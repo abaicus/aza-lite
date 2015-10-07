@@ -45,8 +45,11 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
 		'panel'		  => 'panel_2'
 	));
 	
-		/* Logo	*/
-	$wp_customize->add_setting( 'aza_logo', array(
+/*-------------------------------
+Logo
+---------------------------------*/
+
+    $wp_customize->add_setting( 'aza_logo', array(
 		'default' => aza_get_file('/images/logo.png'),
 		'sanitize_callback' => 'esc_url',
 	));
@@ -56,6 +59,10 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
 	      	'section'  => 'aza_appearance_cover',
 			'priority'    => 1,
 	)));
+    
+/*-------------------------------
+Site header title
+---------------------------------*/
     
      $wp_customize->add_setting( 'aza_header_title', array(
 		'default' => esc_html__('AZA Theme','aza'),
@@ -67,6 +74,10 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
 		'priority'    => 2,
 	));
     
+/*-------------------------------
+Site header subtitle
+---------------------------------*/
+    
     $wp_customize->add_setting( 'aza_subheader_title', array(
 		'default' => esc_html__('One-page - Responsive, Eyecandy, Clean','aza'),
 		'sanitize_callback' => 'aza_sanitize_text',
@@ -77,8 +88,12 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
 		'priority'    => 3,
 	));
     
+/*-------------------------------
+Header store buttons
+---------------------------------*/    
+    
     $wp_customize->add_setting( 'aza_appstore_link', array(
-//		'default' => esc_html__('One-page - Responsive, Eyecandy, Clean','aza'),
+		'default' => esc_url('#'),
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	$wp_customize->add_control( 'aza_appstore_link', array(
@@ -88,7 +103,7 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
 	));
     
     $wp_customize->add_setting( 'aza_playstore_link', array(
-//		'default' => esc_html__('One-page - Responsive, Eyecandy, Clean','aza'),
+		'default' => esc_url('#'),
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	$wp_customize->add_control( 'aza_playstore_link', array(
@@ -109,6 +124,10 @@ FEATURES SECTION
 		'panel'		  => 'panel_2'
 	));
     
+/*-------------------------------
+Features heading
+---------------------------------*/
+
      $wp_customize->add_setting( 'aza_features_heading', array(
 		'default' => esc_html__('KEY FEATURES','aza'),
 		'sanitize_callback' => 'aza_sanitize_text',
@@ -118,6 +137,10 @@ FEATURES SECTION
 		'section'  => 'aza_appearance_features',
 		'priority'    => 1,
 	));
+    
+/*-------------------------------
+Features phone screen
+---------------------------------*/
     
     $wp_customize->add_setting( 'aza_phone_screen', array(
 		'default' => aza_get_file('/images/screen.png'),
@@ -129,6 +152,36 @@ FEATURES SECTION
 	      	'section'  => 'aza_appearance_features',
 			'priority'    => 2,
 	)));
+
+/*-------------------------------
+Features Button
+---------------------------------*/
+
+    $wp_customize->add_setting( 'aza_features_button_text', array(
+		'default' => esc_html__('LEARN MORE','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	
+    $wp_customize->add_control( 'aza_features_button_text', array(
+		'label'    => esc_html__( 'Button Text', 'aza' ),
+		'section'  => 'aza_appearance_features',
+		'priority'    => 3,
+	));
+    
+    $wp_customize->add_setting( 'aza_features_button_link', array(
+		'default' => esc_url('#'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_features_button_link', array(
+		'label'    => esc_html__('Button Link', 'aza' ),
+		'section'  => 'aza_appearance_features',
+		'priority'    => 4,
+	));
+
+/*-------------------------------
+Features zig-zag
+---------------------------------*/
     
     $wp_customize->add_setting( 'aza_zigzag_features_top', array(
         'default' => 0,

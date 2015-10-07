@@ -1,7 +1,11 @@
 <?php
-$features_heading = get_theme_mod('aza_features_heading', "KEY FEATURES");
 
-$phone_screen = get_theme_mod('aza_phone_screen', aza_get_file('/images/screen.png') );?>
+$features_heading = get_theme_mod('aza_features_heading', "KEY FEATURES");
+$phone_screen = get_theme_mod('aza_phone_screen', aza_get_file('/images/screen.png'));
+$button_text = get_theme_mod('aza_features_button_text', "LEARN MORE");
+$button_link = get_theme_mod('aza_features_button_link',"#");
+
+?>
 
 
     <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_features_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
@@ -55,7 +59,12 @@ $phone_screen = get_theme_mod('aza_phone_screen', aza_get_file('/images/screen.p
                                 <div class="button">
                                 </div>
                             </div>
-                            <button type="button" class="btn features-btn">Learn More</button>
+                            
+                            <?php if(!empty($button_link)){ ?>
+                            <button type="button" onclick="window.location='<?php echo $button_link; ?>'" class="btn features-btn">
+                                <?php echo $button_text; ?>
+                            </button>
+                            <?php } ?>
                         </div>
 
                         <div class="col-md-4">
