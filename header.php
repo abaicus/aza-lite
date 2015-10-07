@@ -18,6 +18,8 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
+
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aza-lite' ); ?></a>
 
 	<!-- =========================
@@ -135,3 +137,5 @@
                 <!-- /END CONTAINER -->
             </div>
             <!-- /END STICKY NAVIGATION -->
+            
+          
