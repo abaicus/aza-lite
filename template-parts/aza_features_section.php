@@ -1,10 +1,20 @@
 <?php
 
 $features_heading = get_theme_mod('aza_features_heading', "KEY FEATURES");
+
 $phone_screen = get_theme_mod('aza_phone_screen', aza_get_file('/images/screen.png'));
+
 $button_text = get_theme_mod('aza_features_button_text', "LEARN MORE");
+
 $button_link = get_theme_mod('aza_features_button_link',"#");
 
+$features_icons_left = get_theme_mod ('aza_features_icons_left',json_encode(
+            array(
+                array('icon_value' => 'icon-social-facebook' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive'),
+                array('icon_value' => 'icon-social-twitter' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design'),
+)));
+
+$features_icons_left_decoded = json_decode($features_icons_left);
 ?>
 
 
@@ -24,25 +34,23 @@ $button_link = get_theme_mod('aza_features_button_link',"#");
 
                     <div class="row features-content">
                         <div class="col-md-4">
-                            <ul id="left-column">
-                                <li>
-                                    <div id="fully-responsive" class="circle text-center">
-                                        <i class="fa fa-bars"></i>
-                                    </div>
-                                    <h3 class="features-name text-center">Fully Responsive</h3>
-                                    <p class="features-description text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
-                                </li>
-                                <li>
-                                    <div class="features-separator"></div>
-                                </li>
-                                <li>
-                                    <div id="clean-design" class="circle text-center">
-                                        <i class="fa fa-cube"></i>
-                                    </div>
-                                    <h3 class="features-name text-center">Clean Design</h3>
-                                    <p class="features-description text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
-                                </li>
-                            </ul>
+
+                            <?php
+
+                           if(!empty($features_icons_left)){
+                           $features_icons_left_decoded = json_decode($features_icons_left);
+                            if(!empty($features_icons_left_decoded)) {
+                                echo '<ul id="left_column">';
+                                
+                                    foreach($features_icons_left_decoded as $features_icons_left) {
+                                        echo '<li><div id="'.esc_html($features_icons_left->subtitle). '" class="circle text-center"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
+                                        <h3 class="features-name text-center">'.$features_icons_left->title.'</h3>
+                                        <p class="features-description text-center">'.$features_icons_left->text.'</li>';
+                                    }
+                                
+                            echo '</ul>';}
+                           
+                           } ?>
                         </div>
 
                         <div class="col-md-4 text-center">
@@ -59,12 +67,12 @@ $button_link = get_theme_mod('aza_features_button_link',"#");
                                 <div class="button">
                                 </div>
                             </div>
-                            
+
                             <?php if(!empty($button_link)){ ?>
-                            <button type="button" onclick="window.location='<?php echo $button_link; ?>'" class="btn features-btn">
-                                <?php echo $button_text; ?>
-                            </button>
-                            <?php } ?>
+                                <button type="button" onclick="window.location='<?php echo $button_link; ?>'" class="btn features-btn">
+                                    <?php echo $button_text; ?>
+                                </button>
+                                <?php } ?>
                         </div>
 
                         <div class="col-md-4">

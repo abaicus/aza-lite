@@ -337,7 +337,7 @@ html {
 }
 
 body {
-	background-color: #fff; /* Fallback for when there is no custom background color defined. */
+	background-color: #000; /* Fallback for when there is no custom background color defined. */
 }
 
 body.custom-background {
@@ -926,8 +926,8 @@ background-color: rgba(255, 255, 255, 0.75);
 .header-image{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    margin-top:-70px;
-    padding-top:70px;
+    margin-top: -200px;
+    padding-top: 200px;    
 }
 /*
 
@@ -1005,26 +1005,27 @@ background-color: rgba(255, 255, 255, 0.75);
     margin-top: 40px;
 }
 
-.circle {
-    margin-bottom: 30px;
+.features-content ul li {
+    margin-top: 50px;
 }
 
-.features-content #fully-responsive i {
+.features-content #fully-responsive   {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #365469;
-    height: 77px;
-    width: 77px;
+    height: 75px;
+    width: 75px;
     font-size: 30px;
-    line-height: 77px;
+    line-height: 84px;
     color: #87cfff;
     background-color: #3399df;
-    text-align: center;
+/*    text-align: center;*/
+    margin:0 auto;
 }
 
-.features-content #clean-design i {
+.features-content #clean-design  {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -1036,10 +1037,11 @@ background-color: rgba(255, 255, 255, 0.75);
     line-height: 77px;
     color: #f0dfce;
     background-color: #f0b57c;
-    text-align: center;
+   /*    text-align: center;*/
+    margin:0 auto;
 }
 
-.features-content #perfect-showcase i {
+.features-content #perfect-showcase  {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -1051,10 +1053,11 @@ background-color: rgba(255, 255, 255, 0.75);
     line-height: 77px;
     color: #7affd1;
     background-color: #4bb992;
-    text-align: center;
+    /*    text-align: center;*/
+    margin:0 auto;
 }
 
-.features-content #fully-customizable i {
+.features-content #fully-customizable  {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -1066,7 +1069,8 @@ background-color: rgba(255, 255, 255, 0.75);
     line-height: 79px;
     color: #c4a8ff;
     background-color: #8a74b9;
-    text-align: center;
+    /*    text-align: center;*/
+    margin:0 auto;
 }
 
 .device {
@@ -1224,7 +1228,7 @@ background-color: rgba(255, 255, 255, 0.75);
 .parallax-background {
     position: absolute;
     width: 100%;
-/*    background-position: center center;*/
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 600px;
@@ -1624,6 +1628,8 @@ background-color: rgba(255, 255, 255, 0.75);
 		line-height: 28px;
 		top: 0;
 	}
+    
+    
 	
 }
 
@@ -2227,6 +2233,24 @@ background-color: rgba(255, 255, 255, 0.75);
 	.comment-form input {
 		width: 100%;
 	}
+    
+    .parallax-content .parallax-features h3 {
+        font-size: 24px;
+    }
+    
+    .parallax-content .parallax-features p {
+        font-size: 14px;
+    }
+    
+    .parallax-content ul {
+        margin-top: 20px;
+    }
+    
+    .parallax-content {
+        padding: 20px 0 20px 0;
+}
+
+    
 
 }
  

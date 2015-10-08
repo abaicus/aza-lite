@@ -178,6 +178,33 @@ Features Button
 		'section'  => 'aza_appearance_features',
 		'priority'    => 4,
 	));
+    
+/*-------------------------------
+features repeater
+---------------------------------*/
+    
+    $wp_customize -> add_setting('aza_features_icons_left', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                 array('icon_value' => 'icon-social-facebook' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive'  ),
+                array('icon_value' => 'icon-social-twitter' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design' ),
+            )    
+        )
+    ));
+    
+    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_features_icons_left' , array(
+        'label' => esc_html__('Edit the icons and text','aza'),
+        'section' => 'aza_appearance_features',
+        'priority' => 5,
+        'parallax_image_control'    => false,
+        'parallax_icon_control'     => true,
+        'parallax_title_control'    => true,
+        'parallax_text_control'     => true,
+        'parallax_link_control'     => false,
+    ) ) );
+    
+    
 
 /*-------------------------------
 Features zig-zag
@@ -266,6 +293,45 @@ PARALLAX SECTION
 }
 add_action( 'customize_register', 'aza_customize_register' );
 
+
+require_once ('class/parallax-one-general-control.php');
+
+function parallax_one_customizer_script() {
+wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+}
+add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );
+
+function aza_sanitize_repeater($input){
+	$input_decoded = json_decode($input,true);
+	$allowed_html = array(
+								'br' => array(),
+								'em' => array(),
+								'strong' => array(),
+								'a' => array(
+									'href' => array(),
+									'class' => array(),
+									'id' => array(),
+									'target' => array()
+								),
+								'button' => array(
+									'class' => array(),
+									'id' => array()
+								)
+							);
+	foreach ($input_decoded as $boxk => $box ){
+		foreach ($box as $key => $value){
+			if ($key == 'text'){
+				$input_decoded[$boxk][$key] = wp_kses($value, $allowed_html);
+				
+			} else {
+				$input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
+			}
+			
+		}
+	}
+	
+	return json_encode($input_decoded);
+}
 
 
 function aza_sanitize_text( $input ) {
