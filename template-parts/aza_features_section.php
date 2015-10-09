@@ -10,11 +10,31 @@ $button_link = get_theme_mod('aza_features_button_link',"#");
 
 $features_icons_left = get_theme_mod ('aza_features_icons_left',json_encode(
             array(
-                array('icon_value' => 'icon-social-facebook' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive'),
-                array('icon_value' => 'icon-social-twitter' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design'),
+                array('icon_value' => 'icon-arrows-squares' , 
+                      'title' => 'Fully Responsive' , 
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
+                      'subtitle' => 'fully-responsive'),
+                array('icon_value' => 'icon-computer-imac' , 
+                      'title' => 'Clean Design' , 
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
+                      'subtitle' => 'clean-design'),
 )));
 
 $features_icons_left_decoded = json_decode($features_icons_left);
+
+$features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
+            array(
+                array('icon_value' => 'icon-ecommerce-diamond' , 
+                      'title' => 'Beautiful Showcase' , 
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
+                      'subtitle' => 'perfect-showcase'),
+                array('icon_value' => 'icon-settings-streamline-2' , 
+                      'title' => 'Fully Customizable' , 
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
+                      'subtitle' => 'fully-customizable'),
+)));
+
+$features_icons_right_decoded = json_decode($features_icons_right);
 ?>
 
 
@@ -40,7 +60,7 @@ $features_icons_left_decoded = json_decode($features_icons_left);
                            if(!empty($features_icons_left)){
                            $features_icons_left_decoded = json_decode($features_icons_left);
                             if(!empty($features_icons_left_decoded)) {
-                                echo '<ul id="left_column">';
+                                echo '<ul id="left-column">';
                                 
                                     foreach($features_icons_left_decoded as $features_icons_left) {
                                         echo '<li><div id="'.esc_html($features_icons_left->subtitle). '" class="circle text-center"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
@@ -76,26 +96,23 @@ $features_icons_left_decoded = json_decode($features_icons_left);
                         </div>
 
                         <div class="col-md-4">
-                            <ul id="right-column">
-                                <li>
-                                    <div id="perfect-showcase" class="circle text-center">
-                                        <i class="fa fa-mobile"></i>
-                                    </div>
-                                    <h3 class="features-name text-center">Perfect Showcase</h3>
-                                    <p class="features-description text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
 
-                                </li>
-                                <li>
-                                    <div class="features-separator"></div>
-                                </li>
-                                <li>
-                                    <div id="fully-customizable" class="circle text-center">
-                                        <i class="fa fa-th-large"></i>
-                                    </div>
-                                    <h3 class="features-name text-center">Fully Customizable</h3>
-                                    <p class="features-description text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
-                                </li>
-                            </ul>
+                            <?php
+
+                           if(!empty($features_icons_right)){
+                           $features_icons_right_decoded = json_decode($features_icons_right);
+                            if(!empty($features_icons_right_decoded)) {
+                                echo '<ul id="right-column">';
+                                
+                                    foreach($features_icons_right_decoded as $features_icons_right) {
+                                        echo '<li><div id="'.esc_html($features_icons_right->subtitle). '" class="circle text-center"><span class = " '.esc_html($features_icons_right->icon_value).'"></span></div>
+                                        <h3 class="features-name text-center">'.$features_icons_right->title.'</h3>
+                                        <p class="features-description text-center">'.$features_icons_right->text.'</li>';
+                                    }
+                                
+                            echo '</ul>';}
+                           
+                           } ?>
                         </div>
                     </div>
             </div>

@@ -1009,68 +1009,43 @@ background-color: rgba(255, 255, 255, 0.75);
     margin-top: 50px;
 }
 
-.features-content #fully-responsive   {
+.features-content #fully-responsive,
+.features-content #clean-design,
+.features-content #perfect-showcase,
+.features-content #fully-customizable {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #365469;
     height: 75px;
     width: 75px;
     font-size: 30px;
     line-height: 84px;
-    color: #87cfff;
-    background-color: #3399df;
-/*    text-align: center;*/
+    color: #ffffff;
     margin:0 auto;
+}
+
+.features-content #fully-responsive {
+    
+    background-color: #3399df;
+    
 }
 
 .features-content #clean-design  {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #a87f57;
-    height: 77px;
-    width: 77px;
-    font-size: 30px;
-    line-height: 77px;
-    color: #f0dfce;
+    
     background-color: #f0b57c;
-   /*    text-align: center;*/
-    margin:0 auto;
+
 }
 
 .features-content #perfect-showcase  {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #348166;
-    height: 77px;
-    width: 77px;
-    font-size: 45px;
-    line-height: 77px;
-    color: #7affd1;
+   
     background-color: #4bb992;
-    /*    text-align: center;*/
-    margin:0 auto;
+
 }
 
 .features-content #fully-customizable  {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #5c4c7e;
-    height: 77px;
-    width: 77px;
-    font-size: 35px;
-    line-height: 79px;
-    color: #c4a8ff;
+  
     background-color: #8a74b9;
-    /*    text-align: center;*/
-    margin:0 auto;
+
 }
 
 .device {
@@ -1272,8 +1247,9 @@ background-color: rgba(255, 255, 255, 0.75);
 .parallax-features h3 {
     color: #ffffff;
     font: 100 30px Montserrat;
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
     letter-spacing: 1px;
+/*    text-align: center;*/
 }
 
 .parallax-features p {
@@ -1283,7 +1259,7 @@ background-color: rgba(255, 255, 255, 0.75);
     letter-spacing: 0.5px;
 }
 
-.parallax-features ul {
+.parallax-features  {
     margin: 0 auto;
     list-style: none;
     text-align:center;
@@ -1376,16 +1352,18 @@ background-color: rgba(255, 255, 255, 0.75);
     text-align: center;
 }
 
-#carousel a>i {
-    font-size: 40px;
+#carousel a>span {
+    font-size: 80px;
     color: #ffffff;
-    align-content: center;
-    vertical-align: middle;
-    margin-top: 100px;
+  
+/*    vertical-align: middle;*/
+/*    margin-top: 100px;*/
 }
 
 #carousel a {
-    margin: auto;
+    margin-top:0;
+    margin-bottom:0;
+      align-content: center;
 }
 
 .signature {

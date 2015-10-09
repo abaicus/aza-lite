@@ -187,13 +187,35 @@ features repeater
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array('icon_value' => 'icon-social-facebook' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive'  ),
-                array('icon_value' => 'icon-social-twitter' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design' ),
+                 array('icon_value' => 'icon-arrows-squares' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive'  ),
+                array('icon_value' => 'icon-computer-imac' , 'title' => 'Clean Design' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design' ),
             )    
         )
     ));
     
     $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_features_icons_left' , array(
+        'label' => esc_html__('Edit the icons and text','aza'),
+        'section' => 'aza_appearance_features',
+        'priority' => 5,
+        'parallax_image_control'    => false,
+        'parallax_icon_control'     => true,
+        'parallax_title_control'    => true,
+        'parallax_text_control'     => true,
+        'parallax_link_control'     => false,
+    ) ) );
+    
+    
+     $wp_customize -> add_setting('aza_features_icons_right', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                 array('icon_value' => 'icon-ecommerce-diamond' , 'title' => 'Beautiful Showcase' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'perfect-showcase'  ),
+                array('icon_value' => 'icon-settings-streamline-2' , 'title' => 'Fully Customizable' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-customizable' ),
+            )    
+        )
+    ));
+    
+    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_features_icons_right' , array(
         'label' => esc_html__('Edit the icons and text','aza'),
         'section' => 'aza_appearance_features',
         'priority' => 5,
@@ -287,6 +309,60 @@ PARALLAX SECTION
 	      	'section'  => 'aza_appearance_parallax',
 			'priority'    => 1,
 	)));
+    
+    $wp_customize -> add_setting('aza_parallax_text', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                 array('title' => 'Our Multi layered parallax is fully customizable and showcases anything you need with an eyecandy design.' , 'text' => 'Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.')))));
+    
+    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_parallax_text' , array(
+        'label' => esc_html__('Edit the parallax section text','aza'),
+        'section' => 'aza_appearance_parallax',
+        'priority' => 5,
+//        'parallax_image_control'    => false,
+//        'parallax_icon_control'     => false,
+        'parallax_title_control'    => true,
+        'parallax_text_control'     => true,
+//        'parallax_link_control'     => false,
+    ) ) );
+    
+/*-------------------------------
+Testimonial Section
+---------------------------------*/
+     $wp_customize->add_section( 'aza_appearance_testimonials' , array(
+		'title'       => esc_html__( 'Testimonials Section', 'aza' ),
+//      	'priority'    => 33,
+      	'description' => esc_html__('AZA theme Testimonials section appearance options','aza'),
+		'panel'		  => 'panel_2'
+	));
+    
+   $wp_customize -> add_setting('aza_testimonials', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                 array("image_url"  => aza_get_file('/images/testimonials-pic1.png'), 
+                       "title"      => esc_html__("John Fox"),
+                       "text"       => esc_html__("Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.")),
+                array("image_url"  => aza_get_file('/images/testimonials-pic2.png'), 
+                       "title"      => esc_html__("Parr Otte"),
+                       "text"       => esc_html__("Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.")),
+                array("image_url"  => aza_get_file('/images/testimonials-pic3.png'), 
+                       "title"      => esc_html__("Gee Raff"),
+                       "text"       => esc_html__("Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.")),
+            ))));
+    
+    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_testimonials' , array(
+        'label' => esc_html__('Edit the testimonial section','aza'),
+        'section' => 'aza_appearance_testimonials',
+        'priority' => 5,
+        'parallax_image_control'    => true,
+        'parallax_title_control'    => true,
+        'parallax_text_control'     => true,
+    ) ) );
+    
+    
+    
     
 
 
