@@ -219,7 +219,7 @@ function parallax_one_php_style() {
 
 		$aza_header_image = get_header_image();
 		if(!empty($aza_header_image)){
-			echo '.cover{ background-image: url('.$aza_header_image.');
+			echo 'body{ background-image: url('.$aza_header_image.');
             }';
         }
 

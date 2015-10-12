@@ -350,11 +350,7 @@ TESTIMONIAL SECTION
 	));
     
     
-    
-    
-    
-    
-    
+        
    $wp_customize -> add_setting('aza_testimonials', array(
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
@@ -380,7 +376,26 @@ TESTIMONIAL SECTION
     ) ) );
     
     
+       
+    $wp_customize->add_setting( 'aza_zigzag_testimonial_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_zigzag_testimonial_top', array(
+        'label' => 'Jagged top edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_testimonials',
+    ));
     
+    $wp_customize->add_setting( 'aza_zigzag_testimonial_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_zigzag_testimonial_bottom', array(
+        'label' => 'Jagged bottom edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_testimonials',
+    ));
     
 
 

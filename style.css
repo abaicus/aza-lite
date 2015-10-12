@@ -337,11 +337,15 @@ html {
 }
 
 body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 	background-color: #000; /* Fallback for when there is no custom background color defined. */
 }
 
 body.custom-background {
 	background-size: cover;
+    background-attachment: fixed;
 }
 
 .skip-link {
@@ -522,6 +526,34 @@ big {
 	clear: both;
 	display: block;
 	margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    text-transform: uppercase;
+    font: 100 40px Montserrat;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.separator {
+    width: 300px;
+    height: 1px;
+    background-color: #828084;
+    margin: 40px auto;
+}
+
+.suprascript {
+    vertical-align: super;
+}
+
+sub {
+    bottom: 0px;
+    font-size: 50%;
 }
 
 
@@ -916,10 +948,19 @@ background-color: rgba(255, 255, 255, 0.75);
 3.2 COVER
 ----------------------------------------*/
 .cover {
-    background-repeat: no-repeat;
-/*    background-attachment: fixed;*/
-    background-position: center center;
-    background-size: cover;
+/*  position: absolute;*/
+/*        background-color: rgba(255, 255, 255, 0.7);*/
+        background:no-repeat fixed center 0; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        top: 0;
+        right 0;
+        left: 0;
+        bottom 0;
+    overflow: visible;
+
 
 }
 
@@ -928,6 +969,7 @@ background-color: rgba(255, 255, 255, 0.75);
     z-index: 1;
     margin-top: -200px;
     padding-top: 200px;    
+    background-attachment: fixed;
 }
 /*
 
@@ -995,7 +1037,7 @@ background-color: rgba(255, 255, 255, 0.75);
 .features-background {
     background-color: #464448;
     height: inherit;
-    padding-bottom: 80px;
+    padding: 80px 0;
     -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
@@ -1272,6 +1314,7 @@ background-color: rgba(255, 255, 255, 0.75);
 
 .testimonials {
     height: auto;
+    min-height: 600px;
     padding: 60px 0 80px 0;
     background-color: #464448;
     -moz-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
@@ -1381,6 +1424,137 @@ background-color: rgba(255, 255, 255, 0.75);
     margin-bottom:0;
     position: relative;
 }
+
+/*---------------------------------------
+3.6 RIBBON
+----------------------------------------*/
+
+#ribbon {
+    height: auto;
+    background: linear-gradient( rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3));
+    z-index: 300;
+    padding: 80px 0;
+}
+
+#ribbon .ribbon-row {
+    margin: 0px 0;
+}
+
+#ribbon .ribbon-row h2 {
+    color: #ffffff;
+    font: 700 24px Montserrat;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#ribbon button {
+    margin-bottom: 0;
+}
+
+
+/*---------------------------------------
+3.6 PORTFOLIO
+----------------------------------------*/
+
+#portfolio {
+    height: auto;
+    background-color: #464448;
+    padding: 80px 0 40px 0;
+    -moz-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
+    -webkit-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
+    box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
+}
+
+#portfolio p {
+    margin-bottom: 40px;
+    color: #ededed;
+    font: 400 21px / 30px Roboto;
+}
+
+.portfolio-item {
+    position: relative;
+    z-index: 0;
+    height: auto;
+    width: auto;
+    display: inline-block;
+}
+
+.porftolio-collumns {
+    font-size: 0px;
+    padding: 0;
+}
+
+.portfolio-img-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    padding: 70px 10px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.portfolio-item h3 {
+    color: #fc535f;
+    font: 700 40px / 72px Montserrat;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.portfolio-item p {
+    color: #ffffff;
+    font: 400 21px / 30px Roboto;
+    margin: 0;
+}
+
+.portfolio-item img {
+    -webkit-transition: all 1s ease;
+    /* Safari and Chrome */
+    -moz-transition: all 1s ease;
+    /* Firefox */
+    -o-transition: all 1s ease;
+    /* IE 9 */
+    -ms-transition: all 1s ease;
+    /* Opera */
+    transition: all 1s ease;
+    max-width: 100%;
+}
+
+.portfolio-item:hover img,
+.portfolio-item:focus img {
+    -webkit-transform: scale(1.1);
+    /* Safari and Chrome */
+    -moz-transform: scale(1.1);
+    /* Firefox */
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -o-transform: scale(1.1);
+    /* Opera */
+    transform: scale(1.1);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: url(grayscale.svg);
+    /* Firefox 4+ */
+    filter: gray;
+    /* IE 6-9 */
+}
+
+.portfolio-item {
+    overflow: hidden;
+}
+
+.portfolio-item:hover .portfolio-img-overlay {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+
 /*---------------------------------------
 3.17 SITE FOOTER
 ----------------------------------------*/

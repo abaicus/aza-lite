@@ -117,7 +117,7 @@ $features_icons_right_decoded = json_decode($features_icons_right);
                     </div>
             </div>
         </div>
-
+ </section>
 
         <div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_features_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
-    </section>
+   
