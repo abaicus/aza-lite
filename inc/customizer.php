@@ -328,14 +328,32 @@ PARALLAX SECTION
     ) ) );
     
 /*-------------------------------
-Testimonial Section
+TESTIMONIAL SECTION
 ---------------------------------*/
+
+    
      $wp_customize->add_section( 'aza_appearance_testimonials' , array(
 		'title'       => esc_html__( 'Testimonials Section', 'aza' ),
 //      	'priority'    => 33,
       	'description' => esc_html__('AZA theme Testimonials section appearance options','aza'),
 		'panel'		  => 'panel_2'
 	));
+    
+           $wp_customize->add_setting( 'aza_testimonials_header', array(
+		'default' => esc_html__('TESTIMONIALS','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	$wp_customize->add_control( 'aza_testimonials_header', array(
+		'label'    => esc_html__( 'Testimonial Heading', 'aza' ),
+		'section'  => 'aza_appearance_testimonials',
+		'priority'    => 1,
+	));
+    
+    
+    
+    
+    
+    
     
    $wp_customize -> add_setting('aza_testimonials', array(
         'sanitize_callback' => 'aza_sanitize_repeater',

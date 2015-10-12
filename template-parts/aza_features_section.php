@@ -59,10 +59,10 @@ $features_icons_right_decoded = json_decode($features_icons_right);
 
                            if(!empty($features_icons_left)){
                            $features_icons_left_decoded = json_decode($features_icons_left);
-                            if(!empty($features_icons_left_decoded)) {
-                                echo '<ul id="left-column">';
-                                
-                                    foreach($features_icons_left_decoded as $features_icons_left) {
+                            if(!empty($features_icons_left_decoded)) { ?>
+                                <ul id="left-column">
+
+                                    <?php                                    foreach($features_icons_left_decoded as $features_icons_left) {
                                         echo '<li><div id="'.esc_html($features_icons_left->subtitle). '" class="circle text-center"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
                                         <h3 class="features-name text-center">'.$features_icons_left->title.'</h3>
                                         <p class="features-description text-center">'.$features_icons_left->text.'</li>';
