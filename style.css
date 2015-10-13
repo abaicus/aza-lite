@@ -1240,6 +1240,14 @@ background-color: rgba(255, 255, 255, 0.75);
 
 .parallax>div {
     height: auto;
+    
+}
+
+.row-parallax {
+    margin: 0px 0;
+     display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .parallax-background {
@@ -1429,35 +1437,43 @@ background-color: rgba(255, 255, 255, 0.75);
 3.6 RIBBON
 ----------------------------------------*/
 
-#ribbon {
+.ribbon {
     height: auto;
     background: linear-gradient( rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3));
-    z-index: 300;
+    z-index: -1000;
     padding: 80px 0;
 }
 
-#ribbon .ribbon-row {
+.ribbon .ribbon-row {
     margin: 0px 0;
+     display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#ribbon .ribbon-row h2 {
+.ribbon .ribbon-row h2 {
     color: #ffffff;
     font: 700 24px Montserrat;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 auto;
     padding: 10px 0;
 }
 
-#ribbon button {
+.ribbon button {
+    margin-top:0;
     margin-bottom: 0;
+}
+
+.ribbon-row div {
+    display: block;
 }
 
 
 /*---------------------------------------
-3.6 PORTFOLIO
+3.7 PORTFOLIO
 ----------------------------------------*/
 
-#portfolio {
+.portfolio {
     height: auto;
     background-color: #464448;
     padding: 80px 0 40px 0;
@@ -1466,7 +1482,7 @@ background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
 }
 
-#portfolio p {
+.portfolio p {
     margin-bottom: 40px;
     color: #ededed;
     font: 400 21px / 30px Roboto;
@@ -1483,6 +1499,7 @@ background-color: rgba(255, 255, 255, 0.75);
 .porftolio-collumns {
     font-size: 0px;
     padding: 0;
+    margin-bottom: -14px;
 }
 
 .portfolio-img-overlay {
@@ -1603,11 +1620,24 @@ background-color: rgba(255, 255, 255, 0.75);
 /*---------------------------------------
    6.5 FIXES FOR => 768PX to <= 991PX SCREENS          
 -----------------------------------------*/
-
+@media (max-width: 1199px)  {
+    
+     .portfolio-item h3 {
+         font-size: 25px;
+         margin: 0;
+         line-height: 30px;
+         padding: 10px 0 0 0;
+        }
+    
+    .portfolio-item p {
+        font-size: 16px;
+    }
+}
 @media (max-width: 991px) {
     .row-parallax {
         width: 100%;
         margin: 0;
+        display:inline;
     }
     .features-btn {
         margin-bottom: 40px;
@@ -1615,7 +1645,7 @@ background-color: rgba(255, 255, 255, 0.75);
     .parallax-layer-1 {
         background-size: cover;
     }
-    #parallax>div {
+    #parallax > div {
         height: auto;
     }
     .parallax-layer-1 {
@@ -1643,8 +1673,14 @@ background-color: rgba(255, 255, 255, 0.75);
     }
     .parallax-background {
         height: 950px;
-    }}
-
+    }
+    .ribbon .ribbon-row {
+        display: inline;
+    }
+    .ribbon .ribbon-row > div {
+        margin: 5px 0;
+    }
+}
 @media (max-width: 782px) {
 	.admin-bar .sticky-navigation-open .sticky-navigation {
 	  top: 46px;
@@ -1819,6 +1855,36 @@ background-color: rgba(255, 255, 255, 0.75);
 		font-size: 80%;
 	}
     
+     .features-btn {
+        margin-bottom: 40px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    #carousel > div > div > div > div > div > p {
+        font-size: 15px;
+    }
+    #carousel ol {
+        margin-top: 20px;
+        position: relative;
+    }
+ .portfolio-img-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 1;
+        bottom: -30px;
+        top: 70%;
+        padding: 0;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+ .portfolio-item h3 {
+        font-size: 30px;
+        margin: 0;
+        line-height: 30px;
+        padding: 10px 0 0 0;
+    }
+    
     #masthead div > div.navbar-header {
         margin:0;
     }
@@ -1856,7 +1922,6 @@ background-color: rgba(255, 255, 255, 0.75);
 	}
 
 	.nav > li {
-		display: inline-block;
 		display: inline-block;
 		width: 100%;
 		text-align: left;
@@ -2143,6 +2208,16 @@ background-color: rgba(255, 255, 255, 0.75);
 		line-height: 24px;
 	}
 
+    .signature {
+        text-align: center;
+    }
+    .separator {
+        width: 200px;
+        height: 1px;
+        background-color: #828084;
+        margin: 40px auto;
+    }
+    
 	.single-stats {
 	    display: block;
 	    width: 100%;

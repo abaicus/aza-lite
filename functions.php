@@ -116,14 +116,13 @@ add_action( 'widgets_init', 'aza_widgets_init' );
 function aza_scripts() {
     
     wp_enqueue_style( 'aza-bootstrap-style', aza_get_file( '/css/bootstrap.min.css'), array(), '3.3.1');
-    
+        
     wp_enqueue_style( 'aza-stamp-icons', aza_get_file('/stamp-icons.css'));
     
     wp_enqueue_style( 'aza-style', get_stylesheet_uri() );
 
     wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700|Homemade+Apple');
-     
-
+    
 	wp_enqueue_script( 'aza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'aza-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -169,6 +168,15 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function aza_admin_styles() {
+	   
+    wp_enqueue_style( 'aza_admin_stylesheet', aza_get_file('/css/admin-style.css'),'1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'aza_admin_styles', 10 );
+
+
+
 
 function aza_get_file($file){
 	$file_parts = pathinfo($file);

@@ -64,10 +64,11 @@ Logo
 Site header title
 ---------------------------------*/
     
-     $wp_customize->add_setting( 'aza_header_title', array(
+    $wp_customize->add_setting( 'aza_header_title', array(
 		'default' => esc_html__('AZA Theme','aza'),
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
+    
 	$wp_customize->add_control( 'aza_header_title', array(
 		'label'    => esc_html__( 'Main title', 'aza' ),
 		'section'  => 'aza_appearance_cover',
@@ -194,7 +195,7 @@ features repeater
     ));
     
     $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_features_icons_left' , array(
-        'label' => esc_html__('Edit the icons and text','aza'),
+        'label' => esc_html__('Left side','aza'),
         'section' => 'aza_appearance_features',
         'priority' => 5,
         'parallax_image_control'    => false,
@@ -216,7 +217,7 @@ features repeater
     ));
     
     $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_features_icons_right' , array(
-        'label' => esc_html__('Edit the icons and text','aza'),
+        'label' => esc_html__('Right side','aza'),
         'section' => 'aza_appearance_features',
         'priority' => 5,
         'parallax_image_control'    => false,
@@ -258,7 +259,12 @@ Features zig-zag
 PARALLAX SECTION
 ---------------------------------------*/
     
-    
+
+            /*---------------------------------------
+            Parallax layers
+            ---------------------------------------*/
+
+
      $wp_customize->add_section( 'aza_appearance_parallax' , array(
 		'title'       => esc_html__( 'Parallax Section', 'aza' ),
       	'priority'    => 32,
@@ -299,6 +305,12 @@ PARALLAX SECTION
 			'priority'    => 4,
 	)));
     
+    
+            /*---------------------------------------
+            Parallax contents
+            ---------------------------------------*/
+    
+    
     $wp_customize->add_setting( 'aza_parallax_image', array(
 		'default' => aza_get_file('/images/parallax-image.png'),
 		'sanitize_callback' => 'esc_url',
@@ -320,11 +332,8 @@ PARALLAX SECTION
         'label' => esc_html__('Edit the parallax section text','aza'),
         'section' => 'aza_appearance_parallax',
         'priority' => 5,
-//        'parallax_image_control'    => false,
-//        'parallax_icon_control'     => false,
         'parallax_title_control'    => true,
         'parallax_text_control'     => true,
-//        'parallax_link_control'     => false,
     ) ) );
     
 /*-------------------------------
@@ -334,10 +343,14 @@ TESTIMONIAL SECTION
     
      $wp_customize->add_section( 'aza_appearance_testimonials' , array(
 		'title'       => esc_html__( 'Testimonials Section', 'aza' ),
-//      	'priority'    => 33,
       	'description' => esc_html__('AZA theme Testimonials section appearance options','aza'),
 		'panel'		  => 'panel_2'
 	));
+    
+    
+            /*---------------------------------------
+            Testimonial Title
+            ---------------------------------------*/
     
            $wp_customize->add_setting( 'aza_testimonials_header', array(
 		'default' => esc_html__('TESTIMONIALS','aza'),
@@ -349,7 +362,10 @@ TESTIMONIAL SECTION
 		'priority'    => 1,
 	));
     
-    
+            
+            /*---------------------------------------
+            Testimonials Repeater
+            ---------------------------------------*/
         
    $wp_customize -> add_setting('aza_testimonials', array(
         'sanitize_callback' => 'aza_sanitize_repeater',
@@ -375,8 +391,11 @@ TESTIMONIAL SECTION
         'parallax_text_control'     => true,
     ) ) );
     
-    
-       
+
+        /*---------------------------------------
+        Testimonials Jagged Edges
+        ---------------------------------------*/
+
     $wp_customize->add_setting( 'aza_zigzag_testimonial_top', array(
         'default' => 0,
     ));
@@ -395,6 +414,168 @@ TESTIMONIAL SECTION
         'label' => 'Jagged bottom edge',
         'type' => 'checkbox',
         'section' => 'aza_appearance_testimonials',
+    ));
+    
+/*-------------------------------
+RIBBON SECTION
+---------------------------------*/
+    
+    $wp_customize->add_section( 'aza_appearance_ribbon' , array(
+		'title'       => esc_html__( 'Ribbon Section', 'aza' ),
+      	'description' => esc_html__('AZA theme Ribbon appearance options','aza'),
+		'panel'		  => 'panel_2'
+	));
+    
+     $wp_customize->add_setting( 'aza_ribbon_text', array(
+		'default' => esc_html__('START USING THIS BEAUTIFUL THEME TODAY','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_ribbon_text', array(
+		'label'    => esc_html__( 'Ribbon Text', 'aza' ),
+		'section'  => 'aza_appearance_ribbon',
+		'priority'    => 1,
+	));
+    
+    $wp_customize->add_setting( 'aza_ribbon_button_text', array(
+		'default' => esc_html__('LEARN MORE','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	
+    $wp_customize->add_control( 'aza_ribbon_button_text', array(
+		'label'    => esc_html__( 'Button Text', 'aza' ),
+		'section'  => 'aza_appearance_ribbon',
+		'priority'    => 2,
+	));
+    
+
+/*-------------------------------
+PORTFOLIO SECTION
+---------------------------------*/
+    
+    
+    $wp_customize->add_section( 'aza_appearance_portfolio' , array(
+		'title'       => esc_html__( 'Portfolio Section', 'aza' ),
+      	'description' => esc_html__('AZA theme Portfolio section appearance options','aza'),
+		'panel'		  => 'panel_2'
+	));
+    
+            /*---------------------------------------
+            Portfolio headings
+            ---------------------------------------*/
+    
+     $wp_customize->add_setting( 'aza_portfolio_title', array(
+		'default' => esc_html__('PORTFOLIO SECTION','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_portfolio_title', array(
+		'label'    => esc_html__( 'Title', 'aza' ),
+		'section'  => 'aza_appearance_portfolio',
+		'priority'    => 1,
+	));
+ $wp_customize->add_setting( 'aza_portfolio_subtitle', array(
+		'default' => esc_html__("Showcase your own work. Be it photography, graphic design or any other form of visual art, 
+you can showcase it in AZA Theme's portfolio grid.",'aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	$wp_customize->add_control( 'aza_portfolio_subtitle', array(
+		'label'    => esc_html__( 'Subtitle', 'aza' ),
+		'section'  => 'aza_appearance_portfolio',
+		'priority'    => 2,
+	));
+    
+    
+    
+    
+    $wp_customize -> add_setting('aza_portfolio', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                 array("image_url"  => aza_get_file('/images/portfolio_1.png'), 
+                       "title"      => esc_html__("City Life"),
+                       "subtitle"   => esc_html__("Street Photography")),
+                
+                array("image_url"   => aza_get_file('/images/portfolio_2.png'), 
+                       "title"      => esc_html__("Buildings"),
+                      "subtitle"    => esc_html__("Architectural Study")),
+                
+                array("image_url"   => aza_get_file('/images/portfolio_3.png'), 
+                       "title"      => esc_html__("Landscape"),
+                      "subtitle"    => esc_html__("Nature Study")), 
+                
+                array("image_url"   => aza_get_file('/images/portfolio_4.png'), 
+                       "title"      => esc_html__("Countryside"),
+                       "subtitle"   => esc_html__("Rural")), 
+                
+                array("image_url"   => aza_get_file('/images/portfolio_5.png'), 
+                       "title"      => esc_html__("Moments"),
+                       "subtitle"   => esc_html__("Personal Collections")), 
+                
+                array("image_url"   => aza_get_file('/images/portfolio_6.png'), 
+                       "title"      => esc_html__("Seaside"),
+                       "subtitle"   => esc_html__("Vacation Photography")),
+            ) ) ) );
+    
+$wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_portfolio' , array(
+        'label' => esc_html__('Edit the Portfolio section','aza'),
+        'section' => 'aza_appearance_portfolio',
+        'priority' => 3,
+        'parallax_image_control'    => true,
+        'parallax_title_control'    => true,
+        'parallax_subtitle_control' => true,
+        'parallax_link_control'     => true,
+    ) ) );
+    
+    
+            /*---------------------------------------
+            Portfolio Separators
+            ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_separator_portfolio_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_separator_portfolio_top', array(
+        'label' => 'Separator top',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_portfolio',
+    ));
+    
+    $wp_customize->add_setting( 'aza_separator_portfolio_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_separator_portfolio_bottom', array(
+        'label' => 'Separator bottom',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_portfolio',
+    ));
+    
+    
+            /*---------------------------------------
+            Portfolio Jagged Edges
+            ---------------------------------------*/
+    
+     
+    $wp_customize->add_setting( 'aza_zigzag_portfolio_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_zigzag_portfolio_top', array(
+        'label' => 'Jagged top edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_portfolio',
+    ));
+    
+    $wp_customize->add_setting( 'aza_zigzag_portfolio_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_zigzag_portfolio_bottom', array(
+        'label' => 'Jagged bottom edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_portfolio',
     ));
     
 
