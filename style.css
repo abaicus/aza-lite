@@ -860,7 +860,7 @@ header .navbar-brand {
 }
 
 .admin-bar .sticky-navigation-open .sticky-navigation {
-	top: 32px;
+/*	top: 32px;*/
 	opacity: 1;
 }
 
@@ -1323,7 +1323,7 @@ background-color: rgba(255, 255, 255, 0.75);
 .testimonials {
     height: auto;
     min-height: 600px;
-    padding: 60px 0 80px 0;
+    padding: 80px 0 80px 0;
     background-color: #464448;
     -moz-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
@@ -1356,6 +1356,7 @@ background-color: rgba(255, 255, 255, 0.75);
 #carousel > a.right.carousel-control,
 #carousel > a.left.carousel-control {
     background: none;
+    
 }
 
 .carousel {
@@ -1571,7 +1572,29 @@ background-color: rgba(255, 255, 255, 0.75);
     transition: all 0.5s ease;
 }
 
+/*---------------------------------------
+3.8 PRICING
+----------------------------------------*/
 
+.pricing {
+    height: auto;
+    padding: 80px 0;
+    background: linear-gradient( rgba(41, 2, 2, 0.5), rgba(41, 2, 2, 0.5)), url(img/parallax-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.pricing p {
+    margin: 40px 0;
+    color: #ededed;
+    font: 400 21px Roboto;
+}
+
+.pricing h1 {
+    margin: 0;
+    padding: 0;
+}
 /*---------------------------------------
 3.17 SITE FOOTER
 ----------------------------------------*/

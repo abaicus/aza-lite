@@ -51,7 +51,7 @@
 		<div class="overlay-layer-nav <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
 
             <!-- STICKY NAVIGATION -->
-            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
+            <div class="navbar navbar-inverse bs-docs-nav navbar-top sticky-navigation appear-on-scroll">
 				<!-- CONTAINER -->
                 <div class="container">
 				
