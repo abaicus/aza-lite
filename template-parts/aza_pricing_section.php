@@ -1,22 +1,34 @@
-<section class="pricing">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-centered text-center">
-                <h1>Pricing Packages</h1>
-            </div>
+    
+<?php
+    $aza_shortcodes_settings = get_theme_mod('aza_shortcodes_settings');
 
-            <div class="col-lg-12 col-centered text-center">
-                <p>Let your clients know what you are packages you are offering them with this awesome pricing section.</p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <?php echo do_shortcode ( '[easy-pricing-table id="1737"]' ); ?>
-
-
-
-</section>
+    $aza_shortcodes_settings_decoded = json_decode($aza_shortcodes_settings);
+    
+    if(!empty($aza_shortcodes_settings_decoded)){
+        foreach($aza_shortcodes_settings_decoded as $scd_section){
+           ?>
+            <section class="pricing">
+                <div class="row">
+                    <?php if(!empty($scd_section->title)){?>
+                    <div class="col-lg-12 col-centered text-center">
+                        <h1><?php echo $scd_section->title; ?></h1>
+                    </div>
+                    <?php } ?>
+                    <?php if(!empty( $scd_section->subtitle )){ ?>
+                        <div class="col-lg-12 col-centered text-center">
+                            <p><?php echo $scd_section->subtitle; ?></p>
+                        </div>
+                    <?php } ?>    
+                </div>    
+                
+                
+                <?php
+                    $scd = htmlspecialchars_decode ($scd_section->shortcode , ENT_QUOTES);
+                    echo do_shortcode ( $scd ); ?>
+            </section>
+            <?php
+            
+        }
+    }
+?>

@@ -280,7 +280,6 @@ PARALLAX SECTION
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aza_parallax_background', array(
 	      	'label'    => esc_html__( 'Parallax Background Image', 'aza' ),
 	      	'section'  => 'aza_appearance_parallax',
-			'priority'    => 2,
 	)));
     
      $wp_customize->add_setting( 'aza_parallax_layer_1', array(
@@ -578,8 +577,43 @@ $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize 
         'section' => 'aza_appearance_portfolio',
     ));
     
+/*-------------------------------
+SHORTCODES SECTION 
+---------------------------------*/
 
+    $wp_customize->add_panel( 'panel_3', array(
+		'priority' => 32,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => esc_html__( 'Shortcodes', 'aza' )
+	) );
 
+    $wp_customize->add_section( 'aza_shortcodes' , array(
+		'title'       => esc_html__( 'Shortcodes', 'aza' ),
+      	'description' => esc_html__('AZA theme shortcode options','aza'),
+		'panel'		  => 'panel_3'
+	));
+    
+  $wp_customize -> add_setting('aza_shortcodes_settings', array(
+        //'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+             array("title"      => esc_html__("Pricing Table"),
+                   "subtitle"   => esc_html__(""), 
+                   "link"       => esc_url(""),
+                ) ) ) ) );
+    
+$wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_shortcodes_settings' , array(
+        'label' => esc_html__('Edit the shortcode options','aza'),
+        'section' => 'aza_shortcodes',
+        'priority' => 1,
+        'parallax_title_control'    => true,
+        'parallax_subtitle_control'    => true,
+        'parallax_shortcode_control' => true
+    ) ) );
+    
+    
+    
 }
 add_action( 'customize_register', 'aza_customize_register' );
 
