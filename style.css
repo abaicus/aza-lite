@@ -1706,8 +1706,13 @@ section.about p {
     font: 400 21px Roboto;
 }
 
+#content > section.about > div > div:nth-child(2) > div {
+    display:flex;
+}
+
 .about-content {
     margin-top: 40px;
+    display: flex;
 }
 
 .knob-list li {

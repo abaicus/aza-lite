@@ -578,6 +578,109 @@ $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize 
     ));
     
 /*-------------------------------
+ABOUT SECTION
+---------------------------------*/
+    
+    $wp_customize->add_section( 'aza_appearance_about' , array(
+		'title'       => esc_html__( 'About us section', 'aza' ),
+      	'description' => esc_html__('AZA theme About section appearance options','aza'),
+		'panel'		  => 'panel_2'
+	));
+    
+    /*---------------------------------------
+    Portfolio headings
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_about_title', array(
+		'default' => esc_html__('ABOUT US','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_about_title', array(
+		'label'    => esc_html__( 'Title', 'aza' ),
+		'section'  => 'aza_appearance_about',
+		'priority'    => 1,
+	));
+    
+    $wp_customize->add_setting( 'aza_about_subtitle', array(
+		'default' => esc_html__("Let clients know about your company in this section.",'aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_about_subtitle', array(
+		'label'    => esc_html__( 'Subtitle', 'aza' ),
+		'section'  => 'aza_appearance_about',
+		'priority'    => 2,
+	));
+    
+    /*-------------------------------
+    About Picture
+    ---------------------------------*/
+
+    $wp_customize->add_setting( 'about_image', array(
+		'default' => aza_get_file('/images/about-photo.png'),
+		'sanitize_callback' => 'esc_url',
+    ));
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_image', array(              
+	      	'label'    => esc_html__( 'Section Photo', 'aza' ),
+	      	'section'  => 'aza_appearance_about',
+//			'priority'    => 1,
+	)));
+    
+    
+    /*---------------------------------------
+    About Separators
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_separator_about_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_separator_about_top', array(
+        'label' => 'Separator top',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_about',
+    ));
+    
+    $wp_customize->add_setting( 'aza_separator_about_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_separator_about_bottom', array(
+        'label' => 'Separator bottom',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_about',
+    ));
+    
+    
+    /*---------------------------------------
+    About Jagged Edges
+    ---------------------------------------*/
+    
+     
+    $wp_customize->add_setting( 'aza_zigzag_about_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_zigzag_about_top', array(
+        'label' => 'Jagged top edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_about',
+    ));
+    
+    $wp_customize->add_setting( 'aza_zigzag_about_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_zigzag_about_bottom', array(
+        'label' => 'Jagged bottom edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_about',
+    ));
+    
+    
+/*-------------------------------
 SHORTCODES SECTION 
 ---------------------------------*/
 
@@ -612,9 +715,11 @@ $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize 
         'parallax_shortcode_control' => true
     ) ) );
     
-    
+
+
     
 }
+
 add_action( 'customize_register', 'aza_customize_register' );
 
 
