@@ -1,4 +1,4 @@
-//Wrapper Dropdown-toggle
+    //Wrapper Dropdown-toggle
 
 //jQuery(document).ready(function () {
 //
@@ -40,8 +40,9 @@ jQuery('.percentages').knob({
     'width': '100',
     'dynamicDraw': true,
     'draw': function () {
-        $(this.i).val(this.cv + '%');
-    }
+        jQuery(this.i).val(this.cv + '%');
+    },
+    
 });
 
 jQuery.when(
@@ -51,7 +52,7 @@ jQuery.when(
         duration: 1500,
         easing: 'swing',
         progress: function () {
-            $(this).val(Math.round(this.value / 100 * $(this).data('start'))).trigger('change')
+            jQuery(this).val(Math.round(this.value / 100 * jQuery(this).data('start'))).trigger('change')
         }
     }));
 
@@ -66,8 +67,14 @@ jQuery('.nav a , #footer-end a').click(function () {
 
 //Smooth-Scroll
 
-jQuery(function () {
-    jQuery.scrollSpeed(150, 1000);
+
+jQuery(document).ready(function(){  
+
+    // Default
+    jQuery.scrollSpeed(100, 800);
+
+    // Custom Easing
+//    jQuery.scrollSpeed(100, 800, 'easeOutCubic');
 
 });
 

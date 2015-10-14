@@ -71,7 +71,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                         
                 ?>
                         <div class="parallax_one_general_control_repeater_container">
-                            <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
+                            <div class="parallax-customize-control-title"><?php esc_html_e('+','parallax-one')?></div>
                             <div class="parallax-box-content-hidden">
                                 <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
@@ -164,7 +164,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                              
                 ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('+','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                          <?php
                                             if($parallax_image_control == true && $parallax_icon_control == true){ ?>
@@ -253,10 +253,10 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                             }
                         } else {
                             foreach($json as $icon){
-                                var_dump($json);
+//                                var_dump($json);
                     ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('+','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                     <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>

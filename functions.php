@@ -133,6 +133,12 @@ function aza_scripts() {
     
     wp_enqueue_script( 'aza-parallax-scroll', aza_get_file('/js/parallax-scroll.js'), array('jquery'), '1.0.0', true );
     
+    wp_enqueue_script( 'aza-jquery-knobs', aza_get_file('/js/jquery.knob.js'), array('jquery'), '1.0.0', true );
+//  
+    wp_enqueue_script( 'aza-jquery-scroll-speed', aza_get_file('/js/jQuery.scrollSpeed.js'), array('jquery'), '1.0.2', true );
+   
+    wp_enqueue_script( 'aza-jquery-myscript', aza_get_file('/js/script.js'), array('jquery'), '1.0.0', true );
+//    
     wp_localize_script( 'aza-custom-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'aza-lite' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'aza-lite' ) . '</span>',

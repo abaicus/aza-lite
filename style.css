@@ -971,8 +971,6 @@ background-color: rgba(255, 255, 255, 0.75);
 .header-image{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    margin-top: -200px;
-    padding-top: 200px;    
     background-attachment: fixed;
 }
 /*
@@ -1587,6 +1585,7 @@ background-color: rgba(255, 255, 255, 0.75);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    overflow:hidden;
 }
 
 .pricing p {
@@ -1678,6 +1677,76 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
 
 .ptp-col-id-3 div.ptp-price {
     background-color: #665797;
+}
+
+
+
+/*---------------------------------------
+3.9 ABOUT SECTION
+----------------------------------------*/
+
+
+section.about {
+    height: auto;
+    padding: 80px 0 0 0;
+    background-color: #464448;
+}
+
+section.about canvas {
+    display: inline-block;
+    float: left;
+    margin: 0 0 10px 0;
+    padding: 0;
+    position: relative;
+}
+
+section.about p {
+    margin: 0;
+    color: #ededed;
+    font: 400 21px Roboto;
+}
+
+.about-content {
+    margin-top: 40px;
+}
+
+.knob-list li {
+    padding: 10px;
+}
+
+.about .knob-list li p {
+    color: #f0f0f0;
+    /*    border-color: #*/
+    font: 200 16px Roboto;
+    max-width: 326px;
+}
+
+.about .knob-list li h3 {
+    color: #ededed;
+    font: 500 21px Roboto;
+    margin: 0 0 13px 0;
+}
+
+.knob-descriptions {
+    margin-left: 140px;
+}
+
+.percentages {
+    color: #fff !important;
+    color: #ededed;
+    font: 200 18px Roboto !important;
+}
+
+.knob-list {
+    padding: 0 auto;
+}
+
+.about img {
+    max-height: 460px;
+    -webkit-box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
+    margin: 0 auto;
 }
 
 /*---------------------------------------
@@ -2586,7 +2655,9 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
         padding: 20px 0 20px 0;
 }
 
-    
+    #carousel a>span { 
+        font-size: 45px;
+    }
 
 }
  

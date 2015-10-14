@@ -13,7 +13,7 @@
         min = Math.min;
 
     k.c = {};
-    k.c.d = $(document);
+    k.c.d = jQuery(document);
     k.c.t = function (e) {
         return e.originalEvent.touches.length - 1;
     };
@@ -100,7 +100,7 @@
                 this.v = {};
                 this.i = this.$.find('input')
                 this.i.each(function(k) {
-                    var $this = $(this);
+                    var $this = jQuery(this);
                     s.i[k] = $this;
                     s.v[k] = $this.val();
 
@@ -131,13 +131,13 @@
 
             (!this.o.displayInput) && this.$.hide();
 
-            this.$c = $('<canvas width="' +
+            this.$c = jQuery('<canvas width="' +
                             this.o.width + 'px" height="' +
                             this.o.height + 'px"></canvas>');
             this.c = this.$c[0].getContext("2d");
 
             this.$
-                .wrap($('<div style="' + (this.o.inline ? 'display:inline;' : '') +
+                .wrap(jQuery('<div style="' + (this.o.inline ? 'display:inline;' : '') +
                         'width:' + this.o.width + 'px;height:' +
                         this.o.height + 'px;"></div>'))
                 .before(this.$c);
@@ -629,7 +629,7 @@
             function () {
                 var d = new k.Dial();
                 d.o = o;
-                d.$ = $(this);
+                d.$ = jQuery(this);
                 d.run();
             }
         ).parent();
@@ -648,9 +648,9 @@
 
 
 
-$(function() {
+jQuery(function() {
 
-                $(".knob").knob({
+                jQuery(".knob").knob({
                     /*change : function (value) {
                         //console.log("change : " + value);
                     },
@@ -707,11 +707,11 @@ $(function() {
 
                 // Example of infinite knob, iPod click wheel
                 var v, up=0,down=0,i=0
-                    ,$idir = $("div.idir")
-                    ,$ival = $("div.ival")
+                    ,$idir = jQuery("div.idir")
+                    ,$ival = jQuery("div.ival")
                     ,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
                     ,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
-                $("input.infinite").knob(
+                jQuery("input.infinite").knob(
                                     {
                                     min : 0
                                     , max : 20
