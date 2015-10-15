@@ -1688,7 +1688,7 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
 
 section.about {
     height: auto;
-    padding: 80px 0 0 0;
+    padding: 80px 0;
     background-color: #464448;
 }
 
@@ -1711,12 +1711,16 @@ section.about p {
 }
 
 .about-content {
-    margin-top: 40px;
-    display: flex;
+     margin-top: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 }
 
-.knob-list li {
+div.row.about-content ul > li {
     padding: 10px;
+    margin: 20px 0px;
+    min-height: 124px;
 }
 
 .about .knob-list li p {
@@ -1753,6 +1757,28 @@ section.about p {
     box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
     margin: 0 auto;
 }
+
+/*---------------------------------------
+3.10 CLIENTS SECTION
+----------------------------------------*/
+
+.clients-header {
+    margin-bottom: 40px;
+}
+
+.clients {
+    height: auto;
+    padding: 40px 0 0 0;
+    background-color: #252426;
+    text-align: center;
+}
+
+.clients > div > div > div > div > img {
+    margin: 0 auto 40px;
+    
+}
+
+
 
 /*---------------------------------------
 3.17 SITE FOOTER

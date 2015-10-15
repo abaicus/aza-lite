@@ -551,6 +551,20 @@ $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize 
         'section' => 'aza_appearance_portfolio',
     ));
     
+            /*---------------------------------------
+            Portfolio Button
+            ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_portfolio_button_text', array(
+		'default' => esc_html__('Other Works'),'aza',
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	
+    $wp_customize->add_control( 'aza_portfolio_button_text', array(
+		'label'    => esc_html__( 'Button Text', 'aza' ),
+		'section'  => 'aza_appearance_portfolio',
+		'priority'    => 4,
+	));
     
             /*---------------------------------------
             Portfolio Jagged Edges
@@ -588,7 +602,7 @@ ABOUT SECTION
 	));
     
     /*---------------------------------------
-    Portfolio headings
+    About headings
     ---------------------------------------*/
     
     $wp_customize->add_setting( 'aza_about_title', array(
@@ -612,6 +626,45 @@ ABOUT SECTION
 		'section'  => 'aza_appearance_about',
 		'priority'    => 2,
 	));
+
+    /*-------------------------------
+    About Content
+    ---------------------------------*/
+    
+      $wp_customize -> add_setting('aza_about_content', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                 array("title"      => esc_html__("iOS Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("27")),
+                
+                array("title"      => esc_html__("Android Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("45")),
+                
+                array("title"      => esc_html__("Windows Mobile Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("10")),
+                
+                array("title"      => esc_html__("Desktop Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("18")),
+                
+               
+            ) ) ) );
+    
+            $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_about_content' , array(
+                    'label' => esc_html__('Edit the About Us section content','aza'),
+                    'section' => 'aza_appearance_about',
+                    'priority' => 3,
+                    'parallax_title_control'    => true,
+                    'parallax_percentage_control' => true,
+                    'parallax_text_control'     => true,
+                ) ) );
+
+    
+    
     
     /*-------------------------------
     About Picture
@@ -652,6 +705,22 @@ ABOUT SECTION
         'type' => 'checkbox',
         'section' => 'aza_appearance_about',
     ));
+    
+    
+    /*-------------------------------
+    About Button
+    ---------------------------------*/
+    
+        $wp_customize->add_setting( 'aza_about_button_text', array(
+		'default' => esc_html__('More info'),'aza',
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	
+    $wp_customize->add_control( 'aza_about_button_text', array(
+		'label'    => esc_html__( 'Button Text', 'aza' ),
+		'section'  => 'aza_appearance_about',
+		'priority'    => 4,
+	));
     
     
     /*---------------------------------------

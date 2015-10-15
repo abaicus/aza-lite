@@ -20,7 +20,6 @@ $features_icons_left = get_theme_mod ('aza_features_icons_left',json_encode(
                       'subtitle' => 'clean-design'),
 )));
 
-$features_icons_left_decoded = json_decode($features_icons_left);
 
 $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
             array(
@@ -34,7 +33,6 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                       'subtitle' => 'fully-customizable'),
 )));
 
-$features_icons_right_decoded = json_decode($features_icons_right);
 ?>
 
 

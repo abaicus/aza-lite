@@ -1,8 +1,34 @@
 <?php 
 
 $heading = get_theme_mod('aza_about_title', 'ABOUT US');
+
 $subheading = get_theme_mod('aza_about_subheading', 'Let clients know about your company in this section.');
+
 $about_image = get_theme_mod('about_image', aza_get_file('/images/about-photo.png'));
+
+$about_content = get_theme_mod ('aza_about_content',json_encode(
+            array(
+                 array("title"      => esc_html__("iOS Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("27")),
+                
+                array("title"      => esc_html__("Android Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("45")),
+                
+                array("title"      => esc_html__("Windows Mobile Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("10")),
+                
+                array("title"      => esc_html__("Desktop Users"),
+                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("18")),
+)));
+
+$about_content_decoded = json_decode($about_content);
+
+$button_text = get_theme_mod('aza_about_button_text', 'More info')
+
 
 ?>
 
@@ -25,88 +51,56 @@ $about_image = get_theme_mod('about_image', aza_get_file('/images/about-photo.pn
                         }?>
                 </div>
             </div>
-
+            
             <div class="row about-content">
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 ">
-                    <ul class="knob-list">
+              <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 ">
+               <ul class="knob-list">
+               
+                            <?php
 
+                            $var = 1;
 
-                        <li>
+                           if(!empty($about_content)){
+                           $about_content_decoded = json_decode($about_content);
+                            if(!empty($about_content_decoded)) {
+                        foreach($about_content_decoded as $about_content) {
+                                        echo '<li>';
+                                        echo '<input class= "percentages k'.$var.'" value = "'.$about_content->percentage.'" data-fgColor = "#f0b57c" data-bgColor = "#333333"/>';
+                                        echo ' <div class="knob-descriptions">';
+                                        echo '<h3>'.$about_content->title.'</h3>';
+                                        echo '<p>'.$about_content->text.'</p>';
+                                        echo '</div></li>';
+                                            $var++;
+                        }
+                                       }}
+                  ?> </div> </ul>
 
-                            <input class="percentages k1" data-start="0" data-value="27" data-fgColor="#f0b57c" data-bgColor="#333333">
-
-                            <div class="knob-descriptions">
-                                <h3>iOS Users</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <input class="percentages k2" data-start="0" data-value="45" data-fgColor="#4bb992" data-bgColor="#333333">
-
-                            <div class="knob-descriptions">
-                                <h3>Android Users</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <input class="percentages k3" data-start="0" data-value="10" data-fgColor="#349ae0" data-bgColor="#333333">
-
-                            <div class="knob-descriptions">
-                                <h3>Windows Mobile Users</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <input class="percentages k4" data-start="0" data-value="18" data-fgColor="#887caf" data-bgColor="#333333">
-
-                            <div class="knob-descriptions">
-                                <h3>Desktop Users</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-           
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 ">
+       
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12" >
 
                 <?php if(!empty($about_image)) {
                         echo '<img src = " '.esc_url($about_image).'" alt = "#"/>';
                     }?>
                 </div>
-            </div>
-
-            <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_about_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
-
-            <div class="row">
-                <div class="col-lg-12 col-centered text-center clients-header">
-                    <h1>Clients</h1>
                 </div>
-            </div>
-
         </div>
-    </section>
+              
+                     <div class="container">
+                     <div class="row">       
+            <hr class="separator" <?php echo ( get_theme_mod( 'aza_separator_about_bottom' ) ) ? "" : "style='display:none!important;'" ?>>
+        
+             <?php
+                        if(!empty($button_text))
+                        {
+                      
+                        echo '<div class="col-lg-12 col-centered text-center">';
+                        echo '<button type="button" class="btn features-btn">'.esc_html__($button_text).'</button></div>';
+                        }
+                    ?>  
+                </div></div></div>
+   
+   </section>
+<div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_about_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
 
-    <section id="clients">
-        <div class="container">
-            <div class="row">
 
-                <div class="client-list">
-
-
-
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img class="img-responsive" src="img/adobe.png" alt=""> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img class="img-responsive" src="img/squares.png" alt=""> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img class="img-responsive" src="img/wordpress.png" alt=""> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img src="img/pixelgraft.png" alt=""> </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-    
-       <div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_about_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
+       

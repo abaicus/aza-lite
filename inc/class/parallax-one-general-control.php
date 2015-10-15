@@ -21,7 +21,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             $json = json_decode($values);
             if(!is_array($json)) $json = array($values);
             $it = 0;
-            $it2 = 0;
+            
 
             $options = $this->options;
             if(!empty($options['parallax_image_control'])){
@@ -59,6 +59,12 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                 $parallax_shortcode_control = $options['parallax_shortcode_control'];
             } else {
                 $parallax_shortcode_control = false;
+            }
+            
+            if(!empty($options['parallax_percentage_control'])){
+                $parallax_percentage_control = $options['parallax_percentage_control'];
+            } else {
+                $parallax_percentage_control = false;
             }
             
 
@@ -150,8 +156,12 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                     ?>
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
                                         <input type="text" class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
-                                 <?php   
-                                    }
+                                 <?php } 
+                                    if($parallax_percentage_control==true){
+                                    ?>
+                                        <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
+                                         <input type="number" maxlength="3" min="0" max="100" class="parallax_one_percentage_control" placeholder="<?php esc_html_e('Percentage','parallax-one'); ?>"/>
+                                 <?php }
                                 ?>
                                 <input type="hidden" class="parallax_one_box_id">
                             <button type="button" class="parallax_one_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','parallax-one'); ?></button>
@@ -183,6 +193,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 
                                                 <div class="parallax_one_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='parallax_icon'){ echo 'style="display:none"';}?>>
                                                     <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one');?></span>
+                                                    <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
@@ -240,7 +251,11 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                 if($parallax_shortcode_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
                                         <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
-                                  <?php  }
+                                        <?php   }
+                                                if($parallax_percentage_control==true){ ?>
+                                        <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
+                                         <input type="number" maxlength="3" min="0" max="100" value='<?php if(!empty($icon->percentage)) echo $icon->percentage; ?>' class="parallax_one_percentage_control" placeholder="<?php esc_html_e('Percentage','parallax-one'); ?>"/>
+                                        <?php   }
                                         ?>
                                         <input type="hidden" class="parallax_one_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                     <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
@@ -337,6 +352,11 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
                                             <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
                                   <?php  }
+                                
+                                        if($parallax_percentage_control==true){ ?>
+                                            <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
+                                            <input type="number" maxlength="3" min="0" max="100" value='<?php if(!empty($icon->percentage)) echo $icon->percentage; ?>' class="parallax_one_percentage_control" placeholder="<?php esc_html_e('Percentage','parallax-one'); ?>"/>
+                                  <?php  }  
                                         ?>
                                         <input type="hidden" class="parallax_one_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                         <button type="button" class="parallax_one_general_control_remove_field button" <?php 

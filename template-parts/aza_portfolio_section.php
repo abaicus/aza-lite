@@ -39,19 +39,21 @@ $title =  get_theme_mod('aza_portfolio_title', 'PORTFOLIO SECTION');
 
 $subtitle = get_theme_mod('aza_portfolio_subtitle', "Showcase your own work. Be it photography, graphic design or any other form of visual art, 
 you can showcase it in AZA Theme's portfolio grid.");
+
+$button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
 ?> 
            
              <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
              
            <section class="portfolio">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-centered text-center">
+                <div class="row text-center">
+                    <div class="col-lg-12 col-centered">
                         <?php
                         if(!empty($title)) {
                             echo '<h1>'.esc_html__($title).'</h1>';
                         }   ?>
-                         <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "" : "style='display:none!important;'" ?>></div>          
+                         <hr class="separator" <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "" : "style='display:none!important;'" ?></div>  
                         
                         <?php
                         if(!empty($subtitle)) {
@@ -62,7 +64,7 @@ you can showcase it in AZA Theme's portfolio grid.");
                     </div>
                     
                     </div>
-                </div>
+             
            
 
             <div class="container">
@@ -90,28 +92,23 @@ if(!empty($portfolio_item)) {
                     
                 </div>
                </div>
-<!--
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center porftolio-collumns">
-                        <a href="#">
-                            <div class="portfolio-item">
-                                <img src="images/portfolio_1.png" class="img-responsive" alt="#">
-                                <div class="portfolio-img-overlay">
-                                    <h3>City life</h3>
-                                    <p> Street photography</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
--->
 
                     
 
 
                 <div class="container">
-                       <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>   
-                    <div class="col-lg-12 col-centered text-center">
-                        <button type="button" class="btn features-btn">Learn More</button>
-                    </div>
+                    <div class="row text-center">
+                       <hr class="separator" <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "" : "style='display:none!important;'" ?>
+                    <?php
+                        if(!empty($button_text))
+                        {
+                        echo '<div class="container text-center"';
+                        echo '<div class="col-lg-12 col-centered">';
+                        echo '<button type="button" class="btn features-btn">'.esc_html__($button_text).'</button></div></div>';
+                        }
+                    ?>  
+                    
+                </div>
                 </div>
         </section>
         

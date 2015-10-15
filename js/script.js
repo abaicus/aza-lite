@@ -19,17 +19,17 @@
 
 //jQuery Knobs Percentages Animations
 
-jQuery('.k1').data('start',
-    jQuery('.k1').data('value'));
-
-jQuery('.k2').data('start',
-    jQuery('.k2').data('value'));
-
-jQuery('.k3').data('start',
-    jQuery('.k3').data('value'));
-
-jQuery('.k4').data('start',
-    jQuery('.k4').data('value'));
+//jQuery('.k1').data('start',
+//    jQuery('.k1').data('value'));
+//
+//jQuery('.k2').data('start',
+//    jQuery('.k2').data('value'));
+//
+//jQuery('.k3').data('start',
+//    jQuery('.k3').data('value'));
+//
+//jQuery('.k4').data('start',
+//    jQuery('.k4').data('value'));
 
 
 
@@ -44,26 +44,26 @@ jQuery('.percentages').knob({
     },
     
 });
-
-jQuery.when(
-    jQuery('.percentages').animate({
-        value: 100
-    }, {
-        duration: 1500,
-        easing: 'swing',
-        progress: function () {
-            jQuery(this).val(Math.round(this.value / 100 * jQuery(this).data('start'))).trigger('change')
-        }
-    }));
+//
+//jQuery.when(
+//    jQuery('.percentages').animate({
+//        value: 100
+//    }, {
+//        duration: 1500,
+//        easing: 'swing',
+//        progress: function () {
+//            jQuery(this).val(Math.round(this.value / 100 * jQuery(this).data('start'))).trigger('change')
+//        }
+//    }));
 
 //Anchors
-
-jQuery('.nav a , #footer-end a').click(function () {
-    jQuery('html, body').animate({
-        scrollTop: jQuery(jQuery(this).attr('href')).offset().top
-    }, 500);
-    return false;
-});
+//
+//jQuery('.nav a , #footer-end a').click(function () {
+//    jQuery('html, body').animate({
+//        scrollTop: jQuery(jQuery(this).attr('href')).offset().top
+//    }, 500);
+//    return false;
+//});
 
 //Smooth-Scroll
 
