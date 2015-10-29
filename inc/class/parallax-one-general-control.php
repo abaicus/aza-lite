@@ -60,7 +60,11 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             } else {
                 $parallax_shortcode_control = false;
             }
-            
+            if(!empty($options['parallax_color_control'])){
+                $parallax_color_control = $options['parallax_color_control'];
+            } else {
+                $parallax_color_control = false;
+            }
             if(!empty($options['parallax_percentage_control'])){
                 $parallax_percentage_control = $options['parallax_percentage_control'];
             } else {
@@ -157,6 +161,11 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
                                         <input type="text" class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
                                  <?php } 
+                        if($parallax_color_control==true){
+                                    ?>
+                                        <span class="customize-control-title"><?php esc_html_e('Color','parallax-one')?></span>
+                                        <input type="text" class="parallax_one_color_control" placeholder="<?php esc_html_e('Color','parallax-one'); ?>"/>
+                                 <?php } 
                                     if($parallax_percentage_control==true){
                                     ?>
                                         <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
@@ -251,6 +260,12 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                 if($parallax_shortcode_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
                                         <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                        
+                                        <?php	}
+                                                if($parallax_color_control==true){ ?>
+                                        <span class="customize-control-title"><?php esc_html_e('Color','parallax-one')?></span>
+                                        <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="parallax_one_color_control" placeholder="<?php esc_html_e('Color','parallax-one'); ?>"/>
+                                        
                                         <?php   }
                                                 if($parallax_percentage_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
@@ -351,6 +366,14 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         if($parallax_shortcode_control==true){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
                                             <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                            
+                                            <?php }
+                                        
+                                
+                                        if($parallax_color_control==true){ ?>
+                                            <span class="customize-control-title"><?php esc_html_e('Color','parallax-one')?></span>
+                                            <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="parallax_one_color_control" placeholder="<?php esc_html_e('Color','parallax-one'); ?>"/>
+                                            
                                   <?php  }
                                 
                                         if($parallax_percentage_control==true){ ?>

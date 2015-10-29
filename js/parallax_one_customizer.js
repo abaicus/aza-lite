@@ -126,6 +126,7 @@ function parallax_one_refresh_general_control_values(){
 			}
 			var id = jQuery(this).find(".parallax_one_box_id").val();
             var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
+            var color = jQuery(this).find(".parallax_one_color_control").val();
             var percentage = jQuery(this).find(".parallax_one_percentage_control").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
@@ -138,6 +139,7 @@ function parallax_one_refresh_general_control_values(){
                     "subtitle" : subtitle,
 					"id" : id,
                     "shortcode" : escapeHtml(shortcode),
+                    "color" : escapeHtml(color),
                     "percentage": percentage,
                 });
             }
@@ -208,6 +210,7 @@ jQuery(document).ready(function(){
                 field.find(".parallax_one_title_control").val('');
                 field.find(".parallax_one_subtitle_control").val('');
                 field.find(".parallax_one_shortcode_control").val('');
+                field.find(".parallax_one_color_control").val('');
                 field.find(".parallax_one_percentage_control").val('');
                 th.find(".parallax_one_general_control_repeater_container:first").parent().append(field);
                 parallax_one_refresh_general_control_values();
@@ -235,6 +238,10 @@ jQuery(document).ready(function(){
 	});
     
     jQuery("#customize-theme-controls").on('keyup', '.parallax_one_shortcode_control',function(){
+		 parallax_one_refresh_general_control_values();
+	}); 
+     
+    jQuery("#customize-theme-controls").on('keyup', '.parallax_one_color_control',function(){
 		 parallax_one_refresh_general_control_values();
 	}); 
     

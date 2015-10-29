@@ -13,11 +13,13 @@ $features_icons_left = get_theme_mod ('aza_features_icons_left',json_encode(
                 array('icon_value' => 'icon-arrows-squares' , 
                       'title' => 'Fully Responsive' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
+                      'color' => '#F26B1D',
                       'subtitle' => 'fully-responsive'),
                 array('icon_value' => 'icon-computer-imac' , 
                       'title' => 'Clean Design' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'subtitle' => 'clean-design'),
+                      'subtitle' => 'clean-design',
+                      'color'    => '#6FC6D2'),
 )));
 
 
@@ -26,11 +28,13 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                 array('icon_value' => 'icon-ecommerce-diamond' , 
                       'title' => 'Beautiful Showcase' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'subtitle' => 'perfect-showcase'),
+                      'subtitle' => 'perfect-showcase',
+                      'color'    => '#31728D'),
                 array('icon_value' => 'icon-settings-streamline-2' , 
                       'title' => 'Fully Customizable' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'subtitle' => 'fully-customizable'),
+                      'subtitle' => 'fully-customizable',
+                      'color'    => '#0AC2A5'),
 )));
 
 ?>
@@ -61,7 +65,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                                 <ul id="left-column">
 
                                     <?php                                    foreach($features_icons_left_decoded as $features_icons_left) {
-                                        echo '<li><div id="'.esc_html($features_icons_left->subtitle). '" class="circle text-center"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
+                                        echo '<li><div id="'.esc_html($features_icons_left->subtitle). '" class="circle text-center" style = "background-color: '.esc_html($features_icons_left->color).'"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
                                         <h3 class="features-name text-center">'.$features_icons_left->title.'</h3>
                                         <p class="features-description text-center">'.$features_icons_left->text.'</li>';
                                     }
@@ -103,7 +107,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                                 echo '<ul id="right-column">';
                                 
                                     foreach($features_icons_right_decoded as $features_icons_right) {
-                                        echo '<li><div id="'.esc_html($features_icons_right->subtitle). '" class="circle text-center"><span class = " '.esc_html($features_icons_right->icon_value).'"></span></div>
+                                       echo '<li><div id="'.esc_html($features_icons_right->subtitle). '" class="circle text-center" style = "background-color: '.esc_html($features_icons_right->color).'"><span class = " '.esc_html($features_icons_right->icon_value).'"></span></div>
                                         <h3 class="features-name text-center">'.$features_icons_right->title.'</h3>
                                         <p class="features-description text-center">'.$features_icons_right->text.'</li>';
                                     }

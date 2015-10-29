@@ -188,8 +188,8 @@ features repeater
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array('icon_value' => 'icon-arrows-squares' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive'  ),
-                array('icon_value' => 'icon-computer-imac' , 'title' => 'Clean Design' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design' ),
+                 array('icon_value' => 'icon-arrows-squares' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive', 'color' => '#F26B1D'  ),
+                array('icon_value' => 'icon-computer-imac' , 'title' => 'Clean Design' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design', 'color' => '#6FC6D2' ),
             )    
         )
     ));
@@ -203,6 +203,7 @@ features repeater
         'parallax_title_control'    => true,
         'parallax_text_control'     => true,
         'parallax_link_control'     => false,
+        'parallax_color_control'    => true,
     ) ) );
     
     
@@ -210,8 +211,8 @@ features repeater
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array('icon_value' => 'icon-ecommerce-diamond' , 'title' => 'Beautiful Showcase' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'perfect-showcase'  ),
-                array('icon_value' => 'icon-settings-streamline-2' , 'title' => 'Fully Customizable' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-customizable' ),
+                 array('icon_value' => 'icon-ecommerce-diamond' , 'title' => 'Beautiful Showcase' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'perfect-showcase', 'color' => '#31728D'  ),
+                array('icon_value' => 'icon-settings-streamline-2' , 'title' => 'Fully Customizable' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-customizable', 'color' => '#0AC2A5' ),
             )    
         )
     ));
@@ -225,6 +226,7 @@ features repeater
         'parallax_title_control'    => true,
         'parallax_text_control'     => true,
         'parallax_link_control'     => false,
+        'parallax_color_control'    => true,
     ) ) );
     
     
