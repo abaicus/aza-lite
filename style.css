@@ -1845,11 +1845,12 @@ div.row.about-content ul > li {
     }
 }
 @media (max-width: 991px) {
-    
+    .about-content img {
+        margin-bottom: 40px;   
+    }
     .features-content,
     .about-content {
        display: block;
-
    }
     .row-parallax {
         width: 100%;
