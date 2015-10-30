@@ -10,19 +10,23 @@ $about_content = get_theme_mod ('aza_about_content',json_encode(
             array(
                  array("title"      => esc_html__("iOS Users"),
                        "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("27")),
+                       "percentage" => esc_html__("27"),
+                       "color"      => esc_html__("#3399df")),
                 
                 array("title"      => esc_html__("Android Users"),
                        "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("45")),
+                       "percentage"   => esc_html__("45"),
+                       "color"      => esc_html__("#f0b57c")),
                 
                 array("title"      => esc_html__("Windows Mobile Users"),
                        "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("10")),
+                       "percentage"   => esc_html__("10"),
+                       "color"      => esc_html__("#4bb992")),
                 
                 array("title"      => esc_html__("Desktop Users"),
                        "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("18")),
+                       "percentage"   => esc_html__("18"),
+                       "color"        => esc_html__("#8a74b9")),
 )));
 
 $about_content_decoded = json_decode($about_content);
@@ -65,7 +69,7 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                             if(!empty($about_content_decoded)) {
                         foreach($about_content_decoded as $about_content) {
                                         echo '<li>';
-                                        echo '<input class= "percentages k'.$var.'" value = "'.$about_content->percentage.'" data-fgColor = "#f0b57c" data-bgColor = "#333333"/>';
+                                        echo '<input class= "percentages k'.$var.'" value = "'.$about_content->percentage.'" data-fgColor = "'.$about_content->color.'" data-bgColor = "#333333"/>';
                                         echo ' <div class="knob-descriptions">';
                                         echo '<h3>'.$about_content->title.'</h3>';
                                         echo '<p>'.$about_content->text.'</p>';
@@ -76,7 +80,7 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                   ?> </div> </ul>
 
        
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12" >
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 text-center" >
 
                 <?php if(!empty($about_image)) {
                         echo '<img src = " '.esc_url($about_image).'" alt = "#"/>';

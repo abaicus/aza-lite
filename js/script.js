@@ -71,7 +71,7 @@ jQuery('.percentages').knob({
 jQuery(document).ready(function(){  
 
     // Default
-    jQuery.scrollSpeed(100, 800);
+//    jQuery.scrollSpeed(50, 100);
 
     // Custom Easing
 //    jQuery.scrollSpeed(100, 800, 'easeOutCubic');

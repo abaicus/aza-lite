@@ -12,7 +12,7 @@
             </div>
                 <div class="row">
 
-                <div class="client-list">
+                <div class="client-list text-center">
 
 
 

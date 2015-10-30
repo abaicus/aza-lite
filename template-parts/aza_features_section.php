@@ -13,13 +13,13 @@ $features_icons_left = get_theme_mod ('aza_features_icons_left',json_encode(
                 array('icon_value' => 'icon-arrows-squares' , 
                       'title' => 'Fully Responsive' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'color' => '#F26B1D',
+                      'color' => '#3399df',
                       'subtitle' => 'fully-responsive'),
                 array('icon_value' => 'icon-computer-imac' , 
                       'title' => 'Clean Design' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
                       'subtitle' => 'clean-design',
-                      'color'    => '#6FC6D2'),
+                      'color'    => '#f0b57c'),
 )));
 
 
@@ -29,12 +29,12 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                       'title' => 'Beautiful Showcase' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
                       'subtitle' => 'perfect-showcase',
-                      'color'    => '#31728D'),
+                      'color'    => '#4bb992'),
                 array('icon_value' => 'icon-settings-streamline-2' , 
                       'title' => 'Fully Customizable' , 
                       'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
                       'subtitle' => 'fully-customizable',
-                      'color'    => '#0AC2A5'),
+                      'color'    => '#8a74b9'),
 )));
 
 ?>
@@ -55,7 +55,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
             }?>
 
                     <div class="row features-content">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-12">
 
                             <?php
 
@@ -75,7 +75,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                            } ?>
                         </div>
 
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4 col-sm-12 text-center">
                             <div class="device">
                                 <div class="sensor"></div>
                                 <div class="devicetop">
@@ -97,7 +97,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                                 <?php } ?>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-12">
 
                             <?php
 

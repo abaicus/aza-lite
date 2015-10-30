@@ -32,7 +32,7 @@ echo '<h4>';
 echo esc_html__($menu_name);
 echo '</h4>';  ?>
 <div class="row">
-<div class="col-lg-4 col-lg-offset-4">
+<div class="col-lg-12 text-center">
 
 <?php
 //Menu Call
@@ -57,7 +57,7 @@ echo esc_html__($menu_name);
 echo '</h4>'; 
 ?>
 <div class="row">
-<div class="col-lg-4 col-lg-offset-4">
+<div class="col-lg-12 text-center">
 
 <?php
 

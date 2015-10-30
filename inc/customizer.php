@@ -188,8 +188,8 @@ features repeater
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array('icon_value' => 'icon-arrows-squares' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive', 'color' => '#F26B1D'  ),
-                array('icon_value' => 'icon-computer-imac' , 'title' => 'Clean Design' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design', 'color' => '#6FC6D2' ),
+                 array('icon_value' => 'icon-arrows-squares' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive', 'color' => '#3399df'  ),
+                array('icon_value' => 'icon-computer-imac' , 'title' => 'Clean Design' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design', 'color' => '#f0b57c' ),
             )    
         )
     ));
@@ -211,8 +211,8 @@ features repeater
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array('icon_value' => 'icon-ecommerce-diamond' , 'title' => 'Beautiful Showcase' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'perfect-showcase', 'color' => '#31728D'  ),
-                array('icon_value' => 'icon-settings-streamline-2' , 'title' => 'Fully Customizable' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-customizable', 'color' => '#0AC2A5' ),
+                 array('icon_value' => 'icon-ecommerce-diamond' , 'title' => 'Beautiful Showcase' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'perfect-showcase', 'color' => '#4bb992'  ),
+                array('icon_value' => 'icon-settings-streamline-2' , 'title' => 'Fully Customizable' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-customizable', 'color' => '#8a74b9' ),
             )    
         )
     ));
@@ -637,21 +637,25 @@ ABOUT SECTION
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array("title"      => esc_html__("iOS Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("27")),
+                 array("title"        => esc_html__("iOS Users"),
+                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("27"),
+                       "color"        => esc_html__("#3399df")),
                 
-                array("title"      => esc_html__("Android Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("45")),
+                array("title"         => esc_html__("Android Users"),
+                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("45"),
+                       "color"        => esc_html__("#f0b57c")),
                 
-                array("title"      => esc_html__("Windows Mobile Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("10")),
+                array("title"         => esc_html__("Windows Mobile Users"),
+                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("10"),
+                       "color"        => esc_html__("#4bb992")),
                 
-                array("title"      => esc_html__("Desktop Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("18")),
+                array("title"         => esc_html__("Desktop Users"),
+                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
+                       "percentage"   => esc_html__("18"),
+                       "color"        => esc_html__("#8a74b9")),
                 
                
             ) ) ) );
@@ -663,6 +667,8 @@ ABOUT SECTION
                     'parallax_title_control'    => true,
                     'parallax_percentage_control' => true,
                     'parallax_text_control'     => true,
+                    'parallax_color_control'     => true,
+                
                 ) ) );
 
     

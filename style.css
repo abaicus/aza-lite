@@ -1845,6 +1845,12 @@ div.row.about-content ul > li {
     }
 }
 @media (max-width: 991px) {
+    
+    .features-content,
+    .about-content {
+       display: block;
+
+   }
     .row-parallax {
         width: 100%;
         margin: 0;
@@ -1893,15 +1899,14 @@ div.row.about-content ul > li {
     }
 }
 @media (max-width: 782px) {
-	.admin-bar .sticky-navigation-open .sticky-navigation {
-	  top: 46px;
-	}
+
 	.contact-links .contact-link-box {
 		margin-right: 0;
 	}
 }
 
 @media (min-width: 768px) {
+  
 	.navbar>.container .navbar-brand, 
 	.navbar>.container-fluid .navbar-brand {
     	margin-left: 0;
@@ -2033,7 +2038,10 @@ div.row.about-content ul > li {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-	html {
+    .site-footer .container {
+            width: 100%;
+    }
+    html {
 		font-size: 95%;
 	}
 
@@ -2061,6 +2069,7 @@ div.row.about-content ul > li {
    6.6 FIXES FOR <= 768PX SCREENS          
 -----------------------------------------*/
 @media (max-width: 767px) {
+      
 	
 	html {
 		font-size: 80%;
@@ -2079,23 +2088,23 @@ div.row.about-content ul > li {
         margin-top: 20px;
         position: relative;
     }
- .portfolio-img-overlay {
-        background-color: rgba(0, 0, 0, 0.7);
-        opacity: 1;
-        bottom: -30px;
-        top: 70%;
-        padding: 0;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-    }
- .portfolio-item h3 {
-        font-size: 30px;
-        margin: 0;
-        line-height: 30px;
-        padding: 10px 0 0 0;
-    }
-    
+    .portfolio-img-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 1;
+            bottom: -30px;
+            top: 70%;
+            padding: 0;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+     .portfolio-item h3 {
+            font-size: 30px;
+            margin: 0;
+            line-height: 30px;
+            padding: 10px 0 0 0;
+        }
+
     #masthead div > div.navbar-header {
         margin:0;
     }
