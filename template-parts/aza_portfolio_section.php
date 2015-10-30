@@ -52,8 +52,8 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                         <?php
                         if(!empty($title)) {
                             echo '<h1>'.esc_html__($title).'</h1>';
-                        }   ?>
-                         <hr class="separator" <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "" : "style='display:none!important;'" ?></div>  
+                        }   ?></div>
+                         <hr class="separator " <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? ">" : "style='display:none!important;'>" ?>  
                         
                         <?php
                         if(!empty($subtitle)) {
@@ -68,7 +68,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
            
 
             <div class="container">
-                <div class="row">
+                <div class="row portfolio-content">
                    
                    <?php
                    

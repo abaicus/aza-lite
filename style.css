@@ -548,7 +548,7 @@ h1 {
     width: 300px;
     height: 1px;
     background-color: #828084;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 .suprascript {
@@ -1487,10 +1487,14 @@ background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
 }
 
-.portfolio p {
+.portfolio h1 {
     margin-bottom: 40px;
+}
+
+.portfolio p {
+    margin: 40px 0;
     color: #ededed;
-    font: 400 21px / 30px Roboto;
+    font: 400 21px 30px Roboto;
 }
 
 .portfolio-item {
@@ -1569,6 +1573,14 @@ background-color: rgba(255, 255, 255, 0.75);
 
 .portfolio-item {
     overflow: hidden;
+}
+
+.portfolio .portfolio-content {
+    margin-bottom: 20px;
+}
+
+.portfolio button {
+    margin-top: 20px;
 }
 
 .portfolio-item:hover .portfolio-img-overlay {
@@ -1702,8 +1714,13 @@ section.about canvas {
     position: relative;
 }
 
+.about h1 {
+    margin-bottom:40px;
+}
+
 section.about p {
-    margin: 0;
+    margin-top: 40px;
+/*    margin: 0;*/
     color: #ededed;
     font: 400 21px Roboto;
 }
@@ -2436,7 +2453,7 @@ div.row.about-content ul > li {
         width: 200px;
         height: 1px;
         background-color: #828084;
-        margin: 40px auto;
+        margin: 20px auto;
     }
     
 	.single-stats {
