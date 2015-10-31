@@ -198,7 +198,7 @@ function aza_get_file($file){
 }
 
 
-function parallax_get_file($file){
+function get_file($file){
 	$file_parts = pathinfo($file);
 	$accepted_ext = array('jpg','img','png','css','js');
 	if( in_array($file_parts['extension'], $accepted_ext) ){
@@ -225,8 +225,8 @@ add_action( 'init', 'register_my_menus' );
 
 
 
-add_action('wp_footer','parallax_one_php_style', 100);
-function parallax_one_php_style() {
+add_action('wp_footer','repeater_php_style', 100);
+function repeater_php_style() {
 	
 	echo '<style type="text/css">';
 	

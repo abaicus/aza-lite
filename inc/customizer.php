@@ -194,7 +194,7 @@ features repeater
         )
     ));
     
-    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_features_icons_left' , array(
+    $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_features_icons_left' , array(
         'label' => esc_html__('Left side','aza'),
         'section' => 'aza_appearance_features',
         'priority' => 5,
@@ -217,7 +217,7 @@ features repeater
         )
     ));
     
-    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_features_icons_right' , array(
+    $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_features_icons_right' , array(
         'label' => esc_html__('Right side','aza'),
         'section' => 'aza_appearance_features',
         'priority' => 5,
@@ -329,7 +329,7 @@ PARALLAX SECTION
             array(
                  array('title' => 'Our Multi layered parallax is fully customizable and showcases anything you need with an eyecandy design.' , 'text' => 'Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.')))));
     
-    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_parallax_text' , array(
+    $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_parallax_text' , array(
         'label' => esc_html__('Edit the parallax section text','aza'),
         'section' => 'aza_appearance_parallax',
         'priority' => 5,
@@ -383,7 +383,7 @@ TESTIMONIAL SECTION
                        "text"       => esc_html__("Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.")),
             ))));
     
-    $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_testimonials' , array(
+    $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_testimonials' , array(
         'label' => esc_html__('Edit the testimonial section','aza'),
         'section' => 'aza_appearance_testimonials',
         'priority' => 5,
@@ -518,7 +518,7 @@ you can showcase it in AZA Theme's portfolio grid.",'aza'),
                        "subtitle"   => esc_html__("Vacation Photography")),
             ) ) ) );
     
-$wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_portfolio' , array(
+$wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_portfolio' , array(
         'label' => esc_html__('Edit the Portfolio section','aza'),
         'section' => 'aza_appearance_portfolio',
         'priority' => 3,
@@ -660,7 +660,7 @@ ABOUT SECTION
                
             ) ) ) );
     
-            $wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_about_content' , array(
+            $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_about_content' , array(
                     'label' => esc_html__('Edit the About Us section content','aza'),
                     'section' => 'aza_appearance_about',
                     'priority' => 3,
@@ -783,7 +783,7 @@ SHORTCODES SECTION
                    "link"       => esc_url(""),
                 ) ) ) ) );
     
-$wp_customize -> add_control (new Parallax_One_General_Repeater ( $wp_customize , 'aza_shortcodes_settings' , array(
+$wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_shortcodes_settings' , array(
         'label' => esc_html__('Edit the shortcode options','aza'),
         'section' => 'aza_shortcodes',
         'priority' => 1,
@@ -802,10 +802,10 @@ add_action( 'customize_register', 'aza_customize_register' );
 
 require_once ('class/parallax-one-general-control.php');
 
-function parallax_one_customizer_script() {
-wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+function repeater_customizer_script() {
+wp_enqueue_script( 'repeater_customizer_script', get_file('/js/repeater_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 }
-add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );
+add_action( 'customize_controls_enqueue_scripts', 'repeater_customizer_script' );
 
 function aza_sanitize_repeater($input){
 	$input_decoded = json_decode($input,true);
