@@ -76,18 +76,27 @@ if(!empty($portfolio_item)) {
     $portfolio_item_decoded = json_decode($portfolio_item); 
     if(!empty($portfolio_item_decoded)) { 
         foreach($portfolio_item_decoded as $portfolio_item) { 
-            echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center porftolio-collumns">
-            <a href = " '.esc_url ( $portfolio_item -> link ).' " >
-            <div class = " portfolio-item " >
-            <img src = " '.esc_url ( $portfolio_item -> image_url ).' " class="img-responsive" alt= " '.esc_url ( $portfolio_item -> link ) .' " > 
-            <div class="portfolio-img-overlay">
-            <h3>'.esc_html__( $portfolio_item -> title ) .'</h3>
-            <p>'.esc_html__( $portfolio_item -> subtitle ).'</p>
-            </div>
-            </div>
-            </a>
-            </div>';
+//            echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center porftolio-collumns" >
+//            <a href = " '.esc_url ( $portfolio_item -> link ).' " >
+//            <div class = " portfolio-item ">
+//            <img src = " '.esc_url ( $portfolio_item -> image_url ).' " class="img-responsive" alt= " '.esc_url ( $portfolio_item -> link ) .' " > 
+//            <div class="portfolio-img-overlay">
+//            <h3>'.esc_html__( $portfolio_item -> title ) .'</h3>
+//            <p>'.esc_html__( $portfolio_item -> subtitle ).'</p>
+//            </div>
+//            </div>
+//            </a>
+//            </div>';
+            
+                echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center porftolio-collumns">
+                <a href = "'.esc_url ($portfolio_item -> link).'">
+                <div class= "portfolio-item" style = "background-image: url('.esc_url( $portfolio_item -> image_url ).')">
+                <div class= "portfolio-img-overlay">
+                <h3>'.esc_html__( $portfolio_item -> title ) .'</h3>
+                <p>'.esc_html__( $portfolio_item -> subtitle ).'</p>        
+                </div> </div> </a> </div>';
         }}}
+//            style = "background-image: url('.esc_url( $portfolio_item -> image_url ).')"
                     ?>
                     
                 </div>
