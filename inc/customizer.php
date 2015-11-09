@@ -792,7 +792,135 @@ $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_shortc
         'parallax_shortcode_control' => true
     ) ) );
     
+/*-------------------------------
+CLIENTS SECTION
+---------------------------------*/
+    
+    $wp_customize->add_section( 'aza_appearance_clients' , array(
+		'title'       => esc_html__( 'Clients Section', 'aza' ),
+      	'description' => esc_html__('AZA theme Clients section appearance options','aza'),
+		'panel'		  => 'panel_2'
+	));
+    
+    /*---------------------------------------
+    Clients headings
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_clients_title', array(
+		'default' => esc_html__('OUR CLIENTS','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_clients_title', array(
+		'label'    => esc_html__( 'Title', 'aza' ),
+		'section'  => 'aza_appearance_clients',
+		'priority'    => 1,
+	));
+    
+    $wp_customize->add_setting( 'aza_clients_subtitle', array(
+		'default' => esc_html__("Our awesome clients",'aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_clients_subtitle', array(
+		'label'    => esc_html__( 'Subtitle', 'aza' ),
+		'section'  => 'aza_appearance_clients',
+		'priority'    => 2,
+	));
 
+    /*-------------------------------
+    Clients content
+    ---------------------------------*/
+
+      $wp_customize -> add_setting('aza_clients_content', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                array("image_url"     => aza_get_file('/images/adobe.png'), 
+                      "link"          => esc_url("#")),
+                array("image_url"     => aza_get_file('/images/pixelgraft.png'), 
+                      "link"          => esc_url("#")),
+                array("image_url"     => aza_get_file('/images/wordpress.png'), 
+                      "link"          => esc_url("#")),
+                array("image_url"     => aza_get_file('/images/squares.png'), 
+                      "link"          => esc_url("#")),
+            ) ) ) );
+    
+            $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_clients_content' , array(
+                    'label' => esc_html__('Edit the Clients icons','aza'),
+                    'section' => 'aza_appearance_clients',
+                    'priority' => 3,
+                    'parallax_link_control'    => true,
+                    'parallax_image_control'     => true,
+                ) ) );
+    
+     /*---------------------------------------
+    Clients Separators
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_separator_clients_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_separator_clients_top', array(
+        'label' => 'Separator top',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_clients',
+    ));
+    
+    $wp_customize->add_setting( 'aza_separator_clients_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_separator_clients_bottom', array(
+        'label' => 'Separator bottom',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_clients',
+    ));
+    
+    
+    /*-------------------------------
+    Clients Button
+    ---------------------------------*/
+    
+        $wp_customize->add_setting( 'aza_clients_button_text', array(
+		'default' => esc_html__('Become our client'),'aza',
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	
+    $wp_customize->add_control( 'aza_clients_button_text', array(
+		'label'    => esc_html__( 'Button Text', 'aza' ),
+		'section'  => 'aza_appearance_clients',
+		'priority'    => 4,
+	));
+    
+    
+    /*---------------------------------------
+    Clients Jagged Edges
+    ---------------------------------------*/
+    
+     
+    $wp_customize->add_setting( 'aza_zigzag_clients_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_zigzag_clients_top', array(
+        'label' => 'Jagged top edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_clients',
+    ));
+    
+    $wp_customize->add_setting( 'aza_zigzag_clients_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_zigzag_clients_bottom', array(
+        'label' => 'Jagged bottom edge',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_clients',
+    ));
+    
+    
 
     
 }
