@@ -1,4 +1,4 @@
-<section class="cover">
+<section id="cover">
 
     <?php 
 $aza_appstore = get_theme_mod('aza_appstore', aza_get_file('/images/appstore.png'));

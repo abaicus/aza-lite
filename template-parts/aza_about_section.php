@@ -38,7 +38,7 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
 
     <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_about_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
 
-    <section class="about">
+    <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-centered text-center">

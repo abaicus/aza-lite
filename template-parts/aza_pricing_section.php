@@ -8,7 +8,7 @@
     if(!empty($aza_shortcodes_settings_decoded)){
         foreach($aza_shortcodes_settings_decoded as $scd_section){
            ?>
-            <section class="pricing">
+            <section id="pricing">
                 <div class="row">
                     <?php if(!empty($scd_section->title)){?>
                     <div class="col-lg-12 col-centered text-center">

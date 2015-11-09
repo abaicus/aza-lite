@@ -42,7 +42,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
 
     <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_features_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
 
-    <section class="features">
+    <section id="features">
         <div class="features-background">
             <div class="container">
 

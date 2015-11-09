@@ -25,7 +25,7 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
        
        
 
-<section class="clients">
+<section id="clients">
         <div class="container">
              <div class="row">
                 <div class="col-lg-12 col-centered text-center clients-header">

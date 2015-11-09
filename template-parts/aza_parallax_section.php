@@ -1,4 +1,4 @@
-<section class="parallax">
+<section id="parallax">
     <?php 
 $parallax_background = get_theme_mod('aza_parallax_background', aza_get_file('/images/parallax-background.png'));
 

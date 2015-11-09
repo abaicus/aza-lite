@@ -45,7 +45,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
            
              <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
              
-           <section class="portfolio">
+           <section id="portfolio">
             <div class="container">
                 <div class="row text-center">
                     <div class="col-lg-12 col-centered">

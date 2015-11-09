@@ -951,7 +951,7 @@ background-color: rgba(255, 255, 255, 0.75);
 /*---------------------------------------
 3.2 COVER
 ----------------------------------------*/
-.cover {
+#cover {
 /*  position: absolute;*/
 /*        background-color: rgba(255, 255, 255, 0.7);*/
         background:no-repeat fixed center 0; 
@@ -1242,7 +1242,7 @@ background-color: rgba(255, 255, 255, 0.75);
 3.4 PARALLAX
 ----------------------------------------*/
 
-.parallax>div {
+#parallax >div {
     height: auto;
     
 }
@@ -1324,7 +1324,7 @@ background-color: rgba(255, 255, 255, 0.75);
 3.5 TESTIMONIAL
 ----------------------------------------*/
 
-.testimonials {
+#testimonials {
     height: auto;
     min-height: 600px;
     padding: 80px 0 80px 0;
@@ -1442,21 +1442,21 @@ background-color: rgba(255, 255, 255, 0.75);
 3.6 RIBBON
 ----------------------------------------*/
 
-.ribbon {
+#ribbon {
     height: auto;
     background: linear-gradient( rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3));
     z-index: -1000;
     padding: 80px 0;
 }
 
-.ribbon .ribbon-row {
+#ribbon .ribbon-row {
     margin: 0px 0;
     display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.ribbon .ribbon-row h2 {
+#ribbon .ribbon-row h2 {
     color: #ffffff;
     font: 700 24px Montserrat;
     text-transform: uppercase;
@@ -1464,7 +1464,7 @@ background-color: rgba(255, 255, 255, 0.75);
     padding: 10px 0;
 }
 
-.ribbon button {
+#ribbon button {
     margin-top:0;
     margin-bottom: 0;
 }
@@ -1478,7 +1478,7 @@ background-color: rgba(255, 255, 255, 0.75);
 3.7 PORTFOLIO
 ----------------------------------------*/
 
-.portfolio {
+#portfolio {
     height: auto;
     background-color: #464448;
     padding: 80px 0 40px 0;
@@ -1487,11 +1487,11 @@ background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
 }
 
-.portfolio h1 {
+#portfolio h1 {
     margin-bottom: 40px;
 }
 
-.portfolio p {
+#portfolio p {
     margin: 40px 0;
     color: #ededed;
     font: 400 21px 30px Roboto;
@@ -1564,12 +1564,12 @@ background-color: rgba(255, 255, 255, 0.75);
     
 }
 
-.portfolio .portfolio-content {
+#portfolio .portfolio-content {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.portfolio button {
+#portfolio button {
     margin-top: 20px;
 }
 
@@ -1582,7 +1582,7 @@ background-color: rgba(255, 255, 255, 0.75);
 3.8 PRICING
 ----------------------------------------*/
 
-.pricing {
+#pricing {
     height: auto;
     padding: 80px 0;
     background: linear-gradient( rgba(41, 2, 2, 0.5), rgba(41, 2, 2, 0.5)), url(images/parallax-background.png);
@@ -1592,13 +1592,13 @@ background-color: rgba(255, 255, 255, 0.75);
     overflow:hidden;
 }
 
-.pricing p {
+#pricing p {
     margin: 40px 0;
     color: #ededed;
     font: 400 21px Roboto;
 }
 
-.pricing h1 {
+#pricing h1 {
     margin: 0;
     padding: 0;
 }
@@ -1690,13 +1690,13 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
 ----------------------------------------*/
 
 
-section.about {
+section#about {
     height: auto;
     padding: 80px 0;
     background-color: #464448;
 }
 
-section.about canvas {
+section#about canvas {
     display: inline-block;
     float: left;
     margin: 0 0 10px 0;
@@ -1704,18 +1704,18 @@ section.about canvas {
     position: relative;
 }
 
-.about h1 {
+#about h1 {
     margin-bottom:40px;
 }
 
-section.about p {
+section#about p {
     margin-top: 40px;
 /*    margin: 0;*/
     color: #ededed;
     font: 400 21px Roboto;
 }
 
-#content > section.about > div > div:nth-child(2) > div {
+#content > section#about > div > div:nth-child(2) > div {
     display:flex;
 }
 
@@ -1732,14 +1732,14 @@ div.row.about-content ul > li {
     min-height: 124px;
 }
 
-.about .knob-list li p {
+#about .knob-list li p {
     color: #f0f0f0;
     margin:0;
     font: 200 16px Roboto;
     max-width: 326px;
 }
 
-.about .knob-list li h3 {
+#about .knob-list li h3 {
     color: #ededed;
     font: 500 21px Roboto;
     margin: 0 0 13px 0;
@@ -1759,7 +1759,7 @@ div.row.about-content ul > li {
     padding: 0 auto;
 }
 
-.about img {
+#about img {
     max-height: 460px;
     -webkit-box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
@@ -1775,34 +1775,34 @@ div.row.about-content ul > li {
     margin-bottom: 40px;
 }
 
-section.clients p {
+section#clients p {
     margin-top: 40px;
     color: #ededed;
     font: 400 21px Roboto;
 }
 
 
-.clients {
+#clients {
     height: auto;
     padding: 40px 0 0 0;
     background-color: #252426;
     text-align: center;
 }
 
-.clients .container .client-list.row {
+#clients .container .client-list.row {
     margin-bottom: 40px;
        text-align: center;
 }
 
 
-.clients .container .client-list img {
+#clients .container .client-list img {
     margin: 0 auto;
     display: static;
     margin-bottom: 40px;
     
 }
 
-.clients > div.container .client-list .client-item {
+#clients > div.container .client-list .client-item {
     float: none;
     display: inline-block;
     vertical-align: top;
@@ -1924,10 +1924,10 @@ section.clients p {
     .parallax-background {
         height: 950px;
     }
-    .ribbon .ribbon-row {
+    #ribbon .ribbon-row {
         display: inline;
     }
-    .ribbon .ribbon-row > div {
+    #ribbon .ribbon-row > div {
         margin: 5px 0;
     }
 }
@@ -2200,7 +2200,7 @@ section.clients p {
 		margin-bottom: 50px;
 	}
 
-	.features .overlay-layer-2 {
+	#features .overlay-layer-2 {
 		padding-bottom: 50px;
 	}
 

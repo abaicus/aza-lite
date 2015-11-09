@@ -28,7 +28,7 @@ $var1=0;
 ?>
      <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_testimonial_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
    
-    <section class="testimonials">
+    <section id="testimonials">
         <div class="testimonials-background">
             <div class="container">
                 <div class="row">

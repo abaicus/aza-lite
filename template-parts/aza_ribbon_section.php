@@ -4,7 +4,7 @@ $text =  get_theme_mod('aza_ribbon_text', 'START USING THIS BEAUTIFUL THEME TODA
 $button_text = get_theme_mod('aza_ribbon_button_text', "LEARN MORE");
 ?> 
            
-           <section class="ribbon">
+           <section id="ribbon">
             <div class="container">
                 <div class="row ribbon-row">
                    <?php 
