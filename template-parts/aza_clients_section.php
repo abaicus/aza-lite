@@ -58,7 +58,7 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
                     ?>
 
             </div>
-        </div>
+     
         
          
             <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_clients_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
@@ -71,7 +71,7 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
                         }
                     ?>  
                 </div>
-
+           </div>
     </section>
     
    
