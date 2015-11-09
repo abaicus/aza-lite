@@ -2,7 +2,7 @@
 
 $heading = get_theme_mod('aza_clients_title', 'OUR CLIENTS');
 
-$subheading = get_theme_mod('aza_clients_subheading', '');
+$subheading = get_theme_mod('aza_clients_subheading', 'Our awesome clients');
 
 $clients_content = get_theme_mod ('aza_clients_content',json_encode(
          array(
@@ -18,12 +18,11 @@ $clients_content = get_theme_mod ('aza_clients_content',json_encode(
 
 $clients_content_decoded = json_decode($clients_content);
 
-$button_text = get_theme_mod('aza_clients_button_text', 'Become our client')
+$button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
 
 
 ?>
        
-<div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_clients_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
        
 
 <section class="clients">
@@ -41,27 +40,28 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become our client')
                         }?>
                 </div>
             </div>
-                <div class="row">
+            <div class="row client-list ">
 
-                <div class="client-list text-center">
 
-                
+              <?php
+                    
+                if(!empty($clients_content)) { 
+    $clients_content_decoded = json_decode($clients_content); 
+    if(!empty($clients_content_decoded)) { 
+        foreach($clients_content_decoded as $clients_content) { 
+                    echo '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 client-item">
+                    <a href="'.esc_url( $clients_content -> link ).'" alt="#">
+                    <img src="'.esc_url( $clients_content -> image_url).'" alt=""> </a> </div>';
+            
+              
+        }}}
+                    ?>
 
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img class="img-responsive" src="img/adobe.png" alt=""> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img class="img-responsive" src="img/squares.png" alt=""> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img class="img-responsive" src="img/wordpress.png" alt=""> </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img src="img/pixelgraft.png" alt=""> </div>
-
-                </div>
             </div>
         </div>
         
          
-            <hr class="separator" <?php echo ( get_theme_mod( 'aza_separator_clients_bottom' ) ) ? "" : "style='display:none!important;'" ?>>
+            <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_clients_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
         
              <?php
                         if(!empty($button_text))
@@ -75,4 +75,3 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become our client')
     </section>
     
    
-<div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_about_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>

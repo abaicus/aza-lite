@@ -884,7 +884,7 @@ CLIENTS SECTION
     ---------------------------------*/
     
         $wp_customize->add_setting( 'aza_clients_button_text', array(
-		'default' => esc_html__('Become our client'),'aza',
+		'default' => esc_html__('Become a client'),'aza',
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	
@@ -893,32 +893,6 @@ CLIENTS SECTION
 		'section'  => 'aza_appearance_clients',
 		'priority'    => 4,
 	));
-    
-    
-    /*---------------------------------------
-    Clients Jagged Edges
-    ---------------------------------------*/
-    
-     
-    $wp_customize->add_setting( 'aza_zigzag_clients_top', array(
-        'default' => 0,
-    ));
-
-    $wp_customize->add_control( 'aza_zigzag_clients_top', array(
-        'label' => 'Jagged top edge',
-        'type' => 'checkbox',
-        'section' => 'aza_appearance_clients',
-    ));
-    
-    $wp_customize->add_setting( 'aza_zigzag_clients_bottom', array(
-        'default' => 0,
-        ));
-
-    $wp_customize->add_control( 'aza_zigzag_clients_bottom', array(
-        'label' => 'Jagged bottom edge',
-        'type' => 'checkbox',
-        'section' => 'aza_appearance_clients',
-    ));
     
     
 
