@@ -1,22 +1,36 @@
-<section id="blog">
+<?php 
+
+$heading = get_theme_mod('aza_blog_title', 'LATEST NEWS');
+
+$subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch with your latest blog posts and updates.');
+
+?> 
+           
+
+        <section id="blog">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 text-center">
-                        <h1>Latest News</h1>
-                        <div class="separator"></div>
-
-                        <p>Keep your users in touch with your latest blog posts and updates.</p>
+                             <?php
+                    if(!empty($heading)) {
+                        echo '<h1>'.esc_html__($heading).'</h1>';    
+                    }?>
+                        <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_blog_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+                     <?php
+                                if(!empty($subheading)) {
+                                echo '<p class="blog-p">'.esc_html__($subheading).'</p>';    
+                        }?>
                     </div>
                 </div>
             </div>
 
             <div class="container">
-                <div class="row row-centered">
+                <div class="row row-centered text-center">
                 
                 
                 
 	<?php if ( have_posts() ) : ?>
-    <?php query_posts("showposts=5"); ?>
+    <?php query_posts("showposts=2"); ?>
 			<?php if ( is_home() && ! is_front_page() ) : ?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>

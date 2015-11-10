@@ -1011,6 +1011,66 @@ TEAM SECTION
 		'section'  => 'aza_appearance_team',
 		'priority'    => 4,
 	));
+    
+    
+/*-------------------------------
+BLOG SECTION
+---------------------------------*/
+    
+    $wp_customize->add_section( 'aza_appearance_blog' , array(
+		'title'       => esc_html__( 'Blog Section', 'aza' ),
+      	'description' => esc_html__('AZA theme Blog section appearance options','aza'),
+		'panel'		  => 'panel_2'
+	));
+    
+    /*---------------------------------------
+    Blog headings
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_blog_title', array(
+		'default' => esc_html__('LATEST NEWS','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_blog_title', array(
+		'label'    => esc_html__( 'Title', 'aza' ),
+		'section'  => 'aza_appearance_blog',
+		'priority'    => 1,
+	));
+    
+    $wp_customize->add_setting( 'aza_blog_subtitle', array(
+		'default' => esc_html__("Keep your users in touch with your latest blog posts and updates.",'aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_blog_subtitle', array(
+		'label'    => esc_html__( 'Subtitle', 'aza' ),
+		'section'  => 'aza_appearance_blog',
+		'priority'    => 2,
+	));
+    /*---------------------------------------
+    Team Separators
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_separator_blog_top', array(
+        'default' => 1,
+    ));
+
+    $wp_customize->add_control( 'aza_separator_blog_top', array(
+        'label' => 'Separator top',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_blog',
+    ));
+    
+    $wp_customize->add_setting( 'aza_separator_blog_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_separator_blog_bottom', array(
+        'label' => 'Separator bottom',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_blog',
+    ));
 
     
 }

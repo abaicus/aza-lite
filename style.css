@@ -1811,7 +1811,7 @@ section#clients p {
 }
 
 /*---------------------------------------
-3.11 ABOUT SECTION
+3.11 TEAM SECTION
 ----------------------------------------*/
 
 
@@ -1977,6 +1977,58 @@ section#clients p {
 
 #team button {
     margin-top: 20px;
+}
+
+/*---------------------------------------
+3.12 BLOG SECTION
+----------------------------------------*/
+
+#blog {
+    padding: 80px 0;
+    background-color: #464448;
+    -webkit-box-shadow: 1px -1px 15px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px -1px 15px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px -1px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+#blog .blog-p {
+    color: #ededed;
+    font: 400 21px Roboto;
+    margin: 0 0 40px 0;
+}
+
+#blog img {
+    margin: 0 auto;
+    max-width: 276px;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#blog .container .row p {
+    color: #ffffff;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#blog h4 {
+    color: #fc535f;
+    font: 700 24px Montserrat;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#blog a>i {
+    font-size: 40px;
+    color: #ffffff;
+    align-content: center;
+    vertical-align: middle;
+    margin-top: 100px;
+}
+
+#blog a {
+    margin: auto;
+    text-decoration: none;
 }
 
 
