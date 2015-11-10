@@ -145,8 +145,8 @@ function repeater_refresh_general_control_values(){
             }
 
         });
-        th.find('.repeater_repeater_colector').val(JSON.stringify(values));
-        th.find('.repeater_repeater_colector').trigger('change');
+        th.find('.repeater_colector').val(JSON.stringify(values));
+        th.find('.repeater_colector').trigger('change');
     });
 }
 

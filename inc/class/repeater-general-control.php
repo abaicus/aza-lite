@@ -398,9 +398,9 @@ class General_Repeater extends WP_Customize_Control {
                 if ( !empty($this_default) && empty($json)) {
                      
                 ?>
-                    <input type="hidden" id="repeater_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="repeater_repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
+                    <input type="hidden" id="repeater_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
             <?php } else {	?>
-                    <input type="hidden" id="repeater_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="repeater_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
+                    <input type="hidden" id="repeater_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
             <?php } ?>
             </div>
 

@@ -1071,6 +1071,25 @@ BLOG SECTION
         'type' => 'checkbox',
         'section' => 'aza_appearance_blog',
     ));
+    
+/*-------------------------------
+INTERGEO MAPS SECTION
+---------------------------------*/   
+    
+        $wp_customize->add_section( 'aza_appearance_map' , array(
+                'title'       => esc_html__( 'Maps Section', 'aza' ),
+                'description' => esc_html__('AZA theme maps section shortcode','aza'),
+                'panel'		  => 'panel_2'
+            ));
+        $wp_customize->add_setting( 'frontpage_map_shortcode', array(
+                //		'default' => esc_html__('','aza'),
+                'sanitize_callback' => 'aza_sanitize_text',
+        ));
+        $wp_customize->add_control( 'frontpage_map_shortcode', array(
+                'label'    => esc_html__( 'Intergeo Map Shortcode', 'aza' ),
+                'section'  => 'aza_appearance_map',
+                'priority'    => 1,
+        ));
 
     
 }

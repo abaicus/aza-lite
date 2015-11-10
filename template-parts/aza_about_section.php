@@ -1,3 +1,8 @@
+<!-- =========================
+ABOUT SECTION 
+============================== -->
+
+
 <?php 
 
 $heading = get_theme_mod('aza_about_title', 'ABOUT US');

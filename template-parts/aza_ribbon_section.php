@@ -1,4 +1,7 @@
-    <?php 
+<!-- =========================
+CTA RIBBON SECTION
+============================== -->
+<?php 
 $text =  get_theme_mod('aza_ribbon_text', 'START USING THIS BEAUTIFUL THEME TODAY');
 
 $button_text = get_theme_mod('aza_ribbon_button_text', "LEARN MORE");

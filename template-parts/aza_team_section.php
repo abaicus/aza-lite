@@ -1,3 +1,6 @@
+<!-- =========================
+TEAM SECTION
+============================== -->
 <?php 
 
 $heading = get_theme_mod('aza_team_title', 'OUR TEAM');

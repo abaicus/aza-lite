@@ -1,3 +1,6 @@
+<!-- =========================
+FEATURES SECTION
+============================== -->
 <?php
 
 $features_heading = get_theme_mod('aza_features_heading', "KEY FEATURES");

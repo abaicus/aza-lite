@@ -1,4 +1,9 @@
-<section id="parallax">
+<!-- =========================
+PARALLAX SECTION
+============================== -->
+   
+
+
     <?php 
 $parallax_background = get_theme_mod('aza_parallax_background', aza_get_file('/images/parallax-background.png'));
 
@@ -20,11 +25,7 @@ $parallax_text_decoded = json_decode($parallax_text);
         ?>
 
 
-        <!---    
-  check if images not empty.
-  checkbox- disable parallax.                        
--->
-
+<section id="parallax">
         <div>
             <div class="parallax-background" data-parallax='{"y" : -50}' style=" background-image: url(<?php echo esc_url($parallax_background) ?>)">
             </div>

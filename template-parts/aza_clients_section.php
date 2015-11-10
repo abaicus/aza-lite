@@ -1,3 +1,6 @@
+<!-- =========================
+CLIENTS SECTION
+============================== -->
 <?php 
 
 $heading = get_theme_mod('aza_clients_title', 'OUR CLIENTS');

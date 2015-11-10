@@ -1,3 +1,6 @@
+<!-- =========================
+BLOG SECTION
+============================== -->
 <?php 
 
 $heading = get_theme_mod('aza_blog_title', 'LATEST NEWS');
