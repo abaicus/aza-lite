@@ -895,6 +895,116 @@ CLIENTS SECTION
 	));
     
     
+/*-------------------------------
+TEAM SECTION
+---------------------------------*/
+    
+    $wp_customize->add_section( 'aza_appearance_team' , array(
+		'title'       => esc_html__( 'Team Section', 'aza' ),
+      	'description' => esc_html__('AZA theme Team section appearance options','aza'),
+		'panel'		  => 'panel_2'
+	));
+    
+    /*---------------------------------------
+    Team headings
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_team_title', array(
+		'default' => esc_html__('OUR TEAM','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_clients_title', array(
+		'label'    => esc_html__( 'Title', 'aza' ),
+		'section'  => 'aza_appearance_team',
+		'priority'    => 1,
+	));
+    
+    $wp_customize->add_setting( 'aza_team_subtitle', array(
+		'default' => esc_html__("Present your team members and their role in the company",'aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_team_subtitle', array(
+		'label'    => esc_html__( 'Subtitle', 'aza' ),
+		'section'  => 'aza_appearance_team',
+		'priority'    => 2,
+	));
+
+    /*-------------------------------
+    Team content
+    ---------------------------------*/
+
+      $wp_customize -> add_setting('aza_team_content', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                array("image_url"     => aza_get_file('/images/team1.png'), 
+                      "title"         => esc_html__("Jane Doe"),
+                      "subtitle"      => esc_html__("Project Supervisor"),
+                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),        
+                array("image_url"     => aza_get_file('/images/team2.png'), 
+                      "title"         => esc_html__("Ola Nordmann"),   
+                      "subtitle"      => esc_html__("Web Designer"),
+                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                array("image_url"     => aza_get_file('/images/team3.png'),
+                      "title"         => esc_html__("Average Joe"),   
+                      "subtitle"      => esc_html__("Front End Developer"),
+                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                array("image_url"     => aza_get_file('/images/team4.png'), 
+                      "title"         => esc_html__("Joe Bloggs"),
+                      "subtitle"      => esc_html__("UX Designer"),
+                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+            ) ) ) );
+    
+            $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_team_content' , array(
+                    'label' => esc_html__('Edit the Team members','aza'),
+                    'section' => 'aza_appearance_team',
+                    'priority' => 3,
+                    'parallax_link_control'    => true,
+                    'parallax_title_control'    => true,
+                    'parallax_image_control'     => true,
+                ) ) );
+    
+     /*---------------------------------------
+    Clients Separators
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_separator_clients_top', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_separator_clients_top', array(
+        'label' => 'Separator top',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_clients',
+    ));
+    
+    $wp_customize->add_setting( 'aza_separator_clients_bottom', array(
+        'default' => 0,
+        ));
+
+    $wp_customize->add_control( 'aza_separator_clients_bottom', array(
+        'label' => 'Separator bottom',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_clients',
+    ));
+    
+    
+    /*-------------------------------
+    Clients Button
+    ---------------------------------*/
+    
+        $wp_customize->add_setting( 'aza_clients_button_text', array(
+		'default' => esc_html__('Become a client'),'aza',
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	
+    $wp_customize->add_control( 'aza_clients_button_text', array(
+		'label'    => esc_html__( 'Button Text', 'aza' ),
+		'section'  => 'aza_appearance_clients',
+		'priority'    => 4,
+	));
 
     
 }
@@ -902,7 +1012,7 @@ CLIENTS SECTION
 add_action( 'customize_register', 'aza_customize_register' );
 
 
-require_once ('class/parallax-one-general-control.php');
+require_once ('class/repeater-general-control.php');
 
 function repeater_customizer_script() {
 wp_enqueue_script( 'repeater_customizer_script', get_file('/js/repeater_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
