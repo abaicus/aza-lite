@@ -942,18 +942,22 @@ TEAM SECTION
                 array("image_url"     => aza_get_file('/images/team1.png'), 
                       "title"         => esc_html__("Jane Doe"),
                       "subtitle"      => esc_html__("Project Supervisor"),
+                      "color"         => esc_html__("#f0b57c"),
                       "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),        
                 array("image_url"     => aza_get_file('/images/team2.png'), 
                       "title"         => esc_html__("Ola Nordmann"),   
                       "subtitle"      => esc_html__("Web Designer"),
+                      "color"         => esc_html__("#4bb992"),
                       "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
                 array("image_url"     => aza_get_file('/images/team3.png'),
                       "title"         => esc_html__("Average Joe"),   
                       "subtitle"      => esc_html__("Front End Developer"),
+                      "color"         => esc_html__("#349ae0"),
                       "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
                 array("image_url"     => aza_get_file('/images/team4.png'), 
                       "title"         => esc_html__("Joe Bloggs"),
                       "subtitle"      => esc_html__("UX Designer"),
+                      "color"         => esc_html__("#887caf"),
                       "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
             ) ) ) );
     
@@ -961,48 +965,50 @@ TEAM SECTION
                     'label' => esc_html__('Edit the Team members','aza'),
                     'section' => 'aza_appearance_team',
                     'priority' => 3,
-                    'parallax_link_control'    => true,
-                    'parallax_title_control'    => true,
-                    'parallax_image_control'     => true,
+                    'parallax_title_control'        => true,
+                    'parallax_subtitle_control'     => true,
+                    'parallax_text_control'         => true,
+                    'parallax_image_control'        => true,
+                    'parallax_color_control'        => true,
                 ) ) );
     
      /*---------------------------------------
-    Clients Separators
+    Team Separators
     ---------------------------------------*/
     
-    $wp_customize->add_setting( 'aza_separator_clients_top', array(
-        'default' => 0,
+    $wp_customize->add_setting( 'aza_separator_team_top', array(
+        'default' => 1,
     ));
 
-    $wp_customize->add_control( 'aza_separator_clients_top', array(
+    $wp_customize->add_control( 'aza_separator_team_top', array(
         'label' => 'Separator top',
         'type' => 'checkbox',
-        'section' => 'aza_appearance_clients',
+        'section' => 'aza_appearance_team',
     ));
     
-    $wp_customize->add_setting( 'aza_separator_clients_bottom', array(
+    $wp_customize->add_setting( 'aza_separator_team_bottom', array(
         'default' => 0,
         ));
 
-    $wp_customize->add_control( 'aza_separator_clients_bottom', array(
+    $wp_customize->add_control( 'aza_separator_team_bottom', array(
         'label' => 'Separator bottom',
         'type' => 'checkbox',
-        'section' => 'aza_appearance_clients',
+        'section' => 'aza_appearance_team',
     ));
     
     
     /*-------------------------------
-    Clients Button
+    Team Button
     ---------------------------------*/
     
-        $wp_customize->add_setting( 'aza_clients_button_text', array(
-		'default' => esc_html__('Become a client'),'aza',
+        $wp_customize->add_setting( 'aza_team_button_text', array(
+		'default' => esc_html__('Work with us'),'aza',
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	
-    $wp_customize->add_control( 'aza_clients_button_text', array(
+    $wp_customize->add_control( 'aza_team_button_text', array(
 		'label'    => esc_html__( 'Button Text', 'aza' ),
-		'section'  => 'aza_appearance_clients',
+		'section'  => 'aza_appearance_team',
 		'priority'    => 4,
 	));
 
