@@ -1905,43 +1905,6 @@ section#clients p {
     text-transform: none;
 }
 
-#team .team-row .team-picture-overlay .team-social-icons {
-    top: auto;
-    bottom: 13px;
-    position: absolute;
-    right: 0;
-    left: 0;
-}
-
-#team .team-row .team-picture-overlay .team-social-icons i {
-    margin: 0 10px;
-    font-size: 26px;
-    transition: all 0.5s ease;
-}
-
-#team .team-row .team-picture-overlay .team-social-icons a {
-    text-decoration: none;
-}
-
-.team-social-icons .fa-twitter {
-    color: #45d1c2;
-}
-
-.team-social-icons .fa-facebook {
-    color: #4597d1;
-}
-
-.team-social-icons .fa-google-plus {
-    color: #fc535f;
-}
-
-.team-social-icons .fa-twitter:hover,
-.team-social-icons .fa-facebook:hover,
-.team-social-icons .fa-google-plus:hover {
-    color: #fff;
-    transition: all 0.5s ease;
-    text-decoration: none;
-}
 
 .team-picture:hover >img {
     -webkit-transform: scale(1.05);
@@ -2065,28 +2028,16 @@ section#clients p {
     margin-bottom: 10px;
 }
 
-#social p>a>i {
+#social p>a {
     font-size: 40px;
     margin: 0 20px;
     transition: all 0.5s ease;
 }
 
-#social .fa-facebook {
-    color: #4597d1;
-}
 
-#social .fa-twitter {
-    color: #45d1c2;
-}
 
-#social .fa-google-plus {
-    color: #fc535f;
-}
-
-#social .fa-facebook:hover,
-#social .fa-twitter:hover,
-#social .fa-google-plus:hover {
-    color: #fff;
+#social p>a:hover {
+    color: #fff !important;
 }
 
 .social-btn-row {

@@ -1169,6 +1169,35 @@ SOCIAL RIBBON
         'section' => 'aza_appearance_social_ribbon',
     ));
     
+    /*---------------------------------------
+    Social ribbon icons
+    ---------------------------------------*/
+    
+      $wp_customize -> add_setting('aza_social_ribbon_icons', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default' => json_encode(
+            array(
+                array('icon_value'  => 'icon-social-facebook' , 
+                      'link'        => '#' , 
+                      'color'       => '#4597d1'),
+                array('icon_value'  => 'icon-social-twitter' , 
+                      'link'        => '#' , 
+                    'color'         => '#45d1c2'),
+                array('icon_value'  => 'icon-social-googleplus' , 
+                      'link'        => '#' , 
+                      'color'       => '#fc535f'),
+            )    
+        )
+    ));
+    
+    $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_social_ribbon_icons' , array(
+        'label' => esc_html__('Social Icons','aza'),
+        'section' => 'aza_appearance_social_ribbon',
+        'priority' => 2,
+        'parallax_icon_control'     => true,
+        'parallax_link_control'     => true,
+        'parallax_color_control'    => true,
+    ) ) );
     
     /*-------------------------------
     Social ribbon heading 2
@@ -1182,7 +1211,7 @@ SOCIAL RIBBON
 	$wp_customize->add_control( 'aza_social_heading_2', array(
 		'label'    => esc_html__( 'Heading 2', 'aza' ),
 		'section'  => 'aza_appearance_social_ribbon',
-		'priority'    => 2,
+		'priority'    => 3,
 	));
     
     /*-------------------------------

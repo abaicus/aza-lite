@@ -13,21 +13,15 @@ $aza_playstore_link = get_theme_mod('aza_playstore_link','#');
 
 $social_icons = get_theme_mod ('aza_social_ribbon_icons', json_encode(
             array(
-                array('icon_value' => 'icon-arrows-squares' , 
-                      'title' => 'Fully Responsive' , 
+                array('icon_value' => 'icon-social-facebook' , 
                       'link' => '#' , 
-                      'color' => '#3399df',
-                      'subtitle' => 'fully-responsive'),
-                 array('icon_value' => 'icon-arrows-squares' , 
-                      'title' => 'Fully Responsive' , 
+                      'color' => '#4597d1'),
+                 array('icon_value' => 'icon-social-twitter' , 
                       'link' => '#' , 
-                      'color' => '#3399df',
-                      'subtitle' => 'fully-responsive'),
-                 array('icon_value' => 'icon-arrows-squares' , 
-                      'title' => 'Fully Responsive' , 
+                      'color' => '#45d1c2'),
+                 array('icon_value' => 'icon-social-googleplus' , 
                       'link' => '#' , 
-                      'color' => '#3399df',
-                      'subtitle' => 'fully-responsive'),
+                      'color' => '#fc535f'),
 )));
           
 ?>    
@@ -42,13 +36,24 @@ $social_icons = get_theme_mod ('aza_social_ribbon_icons', json_encode(
 if(!empty($aza_primary_header)){
         echo "<h3>".$aza_primary_header."</h3>"; 
     }
-?>
 
+if(!empty($social_icons)){
+    $social_icons_decoded = json_decode($social_icons);
+    if(!empty($social_icons_decoded)) { 
+        echo '<p>';
+        foreach($social_icons_decoded as $social_icons) {
+            echo '<a href="'.esc_html__($social_icons->link).'" style="color: '.esc_html($social_icons->color).';"><span class= "'.esc_html__($social_icons->icon_value).'"></span></a>'; 
+}
+echo '</p>';
+}}
+                        ?>
+<!--
                         <p>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><span class="icon-social-facebook"></span></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-google-plus"></i></a>
                         </p>
+-->
                         <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_social_ribbon' ) ) ? "" : "style='display:none!important;'" ?>></div>
                         
                         <?php
