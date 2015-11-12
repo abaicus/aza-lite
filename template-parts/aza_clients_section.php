@@ -52,7 +52,7 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
     $clients_content_decoded = json_decode($clients_content); 
     if(!empty($clients_content_decoded)) { 
         foreach($clients_content_decoded as $clients_content) { 
-                    echo '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 client-item">
+                    echo '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 client-item text-center">
                     <a href="'.esc_url( $clients_content -> link ).'" alt="#">
                     <img src="'.esc_url( $clients_content -> image_url).'" alt=""> </a> </div>';
             

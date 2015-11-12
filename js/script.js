@@ -1,37 +1,33 @@
-    //Wrapper Dropdown-toggle
+/*=============================
+========= MAP OVERLAY =========
+===============================*/
 
-//jQuery(document).ready(function () {
-//
-//    jQuery(function () {
-//        jQuery('button.navbar-toggle').click(function () {
-//            if (jQuery('#wrapper').css('margin-top') === '0px') {
-//                jQuery('#wrapper').animate({
-//                    "margin-top": '310px'
-//                }, 150);
-//            } else {
-//                jQuery('#wrapper').animate({
-//                    "margin-top": '0px'
-//                }, 150);
-//            }
-//        });
-//    });
+//jQuery(document).ready(function(){
+   jQuery('.map_overlay').click(function(){
+       jQuery(this).hide();
+   });
+    
+
 //});
 
-//jQuery Knobs Percentages Animations
-
-//jQuery('.k1').data('start',
-//    jQuery('.k1').data('value'));
 //
-//jQuery('.k2').data('start',
-//    jQuery('.k2').data('value'));
-//
-//jQuery('.k3').data('start',
-//    jQuery('.k3').data('value'));
-//
-//jQuery('.k4').data('start',
-//    jQuery('.k4').data('value'));
+//jQuery(document).ready(function(){
+//    jQuery('html').click(function(event) {
+//        jQuery('.map_overlay').show();
+//    });
+//    
+//    jQuery('#container-fluid').click(function(event){
+//        event.stopPropagation();
+//    });
+//    
+//    jQuery('.map_overlay').on('click',function(event){
+//        jQuery(this).hide();
+//    })
+//});
 
-
+/*=============================
+========= KNOBS VALUES ========
+===============================*/
 
 jQuery('.percentages').knob({
     'readOnly': true,
@@ -44,39 +40,7 @@ jQuery('.percentages').knob({
     },
     
 });
-//
-//jQuery.when(
-//    jQuery('.percentages').animate({
-//        value: 100
-//    }, {
-//        duration: 1500,
-//        easing: 'swing',
-//        progress: function () {
-//            jQuery(this).val(Math.round(this.value / 100 * jQuery(this).data('start'))).trigger('change')
-//        }
-//    }));
 
-//Anchors
-//
-//jQuery('.nav a , #footer-end a').click(function () {
-//    jQuery('html, body').animate({
-//        scrollTop: jQuery(jQuery(this).attr('href')).offset().top
-//    }, 500);
-//    return false;
-//});
-
-//Smooth-Scroll
-
-
-jQuery(document).ready(function(){  
-
-    // Default
-//    jQuery.scrollSpeed(50, 100);
-
-    // Custom Easing
-//    jQuery.scrollSpeed(100, 800, 'easeOutCubic');
-
-});
 
 //Loader
 

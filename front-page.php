@@ -27,6 +27,8 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                 get_template_part('/template-parts/aza_team_section');
                 get_template_part('/template-parts/aza_blog_section');
                 get_template_part('/template-parts/aza_map_section');
+//                get_template_part('/template-parts/aza_social_section');
+
 
 // $sections_array = apply_filters("repeater_pro_sections_filter",array('sections/repeater_logos_section','sections/repeater_our_services_section','sections/repeater_our_story_section','sections/repeater_our_team_section','sections/repeater_happy_customers_section','sections/repeater_ribbon_section','sections/repeater_latest_news_section','sections/repeater_contact_info_section','sections/repeater_map_section'));
 

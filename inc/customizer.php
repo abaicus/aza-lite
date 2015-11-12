@@ -44,6 +44,8 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
       	'description' => esc_html__('AZA theme general appearance options','aza'),
 		'panel'		  => 'panel_2'
 	));
+    
+
 	
 /*-------------------------------
 Logo
@@ -112,6 +114,28 @@ Header store buttons
 		'section'  => 'aza_appearance_cover',
 		'priority'    => 5,
 	));
+    
+    /*-------------------------------
+    Header image overlay opacity
+    ---------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_overlay_opacity', array(
+      'type' => 'theme_mod', 
+      'capability' => 'edit_theme_options',
+      'default' => '0.5',
+    ) );
+        
+    $wp_customize->add_control( 'aza_overlay_opacity', array(
+      'type' => 'range',
+      'section' => 'aza_appearance_cover',
+      'label' => __( 'Range' ),
+      'description' => __( 'Cover photo overlay opacity' ),
+      'input_attrs' => array(
+        'min' => 0,
+        'max' => 1,
+        'step' =>0.1,
+      ),
+    ) );
 
 
 /*---------------------------------------
@@ -1090,6 +1114,75 @@ INTERGEO MAPS SECTION
                 'section'  => 'aza_appearance_map',
                 'priority'    => 1,
         ));
+    
+    
+    
+/*-------------------------------
+SOCIAL RIBBON
+---------------------------------*/
+    $wp_customize->add_section( 'aza_appearance_social_ribbon' , array(
+                'title'       => esc_html__( 'Social Ribbon', 'aza' ),
+                'description' => esc_html__('AZA theme social ribbon appearance options.','aza'),
+                'panel'		  => 'panel_2'
+            ));
+    
+    
+    /*-------------------------------
+    Social ribbon heading 1
+    ---------------------------------*/
+    
+    
+    $wp_customize->add_setting( 'aza_social_heading_1', array(
+		'default' => esc_html__('STAY CONNECTED','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_social_heading_1', array(
+		'label'    => esc_html__( 'Heading 1', 'aza' ),
+		'section'  => 'aza_appearance_social_ribbon',
+		'priority'    => 1,
+	));
+    
+    
+    /*-------------------------------
+    Social ribbon heading 2
+    ---------------------------------*/
+    
+     $wp_customize->add_setting( 'aza_social_heading_2', array(
+		'default' => esc_html__('GET STARTED USING OUR THEME TODAY','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_social_heading_2', array(
+		'label'    => esc_html__( 'Heading 2', 'aza' ),
+		'section'  => 'aza_appearance_social_ribbon',
+		'priority'    => 2,
+	));
+    
+    /*-------------------------------
+    Social ribbon store buttons
+    ---------------------------------*/    
+    
+    $wp_customize->add_setting( 'aza_appstore_link_social_ribbon', array(
+		'default' => esc_url('#'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	$wp_customize->add_control( 'aza_appstore_link_social_ribbon', array(
+		'label'    => esc_html__('Apple Appstore link', 'aza' ),
+		'section'  => 'aza_appearance_social_ribbon',
+		'priority'    => 4,
+	));
+    
+    $wp_customize->add_setting( 'aza_playstore_link_social_ribbon', array(
+		'default' => esc_url('#'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	$wp_customize->add_control( 'aza_playstore_link_social_ribbon', array(
+		'label'    => esc_html__( 'Google Playstore link', 'aza' ),
+		'section'  => 'aza_appearance_social_ribbon',
+		'priority'    => 5,
+	));
+
 
     
 }
