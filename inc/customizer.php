@@ -115,6 +115,17 @@ Header store buttons
 		'priority'    => 5,
 	));
     
+    $wp_customize->add_setting( 'aza_header_store_buttons', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_header_store_buttons', array(
+        'label' => 'Hide store buttons',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_cover',
+    ));
+    
+    
     /*-------------------------------
     Header image overlay opacity
     ---------------------------------*/
@@ -1144,6 +1155,21 @@ SOCIAL RIBBON
 	));
     
     
+    /*---------------------------------------
+    Social ribbon separator
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_separator_social_ribbon', array(
+        'default' => 1,
+    ));
+
+    $wp_customize->add_control( 'aza_separator_social_ribbon', array(
+        'label' => 'Separator',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_social_ribbon',
+    ));
+    
+    
     /*-------------------------------
     Social ribbon heading 2
     ---------------------------------*/
@@ -1162,26 +1188,17 @@ SOCIAL RIBBON
     /*-------------------------------
     Social ribbon store buttons
     ---------------------------------*/    
+    $wp_customize->add_setting( 'aza_social_ribbon_store_buttons', array(
+        'default' => 0,
+    ));
+
+    $wp_customize->add_control( 'aza_social_ribbon_store_buttons', array(
+        'label' => 'Hide store buttons',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_social_ribbon',
+    ));
     
-    $wp_customize->add_setting( 'aza_appstore_link_social_ribbon', array(
-		'default' => esc_url('#'),
-		'sanitize_callback' => 'aza_sanitize_text',
-	));
-	$wp_customize->add_control( 'aza_appstore_link_social_ribbon', array(
-		'label'    => esc_html__('Apple Appstore link', 'aza' ),
-		'section'  => 'aza_appearance_social_ribbon',
-		'priority'    => 4,
-	));
-    
-    $wp_customize->add_setting( 'aza_playstore_link_social_ribbon', array(
-		'default' => esc_url('#'),
-		'sanitize_callback' => 'aza_sanitize_text',
-	));
-	$wp_customize->add_control( 'aza_playstore_link_social_ribbon', array(
-		'label'    => esc_html__( 'Google Playstore link', 'aza' ),
-		'section'  => 'aza_appearance_social_ribbon',
-		'priority'    => 5,
-	));
+    //end checkbox
 
 
     

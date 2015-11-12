@@ -37,8 +37,8 @@ if(!empty($aza_secondary_header)){
                     </div>
                 </div>
 
-                  <div class="row btn-row">
-                    <div class="col-lg-12 text-center">
+                  <div class="row btn-row ">
+                    <div class="col-lg-12 text-center" <?php echo ( get_theme_mod( 'aza_header_store_buttons' ) ) ? "style='display:none!important;'>" : ">" ?>
                         <?php if((!empty($aza_appstore_link))||(!empty($aza_playstore_link))) {
                        if(!empty($aza_appstore_link)){?>
                             <a class="btn btn-primary btn-stores" href="<?php echo $aza_appstore_link ?>">
