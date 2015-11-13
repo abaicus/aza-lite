@@ -60,7 +60,7 @@ foreach($testimonial_decoded as $testimonial) {
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 col-centered">
-                                    <img class="center-block testimonials-pic" src=" <?php echo esc_url($testimonial->image_url); ?>" alt="#">
+                                    <div class="center-block testimonials-pic" style="background-image: url('<?php echo esc_url($testimonial->image_url)?>');"></div>
                                     <p class="center-block">
                                         <?php echo esc_html($testimonial->text); ?>
                                     </p>
@@ -78,7 +78,7 @@ foreach($testimonial_decoded as $testimonial) {
                                 <ol class="carousel-indicators center-block">
    
     <?php    foreach($testimonial_decoded as $testimonial) { ?>
-                         <li date-target = "#carousel" data-slide-to = "<?php
+                         <li data-target = "#carousel" data-slide-to = "<?php
                                                                             echo $var1;
                                                                         ?>"
     <?php

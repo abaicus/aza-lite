@@ -26,6 +26,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                 get_template_part('/template-parts/aza_clients_section');
                 get_template_part('/template-parts/aza_team_section');
                 get_template_part('/template-parts/aza_blog_section');
+                get_template_part('/template-parts/aza_contact_section');
                 get_template_part('/template-parts/aza_map_section');
                 get_template_part('/template-parts/aza_social_section');
 

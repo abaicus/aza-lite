@@ -83,7 +83,7 @@ if(!empty($portfolio_item)) {
         foreach($portfolio_item_decoded as $portfolio_item) { 
 
             
-                echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center porftolio-collumns">
+                echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10 text-center porftolio-collumns">
                 <a href = "'.esc_url ($portfolio_item -> link).'">
                 <div class= "portfolio-item" style = "background-image: url('.esc_url( $portfolio_item -> image_url ).')">
                 <div class= "portfolio-img-overlay">

@@ -47,13 +47,7 @@ if(!empty($social_icons)){
 echo '</p>';
 }}
                         ?>
-<!--
-                        <p>
-                            <a href="#"><span class="icon-social-facebook"></span></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </p>
--->
+
                         <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_social_ribbon' ) ) ? "" : "style='display:none!important;'" ?>></div>
                         
                         <?php
@@ -65,7 +59,7 @@ if(!empty($aza_secondary_header)){
                     </div>
                 </div>
 
-                <div class="row footer-btn-row" <?php echo ( get_theme_mod( 'aza_social_ribbon_store_buttons' ) ) ? "style='display:none!important;'>" : ">" ?>
+                <div class="row social-btn-row" <?php echo ( get_theme_mod( 'aza_social_ribbon_store_buttons' ) ) ? "style='display:none!important;'>" : ">" ?>
                     <div class="col-lg-12 text-center">
                         <?php if((!empty($aza_appstore_link))||(!empty($aza_playstore_link))) {
                        if(!empty($aza_appstore_link)){?>

@@ -135,7 +135,7 @@ function aza_scripts() {
     
     wp_enqueue_script( 'aza-jquery-knobs', aza_get_file('/js/jquery.knob.js'), array('jquery'), '1.0.0', true );
 //  
-    wp_enqueue_script( 'aza-jquery-scroll-speed', aza_get_file('/js/jQuery.scrollSpeed.js'), array('jquery'), '1.0.2', true );
+//    wp_enqueue_script( 'aza-jquery-scroll-speed', aza_get_file('/js/jQuery.scrollSpeed.js'), array('jquery'), '1.0.2', true );
    
     wp_enqueue_script( 'aza-script', aza_get_file('/js/script.js'), array('jquery'), '1.0.0', true );
 //    

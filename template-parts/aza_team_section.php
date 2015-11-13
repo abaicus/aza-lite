@@ -5,7 +5,7 @@ TEAM SECTION
 
 $heading = get_theme_mod('aza_team_title', 'OUR TEAM');
 
-$subheading = get_theme_mod('aza_team_subheading', 'Present your team members and their role in the company.');
+$subheading = get_theme_mod('aza_team_subtitle', 'Present your team members and their role in the company.');
 
 $team_content = get_theme_mod ('aza_team_content',json_encode(
          array(

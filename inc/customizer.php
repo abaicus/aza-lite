@@ -949,7 +949,7 @@ TEAM SECTION
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
     
-	$wp_customize->add_control( 'aza_clients_title', array(
+	$wp_customize->add_control( 'aza_team_title', array(
 		'label'    => esc_html__( 'Title', 'aza' ),
 		'section'  => 'aza_appearance_team',
 		'priority'    => 1,
@@ -1084,7 +1084,7 @@ BLOG SECTION
 		'priority'    => 2,
 	));
     /*---------------------------------------
-    Team Separators
+    Blog Separators
     ---------------------------------------*/
     
     $wp_customize->add_setting( 'aza_separator_blog_top', array(
@@ -1106,6 +1106,91 @@ BLOG SECTION
         'type' => 'checkbox',
         'section' => 'aza_appearance_blog',
     ));
+   
+/*-------------------------------
+CONTACT SECTION
+---------------------------------*/
+    
+    /*---------------------------------------
+    Contact headings
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_contact_title', array(
+		'default' => esc_html__('Contact','aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_contact_title', array(
+		'label'    => esc_html__( 'Title', 'aza' ),
+		'section'  => 'aza_appearance_contact',
+		'priority'    => 1,
+	));
+    
+    $wp_customize->add_setting( 'aza_contact_subtitle', array(
+		'default' => esc_html__("Message us",'aza'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+    
+	$wp_customize->add_control( 'aza_contact_subtitle', array(
+		'label'    => esc_html__( 'Subtitle', 'aza' ),
+		'section'  => 'aza_appearance_contact',
+		'priority'    => 2,
+	));
+
+    /*-------------------------------
+    Contact shortcode
+    ---------------------------------*/
+
+    $wp_customize->add_section( 'aza_appearance_contact' , array(
+                'title'       => esc_html__( 'Contact Section', 'aza' ),
+                'description' => esc_html__('AZA theme contact section shortcode','aza'),
+                'panel'		  => 'panel_2'
+            ));
+        $wp_customize->add_setting( 'frontpage_contact_shortcode', array(
+                'sanitize_callback' => 'aza_sanitize_text',
+        ));
+        $wp_customize->add_control( 'frontpage_contact_shortcode', array(
+                'label'    => esc_html__( 'Pirate Forms Shortcode', 'aza' ),
+                'section'  => 'aza_appearance_contact',
+                'priority'    => 1,
+        ));
+    
+    
+    /*---------------------------------------
+    Contact separators
+    ---------------------------------------*/
+    
+    $wp_customize->add_setting( 'aza_separator_contact_top', array(
+        'default' => 1,
+    ));
+
+    $wp_customize->add_control( 'aza_separator_contact_top', array(
+        'label' => 'Top Separator',
+        'type' => 'checkbox',
+        'section' => 'aza_appearance_contact',
+    ));
+    
+    /*-------------------------------
+    Contact background opacity
+    ---------------------------------*/
+
+    $wp_customize->add_setting( 'aza_overlay_opacity_contact', array(
+      'type' => 'theme_mod', 
+      'capability' => 'edit_theme_options',
+      'default' => '0.5',
+    ) );
+        
+    $wp_customize->add_control( 'aza_overlay_opacity_contact', array(
+      'type' => 'range',
+      'section' => 'aza_appearance_contact',
+      'label' => __( 'Range' ),
+      'description' => __( 'Cover photo overlay opacity'),
+      'input_attrs' => array(
+        'min' => 0,
+        'max' => 1,
+        'step' =>0.1,
+      ),
+    ) );    
     
 /*-------------------------------
 INTERGEO MAPS SECTION
@@ -1125,7 +1210,6 @@ INTERGEO MAPS SECTION
                 'section'  => 'aza_appearance_map',
                 'priority'    => 1,
         ));
-    
     
     
 /*-------------------------------
