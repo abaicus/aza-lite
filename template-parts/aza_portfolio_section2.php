@@ -31,7 +31,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
             <?php
                         if(!empty($title)) {
                             echo '<h1>'.esc_html__($title).'</h1></div>';
-                        }   ?> </div>
+                        }   ?> 
                 <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "<hr class='separator'>" : "" ?>
 
                     <?php
@@ -40,7 +40,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                         }
 
                         ?>
-        </div> 
+        </div> </div>
 
 
        
@@ -58,12 +58,12 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                 $thumb = get_the_post_thumbnail();
                     ?>
                 
-             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-10 text-center porftolio-collumns"> 
+             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10 text-center portfolio-collumns"> 
                 <a href = "<?php echo esc_url($post_link); ?>">
              <?php if (has_post_thumbnail() ): ?>
              <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'single-post-thumbnail' ); ?>
-                <div class= "portfolio-item">
-                <img src="<?php echo $image[0]; ?>"> <?php endif; ?>
+                <div class= "portfolio-item" style="background-image: url(<?php echo $image[0]; ?>);">
+             <?php endif; ?>
                 <div class= "portfolio-img-overlay">
                 <h3><?php echo esc_html__( $post_title ) ?></h3>
                 </div> </div> </a> </div>
