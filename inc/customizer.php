@@ -521,6 +521,10 @@ you can showcase it in AZA Theme's portfolio grid.",'aza'),
 		'priority'    => 2,
 	));
     
+    /*---------------------------------------
+    Portfolio Content
+    ---------------------------------------*/
+    
 $wp_customize->add_setting( 'portfolio_show_link_to_single', array(
 		'default' => 1
 	));
@@ -546,46 +550,7 @@ $wp_customize->add_setting( 'number_of_portfolio_posts', array(
 		)
 	);
     
-//    
-//    $wp_customize -> add_setting('aza_portfolio', array(
-//        'sanitize_callback' => 'aza_sanitize_repeater',
-//        'default' => json_encode(
-//            array(
-//                 array("image_url"  => aza_get_file('/images/portfolio_1.png'), 
-//                       "title"      => esc_html__("City Life"),
-//                       "subtitle"   => esc_html__("Street Photography")),
-//                
-//                array("image_url"   => aza_get_file('/images/portfolio_2.png'), 
-//                       "title"      => esc_html__("Buildings"),
-//                      "subtitle"    => esc_html__("Architectural Study")),
-//                
-//                array("image_url"   => aza_get_file('/images/portfolio_3.png'), 
-//                       "title"      => esc_html__("Landscape"),
-//                      "subtitle"    => esc_html__("Nature Study")), 
-//                
-//                array("image_url"   => aza_get_file('/images/portfolio_4.png'), 
-//                       "title"      => esc_html__("Countryside"),
-//                       "subtitle"   => esc_html__("Rural")), 
-//                
-//                array("image_url"   => aza_get_file('/images/portfolio_5.png'), 
-//                       "title"      => esc_html__("Moments"),
-//                       "subtitle"   => esc_html__("Personal Collections")), 
-//                
-//                array("image_url"   => aza_get_file('/images/portfolio_6.png'), 
-//                       "title"      => esc_html__("Seaside"),
-//                       "subtitle"   => esc_html__("Vacation Photography")),
-//            ) ) ) );
-//    
-//$wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_portfolio' , array(
-//        'label' => esc_html__('Edit the Portfolio section','aza'),
-//        'section' => 'aza_appearance_portfolio',
-//        'priority' => 3,
-//        'parallax_image_control'    => true,
-//        'parallax_title_control'    => true,
-//        'parallax_subtitle_control' => true,
-//        'parallax_link_control'     => true,
-//    ) ) );
-//    
+
     
             /*---------------------------------------
             Portfolio Separators

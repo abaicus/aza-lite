@@ -59,14 +59,20 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                     ?>
                 
              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10 text-center portfolio-collumns"> 
-                <a href = "<?php echo esc_url($post_link); ?>">
+                
+             <?php echo ( $show_link_to_single ) ? '<a href = "'.esc_url($post_link).'">' : '' ?>
              <?php if (has_post_thumbnail() ): ?>
              <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'single-post-thumbnail' ); ?>
                 <div class= "portfolio-item" style="background-image: url(<?php echo $image[0]; ?>);">
              <?php endif; ?>
                 <div class= "portfolio-img-overlay">
                 <h3><?php echo esc_html__( $post_title ) ?></h3>
-                </div> </div> </a> </div>
+                </div> </div> 
+                
+                      <?php echo ( $show_link_to_single ) ? '</a>' : '' ?>
+                
+                
+                  </div>
            <?php
             }
             ?>
