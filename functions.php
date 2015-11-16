@@ -111,6 +111,48 @@ function aza_widgets_init() {
 add_action( 'widgets_init', 'aza_widgets_init' );
 
 /**
+ * Register post types.
+ */
+
+
+
+function portfolio_register() {
+    $labels = array (
+        'name'                => esc_html__('Portfolio', 'post type general name'),
+        'singular name'       => esc_html__('Portfolio Item', 'post type singular name'),
+        'add_new'             => esc_html__('Add New', 'portfolio item'),
+        'add_new_item'        => esc_html__('Add New Portfolio Item'),
+        'edit_item'           => esc_html__('Edit Portfolio Item'),
+        'new_item'            => esc_html__('New Portfolio Item'),
+        'view_item'           => esc_html__('View Portfolio Item'),
+        'search_items'        => esc_html__('Search Portfolio'),
+		'not_found'           => esc_html__('Nothing found'),
+		'not_found_in_trash'  => esc_html__('Nothing found in Trash'),
+		'parent_item_colon'   => '' );
+    
+    $args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'menu_icon' => 'dashicons-images-alt',
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array('title','editor','thumbnail')
+	  ); 
+ 
+	register_post_type( 'portfolio' , $args );
+}
+    
+add_action('init', 'portfolio_register');    
+    
+
+
+
+/**
  * Enqueue scripts and styles.
  */
 function aza_scripts() {

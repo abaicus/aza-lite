@@ -5,103 +5,82 @@ PORTFOLIO SECTION
 
 <?php 
 
-
-$portfolio_item = get_theme_mod ('aza_portfolio', json_encode(
-     array(
-         
-                array("image_url"  => aza_get_file('/images/portfolio_1.png'), 
-                      "title"      => esc_html__("City Life"),                      
-                      "subtitle"   => esc_html__("Street Photography")),
-                
-                array("image_url"   => aza_get_file('/images/portfolio_2.png'), 
-                      "title"      => esc_html__("Buildings"),
-                      "subtitle"    => esc_html__("Architectural Study")),
-                
-                array("image_url"   => aza_get_file('/images/portfolio_3.png'), 
-                      "title"      => esc_html__("Landscape"),
-                      "subtitle"    => esc_html__("Nature Study")), 
-                
-                array("image_url"   => aza_get_file('/images/portfolio_4.png'), 
-                      "title"      => esc_html__("Countryside"),
-                       "subtitle"   => esc_html__("Rural")), 
-                
-                 array("image_url"   => aza_get_file('/images/portfolio_5.png'), 
-                       "title"      => esc_html__("Moments"),
-                       "subtitle"   => esc_html__("Personal Collections")), 
-                
-                 array("image_url"   => aza_get_file('/images/portfolio_6.png'), 
-                       "title"      => esc_html__("Seaside"),
-                       "subtitle"   => esc_html__("Vacation Photography")),
-            ) ) ) ;
-         
-         
-         
-$portfolio_item_decoded = json_decode($portfolio_item);
-
-
-
 $title =  get_theme_mod('aza_portfolio_title', 'PORTFOLIO SECTION');
-
 $subtitle = get_theme_mod('aza_portfolio_subtitle', "Showcase your own work. Be it photography, graphic design or any other form of visual art, 
 you can showcase it in AZA Theme's portfolio grid.");
+
+$show_link_to_single = get_theme_mod('portfolio_show_link_to_single',1);
+
+
+$number_of_portfolio_posts = get_theme_mod('number_of_portfolio_posts',3);
+
+$args = array( 'post_type' => portfolio, 'posts_per_page' => $number_of_portfolio_posts );
+$loop = new WP_Query( $args );
+
+
 
 $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
 ?> 
            
-             <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+             <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "<div class='zig-zag-top' ></div>" : "" ?>
              
-           <section id="portfolio">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-lg-12 col-centered">
-                        <?php
+<section id="portfolio">
+    <div class="container">
+        <div class="row text-center">
+           <div class="col-lg-12 col-centered">
+            <?php
                         if(!empty($title)) {
-                            echo '<h1>'.esc_html__($title).'</h1>';
-                        }   ?></div>
-                         <hr class="separator " <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? ">" : "style='display:none!important;'>" ?>  
-                        
-                        <?php
+                            echo '<h1>'.esc_html__($title).'</h1></div>';
+                        }   ?> 
+                <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "<hr class='separator'>" : "" ?>
+
+                    <?php
                         if(!empty($subtitle)) {
                             echo '<p>'.esc_html__($subtitle).'</p>';
                         }
 
                         ?>
-                    </div>
-                    
-                    </div>
-             
-           
+        </div> </div>
 
-            <div class="container">
-                <div class="row portfolio-content">
-                   
-                   <?php
-                   
-if(!empty($portfolio_item)) { 
-    $portfolio_item_decoded = json_decode($portfolio_item); 
-    if(!empty($portfolio_item_decoded)) { 
-        foreach($portfolio_item_decoded as $portfolio_item) { 
 
-            
-                echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10 text-center porftolio-collumns">
-                <a href = "'.esc_url ($portfolio_item -> link).'">
-                <div class= "portfolio-item" style = "background-image: url('.esc_url( $portfolio_item -> image_url ).')">
-                <div class= "portfolio-img-overlay">
-                <h3>'.esc_html__( $portfolio_item -> title ) .'</h3>
-                <p>'.esc_html__( $portfolio_item -> subtitle ).'</p>        
-                </div> </div> </a> </div>';
-        }}}
+       
+       
+       
+       <div class="container">
+        <div class="row portfolio-content">
+           <?php
+            while ( $loop->have_posts() ) { 
+                $loop->the_post() ;
+                $post_id = get_the_ID();
+                $term_list = wp_get_post_terms($post_id, 'portfolio_cat', array("fields" => "all"));
+                $post_title = get_the_title();
+                $post_link = get_the_permalink();
+                $thumb = get_the_post_thumbnail();
                     ?>
-                    
-                </div>
-               </div>
-
-                    
-
+                
+             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10 text-center portfolio-collumns"> 
+                
+             <?php echo ( $show_link_to_single ) ? '<a href = "'.esc_url($post_link).'">' : '' ?>
+             <?php if (has_post_thumbnail() ): ?>
+             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'single-post-thumbnail' ); ?>
+                <div class= "portfolio-item" style="background-image: url(<?php echo $image[0]; ?>);">
+             <?php endif; ?>
+                <div class= "portfolio-img-overlay">
+                <h3><?php echo esc_html__( $post_title ) ?></h3>
+                </div> </div> 
+                
+                      <?php echo ( $show_link_to_single ) ? '</a>' : '' ?>
+                
+                
+                  </div>
+           <?php
+            }
+            ?>
+    </div></div>
 
                 <div class="container">
                     <div class="row text-center">
-                       <hr class="separator" <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "" : "style='display:none!important;'" ?>
+                        <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "<hr class='separator'>" : "" ?>
                     <?php
                         if(!empty($button_text))
                         {
@@ -114,5 +93,4 @@ if(!empty($portfolio_item)) {
                 </div>
                 </div>
         </section>
-        
-         <div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
+         <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>
