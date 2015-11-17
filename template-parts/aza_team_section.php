@@ -63,7 +63,7 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
     $team_content_decoded = json_decode($team_content); 
     if(!empty($team_content_decoded)) { 
         foreach($team_content_decoded as $team_content) { 
-            echo '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center team-member">
+            echo '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 text-center team-member">
                         <div class="team-picture">
                             <div class="team-member-image" style="background-image: url(' .esc_url($team_content -> image_url).')"></div>
                             <div class="team-picture-overlay">

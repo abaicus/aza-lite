@@ -58,7 +58,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                 $thumb = get_the_post_thumbnail();
                     ?>
                 
-             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10 text-center portfolio-collumns"> 
+             <div class="col-lg-4 col-md-6 col-sm-7 col-xs-10 text-center portfolio-collumns"> 
                 
              <?php echo ( $show_link_to_single ) ? '<a href = "'.esc_url($post_link).'">' : '' ?>
              <?php if (has_post_thumbnail() ): ?>
