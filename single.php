@@ -10,9 +10,9 @@
 
 get_header(); ?>
 
-    <div class="container single-post">
+    <div class="container blog-content">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main" role="main">
                         <?php while ( have_posts() ) : the_post(); ?>
@@ -32,7 +32,7 @@ get_header(); ?>
                 </div>
                 <!-- #primary -->
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-md-offset-1">
             <?php get_sidebar(); ?>
             </div>
         </div>
