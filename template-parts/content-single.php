@@ -11,18 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-<div class="container">
-    <div class="row">
-        <div class="col-md-9 col-center">
             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
                 <div class="entry-meta">
                     <?php aza_posted_on(); ?>
                 </div>
                 <!-- .entry-meta -->
-        </div>
-    </div>
-</div>
 </header>
 <!-- .entry-header -->
 	<div class="entry-content">

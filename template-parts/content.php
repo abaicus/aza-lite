@@ -17,7 +17,6 @@
  * @package aza
  */
 ?>
-
 <article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-top-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'aza' ), get_the_title() )?>">
 	<header class="entry-header">
 

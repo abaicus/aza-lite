@@ -2111,6 +2111,8 @@ section#contact p {
     border: 1px solid #191919;
     background-color: #272727;
 }
+
+
 /*---------------------------------------
 3.16 SITE FOOTER
 ----------------------------------------*/
@@ -2157,6 +2159,15 @@ section#contact p {
 }
 
 
+/*---------------------------------------
+4.0 BLOG PAGE
+----------------------------------------*/
+.blog-content-wrapper {
+    background-color: #333;
+}
+.single-post-content, .blog-content {
+    margin-top: 80px;
+}
 
 
 
