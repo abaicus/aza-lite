@@ -41,8 +41,11 @@ echo '</h4>';  ?>
                                  'container_class' => 'footer-menu' )); 
 ?>
 </div></div>
-        <?php
+         
 
+<?php
+    /*          
+       
 //Get Menu Name
 
 $menu_location = 'footer-menu-2';
@@ -63,20 +66,21 @@ echo '</h4>';
 
 //Menu Call
 
-        wp_nav_menu( array('theme_location' => 'footer-menu-2',
+       wp_nav_menu( array('theme_location' => 'footer-menu-2',
                             'container_class' => 'footer-menu' )); ?>
         </div></div></div>
 
 
 
             <div class="site-info">
-                <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aza' ) ); ?>">
-                    <?php printf( esc_html__( 'Proudly powered by %s', 'aza' ), 'WordPress' ); ?>
+                <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aza-lite' ) ); ?>">
+                    <?php printf( esc_html__( 'Proudly powered by %s', 'aza-lite' ), 'WordPress' ); ?>
                 </a>
                 <span class="sep"> | </span>
-                <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'aza' ), 'aza', '<a href="http://themeisle.com/" rel="designer">Andrei Baicus</a>' ); ?>
+                <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'aza-lite' ), 'aza-lite', '<a href="http://themeisle.com/" rel="designer">Andrei Baicus</a>' ); ?>
             </div>
             <!-- .site-info -->
+            */ ?>
     </footer>
     <!-- #colophon -->
     </div>

@@ -1,3 +1,5 @@
+<div class="archive-content-wrapper">
+
 <?php
 /**
  * The template for displaying archive pages.
@@ -8,7 +10,7 @@
  */
 
 get_header(); ?>
-    <div class="archive-content-wrapper">
+    
         <div class="container">
             <div class="row">
                 <div class="col-md-9">

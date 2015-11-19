@@ -13,25 +13,25 @@ $about_image = get_theme_mod('about_image', aza_get_file('/images/about-photo.pn
 
 $about_content = get_theme_mod ('aza_about_content',json_encode(
             array(
-                 array("title"      => esc_html__("iOS Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage" => esc_html__("27"),
-                       "color"      => esc_html__("#3399df")),
+                 array("title"      => esc_html__('iOS Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '27',
+                       "color"      => '#3399df'),
                 
-                array("title"      => esc_html__("Android Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("45"),
-                       "color"      => esc_html__("#f0b57c")),
+                array("title"       => esc_html__('Android Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '45',
+                       "color"      => '#f0b57c'),
                 
-                array("title"      => esc_html__("Windows Mobile Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("10"),
-                       "color"      => esc_html__("#4bb992")),
+                array("title"       => esc_html__('Windows Mobile Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '10',
+                       "color"      => '#4bb992'),
                 
-                array("title"      => esc_html__("Desktop Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("18"),
-                       "color"        => esc_html__("#8a74b9")),
+                array("title"       => esc_html__('Desktop Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '18',
+                       "color"      => '#8a74b9'),
 )));
 
 $about_content_decoded = json_decode($about_content);

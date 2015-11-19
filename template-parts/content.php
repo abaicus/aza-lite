@@ -17,14 +17,14 @@
  * @package aza
  */
 ?>
-<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-top-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'aza' ), get_the_title() )?>">
+<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-top-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'aza-lite' ), get_the_title() )?>">
 	<header class="entry-header">
 
        <?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="colored-line-left"></div>
 		<div class="clearfix"></div>
        
-       <div class="aza-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'aza' ) ); ?>">
+       <div class="aza-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'aza-lite' ) ); ?>">
 					<?php echo get_the_date('F j, Y');?>
 				</div>
        
@@ -38,7 +38,7 @@
 					<i class="icon-basic-elaboration-folder-check"></i> in
 					<?php
 						/* translators: used between list items, there is a space after the comma */
-						$categories_list = get_the_category_list( esc_html__( ', ', 'aza' ) );
+						$categories_list = get_the_category_list( esc_html__( ', ', 'aza-lite' ) );
 						$pos = strpos($categories_list, ',');
 						if ( $pos ) {
 							echo substr($categories_list, 0, $pos);
@@ -48,7 +48,7 @@
 					?>
 				</span>
 				
-					<i class="icon-comment-alt"></i><a href="<?php comments_link(); ?>" class="post-comments"><?php comments_number( esc_html__('No comments','aza'), esc_html__('One comment','aza'), esc_html__('% comments','aza') ); ?>
+					<i class="icon-comment-alt"></i><a href="<?php comments_link(); ?>" class="post-comments"><?php comments_number( esc_html__('No comments','aza-lite'), esc_html__('One comment','aza-lite'), esc_html__('% comments','aza-lite') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
         
@@ -87,14 +87,14 @@
 	<div itemprop="description" class="entry-content entry-summary">
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
-			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','aza'), '<span class="screen-reader-text">'.esc_html__('about ', 'aza').get_the_title().'</span>' ) );
+			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','aza-lite'), '<span class="screen-reader-text">'.esc_html__('about ', 'aza-lite').get_the_title().'</span>' ) );
 			else : the_excerpt();
 			endif;
 		?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aza' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aza-lite' ),
 				'after'  => '</div>',
 			) );
 		?>

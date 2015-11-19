@@ -16,9 +16,9 @@ $parallax_image = get_theme_mod('aza_parallax_image', aza_get_file('/images/para
 $parallax_text = get_theme_mod ('aza_parallax_text',json_encode(
             array(
                 array(
-                    'title' => esc_html__('Our Multi layered parallax is fully customizable and showcases anything you need with an eyecandy design.') ,
-                    'text' =>  esc_html__('Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.')))));
+                    'title' => esc_html__('Multi layered parallax.','aza-lite') ,
 
+                    'text' =>  esc_html__(' Fully customizable and showcases anything you need with an eyecandy design. Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.','aza-lite')))));
 $parallax_text_decoded = json_decode($parallax_text);
 
         
