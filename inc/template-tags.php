@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package AZA_Theme
+ * @package aza-lite
  */
 
 if ( ! function_exists( 'aza_posted_on' ) ) :

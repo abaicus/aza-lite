@@ -2,7 +2,7 @@
 /**
  * AZA Theme Theme Customizer.
  *
- * @package AZA_Theme
+ * @package aza-lite
  */
 
 /**

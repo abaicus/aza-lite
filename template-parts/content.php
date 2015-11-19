@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package AZA_Theme
+ * @package aza-lite
  */
 
 ?>
@@ -93,7 +93,6 @@
 		?>
 
 		<?php
-			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aza-lite' ),
 				'after'  => '</div>',
 			) );

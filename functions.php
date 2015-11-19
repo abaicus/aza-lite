@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package AZA_Theme
+ * @package aza-lite
  */
 
 if ( ! function_exists( 'aza_setup' ) ) :
