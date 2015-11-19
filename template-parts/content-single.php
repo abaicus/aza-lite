@@ -18,6 +18,13 @@
                 </div>
                 <!-- .entry-meta -->
 </header>
+    <div class="featured-image">
+  <?php      
+        if ( has_post_thumbnail() ) {
+	           the_post_thumbnail('large');
+                } ?>
+        
+    </div>
 <!-- .entry-header -->
 	<div class="entry-content">
 		<?php the_content(); ?>
