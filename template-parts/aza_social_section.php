@@ -42,7 +42,7 @@ if(!empty($social_icons)){
     if(!empty($social_icons_decoded)) { 
         echo '<p>';
         foreach($social_icons_decoded as $social_icons) {
-            echo '<a href="'.esc_html__($social_icons->link).'" style="color: '.esc_html($social_icons->color).';"><span class= "'.esc_html__($social_icons->icon_value).'"></span></a>'; 
+            echo '<a href="'.$social_icons->link.'" style="color: '.esc_html($social_icons->color).';"><span class= "'.$social_icons->icon_value.'"></span></a>'; 
 }
 echo '</p>';
 }}

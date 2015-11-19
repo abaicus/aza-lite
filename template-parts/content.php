@@ -14,7 +14,7 @@
 
 <?php
 /**
- * @package aza
+ * @package aza-lite
  */
 ?>
 <article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-top-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'aza-lite' ), get_the_title() )?>">
@@ -48,7 +48,7 @@
 					?>
 				</span>
 				
-					<i class="icon-comment-alt"></i><a href="<?php comments_link(); ?>" class="post-comments"><?php comments_number( esc_html__('No comments','aza-lite'), esc_html__('One comment','aza-lite'), esc_html__('% comments','aza-lite') ); ?>
+					<i class="icon-comment-alt"></i><a href="<?php comments_link(); ?>" class="post-comments"><?php comments_number( esc_html__('No comments', 'aza-lite'), esc_html__('One comment', 'aza-lite'), esc_html__('% comments', 'aza-lite') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
         
@@ -87,7 +87,7 @@
 	<div itemprop="description" class="entry-content entry-summary">
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
-			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','aza-lite'), '<span class="screen-reader-text">'.esc_html__('about ', 'aza-lite').get_the_title().'</span>' ) );
+			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...', 'aza-lite'), '<span class="screen-reader-text">'.esc_html__('about ', 'aza-lite').get_the_title().'</span>' ) );
 			else : the_excerpt();
 			endif;
 		?>

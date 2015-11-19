@@ -117,6 +117,7 @@ Header store buttons
     
     $wp_customize->add_setting( 'aza_header_store_buttons', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_header_store_buttons', array(
@@ -134,13 +135,14 @@ Header store buttons
       'type' => 'theme_mod', 
       'capability' => 'edit_theme_options',
       'default' => '0.5',
+      'sanitize_callback' => 'aza_sanitize_text', 
     ) );
         
     $wp_customize->add_control( 'aza_overlay_opacity', array(
       'type' => 'range',
       'section' => 'aza_appearance_cover',
-      'label' => __( 'Range' ),
-      'description' => __( 'Cover photo overlay opacity' ),
+      'label' => __( 'Range', 'aza-lite' ),
+      'description' => __( 'Cover photo overlay opacity', 'aza-lite'),
       'input_attrs' => array(
         'min' => 0,
         'max' => 1,
@@ -226,7 +228,8 @@ features repeater
                  array('icon_value' => 'icon-arrows-squares' , 'title' => 'Fully Responsive' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-responsive', 'color' => '#3399df'  ),
                 array('icon_value' => 'icon-computer-imac' , 'title' => 'Clean Design' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design', 'color' => '#f0b57c' ),
             )    
-        )
+        ),
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
     
     $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_features_icons_left' , array(
@@ -249,7 +252,8 @@ features repeater
                  array('icon_value' => 'icon-ecommerce-diamond' , 'title' => 'Beautiful Showcase' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'perfect-showcase', 'color' => '#4bb992'  ),
                 array('icon_value' => 'icon-settings-streamline-2' , 'title' => 'Fully Customizable' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-customizable', 'color' => '#8a74b9' ),
             )    
-        )
+        ),
+         'sanitize_callback' => 'aza_sanitize_text',
     ));
     
     $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_features_icons_right' , array(
@@ -272,6 +276,7 @@ Features zig-zag
     
     $wp_customize->add_setting( 'aza_zigzag_features_top', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_zigzag_features_top', array(
@@ -282,6 +287,7 @@ Features zig-zag
     
     $wp_customize->add_setting( 'aza_zigzag_features_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_zigzag_features_bottom', array(
@@ -355,19 +361,20 @@ PARALLAX SECTION
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aza_parallax_image', array(
 	      	'label'    => esc_html__( 'Left side of the Parallax Image', 'aza-lite' ),
 	      	'section'  => 'aza_appearance_parallax',
-			'priority'    => 1,
+			'priority' => 1,
 	)));
     
     $wp_customize -> add_setting('aza_parallax_text', array(
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array('title' => 'Our Multi layered parallax is fully customizable and showcases anything you need with an eyecandy design.' , 'text' => 'Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.')))));
+                 array('title' => 'Multi layered parallax.' , 
+                       'text'  => 'fully customizable and showcases anything you need with an eyecandy design. Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.')))));
     
     $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_parallax_text' , array(
-        'label' => esc_html__('Edit the parallax section text','aza-lite'),
-        'section' => 'aza_appearance_parallax',
-        'priority' => 5,
+        'label'                     => esc_html__('Edit the parallax section text','aza-lite'),
+        'section'                   => 'aza_appearance_parallax',
+        'priority'                  => 5,
         'parallax_title_control'    => true,
         'parallax_text_control'     => true,
     ) ) );
@@ -408,14 +415,14 @@ TESTIMONIAL SECTION
         'default' => json_encode(
             array(
                  array("image_url"  => aza_get_file('/images/testimonials-pic1.png'), 
-                       "title"      => esc_html__("John Fox"),
-                       "text"       => esc_html__("Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.")),
+                       "title"      => esc_html__('John Fox', 'aza-lite'),
+                       "text"       => esc_html__('Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.', 'aza-lite')),
                 array("image_url"  => aza_get_file('/images/testimonials-pic2.png'), 
-                       "title"      => esc_html__("Parr Otte"),
-                       "text"       => esc_html__("Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.")),
+                       "title"      => esc_html__('Parr Otte', 'aza-lite'),
+                       "text"       => esc_html__('Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.', 'aza-lite' )),
                 array("image_url"  => aza_get_file('/images/testimonials-pic3.png'), 
-                       "title"      => esc_html__("Gee Raff"),
-                       "text"       => esc_html__("Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.")),
+                       "title"      => esc_html__('Gee Raff', 'aza-lite'),
+                       "text"       => esc_html__('Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.', 'aza-lite')),
             ))));
     
     $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_testimonials' , array(
@@ -434,6 +441,7 @@ TESTIMONIAL SECTION
 
     $wp_customize->add_setting( 'aza_zigzag_testimonial_top', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_zigzag_testimonial_top', array(
@@ -444,6 +452,7 @@ TESTIMONIAL SECTION
     
     $wp_customize->add_setting( 'aza_zigzag_testimonial_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_zigzag_testimonial_bottom', array(
@@ -526,7 +535,8 @@ you can showcase it in AZA Theme's portfolio grid.",'aza-lite'),
     ---------------------------------------*/
     
 $wp_customize->add_setting( 'portfolio_show_link_to_single', array(
-		'default' => 1
+		'default' => 1,
+        'sanitize_callback' => 'aza_sanitize_text',
 	));
 	$wp_customize->add_control( 'portfolio_show_link_to_single',
 		array(
@@ -538,7 +548,8 @@ $wp_customize->add_setting( 'portfolio_show_link_to_single', array(
 		)
 	);
 $wp_customize->add_setting( 'number_of_portfolio_posts', array(
-		'default' => 3
+		'default' => 3,
+        'sanitize_callback' => 'esc_attr',
 	));
 	$wp_customize->add_control( 'number_of_portfolio_posts',
 		array(
@@ -558,6 +569,7 @@ $wp_customize->add_setting( 'number_of_portfolio_posts', array(
     
     $wp_customize->add_setting( 'aza_separator_portfolio_top', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_separator_portfolio_top', array(
@@ -568,6 +580,7 @@ $wp_customize->add_setting( 'number_of_portfolio_posts', array(
     
     $wp_customize->add_setting( 'aza_separator_portfolio_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_separator_portfolio_bottom', array(
@@ -581,7 +594,7 @@ $wp_customize->add_setting( 'number_of_portfolio_posts', array(
             ---------------------------------------*/
     
     $wp_customize->add_setting( 'aza_portfolio_button_text', array(
-		'default' => esc_html__('Other Works'),'aza-lite',
+		'default' => esc_html__('Other Works', 'aza-lite'),
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	
@@ -598,6 +611,7 @@ $wp_customize->add_setting( 'number_of_portfolio_posts', array(
      
     $wp_customize->add_setting( 'aza_zigzag_portfolio_top', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_zigzag_portfolio_top', array(
@@ -608,6 +622,7 @@ $wp_customize->add_setting( 'number_of_portfolio_posts', array(
     
     $wp_customize->add_setting( 'aza_zigzag_portfolio_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_zigzag_portfolio_bottom', array(
@@ -660,25 +675,25 @@ ABOUT SECTION
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                 array("title"        => esc_html__("iOS Users"),
-                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("27"),
-                       "color"        => esc_html__("#3399df")),
+                 array("title"        => esc_html__('iOS Users', 'aza-lite'),
+                       "text"         => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
+                       "percentage"   => '27',
+                       "color"        => '#3399df'),
                 
-                array("title"         => esc_html__("Android Users"),
-                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("45"),
-                       "color"        => esc_html__("#f0b57c")),
+                array("title"         => esc_html__('Android Users', 'aza-lite'),
+                       "text"         => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
+                       "percentage"   => '45',
+                       "color"        => '#f0b57c'),
                 
-                array("title"         => esc_html__("Windows Mobile Users"),
-                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("10"),
-                       "color"        => esc_html__("#4bb992")),
+                array("title"         => esc_html__('Windows Mobile Users', 'aza-lite'),
+                       "text"         => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
+                       "percentage"   => '10',
+                       "color"        => '#4bb992'),
                 
-                array("title"         => esc_html__("Desktop Users"),
-                       "text"         => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("18"),
-                       "color"        => esc_html__("#8a74b9")),
+                array("title"         => esc_html__('Desktop Users', 'aza-lite'),
+                       "text"         => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
+                       "percentage"   => '18',
+                       "color"        => '#8a74b9'),
                 
                
             ) ) ) );
@@ -719,6 +734,7 @@ ABOUT SECTION
     
     $wp_customize->add_setting( 'aza_separator_about_top', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_separator_about_top', array(
@@ -729,6 +745,7 @@ ABOUT SECTION
     
     $wp_customize->add_setting( 'aza_separator_about_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_separator_about_bottom', array(
@@ -743,12 +760,12 @@ ABOUT SECTION
     ---------------------------------*/
     
         $wp_customize->add_setting( 'aza_about_button_text', array(
-		'default' => esc_html__('More info'),'aza-lite',
+		'default' => esc_html__('More info', 'aza-lite'),
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	
     $wp_customize->add_control( 'aza_about_button_text', array(
-		'label'    => esc_html__( 'Button Text', 'aza-lite' ),
+		'label'    => esc_html__( 'Button Text', 'aza-lite'),
 		'section'  => 'aza_appearance_about',
 		'priority'    => 4,
 	));
@@ -761,6 +778,7 @@ ABOUT SECTION
      
     $wp_customize->add_setting( 'aza_zigzag_about_top', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_zigzag_about_top', array(
@@ -771,6 +789,7 @@ ABOUT SECTION
     
     $wp_customize->add_setting( 'aza_zigzag_about_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_zigzag_about_bottom', array(
@@ -798,12 +817,12 @@ SHORTCODES SECTION
 	));
     
   $wp_customize -> add_setting('aza_shortcodes_settings', array(
-        //'sanitize_callback' => 'aza_sanitize_repeater',
+        'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-             array("title"      => esc_html__("Pricing Table"),
-                   "subtitle"   => esc_html__(""), 
-                   "link"       => esc_url(""),
+             array("title"      => esc_html__('Pricing Table', 'aza-lite'),
+                   "subtitle"   => '', 
+                   "link"       => esc_url(''),
                 ) ) ) ) );
     
 $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_shortcodes_settings' , array(
@@ -883,6 +902,7 @@ CLIENTS SECTION
     
     $wp_customize->add_setting( 'aza_separator_clients_top', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_separator_clients_top', array(
@@ -893,6 +913,7 @@ CLIENTS SECTION
     
     $wp_customize->add_setting( 'aza_separator_clients_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_separator_clients_bottom', array(
@@ -907,7 +928,7 @@ CLIENTS SECTION
     ---------------------------------*/
     
         $wp_customize->add_setting( 'aza_clients_button_text', array(
-		'default' => esc_html__('Become a client'),'aza-lite',
+		'default' => esc_html__('Become a client', 'aza-lite'),
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	
@@ -962,26 +983,27 @@ TEAM SECTION
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default' => json_encode(
             array(
-                array("image_url"     => aza_get_file('/images/team1.png'), 
-                      "title"         => esc_html__("Jane Doe"),
-                      "subtitle"      => esc_html__("Project Supervisor"),
-                      "color"         => esc_html__("#f0b57c"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),        
+                  array("image_url"     => aza_get_file('/images/team1.png'), 
+                      "title"         => esc_html__('Jane Doe','aza-lite'),
+                      "subtitle"      => esc_html__('Project Supervisor','aza-lite'),
+                      "color"         => '#f0b57c',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite')),        
                 array("image_url"     => aza_get_file('/images/team2.png'), 
-                      "title"         => esc_html__("Ola Nordmann"),   
-                      "subtitle"      => esc_html__("Web Designer"),
-                      "color"         => esc_html__("#4bb992"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                      "title"         => esc_html__('Ola Nordmann','aza-lite'),   
+                      "subtitle"      => esc_html__('Web Designer','aza-lite'),
+                      "color"         => '#4bb992',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite')),  
+             
                 array("image_url"     => aza_get_file('/images/team3.png'),
-                      "title"         => esc_html__("Average Joe"),   
-                      "subtitle"      => esc_html__("Front End Developer"),
-                      "color"         => esc_html__("#349ae0"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                      "title"         => esc_html__('Average Joe','aza-lite'),   
+                      "subtitle"      => esc_html__('Front End Developer','aza-lite'),
+                      "color"         => '#349ae0',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite')),    
                 array("image_url"     => aza_get_file('/images/team4.png'), 
-                      "title"         => esc_html__("Joe Bloggs"),
-                      "subtitle"      => esc_html__("UX Designer"),
-                      "color"         => esc_html__("#887caf"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                      "title"         => esc_html__('Joe Bloggs','aza-lite'),
+                      "subtitle"      => esc_html__('UX Designer','aza-lite'),
+                      "color"         => '#887caf',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')),       
             ) ) ) );
     
             $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_team_content' , array(
@@ -1001,6 +1023,7 @@ TEAM SECTION
     
     $wp_customize->add_setting( 'aza_separator_team_top', array(
         'default' => 1,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_separator_team_top', array(
@@ -1011,6 +1034,7 @@ TEAM SECTION
     
     $wp_customize->add_setting( 'aza_separator_team_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_separator_team_bottom', array(
@@ -1025,7 +1049,7 @@ TEAM SECTION
     ---------------------------------*/
     
         $wp_customize->add_setting( 'aza_team_button_text', array(
-		'default' => esc_html__('Work with us'),'aza-lite',
+		'default' => esc_html__('Work with us', 'aza-lite'),
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	
@@ -1077,6 +1101,7 @@ BLOG SECTION
     
     $wp_customize->add_setting( 'aza_separator_blog_top', array(
         'default' => 1,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_separator_blog_top', array(
@@ -1087,6 +1112,7 @@ BLOG SECTION
     
     $wp_customize->add_setting( 'aza_separator_blog_bottom', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
         ));
 
     $wp_customize->add_control( 'aza_separator_blog_bottom', array(
@@ -1150,6 +1176,7 @@ CONTACT SECTION
     
     $wp_customize->add_setting( 'aza_separator_contact_top', array(
         'default' => 1,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_separator_contact_top', array(
@@ -1163,16 +1190,17 @@ CONTACT SECTION
     ---------------------------------*/
 
     $wp_customize->add_setting( 'aza_overlay_opacity_contact', array(
-      'type' => 'theme_mod', 
-      'capability' => 'edit_theme_options',
-      'default' => '0.5',
+        'type' => 'theme_mod', 
+        'capability' => 'edit_theme_options',
+        'default' => '0.5',
+        'sanitize_callback' => 'aza_sanitize_text',
     ) );
         
     $wp_customize->add_control( 'aza_overlay_opacity_contact', array(
       'type' => 'range',
       'section' => 'aza_appearance_contact',
-      'label' => __( 'Range' ),
-      'description' => __( 'Cover photo overlay opacity'),
+      'label' => __( 'Range' , 'aza-lite'),
+      'description' => __( 'Contact section overlay opacity', 'aza-lite'),
       'input_attrs' => array(
         'min' => 0,
         'max' => 1,
@@ -1190,7 +1218,6 @@ INTERGEO MAPS SECTION
                 'panel'		  => 'panel_2'
             ));
         $wp_customize->add_setting( 'frontpage_map_shortcode', array(
-                //		'default' => esc_html__('','aza-lite'),
                 'sanitize_callback' => 'aza_sanitize_text',
         ));
         $wp_customize->add_control( 'frontpage_map_shortcode', array(
@@ -1233,6 +1260,7 @@ SOCIAL RIBBON
     
     $wp_customize->add_setting( 'aza_separator_social_ribbon', array(
         'default' => 1,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_separator_social_ribbon', array(
@@ -1291,6 +1319,7 @@ SOCIAL RIBBON
     ---------------------------------*/    
     $wp_customize->add_setting( 'aza_social_ribbon_store_buttons', array(
         'default' => 0,
+        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize->add_control( 'aza_social_ribbon_store_buttons', array(

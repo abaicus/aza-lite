@@ -258,7 +258,7 @@ function get_file($file){
 function register_my_menus() {
   register_nav_menus(
       array(
-          'footer-menu-1' => __( 'First Footer Menu' ),
+          'footer-menu-1' => __( 'First Footer Menu', 'aza-lite'),
 //          'footer-menu-2' => __( 'Second Footer Menu' )
       ));
 }

@@ -29,7 +29,7 @@ $team_content = get_theme_mod ('aza_team_content',json_encode(
                       "title"         => esc_html__('Joe Bloggs','aza-lite'),
                       "subtitle"      => esc_html__('UX Designer','aza-lite'),
                       "color"         => '#887caf',
-                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.')),      
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')),      
             ) ) ) ;
 
 $team_content_decoded = json_decode($team_content);
@@ -45,12 +45,12 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                     <div class="col-lg-12 col-centered text-center">
                         <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.esc_html__($heading).'</h1>';    
+                        echo '<h1>'.$heading.'</h1>';    
                     }?>
                     <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_team_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
                      <?php
                                 if(!empty($subheading)) {
-                                echo '<p class = "team-p">'.esc_html__($subheading).'</p>';    
+                                echo '<p class = "team-p">'.$subheading.'</p>';    
                         }?>
                     </div>
                 </div>
@@ -68,12 +68,12 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         <div class="team-picture">
                             <div class="team-member-image" style="background-image: url(' .esc_url($team_content -> image_url).')"></div>
                             <div class="team-picture-overlay">
-                                <p class="team-description">'.esc_html__($team_content -> text).'</p>
+                                <p class="team-description">'.$team_content -> text.'</p>
                             </div>
                         </div>
                         <div class="separator-team"></div>
-                        <h4 class="team-name1" style = " color:'.esc_html__($team_content -> color).'">'.esc_html__($team_content -> title).'</h4>
-                        <p>'.esc_html__($team_content -> subtitle).'</p>
+                        <h4 class="team-name1" style = " color:'.$team_content -> color.'">'.$team_content -> title.'</h4>
+                        <p>'.$team_content -> subtitle.'</p>
                     </div>';
             
               
@@ -90,7 +90,7 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         if(!empty($button_text))
                         {
                         echo '<div class="col-lg-12 col-centered text-center">';
-                        echo '<button type="button" class="btn features-btn">'.esc_html__($button_text).'</button></div>';
+                        echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div>';
                         }
                     ?>  
                 </div>

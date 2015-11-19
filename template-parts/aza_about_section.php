@@ -49,14 +49,14 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                 <div class="col-lg-12 col-centered text-center">
                     <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.esc_html__($heading).'</h1>';    
+                        echo '<h1>'.$heading.'</h1>';    
                     }?>
                     
                          <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_about_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
 
                         <?php
                                 if(!empty($subheading)) {
-                                echo '<p>'.esc_html__($subheading).'</p>';    
+                                echo '<p>'.$subheading.'</p>';    
                         }?>
                 </div>
             </div>
@@ -103,7 +103,7 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                         {
                       
                         echo '<div class="col-lg-12 col-centered text-center">';
-                        echo '<button type="button" class="btn features-btn">'.esc_html__($button_text).'</button></div>';
+                        echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div>';
                         }
                     ?>  
                 </div></div></div>

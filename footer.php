@@ -29,7 +29,7 @@ $menu_object = (isset($menu_locations[$menu_location]) ? wp_get_nav_menu_object(
 $menu_name = (isset($menu_object->name) ? $menu_object->name : '');
 
 echo '<h4>';
-echo esc_html__($menu_name);
+echo $menu_name;
 echo '</h4>';  ?>
 <div class="row">
 <div class="col-lg-12 text-center">
@@ -56,7 +56,7 @@ $menu_name = (isset($menu_object->name) ? $menu_object->name : '');
 
 
 echo '<h4>';
-echo esc_html__($menu_name);
+echo $menu_name;
 echo '</h4>'; 
 ?>
 <div class="row">
