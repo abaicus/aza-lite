@@ -1603,7 +1603,8 @@ header .navbar-brand {
 #pricing h1 {
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 40px;
+    margin-bottom: 40px;
 }
 
 div.ptp-item-container {
