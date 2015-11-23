@@ -13,25 +13,25 @@ $about_image = get_theme_mod('about_image', aza_get_file('/images/about-photo.pn
 
 $about_content = get_theme_mod ('aza_about_content',json_encode(
             array(
-                 array("title"      => esc_html__("iOS Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage" => esc_html__("27"),
-                       "color"      => esc_html__("#3399df")),
+                 array("title"      => esc_html__('iOS Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '27',
+                       "color"      => '#3399df'),
                 
-                array("title"      => esc_html__("Android Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("45"),
-                       "color"      => esc_html__("#f0b57c")),
+                array("title"       => esc_html__('Android Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '45',
+                       "color"      => '#f0b57c'),
                 
-                array("title"      => esc_html__("Windows Mobile Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("10"),
-                       "color"      => esc_html__("#4bb992")),
+                array("title"       => esc_html__('Windows Mobile Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '10',
+                       "color"      => '#4bb992'),
                 
-                array("title"      => esc_html__("Desktop Users"),
-                       "text"       => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere."),
-                       "percentage"   => esc_html__("18"),
-                       "color"        => esc_html__("#8a74b9")),
+                array("title"       => esc_html__('Desktop Users','aza-lite'),
+                       "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
+                       "percentage" => '18',
+                       "color"      => '#8a74b9'),
 )));
 
 $about_content_decoded = json_decode($about_content);
@@ -49,14 +49,14 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                 <div class="col-lg-12 col-centered text-center">
                     <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.esc_html__($heading).'</h1>';    
+                        echo '<h1>'.$heading.'</h1>';    
                     }?>
                     
                          <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_about_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
 
                         <?php
                                 if(!empty($subheading)) {
-                                echo '<p>'.esc_html__($subheading).'</p>';    
+                                echo '<p>'.$subheading.'</p>';    
                         }?>
                 </div>
             </div>
@@ -103,7 +103,7 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                         {
                       
                         echo '<div class="col-lg-12 col-centered text-center">';
-                        echo '<button type="button" class="btn features-btn">'.esc_html__($button_text).'</button></div>';
+                        echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div>';
                         }
                     ?>  
                 </div></div></div>

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package AZA_Theme
+ * @package aza-lite
  */
 
 if ( ! function_exists( 'aza_setup' ) ) :
@@ -20,9 +20,9 @@ function aza_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on AZA Theme, use a find and replace
-	 * to change 'aza' to the name of your theme in all the template files.
+	 * to change 'aza-lite' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'aza', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'aza-lite', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function aza_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'aza' ),
+		'primary' => esc_html__( 'Primary Menu', 'aza-lite' ),
 	) );
 
 	/*
@@ -99,7 +99,7 @@ add_action( 'after_setup_theme', 'aza_content_width', 0 );
  */
 function aza_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'aza' ),
+		'name'          => esc_html__( 'Sidebar', 'aza-lite' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -118,16 +118,16 @@ add_action( 'widgets_init', 'aza_widgets_init' );
 
 function portfolio_register() {
     $labels = array (
-        'name'                => esc_html__('Portfolio', 'post type general name'),
-        'singular name'       => esc_html__('Portfolio Item', 'post type singular name'),
-        'add_new'             => esc_html__('Add New', 'portfolio item'),
-        'add_new_item'        => esc_html__('Add New Portfolio Item'),
-        'edit_item'           => esc_html__('Edit Portfolio Item'),
-        'new_item'            => esc_html__('New Portfolio Item'),
-        'view_item'           => esc_html__('View Portfolio Item'),
-        'search_items'        => esc_html__('Search Portfolio'),
-		'not_found'           => esc_html__('Nothing found'),
-		'not_found_in_trash'  => esc_html__('Nothing found in Trash'),
+        'name'                => esc_html__('Portfolio', 'aza-lite'),
+        'singular name'       => esc_html__('Portfolio Item', 'aza-lite'),
+        'add_new'             => esc_html__('Add New', 'aza-lite'),
+        'add_new_item'        => esc_html__('Add New Portfolio Item','aza-lite'),
+        'edit_item'           => esc_html__('Edit Portfolio Item','aza-lite'),
+        'new_item'            => esc_html__('New Portfolio Item','aza-lite'),
+        'view_item'           => esc_html__('View Portfolio Item','aza-lite'),
+        'search_items'        => esc_html__('Search Portfolio','aza-lite'),
+		'not_found'           => esc_html__('Nothing found','aza-lite'),
+		'not_found_in_trash'  => esc_html__('Nothing found in Trash','aza-lite'),
 		'parent_item_colon'   => '' );
     
     $args = array(
@@ -258,8 +258,8 @@ function get_file($file){
 function register_my_menus() {
   register_nav_menus(
       array(
-          'footer-menu-1' => __( 'First Footer Menu' ),
-          'footer-menu-2' => __( 'Second Footer Menu' )
+          'footer-menu-1' => __( 'First Footer Menu', 'aza-lite'),
+//          'footer-menu-2' => __( 'Second Footer Menu' )
       ));
 }
 add_action( 'init', 'register_my_menus' );

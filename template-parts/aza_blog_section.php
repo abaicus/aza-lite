@@ -16,12 +16,12 @@ $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch wit
                     <div class="col-lg-12 col-md-12 text-center">
                              <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.esc_html__($heading).'</h1>';    
+                        echo '<h1>'.$heading.'</h1>';    
                     }?>
                         <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_blog_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
                      <?php
                                 if(!empty($subheading)) {
-                                echo '<p class="blog-p">'.esc_html__($subheading).'</p>';    
+                                echo '<p class="blog-p">'.$subheading.'</p>';    
                         }?>
                     </div>
                 </div>

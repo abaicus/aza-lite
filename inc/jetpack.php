@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.me/
  *
- * @package AZA_Theme
+ * @package aza-lite
  */
 
 /**
