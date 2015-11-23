@@ -1,9 +1,9 @@
 /*
-Theme Name: AZA
+Theme Name: Aza Lite
 Theme URI: http://themeisle.com/themes/aza-lite/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
-Description: AZA theme description goes here. Doesn't it?!
+Description: AZA theme description goes here.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1583,7 +1583,8 @@ header .navbar-brand {
 3.8 PRICING
 ----------------------------------------*/
 
-#pricing {
+
+ #pricing {
     height: auto;
     padding: 80px 0;
     background: linear-gradient( rgba(41, 2, 2, 0.5), rgba(41, 2, 2, 0.5)), url(images/parallax-background.png);
@@ -1602,6 +1603,7 @@ header .navbar-brand {
 #pricing h1 {
     margin: 0;
     padding: 0;
+    font-size: 20px;
 }
 
 div.ptp-item-container {
@@ -1618,7 +1620,7 @@ div.ptp-item-container {
 
 div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-plan {
     color: #ffffff;
-    font: 700 30px Montserrat !important;
+    font: 700 25px Montserrat !important;
     text-transform: capitalize;
     margin: 0;
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
@@ -1628,7 +1630,7 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-plan {
 
 div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-price {
     color: #ffffff;
-    font: 400 40px Montserrat !important;
+    font: 400 30px Montserrat !important;
     line-height: 40px;
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
     /*    padding: 50px 0;*/
@@ -1684,6 +1686,48 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
 .ptp-col-id-3 div.ptp-price {
     background-color: #665797;
 }
+
+.ptp-pricing-table .ptp-col a.ptp-button {
+    padding: 10px 30px;
+    width: auto;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;    
+}
+
+.ptp-item-container {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ptp-pricing-table div.ptp-col .ptp-item-container .ptp-plan {
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    -moz-border-top-left-radius: 5px !important;
+    -moz-border-top-right-radius: 5px !important;
+    -webkit-border-top-left-radius: 5px !important;
+    -webkit-border-top-right-radius: 5px !important;
+}
+
+.ptp-pricing-table div.ptp-col .ptp-item-container .ptp-cta {
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    -moz-border-bottom-left-radius: 5px !important;
+    -moz-border-bottom-right-radius: 5px !important;
+    -webkit-border-bottom-left-radius: 5px !important;
+    -webkit-border-bottom-right-radius: 5px !important;
+}
+
+.ptp-pricing-table div.ptp-col .ptp-most-popular {
+    background-color: rgba(255, 0, 0, 0.5);
+    height: auto;
+    line-height: 20px;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+}
+
 
 
 /*---------------------------------------
@@ -2185,8 +2229,10 @@ section#contact p {
 #secondary,
 #primary {
     margin-top: 80px;
+    margin-bottom: 80px;
 }
 
+.bypostauthor {}
 
 /*---------------------------------------
     4.1 SIDEBAR

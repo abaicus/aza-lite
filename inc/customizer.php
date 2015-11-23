@@ -1337,7 +1337,7 @@ SOCIAL RIBBON
 add_action( 'customize_register', 'aza_customize_register' );
 
 
-require_once ('class/repeater-general-control.php');
+ require_once ('class/repeater-general-control.php');
 
 function repeater_customizer_script() {
 wp_enqueue_script( 'repeater_customizer_script', get_file('/js/repeater_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
