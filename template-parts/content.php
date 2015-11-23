@@ -93,9 +93,9 @@
 		?>
 
 		<?php
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aza-lite' ),
-				'after'  => '</div>',
-			) );
+//				'before' -> '<div class="page-links">' . esc_html__( 'Pages:', 'aza-lite' ),
+//				'after'  -> '</div>',
+//			) );
 		?>
 	</div><!-- .entry-content -->
 

@@ -2181,7 +2181,9 @@ section#contact p {
     background-color: #464448;
 }
 
-.blog-content {
+
+#secondary,
+#primary {
     margin-top: 80px;
 }
 
