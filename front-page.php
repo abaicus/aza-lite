@@ -1,6 +1,7 @@
 <?php
 
-if ( 'posts' == get_option( 'show_on_front' ) ) {
+
+if ( 'page' == get_option( 'show_on_front' ) ) {
 	
 		get_header(); 
 

@@ -30,13 +30,13 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
            <div class="col-lg-12 col-centered">
             <?php
                         if(!empty($title)) {
-                            echo '<h1>'.esc_html__($title).'</h1></div>';
+                            echo '<h1>'.$title.'</h1></div>';
                         }   ?> 
                 <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "<hr class='separator'>" : "" ?>
 
                     <?php
                         if(!empty($subtitle)) {
-                            echo '<p>'.esc_html__($subtitle).'</p>';
+                            echo '<p>'.$subtitle.'</p>';
                         }
 
                         ?>
@@ -66,7 +66,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                 <div class= "portfolio-item" style="background-image: url(<?php echo $image[0]; ?>);">
              <?php endif; ?>
                 <div class= "portfolio-img-overlay">
-                <h3><?php echo esc_html__( $post_title ) ?></h3>
+                <h3><?php echo $post_title ?></h3>
                 </div> </div> 
                 
                       <?php echo ( $show_link_to_single ) ? '</a>' : '' ?>
@@ -86,7 +86,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                         {
                         echo '<div class="container text-center"';
                         echo '<div class="col-lg-12 col-centered">';
-                        echo '<button type="button" class="btn features-btn">'.esc_html__($button_text).'</button></div></div>';
+                        echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div></div>';
                         }
                     ?>  
                     

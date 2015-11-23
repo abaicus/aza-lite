@@ -10,25 +10,26 @@ $subheading = get_theme_mod('aza_team_subtitle', 'Present your team members and 
 $team_content = get_theme_mod ('aza_team_content',json_encode(
          array(
                 array("image_url"     => aza_get_file('/images/team1.png'), 
-                      "title"         => esc_html__("Jane Doe"),
-                      "subtitle"      => esc_html__("Project Supervisor"),
-                      "color"         => esc_html__("#f0b57c"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),        
+                      "title"         => esc_html__('Jane Doe','aza-lite'),
+                      "subtitle"      => esc_html__('Project Supervisor','aza-lite'),
+                      "color"         => '#f0b57c',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite')),        
                 array("image_url"     => aza_get_file('/images/team2.png'), 
-                      "title"         => esc_html__("Ola Nordmann"),   
-                      "subtitle"      => esc_html__("Web Designer"),
-                      "color"         => esc_html__("#4bb992"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                      "title"         => esc_html__('Ola Nordmann','aza-lite'),   
+                      "subtitle"      => esc_html__('Web Designer','aza-lite'),
+                      "color"         => '#4bb992',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite')),  
+             
                 array("image_url"     => aza_get_file('/images/team3.png'),
-                      "title"         => esc_html__("Average Joe"),   
-                      "subtitle"      => esc_html__("Front End Developer"),
-                      "color"         => esc_html__("#349ae0"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                      "title"         => esc_html__('Average Joe','aza-lite'),   
+                      "subtitle"      => esc_html__('Front End Developer','aza-lite'),
+                      "color"         => '#349ae0',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite')),    
                 array("image_url"     => aza_get_file('/images/team4.png'), 
-                      "title"         => esc_html__("Joe Bloggs"),
-                      "subtitle"      => esc_html__("UX Designer"),
-                      "color"         => esc_html__("#887caf"),
-                      "text"          => esc_html__("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.")),      
+                      "title"         => esc_html__('Joe Bloggs','aza-lite'),
+                      "subtitle"      => esc_html__('UX Designer','aza-lite'),
+                      "color"         => '#887caf',
+                      "text"          => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')),      
             ) ) ) ;
 
 $team_content_decoded = json_decode($team_content);
@@ -44,12 +45,12 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                     <div class="col-lg-12 col-centered text-center">
                         <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.esc_html__($heading).'</h1>';    
+                        echo '<h1>'.$heading.'</h1>';    
                     }?>
                     <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_team_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
                      <?php
                                 if(!empty($subheading)) {
-                                echo '<p class = "team-p">'.esc_html__($subheading).'</p>';    
+                                echo '<p class = "team-p">'.$subheading.'</p>';    
                         }?>
                     </div>
                 </div>
@@ -67,12 +68,12 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         <div class="team-picture">
                             <div class="team-member-image" style="background-image: url(' .esc_url($team_content -> image_url).')"></div>
                             <div class="team-picture-overlay">
-                                <p class="team-description">'.esc_html__($team_content -> text).'</p>
+                                <p class="team-description">'.$team_content -> text.'</p>
                             </div>
                         </div>
                         <div class="separator-team"></div>
-                        <h4 class="team-name1" style = " color:'.esc_html__($team_content -> color).'">'.esc_html__($team_content -> title).'</h4>
-                        <p>'.esc_html__($team_content -> subtitle).'</p>
+                        <h4 class="team-name1" style = " color:'.$team_content -> color.'">'.$team_content -> title.'</h4>
+                        <p>'.$team_content -> subtitle.'</p>
                     </div>';
             
               
@@ -89,7 +90,7 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         if(!empty($button_text))
                         {
                         echo '<div class="col-lg-12 col-centered text-center">';
-                        echo '<button type="button" class="btn features-btn">'.esc_html__($button_text).'</button></div>';
+                        echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div>';
                         }
                     ?>  
                 </div>

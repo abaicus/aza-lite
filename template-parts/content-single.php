@@ -4,32 +4,33 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package AZA_Theme
+ * @package aza-lite
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-<div class="container">
-    <div class="row">
-        <div class="col-md-9 col-center">
             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
                 <div class="entry-meta">
                     <?php aza_posted_on(); ?>
                 </div>
                 <!-- .entry-meta -->
-        </div>
-    </div>
-</div>
 </header>
+    <div class="featured-image">
+  <?php      
+        if ( has_post_thumbnail() ) {
+	           the_post_thumbnail('large');
+                } ?>
+        
+    </div>
 <!-- .entry-header -->
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aza' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aza-lite' ),
 				'after'  => '</div>',
 			) );
 		?>
