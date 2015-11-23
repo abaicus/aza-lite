@@ -36,9 +36,7 @@ $team_content_decoded = json_decode($team_content);
 
 $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
 
-
 ?>    
-           
 <section id="team">
             <div class="container">
                 <div class="row">
@@ -47,19 +45,15 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                     if(!empty($heading)) {
                         echo '<h1>'.$heading.'</h1>';    
                     }?>
-                    <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_team_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+                    <?php echo ( get_theme_mod( 'aza_separator_team_top' ) ) ? "<hr class='separator'/>" : "" ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p class = "team-p">'.$subheading.'</p>';    
                         }?>
                     </div>
                 </div>
-                
                 <div class="row team-row text-center">
-
-
               <?php
-                    
                 if(!empty($team_content)) { 
     $team_content_decoded = json_decode($team_content); 
     if(!empty($team_content_decoded)) { 
@@ -75,17 +69,10 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         <h4 class="team-name1" style = " color:'.$team_content -> color.'">'.$team_content -> title.'</h4>
                         <p>'.$team_content -> subtitle.'</p>
                     </div>';
-            
-              
         }}}
                     ?>
-
-            </div>
-     
-        
-         
-            <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_team_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
-        
+            </div> 
+             <?php echo ( get_theme_mod( 'aza_separator_team_bottom' ) ) ? "<hr class='separator'/>" : "" ?>
              <?php
                         if(!empty($button_text))
                         {
@@ -94,7 +81,4 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         }
                     ?>  
                 </div>
-
-                
-
         </section>

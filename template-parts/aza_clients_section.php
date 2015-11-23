@@ -36,7 +36,7 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
                     if(!empty($heading)) {
                         echo '<h1>'.$heading.'</h1>';    
                     }?>
-                    <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_clients_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+                    <?php echo ( get_theme_mod( 'aza_separator_clients_top' ) ) ? "<hr class='separator'/>" : "" ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p>'.$subheading.'</p>';    
@@ -44,8 +44,6 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
                 </div>
             </div>
             <div class="row client-list ">
-
-
               <?php
                     
                 if(!empty($clients_content)) { 
@@ -59,12 +57,10 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
               
         }}}
                     ?>
-
             </div>
      
-        
          
-            <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_clients_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
+ <?php echo ( get_theme_mod( 'aza_separator_clients_bottom' ) ) ? "<hr class='separator'/>" : "" ?>
         
              <?php
                         if(!empty($button_text))

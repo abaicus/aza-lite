@@ -2,7 +2,7 @@
 SOCIAL SECTION 
 ============================== -->
 
-     <?php 
+<?php 
 
 $aza_primary_header = get_theme_mod('aza_social_heading_1', 'STAY CONNECTED');
 $aza_secondary_header = get_theme_mod('aza_social_heading_2', 'GET STARTED USING OUR THEME TODAY');
@@ -23,16 +23,13 @@ $social_icons = get_theme_mod ('aza_social_ribbon_icons', json_encode(
                       'link' => '#' , 
                       'color' => '#fc535f'),
 )));
-          
-?>    
-           
-
-           
-<section id="social">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                       <?php 
+    
+?>
+    <section id="social">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <?php 
 if(!empty($aza_primary_header)){
         echo "<h3>".$aza_primary_header."</h3>"; 
     }
@@ -47,34 +44,28 @@ if(!empty($social_icons)){
 echo '</p>';
 }}
                         ?>
-
-                        <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_social_ribbon' ) ) ? "" : "style='display:none!important;'" ?>></div>
-                        
-                        <?php
-
+                        <?php echo ( get_theme_mod( 'aza_separator_social_ribbon' ) ) ? "<hr class='separator'/>" : "" ?>
+                            <?php
 if(!empty($aza_secondary_header)){
         echo "<h3>".$aza_secondary_header."</h3>";
     }
                         ?>
-                    </div>
                 </div>
-
-                <div class="row social-btn-row" <?php echo ( get_theme_mod( 'aza_social_ribbon_store_buttons' ) ) ? "style='display:none!important;'>" : ">" ?>
-                    <div class="col-lg-12 text-center">
-                        <?php if((!empty($aza_appstore_link))||(!empty($aza_playstore_link))) {
+            </div>
+            <?php echo ( get_theme_mod( 'aza_social_ribbon_store_buttons' ) ) ? "" : "<div class='row social-btn-row'>"?>
+                <div class="col-lg-12 text-center">
+                    <?php if((!empty($aza_appstore_link))||(!empty($aza_playstore_link))) {
                        if(!empty($aza_appstore_link)){?>
-                            <a class="btn btn-primary btn-stores" href="<?php echo $aza_appstore_link ?>">
+                        <a class="btn btn-primary btn-stores" href="<?php echo $aza_appstore_link ?>">
                             <img src=" <?php echo esc_url($aza_appstore) ?>" alt="#">
                         </a>
-                            <?php }
+                        <?php }
                         if(!empty($aza_playstore_link)){?>
-                                <a class="btn btn-primary btn-stores" href="<?php echo $aza_playstore_link ?>">
+                            <a class="btn btn-primary btn-stores" href="<?php echo $aza_playstore_link ?>">
                             <img src=" <?php echo esc_url($aza_playstore) ?>" alt="#">
                         </a>
-                                <?php } }?>
-                    </div>
+                            <?php } }?>
                 </div>
-
-
-            </div>
-        </section>
+        </div>
+        </div>
+    </section>

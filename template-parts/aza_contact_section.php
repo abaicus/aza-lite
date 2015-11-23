@@ -20,7 +20,7 @@ $subheading = get_theme_mod('aza_contact_subtitle', 'Message us');
                     if(!empty($heading)) {
                         echo '<h1>'.$heading.'</h1>';    
                     }?>
-                    <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_contact_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+                     <?php echo ( get_theme_mod( 'aza_separator_contact_top' ) ) ? "<hr class='separator'/>" : "" ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p class = "team-p">'.$subheading.'</p>';    

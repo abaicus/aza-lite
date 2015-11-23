@@ -22,7 +22,7 @@ $loop = new WP_Query( $args );
 $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
 ?> 
            
-             <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "<div class='zig-zag-top' ></div>" : "" ?>
+             <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "<div class='zig-zag-top'></div>" : "" ?>
              
 <section id="portfolio">
     <div class="container">
@@ -32,7 +32,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                         if(!empty($title)) {
                             echo '<h1>'.$title.'</h1></div>';
                         }   ?> 
-                <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "<hr class='separator'>" : "" ?>
+                <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "<hr class='separator'/>" : "" ?>
 
                     <?php
                         if(!empty($subtitle)) {
@@ -80,7 +80,7 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
 
                 <div class="container">
                     <div class="row text-center">
-                        <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "<hr class='separator'>" : "" ?>
+                        <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "<hr class='separator'/>" : "" ?>
                     <?php
                         if(!empty($button_text))
                         {

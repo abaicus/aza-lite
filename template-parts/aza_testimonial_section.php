@@ -26,7 +26,7 @@ $var=0;
 $var1=0;
 
 ?>
-     <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_testimonial_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+      <?php echo ( get_theme_mod( 'aza_zigzag_testimonial_top' ) ) ? "<div class='zig-zag-top'></div>" : "" ?>
    
     <section id="testimonials">
         <div class="testimonials-background">
@@ -110,4 +110,4 @@ foreach($testimonial_decoded as $testimonial) {
 
     </section>
     
-    <div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_testimonial_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
+    <?php echo ( get_theme_mod( 'aza_zigzag_testimonial_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>

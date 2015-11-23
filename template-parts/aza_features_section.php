@@ -43,7 +43,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
 ?>
 
 
-    <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_features_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+   <?php echo ( get_theme_mod( 'aza_zigzag_features_top' ) ) ? "<div class='zig-zag-top'></div>" : "" ?>
 
     <section id="features">
         <div class="features-background">
@@ -124,5 +124,5 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
         </div>
  </section>
 
-        <div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_features_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
+        <?php echo ( get_theme_mod( 'aza_zigzag_features_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>
    

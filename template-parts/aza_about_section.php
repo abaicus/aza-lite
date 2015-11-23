@@ -41,30 +41,30 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
 
 ?>
 
-    <div class="zig-zag-top" <?php echo ( get_theme_mod( 'aza_zigzag_about_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
+    <?php echo ( get_theme_mod( 'aza_zigzag_about_top' ) ) ? "<div class='zig-zag-top'></div>" : "" ?>
 
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-centered text-center">
-                    <?php
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-centered text-center">
+                        <?php
                     if(!empty($heading)) {
                         echo '<h1>'.$heading.'</h1>';    
                     }?>
-                    
-                         <div class="separator" <?php echo ( get_theme_mod( 'aza_separator_about_top' ) ) ? "" : "style='display:none!important;'" ?>></div>
 
-                        <?php
+                            <?php echo ( get_theme_mod( 'aza_separator_about_top' ) ) ? "<hr class='separator'/>" : "" ?>
+
+                                <?php
                                 if(!empty($subheading)) {
                                 echo '<p>'.$subheading.'</p>';    
                         }?>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row about-content">
-              <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 ">
-               <ul class="knob-list">
-               
+
+                <div class="row about-content">
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 ">
+                        <ul class="knob-list">
+
                             <?php
 
                             $var = 1;
@@ -80,36 +80,30 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                                         echo '<p>'.$about_content->text.'</p>';
                                         echo '</div></li>';
                                             $var++;
-                        }
-                                       }}
-                  ?> </div> </ul>
+                        }}}
+                  ?>
+                    </div>
+                    </ul>
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 text-center">
 
-       
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 text-center" >
-
-                <?php if(!empty($about_image)) {
+                        <?php if(!empty($about_image)) {
                         echo '<img src = " '.esc_url($about_image).'" alt = "#"/>';
                     }?>
+                    </div>
                 </div>
-                </div>
-        </div>
-              
-                     <div class="container">
-                     <div class="row">       
-            <hr class="separator" <?php echo ( get_theme_mod( 'aza_separator_about_bottom' ) ) ? "" : "style='display:none!important;'" ?>>
-        
-             <?php
+            </div>
+            <div class="container">
+                <div class="row">
+                    <?php echo ( get_theme_mod( 'aza_separator_about_bottom' ) ) ? " <hr class='separator'/>" : "" ?>
+                        <?php
                         if(!empty($button_text))
                         {
-                      
                         echo '<div class="col-lg-12 col-centered text-center">';
                         echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div>';
                         }
-                    ?>  
-                </div></div></div>
-   
-   </section>
-<div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_about_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
-
-
-       
+                    ?>
+                </div>
+            </div>
+            </div>
+        </section>
+        <?php echo ( get_theme_mod( 'aza_zigzag_about_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>
