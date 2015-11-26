@@ -73,7 +73,7 @@ function aza_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'aza_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => '#ffffff',
 		'default-image' => '',
 	) ) );
 }
@@ -129,7 +129,7 @@ function portfolio_register() {
 		'not_found'           => esc_html__('Nothing found','aza-lite'),
 		'not_found_in_trash'  => esc_html__('Nothing found in Trash','aza-lite'),
 		'parent_item_colon'   => '' );
-    
+
     $args = array(
 		'labels' => $labels,
 		'public' => true,
@@ -142,13 +142,13 @@ function portfolio_register() {
 		'hierarchical' => false,
 		'menu_position' => null,
 		'supports' => array('title','editor','thumbnail')
-	  ); 
- 
+	  );
+
 	register_post_type( 'portfolio' , $args );
 }
-    
-add_action('init', 'portfolio_register');    
-    
+
+add_action('init', 'portfolio_register');
+
 
 
 
@@ -156,31 +156,29 @@ add_action('init', 'portfolio_register');
  * Enqueue scripts and styles.
  */
 function aza_scripts() {
-    
+
     wp_enqueue_style( 'aza-bootstrap-style', aza_get_file( '/css/bootstrap.min.css'), array(), '3.3.1');
-        
+
     wp_enqueue_style( 'aza-stamp-icons', aza_get_file('/stamp-icons.css'));
-    
+
     wp_enqueue_style( 'aza-style', get_stylesheet_uri() );
 
     wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700|Homemade+Apple');
-    
+
 	wp_enqueue_script( 'aza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'aza-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-    
+
     wp_enqueue_script( 'aza-bootstrap', aza_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
-		
+
 	wp_enqueue_script( 'aza-custom-all', aza_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
-    
+
     wp_enqueue_script( 'aza-parallax-scroll', aza_get_file('/js/parallax-scroll.js'), array('jquery'), '1.0.0', true );
-    
+
     wp_enqueue_script( 'aza-jquery-knobs', aza_get_file('/js/jquery.knob.js'), array('jquery'), '1.0.0', true );
-//  
-//    wp_enqueue_script( 'aza-jquery-scroll-speed', aza_get_file('/js/jQuery.scrollSpeed.js'), array('jquery'), '1.0.2', true );
-   
+
     wp_enqueue_script( 'aza-script', aza_get_file('/js/script.js'), array('jquery'), '1.0.0', true );
-//    
+
     wp_localize_script( 'aza-custom-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'aza-lite' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'aza-lite' ) . '</span>',
@@ -218,7 +216,7 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 function aza_admin_styles() {
-	   
+
     wp_enqueue_style( 'aza_admin_stylesheet', aza_get_file('/css/admin-style.css'),'1.0.0' );
 }
 add_action( 'admin_enqueue_scripts', 'aza_admin_styles', 10 );
@@ -232,7 +230,7 @@ function aza_get_file($file){
 	if( in_array($file_parts['extension'], $accepted_ext) ){
 		$file_path = get_stylesheet_directory() . $file;
 		if ( file_exists( $file_path ) ){
-			return esc_url(get_stylesheet_directory_uri() . $file); 
+			return esc_url(get_stylesheet_directory_uri() . $file);
 		} else {
 			return esc_url(get_template_directory_uri() . $file);
 		}
@@ -246,7 +244,7 @@ function get_file($file){
 	if( in_array($file_parts['extension'], $accepted_ext) ){
 		$file_path = get_stylesheet_directory() . $file;
 		if ( file_exists( $file_path ) ){
-			return esc_url(get_stylesheet_directory_uri() . $file); 
+			return esc_url(get_stylesheet_directory_uri() . $file);
 		} else {
 			return esc_url(get_template_directory_uri() . $file);
 		}
@@ -263,22 +261,3 @@ function register_my_menus() {
       ));
 }
 add_action( 'init', 'register_my_menus' );
-
-
-
-
-add_action('wp_footer','repeater_php_style', 100);
-function repeater_php_style() {
-	
-	echo '<style type="text/css">';
-	
-
-		$aza_header_image = get_header_image();
-		if(!empty($aza_header_image)){
-			echo 'body{ background-image: url('.$aza_header_image.');
-            }';
-        }
-
-	echo '</style>';
-}
-

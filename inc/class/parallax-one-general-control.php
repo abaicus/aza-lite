@@ -81,25 +81,25 @@ class General_Repeater extends WP_Customize_Control {
                         
                 ?>
                         <div class="repeater_general_control_repeater_container">
-                            <div class="parallax-customize-control-title"><?php esc_html_e('+','parallax-one')?></div>
+                            <div class="parallax-customize-control-title"><?php esc_html_e('+','aza-lite')?></div>
                             <div class="parallax-box-content-hidden">
                                 <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
+                                        <span class="customize-control-title"><?php esc_html_e('Image type','aza-lite');?></span>
                                         <select class="repeater_image_choice">
-                                            <option value="parallax_icon" selected><?php esc_html_e('Icon','parallax-one'); ?></option>
-                                            <option value="parallax_image"><?php esc_html_e('Image','parallax-one'); ?></option>
-                                            <option value="parallax_none"><?php esc_html_e('None','parallax-one'); ?></option>
+                                            <option value="parallax_icon" selected><?php esc_html_e('Icon','aza-lite'); ?></option>
+                                            <option value="parallax_image"><?php esc_html_e('Image','aza-lite'); ?></option>
+                                            <option value="parallax_none"><?php esc_html_e('None','aza-lite'); ?></option>
                                         </select>
 
                                         <p class="repeater_image_control" style="display:none">
-                                            <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Image','aza-lite')?></span>
                                             <input type="text" class="widefat custom_media_url">
-                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
+                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','aza-lite'); ?>" />
                                         </p>
 
                                         <div class="repeater_general_control_icon">
-                                            <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one');?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Icon','aza-lite');?></span>
                                             <select class="repeater_icon_control">
                                             <?php
                                                 foreach($icons_array as $contact_icon) {
@@ -111,17 +111,17 @@ class General_Repeater extends WP_Customize_Control {
                                 <?php
                                     } else {
                                         if($parallax_image_control ==true){	?>
-                                            <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Image','aza-lite')?></span>
                                             <p class="repeater_image_control">
                                                 <input type="text" class="widefat custom_media_url">
-                                                <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
+                                                <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','aza-lite'); ?>" />
                                             </p>
                                 <?php
                                         }
 
                                        if($parallax_icon_control ==true){
                                 ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one')?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Icon','aza-lite')?></span>
                                             <select name="<?php echo esc_attr($this->id); ?>" class="repeater_icon_control">
                                                 <?php
                                                     foreach($icons_array as $contact_icon) {
@@ -134,46 +134,46 @@ class General_Repeater extends WP_Customize_Control {
                         
                                     if($parallax_title_control==true){
                                 ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Title','parallax-one')?></span>
-                                        <input type="text" class="repeater_title_control" placeholder="<?php esc_html_e('Title','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Title','aza-lite')?></span>
+                                        <input type="text" class="repeater_title_control" placeholder="<?php esc_html_e('Title','aza-lite'); ?>"/>
                                 <?php
                                     }
                         
                                     if($parallax_subtitle_control==true){
                                 ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Subtitle','parallax-one')?></span>
-                                        <input type="text" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Subtitle','aza-lite')?></span>
+                                        <input type="text" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','aza-lite'); ?>"/>
                                 <?php
                                     }
  
 
                                     if($parallax_text_control==true){?>
-                                        <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
-                                        <textarea class="repeater_text_control" placeholder="<?php esc_html_e('Text','parallax-one'); ?>"></textarea>
+                                        <span class="customize-control-title"><?php esc_html_e('Text','aza-lite')?></span>
+                                        <textarea class="repeater_text_control" placeholder="<?php esc_html_e('Text','aza-lite'); ?>"></textarea>
                                 <?php }
 
                                     if($parallax_link_control==true){ ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
-                                        <input type="text" class="repeater_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Link','aza-lite')?></span>
+                                        <input type="text" class="repeater_link_control" placeholder="<?php esc_html_e('Link','aza-lite'); ?>"/>
                                 <?php } 
                                     if($parallax_shortcode_control==true){
                                     ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
-                                        <input type="text" class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Shortcode','aza-lite')?></span>
+                                        <input type="text" class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','aza-lite'); ?>"/>
                                  <?php } 
                         if($parallax_color_control==true){
                                     ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Color','parallax-one')?></span>
-                                        <input type="text" class="repeater_color_control" placeholder="<?php esc_html_e('Color','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Color','aza-lite')?></span>
+                                        <input type="text" class="repeater_color_control" placeholder="<?php esc_html_e('Color','aza-lite'); ?>"/>
                                  <?php } 
                                     if($parallax_percentage_control==true){
                                     ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
-                                         <input type="number" maxlength="3" min="0" max="100" class="repeater_percentage_control" placeholder="<?php esc_html_e('Percentage','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Percentage','aza-lite')?></span>
+                                         <input type="number" maxlength="3" min="0" max="100" class="repeater_percentage_control" placeholder="<?php esc_html_e('Percentage','aza-lite'); ?>"/>
                                  <?php }
                                 ?>
                                 <input type="hidden" class="repeater_box_id">
-                            <button type="button" class="repeater_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','parallax-one'); ?></button>
+                            <button type="button" class="repeater_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','aza-lite'); ?></button>
                             </div>
                         </div>
                 <?php
@@ -183,25 +183,25 @@ class General_Repeater extends WP_Customize_Control {
                              
                 ?>
                                 <div class="repeater_general_control_repeater_container repeater_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('+','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('+','aza-lite')?></div>
                                     <div class="parallax-box-content-hidden">
                                          <?php
                                             if($parallax_image_control == true && $parallax_icon_control == true){ ?>
-                                                <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Image type','aza-lite');?></span>
                                                 <select class="repeater_image_choice">
-                                                    <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','parallax-one');?></option>
-                                                    <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','parallax-one');?></option>
-                                                    <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','parallax-one');?></option>
+                                                    <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','aza-lite');?></option>
+                                                    <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','aza-lite');?></option>
+                                                    <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','aza-lite');?></option>
                                                 </select>
 
                                                 <p class="repeater_image_control"  <?php if(!empty($icon->choice) && $icon->choice!='parallax_image'){ echo 'style="display:none"';}?>>
-                                                    <span class="customize-control-title"><?php esc_html_e('Image','parallax-one');?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Image','aza-lite');?></span>
                                                     <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
+                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','aza-lite'); ?>" />
                                                 </p>
 
                                                 <div class="repeater_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='parallax_icon'){ echo 'style="display:none"';}?>>
-                                                    <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one');?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Icon','aza-lite');?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="repeater_icon_control">
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="repeater_icon_control">
                                                         <?php
@@ -216,15 +216,15 @@ class General_Repeater extends WP_Customize_Control {
                                             } else {
                                         ?>
                                         <?php	if($parallax_image_control==true){ ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Image','aza-lite')?></span>
                                                     <p class="repeater_image_control">
                                                         <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                                        <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
+                                                        <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','aza-lite'); ?>" />
                                                     </p>
                                         <?php	}
 
                                                 if($parallax_icon_control==true){ ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one')?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Icon','aza-lite')?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="repeater_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
@@ -237,43 +237,43 @@ class General_Repeater extends WP_Customize_Control {
                                             }
                                                 if($parallax_title_control==true){
                                         ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Title','parallax-one')?></span>
-                                                    <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="repeater_title_control" placeholder="<?php esc_html_e('Title','parallax-one'); ?>"/>
+                                                    <span class="customize-control-title"><?php esc_html_e('Title','aza-lite')?></span>
+                                                    <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="repeater_title_control" placeholder="<?php esc_html_e('Title','aza-lite'); ?>"/>
                                         <?php
                                                 }
 
                                                 if($parallax_subtitle_control==true){
                                         ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Subtitle','parallax-one')?></span>
-                                                    <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','parallax-one'); ?>"/>
+                                                    <span class="customize-control-title"><?php esc_html_e('Subtitle','aza-lite')?></span>
+                                                    <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','aza-lite'); ?>"/>
                                         <?php
                                                 }
  
                                                 if($parallax_text_control==true){ ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
-                                                    <textarea placeholder="<?php esc_html_e('Text','parallax-one'); ?>" class="repeater_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
+                                                    <span class="customize-control-title"><?php esc_html_e('Text','aza-lite')?></span>
+                                                    <textarea placeholder="<?php esc_html_e('Text','aza-lite'); ?>" class="repeater_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                                         <?php	}
                                                 if($parallax_link_control){ ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
-                                                    <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="repeater_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
+                                                    <span class="customize-control-title"><?php esc_html_e('Link','aza-lite')?></span>
+                                                    <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="repeater_link_control" placeholder="<?php esc_html_e('Link','aza-lite'); ?>"/>
                                         <?php	}
                                                 if($parallax_shortcode_control==true){ ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
-                                        <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Shortcode','aza-lite')?></span>
+                                        <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','aza-lite'); ?>"/>
                                         
                                         <?php	}
                                                 if($parallax_color_control==true){ ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Color','parallax-one')?></span>
-                                        <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="repeater_color_control" placeholder="<?php esc_html_e('Color','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Color','aza-lite')?></span>
+                                        <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="repeater_color_control" placeholder="<?php esc_html_e('Color','aza-lite'); ?>"/>
                                         
                                         <?php   }
                                                 if($parallax_percentage_control==true){ ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
-                                         <input type="number" maxlength="3" min="0" max="100" value='<?php if(!empty($icon->percentage)) echo $icon->percentage; ?>' class="repeater_percentage_control" placeholder="<?php esc_html_e('Percentage','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Percentage','aza-lite')?></span>
+                                         <input type="number" maxlength="3" min="0" max="100" value='<?php if(!empty($icon->percentage)) echo $icon->percentage; ?>' class="repeater_percentage_control" placeholder="<?php esc_html_e('Percentage','aza-lite'); ?>"/>
                                         <?php   }
                                         ?>
                                         <input type="hidden" class="repeater_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
-                                    <button type="button" class="repeater_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
+                                    <button type="button" class="repeater_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','aza-lite'); ?></button>
                                     </div>
 
                                 </div>
@@ -286,26 +286,26 @@ class General_Repeater extends WP_Customize_Control {
 //                                var_dump($json);
                     ?>
                                 <div class="repeater_general_control_repeater_container repeater_draggable">
-                                    <div class="parallax-customize-control-title"><?php esc_html_e('+','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('+','aza-lite')?></div>
                                     <div class="parallax-box-content-hidden">
                                     <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
+                                        <span class="customize-control-title"><?php esc_html_e('Image type','aza-lite');?></span>
                                         <select class="repeater_image_choice">
-                                            <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','parallax-one');?></option>
-                                            <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','parallax-one');?></option>
-                                            <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','parallax-one');?></option>
+                                            <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','aza-lite');?></option>
+                                            <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','aza-lite');?></option>
+                                            <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','aza-lite');?></option>
                                         </select>
 
 
                                         <p class="repeater_image_control" <?php if(!empty($icon->choice) && $icon->choice!='parallax_image'){ echo 'style="display:none"';}?>>
-                                            <span class="customize-control-title"><?php esc_html_e('Image','parallax-one');?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Image','aza-lite');?></span>
                                             <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
+                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','aza-lite'); ?>" />
                                         </p>
 
                                         <div class="repeater_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='parallax_icon'){ echo 'style="display:none"';}?>>
-                                            <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one');?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Icon','aza-lite');?></span>
                                             <select name="<?php echo esc_attr($this->id); ?>" class="repeater_icon_control">
                                             <?php
                                                 foreach($icons_array as $contact_icon) {
@@ -320,15 +320,15 @@ class General_Repeater extends WP_Customize_Control {
                                     ?>
                                         <?php
                                             if($parallax_image_control == true){ ?>
-                                                <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Image','aza-lite')?></span>
                                                 <p class="repeater_image_control">
                                                     <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
+                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','aza-lite'); ?>" />
                                                 </p>
                                         <?php }
 
                                             if($parallax_icon_control==true){ ?>
-                                                <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one')?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Icon','aza-lite')?></span>
                                                 <select name="<?php echo esc_attr($this->id); ?>" class="repeater_icon_control">
                                                 <?php
                                                     foreach($icons_array as $contact_icon) {
@@ -341,50 +341,50 @@ class General_Repeater extends WP_Customize_Control {
                                         }
                                         if($parallax_title_control==true){
                                         ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Title','parallax-one')?></span>
-                                            <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="repeater_title_control" placeholder="<?php esc_html_e('Title','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Title','aza-lite')?></span>
+                                            <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="repeater_title_control" placeholder="<?php esc_html_e('Title','aza-lite'); ?>"/>
                                         <?php
                                                 }
 
                                         if($parallax_subtitle_control==true){
                                         ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Subtitle','parallax-one')?></span>
-                                            <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Subtitle','aza-lite')?></span>
+                                            <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','aza-lite'); ?>"/>
                                         <?php
                                         }
                                         if($parallax_text_control==true ){?>
-                                            <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
-                                            <textarea class="repeater_text_control" placeholder="<?php esc_html_e('Text','parallax-one'); ?>"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
+                                            <span class="customize-control-title"><?php esc_html_e('Text','aza-lite')?></span>
+                                            <textarea class="repeater_text_control" placeholder="<?php esc_html_e('Text','aza-lite'); ?>"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                                         <?php }
 
                                         if($parallax_link_control){ ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
-                                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="repeater_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Link','aza-lite')?></span>
+                                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="repeater_link_control" placeholder="<?php esc_html_e('Link','aza-lite'); ?>"/>
                                         <?php }
                                         
                                 
                                         if($parallax_shortcode_control==true){ ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
-                                            <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Shortcode','aza-lite')?></span>
+                                            <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','aza-lite'); ?>"/>
                                             
                                             <?php }
                                         
                                 
                                         if($parallax_color_control==true){ ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Color','parallax-one')?></span>
-                                            <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="repeater_color_control" placeholder="<?php esc_html_e('Color','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Color','aza-lite')?></span>
+                                            <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="repeater_color_control" placeholder="<?php esc_html_e('Color','aza-lite'); ?>"/>
                                             
                                   <?php  }
                                 
                                         if($parallax_percentage_control==true){ ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Percentage','parallax-one')?></span>
-                                            <input type="number" maxlength="3" min="0" max="100" value='<?php if(!empty($icon->percentage)) echo $icon->percentage; ?>' class="repeater_percentage_control" placeholder="<?php esc_html_e('Percentage','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Percentage','aza-lite')?></span>
+                                            <input type="number" maxlength="3" min="0" max="100" value='<?php if(!empty($icon->percentage)) echo $icon->percentage; ?>' class="repeater_percentage_control" placeholder="<?php esc_html_e('Percentage','aza-lite'); ?>"/>
                                   <?php  }  
                                         ?>
                                         <input type="hidden" class="repeater_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                         <button type="button" class="repeater_general_control_remove_field button" <?php 
                                             if ($it == 0)
-                                            echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
+                                            echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','aza-lite'); ?></button>
                                     </div>
 
                                 </div>
@@ -406,7 +406,7 @@ class General_Repeater extends WP_Customize_Control {
 
             <button type="button"   class="button add_field repeater_general_control_new_field"    
 
-            ><?php esc_html_e('Add new field','parallax-one'); ?></button>
+            ><?php esc_html_e('Add new field','aza-lite'); ?></button>
 
             <?php
 
