@@ -40,13 +40,12 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                         }
 
                         ?>
-        </div> </div>
+            </div> 
 
 
 
 
 
-       <div class="container">
         <div class="row portfolio-content">
            <?php
             while ( $loop->have_posts() ) {
