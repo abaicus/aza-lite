@@ -13,30 +13,26 @@ $button_link = get_theme_mod('aza_features_button_link',"#");
 
 $features_icons_left = get_theme_mod ('aza_features_icons_left',json_encode(
             array(
-                array('icon_value' => 'icon-arrows-squares' , 
-                      'title' => 'Fully Responsive' , 
-                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'color' => '#3399df',
-                      'subtitle' => 'fully-responsive'),
-                array('icon_value' => 'icon-computer-imac' , 
-                      'title' => 'Clean Design' , 
-                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'subtitle' => 'clean-design',
+                array('icon_value' => 'icon-arrows-squares' ,
+                      'title' => 'Fully Responsive' ,
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' ,
+                      'color' => '#3399df'),
+                array('icon_value' => 'icon-computer-imac' ,
+                      'title' => 'Clean Design' ,
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' ,
                       'color'    => '#f0b57c'),
 )));
 
 
 $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
             array(
-                array('icon_value' => 'icon-ecommerce-diamond' , 
-                      'title' => 'Beautiful Showcase' , 
-                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'subtitle' => 'perfect-showcase',
+                array('icon_value' => 'icon-ecommerce-diamond' ,
+                      'title' => 'Beautiful Showcase' ,
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' ,
                       'color'    => '#4bb992'),
-                array('icon_value' => 'icon-settings-streamline-2' , 
-                      'title' => 'Fully Customizable' , 
-                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 
-                      'subtitle' => 'fully-customizable',
+                array('icon_value' => 'icon-settings-streamline-2' ,
+                      'title' => 'Fully Customizable' ,
+                      'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' ,
                       'color'    => '#8a74b9'),
 )));
 
@@ -49,12 +45,12 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
         <div class="features-background">
             <div class="container">
 
-                <?php if(!empty($features_heading)) { 
+                <?php if(!empty($features_heading)) {
             echo '<div class="row">
                 <div class="col-md-12">
                     <h1 class="text-center">'.$features_heading.'</h1>
                 </div>
-            </div>'; 
+            </div>';
             }?>
 
                     <div class="row features-content">
@@ -68,13 +64,13 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                                 <ul id="left-column">
 
                                     <?php                                    foreach($features_icons_left_decoded as $features_icons_left) {
-                                        echo '<li><div id="'.esc_html($features_icons_left->subtitle). '" class="circle text-center" style = "background-color: '.esc_html($features_icons_left->color).'"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
+                                        echo '<li><div class="circle text-center" style = "background-color: '.esc_html($features_icons_left->color).'"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
                                         <h3 class="features-name text-center">'.$features_icons_left->title.'</h3>
                                         <p class="features-description text-center">'.$features_icons_left->text.'</li>';
                                     }
-                                
+
                             echo '</ul>';}
-                           
+
                            } ?>
                         </div>
 
@@ -108,15 +104,15 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                            $features_icons_right_decoded = json_decode($features_icons_right);
                             if(!empty($features_icons_right_decoded)) {
                                 echo '<ul id="right-column">';
-                                
+
                                     foreach($features_icons_right_decoded as $features_icons_right) {
-                                       echo '<li><div id="'.esc_html($features_icons_right->subtitle). '" class="circle text-center" style = "background-color: '.esc_html($features_icons_right->color).'"><span class = " '.esc_html($features_icons_right->icon_value).'"></span></div>
+                                       echo '<li><div class="circle text-center" style = "background-color: '.esc_html($features_icons_right->color).'"><span class = " '.esc_html($features_icons_right->icon_value).'"></span></div>
                                         <h3 class="features-name text-center">'.$features_icons_right->title.'</h3>
                                         <p class="features-description text-center">'.$features_icons_right->text.'</li>';
                                     }
-                                
+
                             echo '</ul>';}
-                           
+
                            } ?>
                         </div>
                     </div>
@@ -125,4 +121,3 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
  </section>
 
         <div class="zig-zag-bottom" <?php echo ( get_theme_mod( 'aza_zigzag_features_bottom' ) ) ? "" : "style='display:none!important;'" ?>></div>
-   

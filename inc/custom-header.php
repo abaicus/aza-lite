@@ -22,19 +22,6 @@
  * @uses aza_admin_header_style()
  * @uses aza_admin_header_image()
  */
-function aza_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'aza_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'aza_header_style',
-		'admin-head-callback'    => 'aza_admin_header_style',
-		'admin-preview-callback' => 'aza_admin_header_image',
-	) ) );
-}
-add_action( 'after_setup_theme', 'aza_custom_header_setup' );
 
 if ( ! function_exists( 'aza_header_style' ) ) :
 /**
