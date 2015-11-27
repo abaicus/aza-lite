@@ -9,6 +9,7 @@ SHORTCODES SECTION
     
     if(!empty($aza_shortcodes_settings_decoded)){
         foreach($aza_shortcodes_settings_decoded as $scd_section){
+            if(!empty($scd_section->shortcode)){
            ?>
             <section id="pricing">
                 <div class="row">
@@ -30,7 +31,7 @@ SHORTCODES SECTION
                     echo do_shortcode ( $scd ); ?>
             </section>
             <?php
-            
+            }
         }
     }
 ?>
