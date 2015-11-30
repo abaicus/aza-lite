@@ -19,30 +19,116 @@ function aza_customize_register( $wp_customize ) {
 	/************** WP DEFAULT CONTROLS  ********************/
 	/********************************************************/
 
-	$wp_customize->remove_control('background_color');
+//	$wp_customize->remove_control('background_color');
 	// $wp_customize->remove_section('background_image');
 	$wp_customize->remove_section('colors');
-    // $wp_customize->get_section('header_image')->panel='panel_2';
-//        ->panel='panel_2';
+    // $wp_customize->get_section('header_image')->panel='appearance_panel';
+//        ->panel='appearance_panel';
 
 
 	/********************************************************/
+	/********************* PRELOADER ************************/
+	/********************************************************/
+    
+    $wp_customize->add_panel( 'aza_preloader_panel', array(
+		'priority' => 32,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+        'active_callback' => 'is_front_page',
+		'title' => esc_html__( 'Edit the preloader appearance', 'aza-lite' )
+	));
+    $wp_customize->add_section( 'aza_preloader_section' , array(
+		'title'       => esc_html__( 'Preloader Customization', 'aza-lite' ),
+      	'priority'    => 25,
+      	'description' => esc_html__('Edit aspects of the preloader','aza-lite'),
+		'panel'		  => ''
+	));
+    
+/*
+Preloader Colors
+*/    
+    $wp_customize->add_setting( 'aza_preloader_color', array(
+        'default' => '#fc535f',
+        'sanitize_callback' => 'aza_sanitize_text',
+        'description' => esc_html('Change the color of the preloader.', 'aza_lite'),
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control ( $wp_customize, 'preloader_color', 
+        array(
+            'label'      => __( 'Preloader Color', 'aza_lite' ),
+            'section'    => 'aza_preloader_section',
+            'settings'   => 'aza_preloader_color',
+        )));
+
+    $wp_customize->add_setting( 'aza_preloader_background_color', array(
+        'default' => '#333333',
+        'sanitize_callback' => 'aza_sanitize_text',
+        'description' => esc_html('Change the color of the preloader background.', 'aza_lite'),
+
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control ( $wp_customize, 'preloader_background-color', 
+        array(
+            'label'      => __( 'Preloader background Color', 'aza_lite' ),
+            'section'    => 'aza_preloader_section',
+            'settings'   => 'aza_preloader_background_color',
+        )));
+
+/*
+Preloader Toggle
+*/
+    
+    $wp_customize->add_setting( 'aza_preloader_toggle', array(
+        'default' => 1,
+        'sanitize_callback' => 'aza_sanitize_text',
+    ));
+
+    $wp_customize->add_control( 'aza_preloader_toggle', array(
+        'label' => 'Enable Preloader',
+        'type' => 'checkbox',
+        'section' => 'aza_preloader_section',
+        'settings' => 'aza_preloader_toggle',
+        'description' => esc_html('Toggle the website preloader ON or OFF.', 'aza_lite'),
+        'priority' => 0,
+    ));
+    
+/*
+Preloader Types
+*/
+    $wp_customize->add_setting( 'aza_preloader_type', array(
+        'default' => '1',
+    ));
+ 
+    $wp_customize->add_control( 'aza_preloader_type', array(
+        'type' => 'radio',
+        'label' => 'Preloader type',
+        'section' => 'aza_preloader_section',
+        'choices' => array(
+            '1' => 'Rotating plane',
+            '2' => 'Bouncing circles',
+            '3' => 'Folding square',
+            '4' => 'Bouncing lines',
+        ),
+    ));
+    
+    /********************************************************/
 	/********************* APPEARANCE  **********************/
 	/********************************************************/
 
-$wp_customize->add_panel( 'panel_2', array(
-		'priority' => 30,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => esc_html__( 'Appearance', 'aza-lite' )
-	) );
+$wp_customize->add_panel( 'appearance_panel', array(
+		'priority'          => 30,
+		'capability'        => 'edit_theme_options',
+		'theme_supports'    => '',
+		'title'             => esc_html__( 'Appearance', 'aza-lite' ),
+        'description'       => esc_html__( 'Customize the appearance of the front page sections.', 'aza-lite'),
+	));
 
 
 $wp_customize->add_section( 'aza_appearance_cover' , array(
 		'title'       => esc_html__( 'Cover options', 'aza-lite' ),
       	'priority'    => 30,
       	'description' => esc_html__('AZA theme general appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
 
@@ -159,7 +245,7 @@ FEATURES SECTION
 		'title'       => esc_html__( 'Features Section', 'aza-lite' ),
       	'priority'    => 31,
       	'description' => esc_html__('AZA theme Features section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
 /*-------------------------------
@@ -312,7 +398,7 @@ PARALLAX SECTION
 		'title'       => esc_html__( 'Parallax Section', 'aza-lite' ),
       	'priority'    => 32,
       	'description' => esc_html__('AZA theme Parallax section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
     $wp_customize->add_setting( 'aza_parallax_background', array(
@@ -387,7 +473,7 @@ TESTIMONIAL SECTION
      $wp_customize->add_section( 'aza_appearance_testimonials' , array(
 		'title'       => esc_html__( 'Testimonials Section', 'aza-lite' ),
       	'description' => esc_html__('AZA theme Testimonials section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
 
@@ -468,7 +554,7 @@ RIBBON SECTION
     $wp_customize->add_section( 'aza_appearance_ribbon' , array(
 		'title'       => esc_html__( 'Ribbon Section', 'aza-lite' ),
       	'description' => esc_html__('AZA theme Ribbon appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
      $wp_customize->add_setting( 'aza_ribbon_text', array(
@@ -502,7 +588,7 @@ PORTFOLIO SECTION
     $wp_customize->add_section( 'aza_appearance_portfolio' , array(
 		'title'       => esc_html__( 'Portfolio Section', 'aza-lite' ),
       	'description' => esc_html__('AZA theme Portfolio section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
             /*---------------------------------------
@@ -638,7 +724,7 @@ ABOUT SECTION
     $wp_customize->add_section( 'aza_appearance_about' , array(
 		'title'       => esc_html__( 'About us section', 'aza-lite' ),
       	'description' => esc_html__('AZA theme About section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
     /*---------------------------------------
@@ -841,7 +927,7 @@ CLIENTS SECTION
     $wp_customize->add_section( 'aza_appearance_clients' , array(
 		'title'       => esc_html__( 'Clients Section', 'aza-lite' ),
       	'description' => esc_html__('AZA theme Clients section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
     /*---------------------------------------
@@ -946,7 +1032,7 @@ TEAM SECTION
     $wp_customize->add_section( 'aza_appearance_team' , array(
 		'title'       => esc_html__( 'Team Section', 'aza-lite' ),
       	'description' => esc_html__('AZA theme Team section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
     /*---------------------------------------
@@ -1067,7 +1153,7 @@ BLOG SECTION
     $wp_customize->add_section( 'aza_appearance_blog' , array(
 		'title'       => esc_html__( 'Blog Section', 'aza-lite' ),
       	'description' => esc_html__('AZA theme Blog section appearance options','aza-lite'),
-		'panel'		  => 'panel_2'
+		'panel'		  => 'appearance_panel'
 	));
 
     /*---------------------------------------
@@ -1158,7 +1244,7 @@ CONTACT SECTION
     $wp_customize->add_section( 'aza_appearance_contact' , array(
                 'title'       => esc_html__( 'Contact Section', 'aza-lite' ),
                 'description' => esc_html__('AZA theme contact section shortcode','aza-lite'),
-                'panel'		  => 'panel_2'
+                'panel'		  => 'appearance_panel'
             ));
         $wp_customize->add_setting( 'frontpage_contact_shortcode', array(
                 'sanitize_callback' => 'aza_sanitize_text',
@@ -1215,7 +1301,7 @@ INTERGEO MAPS SECTION
         $wp_customize->add_section( 'aza_appearance_map' , array(
                 'title'       => esc_html__( 'Maps Section', 'aza-lite' ),
                 'description' => esc_html__('AZA theme maps section shortcode','aza-lite'),
-                'panel'		  => 'panel_2'
+                'panel'		  => 'appearance_panel'
             ));
         $wp_customize->add_setting( 'frontpage_map_shortcode', array(
                 'sanitize_callback' => 'aza_sanitize_text',
@@ -1233,7 +1319,7 @@ SOCIAL RIBBON
     $wp_customize->add_section( 'aza_appearance_social_ribbon' , array(
                 'title'       => esc_html__( 'Social Ribbon', 'aza-lite' ),
                 'description' => esc_html__('AZA theme social ribbon appearance options.','aza-lite'),
-                'panel'		  => 'panel_2'
+                'panel'		  => 'appearance_panel'
             ));
 
 

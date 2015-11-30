@@ -2,8 +2,7 @@
 SHORTCODES SECTION
 ============================== -->
     
-<?php
-    $aza_shortcodes_settings = get_theme_mod('aza_shortcodes_settings');
+<?php    $aza_shortcodes_settings = get_theme_mod('aza_shortcodes_settings');
 
     $aza_shortcodes_settings_decoded = json_decode($aza_shortcodes_settings);
     

@@ -6,6 +6,12 @@
  *
  * @package aza-lite
  */
+
+$preloader_color = get_theme_mod('aza_preloader_color');
+$preloader_background_color = get_theme_mod('aza_preloader_background_color');
+$preloader_toggle = get_theme_mod('aza_preloader_toggle');
+$preloader_type = get_theme_mod('aza_preloader_type');
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -18,7 +24,51 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
-
+<?php if($preloader_toggle) { ?>
+       
+   
+    <div id="loader-wrapper">
+        <div id="loader">
+             
+          <?php    
+        switch ( $preloader_type ) {
+            case '1': ?>
+               <div class="sk-rotating-plane" style="background-color: <?php echo $preloader_color ?>"></div>
+            <?php break;
+            case '2': ?>
+                <div class="sk-three-bounce">
+                    <div class="sk-child sk-bounce1" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="sk-child sk-bounce2" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="sk-child sk-bounce3" style="background-color: <?php echo $preloader_color ?>"></div>
+                </div>
+             <?php
+                break;
+            case '3': ?>
+                <div class="sk-folding-cube">
+                    <div class="sk-cube1 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="sk-cube2 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="sk-cube4 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="sk-cube3 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
+                </div>
+            <?php
+                break;
+            case '4': ?>
+                <div class="spinner">
+                    <div class="rect1" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="rect2" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="rect3"style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="rect4" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="rect5" style="background-color: <?php echo $preloader_color ?>"></div>
+                </div>
+                <?php
+        }
+                 ?>
+        </div>
+        <div class="loader-section section-left" style="background-color: <?php echo $preloader_background_color ?>"></div>
+        <div class="loader-section section-right"  style="background-color: <?php echo $preloader_background_color ?>"></div>
+    </div>
+    
+    <?php } ?>
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aza-lite' ); ?></a>
 

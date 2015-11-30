@@ -1,29 +1,33 @@
 /*=============================
+=========== JS CHECK  =========
+===============================*/
+
+        jQuery('html').removeClass('no-js');
+        jQuery('html').addClass('js');
+
+/*=============================
+======= PRELOADER SCRIPT ======
+===============================*/
+
+
+jQuery(document).ready(function () {
+
+    setTimeout(function () {
+        jQuery('#wrapper').removeClass('not_ready');
+        jQuery('body').addClass('loaded');
+        
+    }, 1000);
+});
+
+
+/*=============================
 ========= MAP OVERLAY =========
 ===============================*/
 
-//jQuery(document).ready(function(){
    jQuery('.map_overlay').click(function(){
        jQuery(this).hide();
    });
-    
-
-//});
-
-//
-//jQuery(document).ready(function(){
-//    jQuery('html').click(function(event) {
-//        jQuery('.map_overlay').show();
-//    });
-//    
-//    jQuery('#container-fluid').click(function(event){
-//        event.stopPropagation();
-//    });
-//    
-//    jQuery('.map_overlay').on('click',function(event){
-//        jQuery(this).hide();
-//    })
-//});
+  
 
 /*=============================
 ========= KNOBS VALUES ========
@@ -42,14 +46,3 @@ jQuery('.percentages').knob({
 });
 
 
-//Loader
-
-
-jQuery(document).ready(function () {
-
-    setTimeout(function () {
-        jQuery('#wrapper').removeClass('not_ready');
-        jQuery('body').addClass('loaded');
-        
-    }, 1000);
-});
