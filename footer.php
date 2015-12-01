@@ -87,7 +87,7 @@ echo '</h4>';
     <!-- #page -->
 </div>
     <?php wp_footer(); ?>
-
+</div>
         </body>
 
         </html>

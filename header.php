@@ -7,8 +7,8 @@
  * @package aza-lite
  */
 
-$preloader_color = get_theme_mod('aza_preloader_color');
-$preloader_background_color = get_theme_mod('aza_preloader_background_color');
+$preloader_color = get_option('aza_preloader_color');
+$preloader_background_color = get_option('aza_preloader_background_color');
 $preloader_toggle = get_theme_mod('aza_preloader_toggle');
 $preloader_type = get_theme_mod('aza_preloader_type');
 
@@ -31,6 +31,7 @@ $preloader_type = get_theme_mod('aza_preloader_type');
         <div id="loader">
              
           <?php    
+        
         switch ( $preloader_type ) {
             case '1': ?>
                <div class="sk-rotating-plane" style="background-color: <?php echo $preloader_color ?>"></div>
@@ -60,7 +61,7 @@ $preloader_type = get_theme_mod('aza_preloader_type');
                 <div class="spinner">
                     <div class="rect1" style="background-color: <?php echo $preloader_color ?>"></div>
                     <div class="rect2" style="background-color: <?php echo $preloader_color ?>"></div>
-                    <div class="rect3"style="background-color: <?php echo $preloader_color ?>"></div>
+                    <div class="rect3" style="background-color: <?php echo $preloader_color ?>"></div>
                     <div class="rect4" style="background-color: <?php echo $preloader_color ?>"></div>
                     <div class="rect5" style="background-color: <?php echo $preloader_color ?>"></div>
                 </div>

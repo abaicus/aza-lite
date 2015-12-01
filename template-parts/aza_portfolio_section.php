@@ -22,32 +22,34 @@ $loop = new WP_Query( $args );
 $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
 ?>
 
-             <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "<div class='zig-zag-top' ></div>" : "" ?>
+    <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_top' ) ) ? "<div class='zig-zag-top' ></div>" : "" ?>
 
-<section id="portfolio">
-    <div class="container">
-        <div class="row text-center">
-           <div class="col-lg-12 col-centered">
-            <?php
+        <section id="portfolio">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-12 col-centered">
+                        <?php
                         if(!empty($title)) {
-                            echo '<h1>'.$title.'</h1></div>';
+                            echo '<h1>'.$title.'</h1>';
                         }   ?>
-                <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "<hr class='separator'>" : "" ?>
+                            <?php echo ( get_theme_mod( 'aza_separator_portfolio_top' ) ) ? "<hr class='separator'>" : "" ?>
 
-                    <?php
+                                <?php
                         if(!empty($subtitle)) {
                             echo '<p>'.$subtitle.'</p>';
                         }
 
                         ?>
-            </div> 
+                    </div>
+                </div>
 
 
 
 
 
-        <div class="row portfolio-content">
-           <?php
+                <div class="row portfolio-content">
+
+                    <?php
             while ( $loop->have_posts() ) {
                 $loop->the_post() ;
                 $post_id = get_the_ID();
@@ -57,30 +59,31 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                 $thumb = get_the_post_thumbnail();
                     ?>
 
-             <div class="col-lg-4 col-md-6 col-sm-7 col-xs-10 text-center portfolio-collumns">
+                        <div class="col-lg-4 col-md-6 col-sm-7 col-xs-10 text-center portfolio-collumns">
+                            <?php echo ( $show_link_to_single ) ? '<a href = "'.esc_url($post_link).'">' : '' ?>
+                                <?php if (has_post_thumbnail() ): ?>
+                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'single-post-thumbnail' ); ?>
+                                        <div class="portfolio-item" style="background-image: url(<?php echo $image[0]; ?>);">
+                                            <?php endif; ?>
+                                                <div class="portfolio-img-overlay">
+                                                    <h3><?php echo $post_title ?></h3>
+                                                </div>
+                                        </div>
 
-             <?php echo ( $show_link_to_single ) ? '<a href = "'.esc_url($post_link).'">' : '' ?>
-             <?php if (has_post_thumbnail() ): ?>
-             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'single-post-thumbnail' ); ?>
-                <div class= "portfolio-item" style="background-image: url(<?php echo $image[0]; ?>);">
-             <?php endif; ?>
-                <div class= "portfolio-img-overlay">
-                <h3><?php echo $post_title ?></h3>
-                </div> </div>
-
-                      <?php echo ( $show_link_to_single ) ? '</a>' : '' ?>
+                                        <?php echo '</a>'?>
+                        </div>
 
 
-                  </div>
-           <?php
+                        <?php
             }
             ?>
-    </div></div>
+                </div>
+            </div>
 
-                <div class="container">
-                    <div class="row text-center">
-                        <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "<hr class='separator'>" : "" ?>
-                    <?php
+            <div class="container">
+                <div class="row text-center">
+                    <?php echo ( get_theme_mod( 'aza_separator_portfolio_bottom' ) ) ? "<hr class='separator'>" : "" ?>
+                        <?php
                         if(!empty($button_text))
                         {
                         echo '<div class="container text-center"';
@@ -88,8 +91,8 @@ $button_text = get_theme_mod('aza_portfolio_button_text', 'Other Works')
                         echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div></div>';
                         }
                     ?>
+                </div>
+            </div>
 
-                </div>
-                </div>
         </section>
-         <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>
+        <?php echo ( get_theme_mod( 'aza_zigzag_portfolio_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>

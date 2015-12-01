@@ -291,10 +291,12 @@ Rotating Plane
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
             transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
 
+/*
 #wrapper.not_ready {
     display: none;
     transition: all 0.5s ease;
 }
+*/
 
 
 /*=================================region LOADER=================================*/
@@ -1117,7 +1119,7 @@ header .navbar-brand {
 }
 
 .site-header-menu.toggled-on,
-.no-js .site-header-menu,
+.no-js .site-header-menu
 .js .site-header-menu {
     display: block;
 }
@@ -1873,13 +1875,6 @@ header .navbar-brand {
     color: #fc535f;
     font: 700 40px / 72px Montserrat;
     text-transform: uppercase;
-    margin: 0;
-}
-
-.portfolio-item p {
-    color: #ffffff;
-    font: 400 21px / 30px Roboto;
-    margin: 0;
 }
 
 .portfolio-item {

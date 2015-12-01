@@ -13,7 +13,7 @@
 jQuery(document).ready(function () {
 
     setTimeout(function () {
-        jQuery('#wrapper').removeClass('not_ready');
+//        jQuery('#wrapper').removeClass('snot_ready');
         jQuery('body').addClass('loaded');
         
     }, 1000);
