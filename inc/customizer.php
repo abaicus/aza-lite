@@ -38,10 +38,10 @@ function aza_customize_register( $wp_customize ) {
 		'title' => esc_html__( 'Edit the preloader appearance', 'aza-lite' )
 	));
     $wp_customize->add_section( 'aza_preloader_section' , array(
-		'title'       => esc_html__( 'Preloader Customization', 'aza-lite' ),
+		'title'       => esc_html__( 'Preloader', 'aza-lite' ),
       	'priority'    => 25,
-      	'description' => esc_html__('Edit aspects of the preloader','aza-lite'),
-		'panel'		  => ''
+      	'description' => esc_html__('Preloader options','aza-lite'),
+//		'panel'		  => 'aza_preloader_panel',
 	));
     
 /*
@@ -50,28 +50,30 @@ Preloader Colors
     $wp_customize->add_setting( 'aza_preloader_color', array(
         'default' => '#fc535f',
         'sanitize_callback' => 'aza_sanitize_text',
-        'description' => esc_html('Change the color of the preloader.', 'aza_lite'),
     ));
     
     $wp_customize->add_control( new WP_Customize_Color_Control ( $wp_customize, 'preloader_color', 
         array(
-            'label'      => __( 'Preloader Color', 'aza_lite' ),
+            'label'      => __( 'Color', 'aza_lite' ),
             'section'    => 'aza_preloader_section',
             'settings'   => 'aza_preloader_color',
+            'description' => esc_html__('Change the color of the preloader object.', 'aza_lite'),
+
         )));
 
     $wp_customize->add_setting( 'aza_preloader_background_color', array(
         'default' => '#333333',
         'sanitize_callback' => 'aza_sanitize_text',
-        'description' => esc_html('Change the color of the preloader background.', 'aza_lite'),
 
     ));
     
     $wp_customize->add_control( new WP_Customize_Color_Control ( $wp_customize, 'preloader_background-color', 
         array(
-            'label'      => __( 'Preloader background Color', 'aza_lite' ),
+            'label'      => __( 'Background Color', 'aza_lite' ),
             'section'    => 'aza_preloader_section',
             'settings'   => 'aza_preloader_background_color',
+            'description' => esc_html__('Change the background color of the preloader.', 'aza_lite'),
+
         )));
 
 /*
@@ -88,7 +90,7 @@ Preloader Toggle
         'type' => 'checkbox',
         'section' => 'aza_preloader_section',
         'settings' => 'aza_preloader_toggle',
-        'description' => esc_html('Toggle the website preloader ON or OFF.', 'aza_lite'),
+        'description' => esc_html__('Toggle the website preloader ON or OFF.', 'aza_lite'),
         'priority' => 0,
     ));
     
@@ -109,6 +111,7 @@ Preloader Types
             '3' => 'Folding square',
             '4' => 'Bouncing lines',
         ),
+        'description' => esc_html__('Change the preloader animation.')
     ));
     
     /********************************************************/
@@ -119,7 +122,7 @@ $wp_customize->add_panel( 'appearance_panel', array(
 		'priority'          => 30,
 		'capability'        => 'edit_theme_options',
 		'theme_supports'    => '',
-		'title'             => esc_html__( 'Appearance', 'aza-lite' ),
+		'title'             => esc_html__( 'Sections', 'aza-lite' ),
         'description'       => esc_html__( 'Customize the appearance of the front page sections.', 'aza-lite'),
 	));
 

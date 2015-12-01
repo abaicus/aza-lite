@@ -49,6 +49,10 @@ $preloader_type = get_theme_mod('aza_preloader_type');
                     <div class="sk-cube2 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
                     <div class="sk-cube4 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
                     <div class="sk-cube3 sk-cube" style="background-color: <?php echo $preloader_color ?>"></div>
+                    <style>
+                        .sk-folding-cube .sk-cube:before {
+                                background-color: <?php echo $preloader_background_color ?>;
+                    </style>
                 </div>
             <?php
                 break;
@@ -76,7 +80,7 @@ $preloader_type = get_theme_mod('aza_preloader_type');
      SECTION: HOME / HEADER  
     ============================== -->
 	<!--header-->
-	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" data-stellar-background-ratio="0.5" class="header header-style-one site-header">
+	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" class="header header-style-one site-header">
 
         <!-- COLOR OVER IMAGE -->
         <?php
