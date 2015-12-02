@@ -217,22 +217,14 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-// Enqueue admin scripts
-
-function aza_admin_scripts() {
-		wp_register_script( 'repeater_customizer_script', get_template_directory_uri() . '/js/admin/repeater_customizer.js', array( 'jquery' ), NULL, true );
-		wp_enqueue_script( 'repeater_customizer_script', get_file('/js/repeater_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
-
-		wp_register_script( 'aza_alpha_color_control_js', get_template_directory_uri() . '/js/admin/alpha_customizer.js', array( 'jquery' ), NULL, true );
-  	wp_enqueue_script( 'aza_alpha_color_control_js' );
-}
-add_action( 'admin_enqueue_scripts', 'aza_admin_scripts', 10 );
-
-// Enqueue admion styles
+// Enqueue admin styles and scripts
 
 function aza_admin_styles() {
 		wp_register_style ('aza_admin_stylesheet', get_template_directory_uri() . '/css/admin/admin-style.css', NULL, NULL, 'all' );
 		wp_enqueue_style( 'aza_admin_stylesheet');
+
+		wp_register_script( 'aza_admin_customizer_script', get_template_directory_uri() . '/js/admin/aza_admin_customizer.js', array( 'jquery' ), NULL, true );
+		wp_enqueue_script( 'aza_admin_customizer_script', get_file('/js/aza_admin_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 }
 add_action( 'customize_controls_print_styles', 'aza_admin_styles');
 
