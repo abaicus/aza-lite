@@ -64,9 +64,9 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                                     <ul id="left-column">
 
                                         <?php                                    foreach($features_icons_left_decoded as $features_icons_left) {
-                                        echo '<li><div class="circle text-center" style = "background-color: '.esc_html($features_icons_left->color).'"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
-                                        <h3 class="features-name text-center">'.$features_icons_left->title.'</h3>
-                                        <p class="features-description text-center">'.$features_icons_left->text.'</li>';
+                                        echo '<li><div class="circle text-center" style = "background-color: '.$features_icons_left->color.'"><span class = " '.$features_icons_left->icon_value.'"></span></div>
+                                        <h3 class="features-name text-center">'.html_entity_decode($features_icons_left->title).'</h3>
+                                        <p class="features-description text-center">'.html_entity_decode($features_icons_left->text).'</li>';
                                     }
 
                             echo '</ul>';}

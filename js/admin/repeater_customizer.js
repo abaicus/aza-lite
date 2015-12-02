@@ -110,34 +110,38 @@ function repeater_refresh_general_control_values(){
 		th.find(".repeater_general_control_repeater_container").each(function(){
 			var icon_value = jQuery(this).find('.repeater_icon_control').val();
 			var text = jQuery(this).find(".repeater_text_control").val();
-			if(text){
-				text = text.replace(/(['"])/g, "\\$1");
-			}
 			var link = jQuery(this).find(".repeater_link_control").val();
 			var image_url = jQuery(this).find(".custom_media_url").val();
 			var choice = jQuery(this).find(".repeater_image_choice").val();
 			var title = jQuery(this).find(".repeater_title_control").val();
+			var subtitle = jQuery(this).find(".repeater_subtitle_control").val();
+			var id = jQuery(this).find(".repeater_box_id").val();
+      var shortcode = jQuery(this).find(".repeater_shortcode_control").val();
+      var color = jQuery(this).find(".repeater_color_control").val();
+      var percentage = jQuery(this).find(".repeater_percentage_control").val();
+
+			if(text){
+				text = text.replace(/(['"])/g, "\\$1");
+			}
+
 			if(title){
 				title = title.replace(/(['"])/g, "\\$1");
 			}
-			var subtitle = jQuery(this).find(".repeater_subtitle_control").val();
+
 			if(subtitle){
 				subtitle = subtitle.replace(/(['"])/g, "\\$1");
 			}
-			var id = jQuery(this).find(".repeater_box_id").val();
-            var shortcode = jQuery(this).find(".repeater_shortcode_control").val();
-            var color = jQuery(this).find(".repeater_color_control").val();
-            var percentage = jQuery(this).find(".repeater_percentage_control").val();
+
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
-                    "text" : text,
+                    "text" : escapeHtml(text),
                     "link" : link,
                     "image_url" : (choice === 'parallax_none' ? "" : image_url),
                     "choice" : choice,
-                    "title" : title,
-                    "subtitle" : subtitle,
-					"id" : id,
+                    "title" : escapeHtml(title),
+                    "subtitle" : escapeHtml(subtitle),
+										"id" : id,
                     "shortcode" : escapeHtml(shortcode),
                     "color" : escapeHtml(color),
                     "percentage": percentage,
@@ -158,7 +162,7 @@ jQuery(document).ready(function(){
                 jQuery(this).css('display','block');
         });
     });
-    
+
     jQuery('#customize-theme-controls').on('change','.repeater_image_choice',function() {
         if(jQuery(this).val() == 'parallax_image'){
             jQuery(this).parent().parent().find('.repeater_general_control_icon').hide();
@@ -172,28 +176,28 @@ jQuery(document).ready(function(){
             jQuery(this).parent().parent().find('.repeater_general_control_icon').hide();
             jQuery(this).parent().parent().find('.repeater_image_control').hide();
         }
-        
+
         repeater_refresh_general_control_values();
-        return false;        
+        return false;
     });
     media_upload('.custom_media_button_parallax_one');
     jQuery(".custom_media_url").live('change',function(){
         repeater_refresh_general_control_values();
         return false;
     });
-    
+
 
 	jQuery("#customize-theme-controls").on('change', '.repeater_icon_control',function(){
 		repeater_refresh_general_control_values();
-		return false; 
+		return false;
 	});
 
 	jQuery(".repeater_general_control_new_field").on("click",function(){
-	 
+
 		var th = jQuery(this).parent();
 		var id = 'repeater_'+repeater_uniqid();
 		if(typeof th != 'undefined') {
-			
+
             var field = th.find(".repeater_general_control_repeater_container:first").clone();
             if(typeof field != 'undefined'){
                 field.find(".repeater_image_choice").val('parallax_icon');
@@ -215,11 +219,11 @@ jQuery(document).ready(function(){
                 th.find(".repeater_general_control_repeater_container:first").parent().append(field);
                 repeater_refresh_general_control_values();
             }
-			
+
 		}
 		return false;
 	 });
-	 
+
 	jQuery("#customize-theme-controls").on("click", ".repeater_general_control_remove_field",function(){
 		if( typeof	jQuery(this).parent() != 'undefined'){
 			jQuery(this).parent().parent().remove();
@@ -236,33 +240,33 @@ jQuery(document).ready(function(){
 	jQuery("#customize-theme-controls").on('keyup', '.repeater_subtitle_control',function(){
 		 repeater_refresh_general_control_values();
 	});
-    
+
     jQuery("#customize-theme-controls").on('keyup', '.repeater_shortcode_control',function(){
 		 repeater_refresh_general_control_values();
-	}); 
-     
+	});
+
     jQuery("#customize-theme-controls").on('keyup', '.repeater_color_control',function(){
 		 repeater_refresh_general_control_values();
-	}); 
-    
+	});
+
     jQuery("#customize-theme-controls").on('keyup', '.repeater_percentage_control',function(){
 		 repeater_refresh_general_control_values();
 	});
-    
+
 	jQuery("#customize-theme-controls").on('keyup', '.repeater_text_control',function(){
 		 repeater_refresh_general_control_values();
 	});
-	
+
 	jQuery("#customize-theme-controls").on('keyup', '.repeater_link_control',function(){
 		repeater_refresh_general_control_values();
 	});
-	
+
 	/*Drag and drop to change icons order*/
 	jQuery(".repeater_general_control_droppable").sortable({
 		update: function( event, ui ) {
 			repeater_refresh_general_control_values();
 		}
-	});	
+	});
 
 });
 
@@ -273,11 +277,13 @@ var entityMap = {
     ">": "&gt;",
     '"': '&quot;',
     "'": '&#39;',
-    "/": '&#x2F;'
+    "/": '&#x2F;',
   };
 
-  function escapeHtml(string) {
-    return String(string).replace(/[&<>"'\/]/g, function (s) {
-      return entityMap[s];
-    });
-  }
+	function escapeHtml(string) {
+      string = String(string).replace(new RegExp('\r?\n','g'), '<br />');
+      string = String(string).replace(/\\/g,'&#92;');
+      return String(string).replace(/[&<>"'\/]/g, function (s) {
+         return entityMap[s];
+      });
+}

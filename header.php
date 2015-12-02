@@ -7,10 +7,10 @@
  * @package aza-lite
  */
 
-$preloader_color = get_option('aza_preloader_color');
-$preloader_background_color = get_option('aza_preloader_background_color');
-$preloader_toggle = get_theme_mod('aza_preloader_toggle');
-$preloader_type = get_theme_mod('aza_preloader_type');
+$preloader_color = get_theme_mod('aza_preloader_color','#fc535f');
+$preloader_background_color = get_theme_mod('aza_preloader_background_color','#333333');
+$preloader_toggle = get_theme_mod('aza_preloader_toggle','1');
+$preloader_type = get_theme_mod('aza_preloader_type','1');
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -25,13 +25,13 @@ $preloader_type = get_theme_mod('aza_preloader_type');
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
 <?php if($preloader_toggle) { ?>
-       
-   
+
+
     <div id="loader-wrapper">
         <div id="loader">
-             
-          <?php    
-        
+
+          <?php
+
         switch ( $preloader_type ) {
             case '1': ?>
                <div class="sk-rotating-plane" style="background-color: <?php echo $preloader_color ?>"></div>
@@ -72,13 +72,13 @@ $preloader_type = get_theme_mod('aza_preloader_type');
         <div class="loader-section section-left" style="background-color: <?php echo $preloader_background_color ?>"></div>
         <div class="loader-section section-right"  style="background-color: <?php echo $preloader_background_color ?>"></div>
     </div>
-    
+
     <?php } ?>
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aza-lite' ); ?></a>
 
 	<!-- =========================
-     SECTION: HOME / HEADER  
+     SECTION: HOME / HEADER
     ============================== -->
 	<!--header-->
 	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" class="header header-style-one site-header">
@@ -109,24 +109,24 @@ $preloader_type = get_theme_mod('aza_preloader_type');
             <div class="navbar navbar-inverse bs-docs-nav navbar-top sticky-navigation appear-on-scroll">
 				<!-- CONTAINER -->
                 <div class="container">
-				
+
                     <div class="navbar-header">
-                     
+
                         <!-- LOGO -->
-						
+
                         <button title='<?php _e( 'Toggle Menu', 'aza-lite' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
                             <span class="screen-reader-text"><?php esc_html_e('Toggle navigation','aza-lite'); ?></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-						
+
 						<?php
-							
+
 							$aza_logo = get_theme_mod('aza_logo', aza_get_file('/images/logo.png') );
 
-							
-							
+
+
 							if(!empty($aza_logo)):
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
@@ -138,59 +138,57 @@ $preloader_type = get_theme_mod('aza_preloader_type');
 								echo '<div class="header-logo-wrap text-header aza_only_customizer">';
 
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-								
+
 									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
-								echo '</div>';	
-							
+								echo '</div>';
+
 							else:
-							
+
 								if( isset( $wp_customize ) ):
-								
+
 									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand aza_only_customizer" title="'.get_bloginfo('title').'">';
 
 										echo '<img src="" alt="'.get_bloginfo('title').'">';
 
 									echo '</a>';
-								
+
 								endif;
-							
+
 								echo '<div class="header-logo-wrap text-header">';
-									
+
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
 									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
-								echo '</div>';							
-							endif;	
+								echo '</div>';
+							endif;
 
 						?>
 
                     </div>
-                    
+
                     <!-- MENU -->
 					<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e('Primary Menu','aza-lite') ?>" id="menu-primary" class="navbar-collapse collapse">
 						<!-- LOGO ON STICKY NAV BAR -->
 						<div id="site-header-menu" class="site-header-menu">
 							<nav id="site-navigation" class="main-navigation" role="navigation">
-							<?php 
-								wp_nav_menu( 
-									array( 
+							<?php
+								wp_nav_menu(
+									array(
 										'theme_location'    => 'primary',
 										'menu_class'        => 'primary-menu small-text',
 										'depth'           	=> 4,
 										'fallback_cb'       => 'aza_lite_wp_page_menu'
-										 ) 
+										 )
 								);
 							?>
 							</nav>
 						</div>
                     </div>
-					
-					
+
+
                 </div>
                 <!-- /END CONTAINER -->
             </div>
             <!-- /END STICKY NAVIGATION -->
-            
-          

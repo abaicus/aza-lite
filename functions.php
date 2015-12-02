@@ -76,8 +76,8 @@ function aza_setup() {
 		'default-color' => '#ffffff',
 		'default-image' => get_template_directory_uri().'/images/background.png',
 	) ) );
-    
-    
+
+
 }
 endif; // aza_setup
 add_action( 'after_setup_theme', 'aza_setup' );
@@ -217,14 +217,61 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-function aza_admin_styles() {
+// Enqueue admin scripts
 
-    wp_enqueue_style( 'aza_admin_stylesheet', aza_get_file('/css/admin-style.css'),'1.0.0' );
+function aza_admin_scripts() {
+		wp_register_script( 'repeater_customizer_script', get_template_directory_uri() . '/js/admin/repeater_customizer.js', array( 'jquery' ), NULL, true );
+		wp_enqueue_script( 'repeater_customizer_script', get_file('/js/repeater_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+
+		wp_register_script( 'aza_alpha_color_control_js', get_template_directory_uri() . '/js/admin/alpha_customizer.js', array( 'jquery' ), NULL, true );
+  	wp_enqueue_script( 'aza_alpha_color_control_js' );
 }
-add_action( 'admin_enqueue_scripts', 'aza_admin_styles', 10 );
+add_action( 'admin_enqueue_scripts', 'aza_admin_scripts', 10 );
+
+// Enqueue admion styles
+
+function aza_admin_styles() {
+		wp_register_style ('aza_admin_stylesheet', get_template_directory_uri() . '/css/admin/admin-style.css', NULL, NULL, 'all' );
+		wp_enqueue_style( 'aza_admin_stylesheet');
+}
+add_action( 'customize_controls_print_styles', 'aza_admin_styles');
 
 
 
+
+function pluto_register_customizer_options( $wp_customize ) {
+/*-----------------------------------------------------------*
+ * Defining our own section called "It's Alpha time"
+ *-----------------------------------------------------------*/
+$wp_customize->add_section(
+    'alpha_color_category',
+    array(
+        'title'     => 'It\'s Alpha time',
+        'priority'  => 202
+    )
+);
+/*-----------------------------------------------------------*
+ * Hook our control into the section above
+ *-----------------------------------------------------------*/
+$wp_customize->add_setting(
+    'pluto_color_control_one'
+);
+$wp_customize->add_control(
+    new Aza_Customize_Alpha_Color_Control(
+        $wp_customize,
+        'pluto_color_control_one',
+        array(
+            'label'    => 'Alpha Color',
+            'palette' =>  'rgba(255,255,255,0.1), #454444',
+            'section'  => 'alpha_color_category'
+        )
+    )
+);
+}
+add_action( 'customize_register', 'pluto_register_customizer_options' );
+
+
+// Get File Custom
 
 function aza_get_file($file){
 	$file_parts = pathinfo($file);
@@ -240,6 +287,8 @@ function aza_get_file($file){
 }
 
 
+// Get File
+
 function get_file($file){
 	$file_parts = pathinfo($file);
 	$accepted_ext = array('jpg','img','png','css','js');
@@ -254,6 +303,7 @@ function get_file($file){
 }
 
 
+// Register menus
 
 function register_my_menus() {
   register_nav_menus(

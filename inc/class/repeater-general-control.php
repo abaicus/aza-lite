@@ -21,7 +21,7 @@ class General_Repeater extends WP_Customize_Control {
             $json = json_decode($values);
             if(!is_array($json)) $json = array($values);
             $it = 0;
-            
+
 
             $options = $this->options;
             if(!empty($options['parallax_image_control'])){
@@ -44,7 +44,7 @@ class General_Repeater extends WP_Customize_Control {
                 $parallax_subtitle_control = $options['parallax_subtitle_control'];
             } else {
                 $parallax_subtitle_control = false;
-            }                        
+            }
             if(!empty($options['parallax_text_control'])){
                 $parallax_text_control = $options['parallax_text_control'];
             } else {
@@ -70,7 +70,7 @@ class General_Repeater extends WP_Customize_Control {
             } else {
                 $parallax_percentage_control = false;
             }
-            
+
 
  ?>
 
@@ -78,7 +78,7 @@ class General_Repeater extends WP_Customize_Control {
             <div class="repeater_general_control_repeater repeater_general_control_droppable">
                 <?php
                     if(empty($json)) {
-                        
+
                 ?>
                         <div class="repeater_general_control_repeater_container">
                             <div class="parallax-customize-control-title"><?php esc_html_e('+','aza-lite')?></div>
@@ -131,21 +131,21 @@ class General_Repeater extends WP_Customize_Control {
                                             </select>
                                 <?php   }
                                     }
-                        
+
                                     if($parallax_title_control==true){
                                 ?>
                                         <span class="customize-control-title"><?php esc_html_e('Title','aza-lite')?></span>
                                         <input type="text" class="repeater_title_control" placeholder="<?php esc_html_e('Title','aza-lite'); ?>"/>
                                 <?php
                                     }
-                        
+
                                     if($parallax_subtitle_control==true){
                                 ?>
                                         <span class="customize-control-title"><?php esc_html_e('Subtitle','aza-lite')?></span>
                                         <input type="text" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','aza-lite'); ?>"/>
                                 <?php
                                     }
- 
+
 
                                     if($parallax_text_control==true){?>
                                         <span class="customize-control-title"><?php esc_html_e('Text','aza-lite')?></span>
@@ -155,17 +155,17 @@ class General_Repeater extends WP_Customize_Control {
                                     if($parallax_link_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Link','aza-lite')?></span>
                                         <input type="text" class="repeater_link_control" placeholder="<?php esc_html_e('Link','aza-lite'); ?>"/>
-                                <?php } 
+                                <?php }
                                     if($parallax_shortcode_control==true){
                                     ?>
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','aza-lite')?></span>
                                         <input type="text" class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','aza-lite'); ?>"/>
-                                 <?php } 
+                                 <?php }
                         if($parallax_color_control==true){
                                     ?>
                                         <span class="customize-control-title"><?php esc_html_e('Color','aza-lite')?></span>
                                         <input type="text" class="repeater_color_control" placeholder="<?php esc_html_e('Color','aza-lite'); ?>"/>
-                                 <?php } 
+                                 <?php }
                                     if($parallax_percentage_control==true){
                                     ?>
                                         <span class="customize-control-title"><?php esc_html_e('Percentage','aza-lite')?></span>
@@ -180,7 +180,7 @@ class General_Repeater extends WP_Customize_Control {
                     } else {
                         if ( !empty($this_default) && empty($json)) {
                             foreach($this_default as $icon){
-                             
+
                 ?>
                                 <div class="repeater_general_control_repeater_container repeater_draggable">
                                     <div class="parallax-customize-control-title"><?php esc_html_e('+','aza-lite')?></div>
@@ -248,7 +248,7 @@ class General_Repeater extends WP_Customize_Control {
                                                     <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="repeater_subtitle_control" placeholder="<?php esc_html_e('Subtitle','aza-lite'); ?>"/>
                                         <?php
                                                 }
- 
+
                                                 if($parallax_text_control==true){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Text','aza-lite')?></span>
                                                     <textarea placeholder="<?php esc_html_e('Text','aza-lite'); ?>" class="repeater_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
@@ -260,12 +260,12 @@ class General_Repeater extends WP_Customize_Control {
                                                 if($parallax_shortcode_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','aza-lite')?></span>
                                         <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','aza-lite'); ?>"/>
-                                        
+
                                         <?php	}
                                                 if($parallax_color_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Color','aza-lite')?></span>
                                         <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="repeater_color_control" placeholder="<?php esc_html_e('Color','aza-lite'); ?>"/>
-                                        
+
                                         <?php   }
                                                 if($parallax_percentage_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Percentage','aza-lite')?></span>
@@ -283,7 +283,6 @@ class General_Repeater extends WP_Customize_Control {
                             }
                         } else {
                             foreach($json as $icon){
-//                                var_dump($json);
                     ?>
                                 <div class="repeater_general_control_repeater_container repeater_draggable">
                                     <div class="parallax-customize-control-title"><?php esc_html_e('+','aza-lite')?></div>
@@ -361,28 +360,28 @@ class General_Repeater extends WP_Customize_Control {
                                             <span class="customize-control-title"><?php esc_html_e('Link','aza-lite')?></span>
                                             <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="repeater_link_control" placeholder="<?php esc_html_e('Link','aza-lite'); ?>"/>
                                         <?php }
-                                        
-                                
+
+
                                         if($parallax_shortcode_control==true){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Shortcode','aza-lite')?></span>
                                             <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="repeater_shortcode_control" placeholder="<?php esc_html_e('Shortcode','aza-lite'); ?>"/>
-                                            
+
                                             <?php }
-                                        
-                                
+
+
                                         if($parallax_color_control==true){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Color','aza-lite')?></span>
                                             <input type="text" value='<?php if(!empty($icon->color)) echo $icon->color; ?>' class="repeater_color_control" placeholder="<?php esc_html_e('Color','aza-lite'); ?>"/>
-                                            
+
                                   <?php  }
-                                
+
                                         if($parallax_percentage_control==true){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Percentage','aza-lite')?></span>
                                             <input type="number" maxlength="3" min="0" max="100" value='<?php if(!empty($icon->percentage)) echo $icon->percentage; ?>' class="repeater_percentage_control" placeholder="<?php esc_html_e('Percentage','aza-lite'); ?>"/>
-                                  <?php  }  
+                                  <?php  }
                                         ?>
                                         <input type="hidden" class="repeater_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
-                                        <button type="button" class="repeater_general_control_remove_field button" <?php 
+                                        <button type="button" class="repeater_general_control_remove_field button" <?php
                                             if ($it == 0)
                                             echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','aza-lite'); ?></button>
                                     </div>
@@ -390,13 +389,13 @@ class General_Repeater extends WP_Customize_Control {
                                 </div>
                     <?php
                                 $it++;
-                                
+
                             }
                         }
                     }
 
                 if ( !empty($this_default) && empty($json)) {
-                     
+
                 ?>
                     <input type="hidden" id="repeater_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
             <?php } else {	?>
@@ -404,9 +403,9 @@ class General_Repeater extends WP_Customize_Control {
             <?php } ?>
             </div>
 
-            <button type="button"   class="button add_field repeater_general_control_new_field"    
+            <button type="button"   class="button add_field repeater_general_control_new_field"
 
-            ><?php esc_html_e('Add new field','aza-lite'); ?></button>
+            ><?php esc_html_e('Add new item','aza-lite'); ?></button>
 
             <?php
 
