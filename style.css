@@ -1454,6 +1454,11 @@ header .navbar-brand {
     height: 40px;
 }
 
+.features-btn-row {
+    text-align: center;
+    margin-top: 40px;
+}
+
 .features-btn {
     color: #ffffff;
     font: 700 24px Montserrat;
@@ -2968,6 +2973,13 @@ section#contact p {
 }
 
 @media (max-width: 991px) {
+    .device {
+        -ms-transform: scale(2,3);
+        -webkit-transform: scale(2,3);
+        transform: scale(.8);
+        margin-bottom: 0;
+        margin-top: 0;
+    }
     .about-content img {
         margin-bottom: 40px;
     }

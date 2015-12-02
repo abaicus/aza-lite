@@ -41,11 +41,11 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
 
     <?php echo ( get_theme_mod( 'aza_zigzag_features_top' ) ) ? "<div class='zig-zag-top'></div>" : "" ?>
 
-    <section id="features">
-        <div class="features-background">
-            <div class="container">
+        <section id="features">
+            <div class="features-background">
+                <div class="container">
 
-                <?php if(!empty($features_heading)) {
+                    <?php if(!empty($features_heading)) {
             echo '<div class="row">
                 <div class="col-md-12">
                     <h1 class="text-center">'.$features_heading.'</h1>
@@ -53,17 +53,17 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
             </div>';
             }?>
 
-                    <div class="row features-content">
-                        <div class="col-md-4 col-sm-12">
+                        <div class="row features-content">
+                            <div class="col-md-4 col-sm-12">
 
-                            <?php
+                                <?php
 
                            if(!empty($features_icons_left)){
                            $features_icons_left_decoded = json_decode($features_icons_left);
                             if(!empty($features_icons_left_decoded)) { ?>
-                                <ul id="left-column">
+                                    <ul id="left-column">
 
-                                    <?php                                    foreach($features_icons_left_decoded as $features_icons_left) {
+                                        <?php                                    foreach($features_icons_left_decoded as $features_icons_left) {
                                         echo '<li><div class="circle text-center" style = "background-color: '.esc_html($features_icons_left->color).'"><span class = " '.esc_html($features_icons_left->icon_value).'"></span></div>
                                         <h3 class="features-name text-center">'.$features_icons_left->title.'</h3>
                                         <p class="features-description text-center">'.$features_icons_left->text.'</li>';
@@ -72,33 +72,29 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                             echo '</ul>';}
 
                            } ?>
-                        </div>
-
-                        <div class="col-md-4 col-sm-12 text-center">
-                            <div class="device">
-                                <div class="sensor"></div>
-                                <div class="devicetop">
-
-                                    <div class="front-camera"></div>
-                                    <div class="iphone-speaker"></div>
-                                </div>
-
-                                <div class="screen iphone-screen" style=" background-image: url(<?php echo esc_url($phone_screen) ?>)">
-                                </div>
-                                <div class="button">
-                                </div>
                             </div>
 
-                            <?php if(!empty($button_link)){ ?>
-                                <button type="button" onclick="window.location='<?php echo $button_link; ?>'" class="btn features-btn">
-                                    <?php echo $button_text; ?>
-                                </button>
-                                <?php } ?>
-                        </div>
+                            <div class="col-md-4 col-sm-12 text-center">
+                                <div class="device">
+                                    <div class="sensor"></div>
+                                    <div class="devicetop">
 
-                        <div class="col-md-4 col-sm-12">
+                                        <div class="front-camera"></div>
+                                        <div class="iphone-speaker"></div>
+                                    </div>
 
-                            <?php
+                                    <div class="screen iphone-screen" style=" background-image: url(<?php echo esc_url($phone_screen) ?>)">
+                                    </div>
+                                    <div class="button">
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-md-4 col-sm-12">
+
+                                <?php
 
                            if(!empty($features_icons_right)){
                            $features_icons_right_decoded = json_decode($features_icons_right);
@@ -114,10 +110,21 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                             echo '</ul>';}
 
                            } ?>
+                            </div>
                         </div>
-                    </div>
-            </div>
-        </div>
- </section>
+                        <?php if(!empty($button_link)){ ?>
+                            <div class="row features-btn-row">
+                                <div class="col-lg-12 col-centered">
 
-<?php echo ( get_theme_mod( 'aza_zigzag_features_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>
+                                    <button type="button" onclick="window.location='<?php echo $button_link; ?>'" class="btn features-btn">
+                                        <?php echo $button_text; ?>
+                                    </button>
+
+                                </div>
+                            </div>
+                            <?php } ?>
+                </div>
+            </div>
+        </section>
+
+        <?php echo ( get_theme_mod( 'aza_zigzag_features_bottom' ) ) ? "<div class='zig-zag-bottom'></div>" : "" ?>
