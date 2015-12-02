@@ -19,13 +19,80 @@ function aza_customize_register( $wp_customize ) {
 	/************** WP DEFAULT CONTROLS  ********************/
 	/********************************************************/
 
-//	$wp_customize->remove_control('background_color');
-	// $wp_customize->remove_section('background_image');
 	$wp_customize->remove_section('colors');
-    // $wp_customize->get_section('header_image')->panel='appearance_panel';
-//        ->panel='appearance_panel';
+	$wp_customize->remove_panel('site_identity');
+    
+    /********************************************************/
+	/************** GENERAL OPTIONS  ************************/
+	/********************************************************/
+	
+	$wp_customize->add_section( 'aza_lite_general_section' , array(
+		'title'       => esc_html__( 'General Options', 'aza_lite' ),
+      	'priority'    => 1,
+      	'description' => esc_html__('Aza Lite theme general options','aza_lite'),
+	));
+    
+    /*-------------------------------
+    Logo
+    ---------------------------------*/
 
+    $wp_customize->add_setting( 'aza_logo', array(
+		'default' => aza_get_file('/images/logo.png'),
+		'sanitize_callback' => 'esc_url',
+	));
 
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aza_logo', array(
+	      	'label'    => esc_html__( 'Site Logo', 'aza-lite' ),
+	      	'section'  => 'aza_lite_general_section',
+			'priority'    => 1,
+            'description' => __('Change the website logo.'),
+	)));
+	
+	$blogname = $wp_customize->get_control('blogname');
+	$blogdescription = $wp_customize->get_control('blogdescription');
+	$blogicon = $wp_customize->get_control('site_icon');
+	$show_on_front = $wp_customize->get_control('show_on_front');
+	$page_on_front = $wp_customize->get_control('page_on_front');
+	$page_for_posts = $wp_customize->get_control('page_for_posts');
+    $site_background = $wp_customize->get_control('background_image');
+        
+    if(!empty($site_background)){
+		$site_background->section='aza_lite_general_section';
+		$site_background->priority= 2;
+		$site_background->description= __('Change your website background image. This will show up throughout the <b>front page</b> of your website.');
+    }
+	if(!empty($blogname)){
+		$blogname->section = 'aza_lite_general_section';
+		$blogname->priority = 3;
+	}
+	if(!empty($blogdescription)){
+		$blogdescription->section = 'aza_lite_general_section';
+		$blogdescription->priority = 4;
+	}
+	if(!empty($blogicon)){
+		$blogicon->section = 'aza_lite_general_section';
+		$blogicon->priority = 5;
+	}
+	if(!empty($show_on_front)){
+		$show_on_front->section='aza_lite_general_section';
+		$show_on_front->priority= 6;
+        $show_on_front->description= __('To have a fully functional version of AZA Theme, you should  set your homepage to <b>a static page</b> and create two pages for <b>Home</b> and <b>Blog</b>.');
+	}
+	if(!empty($page_on_front)){
+		$page_on_front->section='aza_lite_general_section';
+		$page_on_front->priority= 7;
+	}
+	if(!empty($page_for_posts)){
+		$page_for_posts->section='aza_lite_general_section';
+		$page_for_posts->priority= 8;
+	}	
+	
+	$wp_customize->remove_section('static_front_page');
+	$wp_customize->remove_section('title_tagline');
+	$wp_customize->remove_control('background_repeat');
+	$wp_customize->remove_control('background_position_x');
+	$wp_customize->remove_control('background_attachment'); 
+    
 	/********************************************************/
 	/********************* PRELOADER ************************/
 	/********************************************************/
@@ -34,13 +101,13 @@ function aza_customize_register( $wp_customize ) {
 		'priority' => 32,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
-        'active_callback' => 'is_front_page',
-		'title' => __( 'Edit the preloader appearance', 'aza-lite' )
+		'title' => __( 'Edit the preloader appearance', 'aza-lite' ),
 	));
     $wp_customize->add_section( 'aza_preloader_section' , array(
 		'title'       => __( 'Preloader', 'aza-lite' ),
       	'priority'    => 25,
       	'description' => __('Preloader options','aza-lite'),
+
 	));
     
 /*
@@ -51,7 +118,6 @@ Preloader Colors
         'sanitize_callback' => 'sanitize_hex_color',
         'type' => 'option',
         'capability' => 'edit_theme_options',
-        'transport'=>'postMessage'
     ));
     
     $wp_customize->add_control( new WP_Customize_Color_Control ( $wp_customize, 'preloader_color', 
@@ -68,7 +134,6 @@ Preloader Colors
         'sanitize_callback' => 'sanitize_hex_color',
         'type' => 'option',
         'capability' => 'edit_theme_options',
-        'transport'=>'postMessage'
 
 
     ));
@@ -143,20 +208,6 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
 
 
 
-/*-------------------------------
-Logo
----------------------------------*/
-
-    $wp_customize->add_setting( 'aza_logo', array(
-		'default' => aza_get_file('/images/logo.png'),
-		'sanitize_callback' => 'esc_url',
-	));
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aza_logo', array(
-	      	'label'    => esc_html__( 'Site Logo', 'aza-lite' ),
-	      	'section'  => 'aza_appearance_cover',
-			'priority'    => 1,
-	)));
 
 /*-------------------------------
 Site header title
@@ -409,17 +460,7 @@ PARALLAX SECTION
       	'priority'    => 32,
       	'description' => esc_html__('AZA theme Parallax section appearance options','aza-lite'),
 		'panel'		  => 'appearance_panel'
-	));
-
-    $wp_customize->add_setting( 'aza_parallax_background', array(
-		'default' => aza_get_file('/images/parallax-background.png'),
-		'sanitize_callback' => 'esc_url',
-	));
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aza_parallax_background', array(
-	      	'label'    => esc_html__( 'Parallax Background Image', 'aza-lite' ),
-	      	'section'  => 'aza_appearance_parallax',
-	)));
+	));    
 
      $wp_customize->add_setting( 'aza_parallax_layer_1', array(
 		'default' => aza_get_file('/images/parallax-layer1.png'),
@@ -820,7 +861,6 @@ ABOUT SECTION
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_image', array(
 	      	'label'    => esc_html__( 'Section Photo', 'aza-lite' ),
 	      	'section'  => 'aza_appearance_about',
-//			'priority'    => 1,
 	)));
 
 
@@ -1423,11 +1463,6 @@ SOCIAL RIBBON
         'type' => 'checkbox',
         'section' => 'aza_appearance_social_ribbon',
     ));
-
-    //end checkbox
-
-
-
 }
 
 add_action( 'customize_register', 'aza_customize_register' );
@@ -1439,6 +1474,23 @@ function repeater_customizer_script() {
 wp_enqueue_script( 'repeater_customizer_script', get_file('/js/repeater_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 }
 add_action( 'customize_controls_enqueue_scripts', 'repeater_customizer_script' );
+
+
+function aza_custom_background_settings() {
+	add_theme_support(
+		'custom-background',
+		array(
+			'default-image' => aza_get_file('/images/background.png'),
+			'default-repeat'     => 'no-repeat',
+			'default-position-x' => 'center',
+			'default-attachment' => 'fixed',
+
+		)
+	);
+}
+add_action( 'after_setup_theme', 'aza_custom_background_settings' );
+
+
 
 function aza_sanitize_repeater($input){
 	$input_decoded = json_decode($input,true);

@@ -74,8 +74,10 @@ function aza_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'aza_custom_background_args', array(
 		'default-color' => '#ffffff',
-		'default-image' => '',
+		'default-image' => get_template_directory_uri().'/images/background.png',
 	) ) );
+    
+    
 }
 endif; // aza_setup
 add_action( 'after_setup_theme', 'aza_setup' );
@@ -257,7 +259,6 @@ function register_my_menus() {
   register_nav_menus(
       array(
           'footer-menu-1' => __( 'Footer Menu', 'aza-lite'),
-//          'footer-menu-2' => __( 'Second Footer Menu' )
       ));
 }
 add_action( 'init', 'register_my_menus' );
