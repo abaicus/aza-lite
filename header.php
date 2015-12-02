@@ -11,6 +11,7 @@ $preloader_color = get_theme_mod('aza_preloader_color','#fc535f');
 $preloader_background_color = get_theme_mod('aza_preloader_background_color','#333333');
 $preloader_toggle = get_theme_mod('aza_preloader_toggle','1');
 $preloader_type = get_theme_mod('aza_preloader_type','1');
+$navbar_color = get_theme_mod('aza_navbar_color','rgba(0, 0, 0, 0.75)')
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -106,7 +107,7 @@ $preloader_type = get_theme_mod('aza_preloader_type','1');
 		<div class="overlay-layer-nav <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
 
             <!-- STICKY NAVIGATION -->
-            <div class="navbar navbar-inverse bs-docs-nav navbar-top sticky-navigation appear-on-scroll">
+            <div class="navbar navbar-inverse bs-docs-nav navbar-top sticky-navigation appear-on-scroll" style="background-color: <?php echo $navbar_color; ?>">
 				<!-- CONTAINER -->
                 <div class="container">
 

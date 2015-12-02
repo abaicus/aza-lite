@@ -28,7 +28,7 @@
 	/************** GENERAL OPTIONS  ************************/
 	/********************************************************/
 
-	$wp_customize->add_section( 'aza_lite_general_section' , array(
+	$wp_customize->add_section( 'aza_general_section' , array(
 		    'title'             => __( 'General Options', 'aza-lite' ),
       	'priority'          => 1,
       	'description'       => __( 'Aza Lite theme general options', 'aza-lite' ),
@@ -45,10 +45,24 @@
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aza_logo', array(
 	      	'label'           => __( 'Website Logo', 'aza-lite' ),
-	      	'section'         => 'aza_lite_general_section',
+	      	'section'         => 'aza_general_section',
           'priority'        => 1,
           'description'     => __( 'We recommend using a logo that has a <b>maximum height</b> of <b>60px</b>.', 'aza-lite' ),
 	)));
+
+  $wp_customize->add_setting( 'aza_navbar_color', array(
+      'default'             => 'rgba(0, 0, 0, 0.75)',
+      'sanitize_callback'   => 'aza_sanitize_text',
+  ));
+  $wp_customize->add_control( new Aza_Customize_Alpha_Color_Control( $wp_customize, 'aza_navbar_color',
+
+         array(
+           'label'         => __(' Navigation bar color', 'aza-lite' ),
+           'section'       => 'aza_general_section',
+           'priority'      => 2,
+           'description'   => __( 'Change color and opacity of the menu bar.' , 'aza-lite'),
+           'palette'       => false,
+         )));
 
 	$blogname = $wp_customize             ->get_control('blogname');
 	$blogdescription = $wp_customize      ->get_control('blogdescription');
@@ -59,34 +73,34 @@
   $site_background = $wp_customize      ->get_control('background_image');
 
   if(!empty($site_background)){
-  		$site_background->section='aza_lite_general_section';
-  		$site_background->priority= 2;
+  		$site_background->section='aza_general_section';
+  		$site_background->priority= 3;
   		$site_background->description= __( 'Change your website background image. This will show up throughout the <b>front page</b> of your website.', 'aza-lite' );
      }
 	if(!empty($blogname)){
-  		$blogname->section = 'aza_lite_general_section';
-  		$blogname->priority = 3;
+  		$blogname->section = 'aza_general_section';
+  		$blogname->priority = 4;
   	 }
 	if(!empty($blogdescription)){
-  		$blogdescription->section = 'aza_lite_general_section';
-  		$blogdescription->priority = 4;
+  		$blogdescription->section = 'aza_general_section';
+  		$blogdescription->priority = 5;
 	   }
 	if(!empty($blogicon)){
-  		$blogicon->section = 'aza_lite_general_section';
-  		$blogicon->priority = 5;
+  		$blogicon->section = 'aza_general_section';
+  		$blogicon->priority = 6;
 	   }
 	if(!empty($show_on_front)){
-  		$show_on_front->section='aza_lite_general_section';
-  		$show_on_front->priority= 6;
+  		$show_on_front->section='aza_general_section';
+  		$show_on_front->priority= 7;
       $show_on_front->description= __( 'To have a fully functional version of AZA Theme, you should  set your homepage to <b>a static page</b> and create two pages for <b>Home</b> and <b>Blog</b>.', 'aza-lite' );
 	   }
 	if(!empty($page_on_front)){
-  		$page_on_front->section='aza_lite_general_section';
-  		$page_on_front->priority= 7;
+  		$page_on_front->section='aza_general_section';
+  		$page_on_front->priority= 8;
 	   }
 	if(!empty($page_for_posts)){
-  		$page_for_posts->section='aza_lite_general_section';
-  		$page_for_posts->priority= 8;
+  		$page_for_posts->section='aza_general_section';
+  		$page_for_posts->priority= 9;
 	   }
 
 	$wp_customize    ->remove_section('static_front_page');
