@@ -2,6 +2,7 @@
 COVER SECTION
 ============================== -->
    <?php
+
 $aza_appstore = get_theme_mod('aza_appstore', aza_get_file('/images/appstore.png'));
 $aza_playstore = get_theme_mod('aza_playstore', aza_get_file('/images/playstore.png'));
 $aza_main_header = get_theme_mod('aza_header_title', 'AZA Theme');
@@ -11,6 +12,11 @@ $aza_playstore_link = get_theme_mod('aza_playstore_link', '#');
 $aza_overlay_opacity = get_theme_mod('aza_overlay_opacity', '0.5');
 $aza_hero_background = get_theme_mod('aza_hero_background', 'rgba(0, 0, 0, 0.5)');
 $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
+$aza_button_text_1 = get_theme_mod ('aza_button_text_1', 'Button 1');
+$aza_button_text_2 = get_theme_mod ('aza_button_text_2', 'Button 2');
+$aza_button_link_1 = get_theme_mod ('aza_button_link_1', '#');
+$aza_button_link_2 = get_theme_mod ('aza_button_link_2', '#');
+
     ?>
 
 
@@ -49,8 +55,18 @@ if(!empty($aza_secondary_header)){
                       break;
 
                       case 'normal_buttons':
-                        
-                      ?>
+                                if(!empty($aza_button_text_1)) { ?>
+                                  <button type="button" onclick="window.location='<?php echo $aza_button_link_1; ?>'" class="btn">
+                                       <?php echo $aza_button_text_1; ?>
+                                   </button>
+                               </a>
+                                   <?php }
+                               if(!empty($aza_button_text_2)) { ?>
+                                  <button type="button" onclick="window.location='<?php echo $aza_button_link_2; ?>'" class="btn">
+                                       <?php echo $aza_button_text_2; ?>
+                                   </button>
+                               </a>
+                       <?php } ?>
 
                        <?php break;
 

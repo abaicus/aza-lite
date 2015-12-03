@@ -323,10 +323,20 @@ Regular Buttons
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	$wp_customize->add_control( 'aza_button_text_1', array(
-    'label'                 => __( 'First button text', 'aza-lite' ),
+    'label'                 => __( 'First button', 'aza-lite' ),
 		'section'               => 'aza_appearance_cover',
 		'priority'              => 8,
     'description'           => __( 'Text on the first button of the hero area.', 'aza-lite' ),
+	));
+
+  $wp_customize->add_setting( 'aza_button_link_1', array(
+		'default'           => esc_html__('#'),
+		'sanitize_callback' => 'esc_url',
+	));
+	$wp_customize->add_control( 'aza_button_link_1', array(
+		'section'               => 'aza_appearance_cover',
+		'priority'              => 9,
+    'description'           => __( 'Link for the <b>first button</b>.', 'aza-lite' ),
 	));
 
   $wp_customize->add_setting( 'aza_button_text_2', array(
@@ -334,10 +344,20 @@ Regular Buttons
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	$wp_customize->add_control( 'aza_button_text_2', array(
-    'label'                 => __( 'Second button text', 'aza-lite' ),
+    'label'                 => __( 'Second button', 'aza-lite' ),
 		'section'               => 'aza_appearance_cover',
-		'priority'              => 9,
+		'priority'              => 10,
     'description'           => __( 'Text on the second button of the hero area.', 'aza-lite' ),
+	));
+
+  $wp_customize->add_setting( 'aza_button_link_2', array(
+		'default'           => esc_html__('#'),
+		'sanitize_callback' => 'esc_url',
+	));
+	$wp_customize->add_control( 'aza_button_link_2', array(
+		'section'               => 'aza_appearance_cover',
+		'priority'              => 11,
+    'description'           => __( 'Link for the <b>Second button</b>.', 'aza-lite' ),
 	));
 
 /*---------------------------------------
