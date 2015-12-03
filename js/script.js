@@ -13,9 +13,8 @@
 jQuery(document).ready(function () {
 
     setTimeout(function () {
-//        jQuery('#wrapper').removeClass('snot_ready');
         jQuery('body').addClass('loaded');
-        
+
     }, 1000);
 });
 
@@ -27,7 +26,7 @@ jQuery(document).ready(function () {
    jQuery('.map_overlay').click(function(){
        jQuery(this).hide();
    });
-  
+
 
 /*=============================
 ========= KNOBS VALUES ========
@@ -42,7 +41,5 @@ jQuery('.percentages').knob({
     'draw': function () {
         jQuery(this.i).val(this.cv + '%');
     },
-    
+
 });
-
-

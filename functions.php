@@ -167,13 +167,13 @@ function aza_scripts() {
 
     wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700|Homemade+Apple');
 
-	wp_enqueue_script( 'aza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+		wp_enqueue_script( 'aza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'aza-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+		wp_enqueue_script( 'aza-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
     wp_enqueue_script( 'aza-bootstrap', aza_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
 
-	wp_enqueue_script( 'aza-custom-all', aza_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
+		wp_enqueue_script( 'aza-custom-all', aza_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
 
     wp_enqueue_script( 'aza-parallax-scroll', aza_get_file('/js/parallax-scroll.js'), array('jquery'), '1.0.0', true );
 

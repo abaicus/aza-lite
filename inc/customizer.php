@@ -12,7 +12,6 @@
  */
     function aza_customize_register( $wp_customize ) {
 
-
 	$wp_customize  ->get_setting( 'blogname' )         ->transport  = 'postMessage';
 	$wp_customize  ->get_setting( 'blogdescription' )  ->transport  = 'postMessage';
 	$wp_customize  ->get_setting( 'header_textcolor' ) ->transport  = 'postMessage';
@@ -1503,7 +1502,6 @@ add_action( 'customize_register', 'aza_customize_register' );
 
  require_once ('class/repeater-general-control.php');
  require_once ('class/alpha-general-customizer.php');
-
 
 function aza_custom_background_settings() {
 	add_theme_support(

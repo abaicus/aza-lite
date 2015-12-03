@@ -7,7 +7,8 @@
     var ParallaxScroll = {
         /* PUBLIC VARIABLES */
         showLogs: false,
-        round: 1000,
+        round: 50,
+        //1000;
 
         /* PUBLIC FUNCTIONS */
         init: function () {
@@ -24,7 +25,8 @@
                     window.oRequestAnimationFrame ||
                     window.msRequestAnimationFrame ||
                     function ( /* function */ callback, /* DOMElement */ element) {
-                        window.setTimeout(callback, 1000 / 60);
+                        window.setTimeout(callback, 50 / 6);
+                        //1000 / 60;
                     };
             })();
             this._onScroll(true);
