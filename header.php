@@ -11,7 +11,8 @@ $preloader_color = get_theme_mod('aza_preloader_color','#fc535f');
 $preloader_background_color = get_theme_mod('aza_preloader_background_color','#333333');
 $preloader_toggle = get_theme_mod('aza_preloader_toggle','1');
 $preloader_type = get_theme_mod('aza_preloader_type','1');
-$navbar_color = get_theme_mod('aza_navbar_color','rgba(0, 0, 0, 0.75)')
+$navbar_color = get_theme_mod('aza_navbar_color','rgba(0, 0, 0, 0.75)');
+$aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">

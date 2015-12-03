@@ -387,3 +387,33 @@ jQuery(document).ready(function($) {
 
 
 });
+
+//RADIO CHECK OLIGOFREN SUNT
+jQuery(document).ready(function() {
+	jQuery('input[type=radio][name="_customize-radio-aza_header_buttons_type"]').change(function() {
+	 	var radio_value = jQuery('input[name="_customize-radio-aza_header_buttons_type"]:checked').val();
+		if(radio_value == 'store_buttons'){
+			jQuery('#customize-control-aza_appstore_link').css({
+		   'visibility' : 'visible',
+		   'position' : 'relative',
+			 'left' : 'auto'
+		 });
+		 jQuery('#customize-control-aza_playstore_link').css({
+		   'visibility' : 'visible',
+		   'position' : 'relative',
+			 'left' : 'auto'
+		 });
+	 } else if(radio_value == 'normal_buttons'){
+		 jQuery('#customize-control-aza_appstore_link').css({
+			'visibility' : 'hidden',
+			'position' : 'absolute',
+			'left' : '-9999999'
+		});
+		jQuery('#customize-control-aza_playstore_link').css({
+			'visibility' : 'hidden',
+			'position' : 'absolute',
+			'left' : '-9999999'
+		});
+	 }
+	});
+});

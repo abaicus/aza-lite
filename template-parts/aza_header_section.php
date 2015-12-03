@@ -32,7 +32,7 @@ if(!empty($aza_secondary_header)){
                 </div>
 
                 <div class="row btn-row">
-                   <div class="col-lg-12 text-center">'
+                   <div class="col-lg-12 text-center">
                <?php
                  switch ( $aza_buttons_type ) {
                       case 'store_buttons':
@@ -48,7 +48,9 @@ if(!empty($aza_secondary_header)){
                                          <?php }
                       break;
 
-                      case 'normal_buttons': ?>
+                      case 'normal_buttons':
+                        
+                      ?>
 
                        <?php break;
 

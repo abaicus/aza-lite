@@ -246,8 +246,27 @@ Site header subtitle
 
 	));
 
+  /*-------------------------------
+  Header image overlay opacity
+  ---------------------------------*/
+
+  $wp_customize->add_setting( 'aza_hero_background', array(
+      'default'             => 'rgba(0, 0, 0, 0.5)',
+      'sanitize_callback'   => 'aza_sanitize_text',
+  ));
+  $wp_customize->add_control( new Aza_Customize_Alpha_Color_Control( $wp_customize, 'aza_hero_background',
+
+         array(
+           'label'         => __(' Overlay', 'aza-lite' ),
+           'section'       => 'aza_appearance_cover',
+           'priority'      => 4,
+           'description'   => __( 'Edit the background <b>overlay</b> color and opacity.' , 'aza-lite'),
+           'palette'       => false,
+         )));
+
+
 /*-------------------------------
-Header store buttons
+Header buttons
 ---------------------------------*/
     $wp_customize->add_setting( 'aza_header_buttons_type', array(
         'default'           => 'normal_buttons',
@@ -256,6 +275,7 @@ Header store buttons
 
     $wp_customize->add_control( 'aza_header_buttons_type', array(
         'type'          => 'radio',
+        'priority'      => 5,
         'label'         => __( 'Button options', 'aza-lite' ),
         'description'   => __( 'Change the header buttons type or remove them.', 'aza-lite' ),
         'section'       => 'aza_appearance_cover',
@@ -267,28 +287,18 @@ Header store buttons
     ));
 
 
-
-    $wp_customize->add_setting( 'aza_appstore_link', array(
-        'default'               => esc_url('#'),
-        'sanitize_callback'     => 'esc_url',
-    ));
-    $wp_customize->add_control( 'aza_appstore_link', array(
-        'label'                 => __( 'Apple appstore link', 'aza-lite' ),
-        'section'               => 'aza_appearance_cover',
-        'priority'              => 4,
-        'description'           => __( 'Add the appstore link to your app.', 'aza-lite' ),
-    ));
-
-
-    $wp_customize->add_setting( 'aza_appstore_link', array(
+/*-------------------------------
+Store Buttons
+---------------------------------*/
+  $wp_customize->add_setting( 'aza_appstore_link', array(
 		'default'               => esc_url('#'),
 		'sanitize_callback'     => 'esc_url',
 	));
 	$wp_customize->add_control( 'aza_appstore_link', array(
-		'label'                 => __( 'Apple appstore link', 'aza-lite' ),
+		'label'                 => __( 'Apple Appstore link', 'aza-lite' ),
 		'section'               => 'aza_appearance_cover',
-		'priority'              => 4,
-    'description'           => __( 'Add the appstore link to your app.', 'aza-lite' ),
+		'priority'              => 6,
+    'description'           => __( 'Add Apple Appstore link to your app.', 'aza-lite' ),
 	));
 
     $wp_customize->add_setting( 'aza_playstore_link', array(
@@ -296,68 +306,39 @@ Header store buttons
 		'sanitize_callback' => 'aza_sanitize_text',
 	));
 	$wp_customize->add_control( 'aza_playstore_link', array(
-		'label'                 => __( 'Google playstore link', 'aza-lite' ),
+		'label'                 => __( 'Playstore link', 'aza-lite' ),
 		'section'               => 'aza_appearance_cover',
-		'priority'              => 5,
-    'description'           => __( 'Add the appstore link to your app.', 'aza-lite' ),
-
+		'priority'              => 7,
+    'description'           => __( 'Add a Google Playstore link to your app.', 'aza-lite' ),
 	));
 
-    $wp_customize->add_setting( 'aza_header_buttons', array(
-        'default'             => 0,
-        'sanitize_callback'   => 'aza_sanitize_text',
-    ));
-
-    $wp_customize->add_control( 'aza_header_buttons', array(
-        'label'       => __('Hide header buttons', 'aza-lite'),
-        'type'        => 'checkbox',
-        'section'     => 'aza_appearance_cover',
-    ));
-
-
-    /*-------------------------------
-    Header image overlay opacity
-    ---------------------------------*/
-
-    $wp_customize->add_setting( 'aza_hero_background', array(
-        'default'             => 'rgba(0, 0, 0, 0.5)',
-        'sanitize_callback'   => 'aza_sanitize_text',
-    ));
-    $wp_customize->add_control( new Aza_Customize_Alpha_Color_Control( $wp_customize, 'aza_hero_background',
-
-           array(
-             'label'         => __(' Overlay', 'aza-lite' ),
-             'section'       => 'aza_appearance_cover',
-             'priority'      => 6,
-             'description'   => __( 'Edit the background <b>overlay</b> color and opacity.' , 'aza-lite'),
-             'palette'       => false,
-           )));
 
 
 
-    /*-------------------------------
-    Header image overlay opacity
-    ---------------------------------*/
+/*-------------------------------
+Regular Buttons
+---------------------------------*/
+  $wp_customize->add_setting( 'aza_button_text_1', array(
+		'default'           => esc_html__('Button 1'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	$wp_customize->add_control( 'aza_button_text_1', array(
+    'label'                 => __( 'First button text', 'aza-lite' ),
+		'section'               => 'aza_appearance_cover',
+		'priority'              => 8,
+    'description'           => __( 'Text on the first button of the hero area.', 'aza-lite' ),
+	));
 
-    $wp_customize->add_setting( 'aza_overlay_opacity', array(
-      'type' => 'theme_mod',
-      'capability' => 'edit_theme_options',
-      'default' => '0.5',
-      'sanitize_callback' => 'aza_sanitize_text',
-    ) );
-
-    $wp_customize->add_control( 'aza_overlay_opacity', array(
-      'type' => 'range',
-      'section' => 'aza_appearance_cover',
-      'label' => __( 'Range', 'aza-lite' ),
-      'description' => __( 'Cover photo overlay opacity', 'aza-lite'),
-      'input_attrs' => array(
-        'min' => 0,
-        'max' => 1,
-        'step' =>0.1,
-      ),
-    ) );
-
+  $wp_customize->add_setting( 'aza_button_text_2', array(
+		'default'           => esc_html__('Button 2'),
+		'sanitize_callback' => 'aza_sanitize_text',
+	));
+	$wp_customize->add_control( 'aza_button_text_2', array(
+    'label'                 => __( 'Second button text', 'aza-lite' ),
+		'section'               => 'aza_appearance_cover',
+		'priority'              => 9,
+    'description'           => __( 'Text on the second button of the hero area.', 'aza-lite' ),
+	));
 
 /*---------------------------------------
 FEATURES SECTION

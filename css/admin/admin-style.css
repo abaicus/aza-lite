@@ -168,3 +168,9 @@ button.repeater_general_control_remove_field:hover{
 .customize-control-alphacolor .wp-picker-container .iris-picker {
     border-bottom:none;
 }
+
+#customize-control-aza_appstore_link, #customize-control-aza_playstore_link{
+	position: absolute;
+	left: -999999px;
+	visibility: hidden;
+}
