@@ -67,6 +67,7 @@ $navbar_color = get_theme_mod('aza_navbar_color','rgba(0, 0, 0, 0.75)')
                     <div class="rect5" style="background-color: <?php echo $preloader_color ?>"></div>
                 </div>
                 <?php
+                break;
         }
                  ?>
         </div>

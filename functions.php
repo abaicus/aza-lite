@@ -229,40 +229,6 @@ function aza_admin_styles() {
 add_action( 'customize_controls_print_styles', 'aza_admin_styles');
 
 
-
-
-function pluto_register_customizer_options( $wp_customize ) {
-/*-----------------------------------------------------------*
- * Defining our own section called "It's Alpha time"
- *-----------------------------------------------------------*/
-$wp_customize->add_section(
-    'alpha_color_category',
-    array(
-        'title'     => 'It\'s Alpha time',
-        'priority'  => 202
-    )
-);
-/*-----------------------------------------------------------*
- * Hook our control into the section above
- *-----------------------------------------------------------*/
-$wp_customize->add_setting(
-    'pluto_color_control_one'
-);
-$wp_customize->add_control(
-    new Aza_Customize_Alpha_Color_Control(
-        $wp_customize,
-        'pluto_color_control_one',
-        array(
-            'label'    => 'Alpha Color',
-            'palette' =>  'rgba(255,255,255,0.1), #454444',
-            'section'  => 'alpha_color_category'
-        )
-    )
-);
-}
-add_action( 'customize_register', 'pluto_register_customizer_options' );
-
-
 // Get File Custom
 
 function aza_get_file($file){

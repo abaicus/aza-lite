@@ -214,9 +214,6 @@ $wp_customize->add_section( 'aza_appearance_cover' , array(
 		'panel'		     => 'appearance_panel'
 	));
 
-
-
-
 /*-------------------------------
 Site header title
 ---------------------------------*/
@@ -252,6 +249,37 @@ Site header subtitle
 /*-------------------------------
 Header store buttons
 ---------------------------------*/
+    $wp_customize->add_setting( 'aza_header_buttons_type', array(
+        'default'           => 'normal_buttons',
+        'sanitize_callback' => 'aza_sanitize_text',
+    ));
+
+    $wp_customize->add_control( 'aza_header_buttons_type', array(
+        'type'          => 'radio',
+        'label'         => __( 'Button options', 'aza-lite' ),
+        'description'   => __( 'Change the header buttons type or remove them.', 'aza-lite' ),
+        'section'       => 'aza_appearance_cover',
+        'choices'       => array(
+                      'store_buttons'           => 'Store buttons',
+                      'normal_buttons'          => 'Normal buttons',
+                      'disabled_buttons'        => 'Disable buttons',
+                    ),
+    ));
+
+
+
+    $wp_customize->add_setting( 'aza_appstore_link', array(
+        'default'               => esc_url('#'),
+        'sanitize_callback'     => 'esc_url',
+    ));
+    $wp_customize->add_control( 'aza_appstore_link', array(
+        'label'                 => __( 'Apple appstore link', 'aza-lite' ),
+        'section'               => 'aza_appearance_cover',
+        'priority'              => 4,
+        'description'           => __( 'Add the appstore link to your app.', 'aza-lite' ),
+    ));
+
+
     $wp_customize->add_setting( 'aza_appstore_link', array(
 		'default'               => esc_url('#'),
 		'sanitize_callback'     => 'esc_url',
@@ -275,13 +303,13 @@ Header store buttons
 
 	));
 
-    $wp_customize->add_setting( 'aza_header_store_buttons', array(
+    $wp_customize->add_setting( 'aza_header_buttons', array(
         'default'             => 0,
         'sanitize_callback'   => 'aza_sanitize_text',
     ));
 
-    $wp_customize->add_control( 'aza_header_store_buttons', array(
-        'label'       => 'Hide store buttons',
+    $wp_customize->add_control( 'aza_header_buttons', array(
+        'label'       => __('Hide header buttons', 'aza-lite'),
         'type'        => 'checkbox',
         'section'     => 'aza_appearance_cover',
     ));
@@ -409,7 +437,6 @@ features repeater
                 array('icon_value' => 'icon-computer-imac' , 'title' => 'Clean Design' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'clean-design', 'color' => '#f0b57c' ),
             )
         ),
-        'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_features_icons_left' , array(
@@ -433,7 +460,6 @@ features repeater
                 array('icon_value' => 'icon-settings-streamline-2' , 'title' => 'Fully Customizable' , 'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.' , 'subtitle' => 'fully-customizable', 'color' => '#8a74b9' ),
             )
         ),
-         'sanitize_callback' => 'aza_sanitize_text',
     ));
 
     $wp_customize -> add_control (new General_Repeater ( $wp_customize , 'aza_features_icons_right' , array(
