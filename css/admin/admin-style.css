@@ -169,8 +169,15 @@ button.repeater_general_control_remove_field:hover{
     border-bottom:none;
 }
 
-#customize-control-aza_appstore_link, #customize-control-aza_playstore_link{
+/*#customize-control-aza_appstore_link, #customize-control-aza_playstore_link, #customize-control-aza_button_text_1, #customize-control-aza_button_link_1, #customize-control-aza_button_text_2, #customize-control-aza_button_link_2 */
+.hidden-customizer-control{
 	position: absolute;
 	left: -999999px;
 	visibility: hidden;
+}
+
+.visible-customizer-control{
+	position: relative;
+	left: 0;
+	visibility: visible;
 }

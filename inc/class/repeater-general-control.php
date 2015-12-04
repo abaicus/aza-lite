@@ -75,6 +75,7 @@ class General_Repeater extends WP_Customize_Control {
  ?>
 
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+            <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
             <div class="repeater_general_control_repeater repeater_general_control_droppable">
                 <?php
                     if(empty($json)) {
@@ -129,6 +130,8 @@ class General_Repeater extends WP_Customize_Control {
                                                     }
                                                 ?>
                                             </select>
+                                          <?php var_dump($contact_icon); ?>
+
                                 <?php   }
                                     }
 

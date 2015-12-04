@@ -390,30 +390,35 @@ jQuery(document).ready(function($) {
 
 //RADIO CHECK OLIGOFREN SUNT
 jQuery(document).ready(function() {
-	jQuery('input[type=radio][name="_customize-radio-aza_header_buttons_type"]').change(function() {
-	 	var radio_value = jQuery('input[name="_customize-radio-aza_header_buttons_type"]:checked').val();
-		if(radio_value == 'store_buttons'){
-			jQuery('#customize-control-aza_appstore_link').css({
-		   'visibility' : 'visible',
-		   'position' : 'relative',
-			 'left' : 'auto'
-		 });
-		 jQuery('#customize-control-aza_playstore_link').css({
-		   'visibility' : 'visible',
-		   'position' : 'relative',
-			 'left' : 'auto'
-		 });
-	 } else if(radio_value == 'normal_buttons'){
-		 jQuery('#customize-control-aza_appstore_link').css({
-			'visibility' : 'hidden',
-			'position' : 'absolute',
-			'left' : '-9999999'
-		});
-		jQuery('#customize-control-aza_playstore_link').css({
-			'visibility' : 'hidden',
-			'position' : 'absolute',
-			'left' : '-9999999'
-		});
-	 }
+		var button_controls = jQuery ( '#customize-control-aza_appstore_link, #customize-control-aza_playstore_link, #customize-control-aza_button_text_1, #customize-control-aza_button_text_2, #customize-control-aza_button_link_1, #customize-control-aza_button_link_2, #customize-control-aza_button_color_1, #customize-control-aza_button_color_2, #customize-control-aza_button_text_color_1, #customize-control-aza_button_text_color_2' );
+		button_controls.addClass("hidden-customizer-control");
+		var store_buttons = jQuery('#customize-control-aza_appstore_link, #customize-control-aza_playstore_link');
+		var normal_buttons = jQuery('#customize-control-aza_button_text_1, #customize-control-aza_button_text_2, #customize-control-aza_button_link_1, #customize-control-aza_button_link_2, #customize-control-aza_button_color_1, #customize-control-aza_button_color_2, #customize-control-aza_button_text_color_1, #customize-control-aza_button_text_color_2');
+		var initial_radio_value = jQuery('input[name="_customize-radio-aza_header_buttons_type"]:checked').val();
+
+
+//Check initial radio value
+
+				if(initial_radio_value == 'store_buttons') {
+					store_buttons.removeClass('hidden-customizer-control');
+				} else if(initial_radio_value == 'normal_buttons') {
+					normal_buttons.removeClass('hidden-customizer-control');
+				}
+
+
+//Update radio value on change
+
+		jQuery('input[type=radio][name="_customize-radio-aza_header_buttons_type"]').change(function() {
+		 	var radio_value = jQuery('input[name="_customize-radio-aza_header_buttons_type"]:checked').val();
+			if(radio_value == 'store_buttons') {
+				store_buttons.removeClass('hidden-customizer-control');
+				normal_buttons.addClass('hidden-customizer-control');
+		 } else if(radio_value == 'normal_buttons') {
+			 	store_buttons.addClass('hidden-customizer-control');
+				normal_buttons.removeClass('hidden-customizer-control');
+		 } else if (radio_value == 'disabled_buttons') {
+			 normal_buttons.addClass('hidden-customizer-control');
+			 store_buttons.addClass('hidden-customizer-control');
+		 }
 	});
 });

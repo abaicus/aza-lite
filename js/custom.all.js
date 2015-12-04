@@ -57,9 +57,9 @@ function fixFooterBottom(){
 
 jQuery(document).ready(function($) {
     "use strict";
-    /*---------------------------------------*/
+    /*=============================================================================--------*/
     /*	BOOTSTRAP FIXES
-	/*---------------------------------------*/
+	/*=============================================================================--------*/
     var oldSSB = jQuery.fn.modal.Constructor.prototype.setScrollbar;
     $.fn.modal.Constructor.prototype.setScrollbar = function() {
         oldSSB.apply(this);
@@ -118,9 +118,9 @@ jQuery(document).ready(function(){
 
 
 
-/*---------------------------------------*/
+/*=============================================================================--------*/
 /*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
-/*---------------------------------------*/
+/*=============================================================================--------*/
 function mainNav() {
     if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
         return false;

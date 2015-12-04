@@ -5,7 +5,7 @@ PARALLAX SECTION
 
 
     <?php
-$parallax_background = get_theme_mod('aza_parallax_background', aza_get_file('/images/parallax-background.png'));
+$parallax_background = get_theme_mod('aza_parallax_background', aza_get_file('/images/parallax-background.jpg'));
 
 $parallax_layer_1 = get_theme_mod('aza_parallax_layer_1', aza_get_file('/images/parallax-layer1.png'));
 
@@ -27,7 +27,7 @@ $parallax_text_decoded = json_decode($parallax_text);
 
 <section id="parallax">
         <div class="parallax-container">
-            <div class="parallax-background" data-parallax='{"y" : -50}' style=" background-image: url(<?php echo esc_url($parallax_background) ?>)">
+            <div class="parallax-background" data-parallax='{"y" : -50}' style=" background-image: url(<?php echo esc_url($parallax_background) ?>)" alt="">
             </div>
             <div class="parallax-layer-1" data-parallax='{"y" : 25}' style=" background-image: url(<?php echo esc_url($parallax_layer_1) ?>)">
             </div>
@@ -40,7 +40,7 @@ $parallax_text_decoded = json_decode($parallax_text);
                     <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
 
                         <img class="img-responsive parallax-img" src="
-                            <?php echo esc_url($parallax_image) ?>" alt="#">
+                            <?php echo esc_url($parallax_image) ?>" alt="">
                     </div>
                     <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 parallax-features">
 

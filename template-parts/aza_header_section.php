@@ -16,6 +16,10 @@ $aza_button_text_1 = get_theme_mod ('aza_button_text_1', 'Button 1');
 $aza_button_text_2 = get_theme_mod ('aza_button_text_2', 'Button 2');
 $aza_button_link_1 = get_theme_mod ('aza_button_link_1', '#');
 $aza_button_link_2 = get_theme_mod ('aza_button_link_2', '#');
+$aza_button_color_1 = get_theme_mod('aza_button_color_1', '#3399df');
+$aza_button_color_2 = get_theme_mod('aza_button_color_2', '#fc535f');
+$aza_button_text_color_1 = get_theme_mod('aza_button_text_color_1', '#ffffff');
+$aza_button_text_color_2 = get_theme_mod('aza_button_text_color_2', '#ffffff');
 
     ?>
 
@@ -23,7 +27,7 @@ $aza_button_link_2 = get_theme_mod ('aza_button_link_2', '#');
   <section id="cover">
         <div class="header-image" style="background: <?php echo $aza_hero_background?>;">
             <div class="container">
-                <div class="row">
+                <div class="row heading-row">
                     <div class="col-md-12 text-center cover-text">
                         <?php
 if(!empty($aza_main_header)){
@@ -43,12 +47,12 @@ if(!empty($aza_secondary_header)){
                  switch ( $aza_buttons_type ) {
                       case 'store_buttons':
                                 if(!empty($aza_appstore_link)) { ?>
-                                     <a class="btn btn-primary btn-stores" href="<?php echo $aza_appstore_link ?>">
+                                     <a class="btn btn-stores" href="<?php echo $aza_appstore_link ?>">
                                      <img src=" <?php echo esc_url($aza_appstore) ?>" alt="#">
                                  </a>
                                      <?php }
                                  if(!empty($aza_playstore_link)) { ?>
-                                         <a class="btn btn-primary btn-stores" href="<?php echo $aza_playstore_link ?>">
+                                         <a class="btn btn-stores" href="<?php echo $aza_playstore_link ?>">
                                      <img src=" <?php echo esc_url($aza_playstore) ?>" alt="#">
                                  </a>
                                          <?php }
@@ -56,16 +60,16 @@ if(!empty($aza_secondary_header)){
 
                       case 'normal_buttons':
                                 if(!empty($aza_button_text_1)) { ?>
-                                  <button type="button" onclick="window.location='<?php echo $aza_button_link_1; ?>'" class="btn">
+                                  <button type="button" onclick="window.location='<?php echo $aza_button_link_1; ?>'" class="btn btn-normal-header" style="background-color: <?php echo $aza_button_color_1; ?>; color: <?php echo $aza_button_text_color_1; ?>;">
                                        <?php echo $aza_button_text_1; ?>
                                    </button>
                                </a>
                                    <?php }
-                               if(!empty($aza_button_text_2)) { ?>
-                                  <button type="button" onclick="window.location='<?php echo $aza_button_link_2; ?>'" class="btn">
-                                       <?php echo $aza_button_text_2; ?>
-                                   </button>
-                               </a>
+                                 if(!empty($aza_button_text_2)) { ?>
+                                    <button type="button" onclick="window.location='<?php echo $aza_button_link_2; ?>'" class="btn btn-normal-header" style="background-color: <?php echo $aza_button_color_2; ?>; color: <?php echo $aza_button_text_color_2; ?>;">
+                                         <?php echo $aza_button_text_2; ?>
+                                     </button>
+                                 </a>
                        <?php } ?>
 
                        <?php break;
