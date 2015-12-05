@@ -181,3 +181,13 @@ button.repeater_general_control_remove_field:hover{
 	left: 0;
 	visibility: visible;
 }
+
+#accordion-section-aza_appearance_portfolio .accordion-section-title::after {
+	content: "\f160";
+	color:#c85656;	}
+
+#accordion-section-aza_appearance_portfolio .accordion-section-title,
+#accordion-section-aza_appearance_portfolio .accordion-section-title, #accordion-section-aza_appearance_portfolio:hover  .accordion-section-title {
+	color:#000000;
+	background-color: #bdbdbd;
+}
