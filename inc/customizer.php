@@ -73,7 +73,7 @@ function aza_customize_register($wp_customize)
     if (!empty($site_background)) {
         $site_background->section     = 'aza_general_section';
         $site_background->priority    = 3;
-        $site_background->description = __('Change your website background image. This will show up throughout the <b>front page</b> of your website.', 'aza-lite');
+        $site_background->description = __('Change your website background image. This will show up throughout the <b>front page</b> of your website', 'aza-lite');
     }
     if (!empty($blogname)) {
         $blogname->section  = 'aza_general_section';
@@ -90,7 +90,7 @@ function aza_customize_register($wp_customize)
     if (!empty($show_on_front)) {
         $show_on_front->section     = 'aza_general_section';
         $show_on_front->priority    = 7;
-        $show_on_front->description = __('To have a fully functional version of AZA Theme, you should  set your homepage to <b>a static page</b> and create two pages for <b>Home</b> and <b>Blog</b>.', 'aza-lite');
+        $show_on_front->description = __('To have a fully functional version of AZA Theme, you should  set your homepage to <b>a static page</b> and create two pages for <b>Home</b> and <b>Blog</b>', 'aza-lite');
     }
     if (!empty($page_on_front)) {
         $page_on_front->section  = 'aza_general_section';
@@ -135,7 +135,7 @@ function aza_customize_register($wp_customize)
         'label'       => __('Color', 'aza-lite'),
         'section'     => 'aza_preloader_section',
         'settings'    => 'aza_preloader_color',
-        'description' => __('Change the color of the preloader object.', 'aza-lite')
+        'description' => __('Change the color of the preloader object', 'aza-lite')
 
     )));
 
@@ -148,7 +148,7 @@ function aza_customize_register($wp_customize)
         'label'       => __('Background Color', 'aza-lite'),
         'section'     => 'aza_preloader_section',
         'settings'    => 'aza_preloader_background_color',
-        'description' => __('Change the background color of the preloader.', 'aza-lite')
+        'description' => __('Change the background color of the preloader', 'aza-lite')
 
     )));
 
@@ -167,7 +167,7 @@ function aza_customize_register($wp_customize)
         'type'        => 'checkbox',
         'section'     => 'aza_preloader_section',
         'settings'    => 'aza_preloader_toggle',
-        'description' => __('Toggle the website preloader ON or OFF.', 'aza-lite'),
+        'description' => __('Toggle the website preloader ON or OFF', 'aza-lite'),
         'priority'    => 0
     ));
 
@@ -201,14 +201,14 @@ function aza_customize_register($wp_customize)
         'capability'      => 'edit_theme_options',
         'theme_supports'  => '',
         'title'           => __('Sections', 'aza-lite'),
-        'description'     => __('Customize the appearance of the front page sections.', 'aza-lite')
+        'description'     => __('Customize the appearance of the front page sections', 'aza-lite')
     ));
 
 
     $wp_customize->add_section('aza_appearance_cover', array(
         'title'       => __('Hero Area', 'aza-lite'),
         'priority'    => 30,
-        'description' => __('Edit the hero area content.', 'aza-lite'),
+        'description' => __('Edit the hero area content', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -272,7 +272,7 @@ function aza_customize_register($wp_customize)
         'type'        => 'radio',
         'priority'    => 5,
         'label'       => __('Button options', 'aza-lite'),
-        'description' => __('Change the header buttons type or remove them.', 'aza-lite'),
+        'description' => __('Change the header buttons type or remove them', 'aza-lite'),
         'section'     => 'aza_appearance_cover',
         'choices'     => array(
             'store_buttons'     => 'Store buttons',
@@ -341,7 +341,7 @@ function aza_customize_register($wp_customize)
         'section'     => 'aza_appearance_cover',
         'priority'    => '10',
         'settings'    => 'aza_button_color_1',
-        'description' => __('Color', 'aza-lite')
+        'description' => __('Button color', 'aza-lite')
 
     )));
 
@@ -354,7 +354,7 @@ function aza_customize_register($wp_customize)
         'section'     => 'aza_appearance_cover',
         'priority'    => '11',
         'settings'    => 'aza_button_text_color_1',
-        'description' => __('Text Color', 'aza-lite')
+        'description' => __('Text color', 'aza-lite')
 
     )));
 
@@ -377,7 +377,7 @@ function aza_customize_register($wp_customize)
     $wp_customize->add_control('aza_button_link_2', array(
         'section'     => 'aza_appearance_cover',
         'priority'    => 13,
-        'description' => __('Link for the <b>Second button</b>', 'aza-lite')
+        'description' => __('Link for the <b>second button</b>', 'aza-lite')
     ));
 
     $wp_customize->add_setting('aza_button_color_2', array(
@@ -389,7 +389,7 @@ function aza_customize_register($wp_customize)
         'section'     => 'aza_appearance_cover',
         'priority'    => '14',
         'settings'    => 'aza_button_color_2',
-        'description' => __('Color', 'aza-lite')
+        'description' => __('Button color', 'aza-lite')
 
     )));
 
@@ -402,7 +402,7 @@ function aza_customize_register($wp_customize)
         'section'     => 'aza_appearance_cover',
         'priority'    => '15',
         'settings'    => 'aza_button_text_color_2',
-        'description' => __('Text Color', 'aza-lite')
+        'description' => __('Text color', 'aza-lite')
 
     )));
 
@@ -719,7 +719,7 @@ function aza_customize_register($wp_customize)
 
     /*=============================================================================
     Testimonials Jagged Edges
-    --=============================================================================*/
+    =============================================================================*/
 
     $wp_customize->add_setting('aza_zigzag_testimonial_top', array(
         'default'           => 0,
@@ -747,11 +747,50 @@ function aza_customize_register($wp_customize)
     RIBBON SECTION
     =============================================================================*/
 
+
     $wp_customize->add_section('aza_appearance_ribbon', array(
         'title'       => __('Ribbon Section', 'aza-lite'),
         'description' => __('Call to action ribbon options', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
+
+
+    //Layout
+
+    $wp_customize->add_setting('aza_ribbon_layout', array(
+          'default'           => '2',
+          'sanitize_callback' => 'aza_sanitize_text'
+    ));
+
+    $wp_customize->add_control('aza_ribbon_layout', array(
+          'priority'    => '1',
+          'type'        => 'radio',
+          'label'       => __('Section layout', 'aza-lite'),
+          'section'     => 'aza_appearance_ribbon',
+          'choices'     => array(
+              '1' => 'Button first',
+              '2' => 'Text first',
+          ),
+          'description' => __('Change the layout of the ribbon', 'aza-lite')
+      ));
+
+    //Color
+
+    $wp_customize->add_setting('aza_ribbon_background_color', array(
+        'default'           => 'rgba(255, 0, 0, 0.3)',
+        'sanitize_callback' => 'aza_sanitize_text'
+    ));
+    $wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_ribbon_background_color', array(
+        'label'       => __('Background overlay ', 'aza-lite'),
+        'section'     => 'aza_appearance_ribbon',
+        'description' => __('Change color and opacity of ribbon overlay', 'aza-lite'),
+        'palette'     => false,
+        'priority'    => 2,
+    )));
+
+
+
+    //Text options
 
     $wp_customize->add_setting('aza_ribbon_text', array(
         'default'           => esc_html__('START USING THIS BEAUTIFUL THEME TODAY', 'aza-lite'),
@@ -759,10 +798,27 @@ function aza_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('aza_ribbon_text', array(
-        'label'     => __('Text', 'aza-lite'),
-        'section'   => 'aza_appearance_ribbon',
-        'priority'  => 1
+        'label'       => __('Text options', 'aza-lite'),
+        'description' => __('Ribbon text', 'aza-lite'),
+        'section'     => 'aza_appearance_ribbon',
+        'priority'    => 3
     ));
+
+    $wp_customize->add_setting('aza_ribbon_text_color', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'aza_ribbon_text_color', array(
+        'section'     => 'aza_appearance_ribbon',
+        'settings'    => 'aza_ribbon_text_color',
+        'description' => __('Text color', 'aza-lite'),
+        'priority'    => 4,
+    )));
+
+
+
+    //Button options
 
     $wp_customize->add_setting('aza_ribbon_button_text', array(
         'default'           => esc_html__('LEARN MORE', 'aza-lite'),
@@ -773,7 +829,7 @@ function aza_customize_register($wp_customize)
         'label'       => __('Button options', 'aza-lite'),
         'description' => __('Button text', 'aza-lite'),
         'section'     => 'aza_appearance_ribbon',
-        'priority'    => 2
+        'priority'    => 5
     ));
 
     $wp_customize->add_setting('aza_ribbon_button_link', array(
@@ -784,9 +840,32 @@ function aza_customize_register($wp_customize)
     $wp_customize->add_control('aza_ribbon_button_link', array(
         'description' => __('Button link', 'aza-lite'),
         'section'     => 'aza_appearance_ribbon',
-        'priority'    => 2
+        'priority'    => 6
     ));
 
+    $wp_customize->add_setting('aza_ribbon_button_color', array(
+        'default'           => '#fc535f',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'aza_ribbon_button_color', array(
+        'section'     => 'aza_appearance_ribbon',
+        'priority'    => '7',
+        'settings'    => 'aza_ribbon_button_color',
+        'description' => __('Button color', 'aza-lite')
+    )));
+
+    $wp_customize->add_setting('aza_ribbon_button_text_color', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'aza_ribbon_button_text_color', array(
+        'section'     => 'aza_appearance_ribbon',
+        'priority'    => '8',
+        'settings'    => 'aza_ribbon_button_text_color',
+        'description' => __('Button text color', 'aza-lite')
+    )));
 
     /*=============================================================================
     PORTFOLIO SECTION

@@ -1776,8 +1776,6 @@ button.btn-normal-header:active {
 #carousel a>span {
     font-size: 80px;
     color: #ffffff;
-    /*    vertical-align: middle;*/
-    /*    margin-top: 100px;*/
 }
 
 #carousel a {
@@ -1803,13 +1801,12 @@ button.btn-normal-header:active {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 3.6 RIBBON
-----------------------------------------*/
+=============================================================================*/
 
 #ribbon {
     height: auto;
-    background: linear-gradient( rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3));
     z-index: -1000;
     padding: 80px 0;
 }
@@ -1822,7 +1819,6 @@ button.btn-normal-header:active {
 }
 
 #ribbon .ribbon-row h2 {
-    color: #ffffff;
     font: 700 24px Montserrat;
     text-transform: uppercase;
     margin: 0 auto;
