@@ -570,60 +570,21 @@ function aza_customize_register($wp_customize)
         'section' => 'aza_appearance_features'
     ));
 
+
     /*=============================================================================
     PARALLAX SECTION
     =============================================================================*/
 
-
-    /*=============================================================================
-    Parallax layers
-    =============================================================================*/
-
-
     $wp_customize->add_section('aza_appearance_parallax', array(
         'title'       => __('Parallax Section', 'aza-lite'),
         'priority'    => 32,
-        'description' => __('AZA theme Parallax section appearance options', 'aza-lite'),
+        'description' => __('Parallax section options', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
-    $wp_customize->add_setting('aza_parallax_background', array(
-        'default'           => aza_get_file('/images/parallax-background.jpg'),
-        'sanitize_callback' => 'esc_url'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_background', array(
-        'label'     =>  __('Parallax background', 'aza-lite'),
-        'section'   => 'aza_appearance_parallax',
-        'priority'  => 3
-    )));
-
-    $wp_customize->add_setting('aza_parallax_layer_1', array(
-        'default'           => aza_get_file('/images/parallax-layer1.png'),
-        'sanitize_callback' => 'esc_url'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_layer_1', array(
-        'label'     =>  __('Parallax First Layer Image', 'aza-lite'),
-        'section'   => 'aza_appearance_parallax',
-        'priority'  => 3
-    )));
-
-    $wp_customize->add_setting('aza_parallax_layer_2', array(
-        'default'           => aza_get_file('/images/parallax-layer2.png'),
-        'sanitize_callback' => 'esc_url'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_layer_2', array(
-        'label'     => __('Parallax Second Layer Image', 'aza-lite'),
-        'section'   => 'aza_appearance_parallax',
-        'priority'  => 4
-    )));
-
-
-    /*=============================================================================----
-    Parallax contents
-    --=============================================================================*/
+    /*=============================================================================
+    Parallax content
+    =============================================================================*/
 
 
     $wp_customize->add_setting('aza_parallax_image', array(
@@ -632,9 +593,10 @@ function aza_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_image', array(
-        'label'     => __('Left side of the Parallax Image', 'aza-lite'),
-        'section'   => 'aza_appearance_parallax',
-        'priority'  => 1
+        'label'       => __('Parallax content', 'aza-lite'),
+        'description' => __('Image', 'aza-lite'),
+        'section'     => 'aza_appearance_parallax',
+        'priority'    => 1
     )));
 
     $wp_customize->add_setting('aza_parallax_text', array(
@@ -642,18 +604,58 @@ function aza_customize_register($wp_customize)
         'default'           => json_encode(array(
             array(
                 'title' => esc_html__('Multi layered parallax.', 'aza-lite'),
-                'text'  => esc_html__('fully customizable and showcases anything you need with an eyecandy design. Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.', 'aza-lite')
+                'text'  => esc_html__('Fully customizable and showcases anything you need with an eyecandy design. Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.', 'aza-lite')
             )
         ))
     ));
 
     $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_parallax_text', array(
-        'label'                   => __('Edit the parallax section text', 'aza-lite'),
+        'description'             => __('Text', 'aza-lite'),
         'section'                 => 'aza_appearance_parallax',
-        'priority'                => 5,
+        'priority'                => 2,
         'parallax_title_control'  => true,
         'parallax_text_control'   => true
     )));
+
+
+    /*=============================================================================
+    Parallax layers
+    =============================================================================*/
+
+    $wp_customize->add_setting('aza_parallax_background', array(
+        'default'           => aza_get_file('/images/parallax-background.jpg'),
+        'sanitize_callback' => 'esc_url'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_background', array(
+        'label'       => __('Parallax Layers', 'aza-lite'),
+        'description' => __('Background','aza-lite'),
+        'section'     => 'aza_appearance_parallax',
+        'priority'    => 3
+    )));
+
+    $wp_customize->add_setting('aza_parallax_layer_1', array(
+        'default'           => aza_get_file('/images/parallax-layer1.png'),
+        'sanitize_callback' => 'esc_url'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_layer_1', array(
+        'description' => __('First layer image','aza-lite'),
+        'section'     => 'aza_appearance_parallax',
+        'priority'    => 4
+    )));
+
+    $wp_customize->add_setting('aza_parallax_layer_2', array(
+        'default'           => aza_get_file('/images/parallax-layer2.png'),
+        'sanitize_callback' => 'esc_url'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_layer_2', array(
+        'description' => __('Second layer image','aza-lite'),
+        'section'     => 'aza_appearance_parallax',
+        'priority'    => 5
+    )));
+
 
     /*=============================================================================
     TESTIMONIAL SECTION
@@ -661,7 +663,7 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_section('aza_appearance_testimonials', array(
         'title'       => __('Testimonials Section', 'aza-lite'),
-        'description' => __('AZA theme Testimonials section appearance options', 'aza-lite'),
+        'description' => __('Testimonials section options', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -674,7 +676,7 @@ function aza_customize_register($wp_customize)
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control('aza_testimonials_header', array(
-        'label'     => __('Testimonial Heading', 'aza-lite'),
+        'label'     => __('Section Title', 'aza-lite'),
         'section'   => 'aza_appearance_testimonials',
         'priority'  => 1
     ));
@@ -706,7 +708,7 @@ function aza_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_testimonials', array(
-        'label'                   =>__('Edit the testimonial section', 'aza-lite'),
+        'label'                   =>__('Section content', 'aza-lite'),
         'section'                 => 'aza_appearance_testimonials',
         'priority'                => 5,
         'parallax_image_control'  => true,
@@ -721,7 +723,7 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_setting('aza_zigzag_testimonial_top', array(
         'default'           => 0,
-        'sanitize_callback' => 'aza_sanitize_text'
+        'sanitize_callback' => 'esc_attr'
     ));
 
     $wp_customize->add_control('aza_zigzag_testimonial_top', array(
@@ -732,7 +734,7 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_setting('aza_zigzag_testimonial_bottom', array(
         'default'           => 0,
-        'sanitize_callback' => 'aza_sanitize_text'
+        'sanitize_callback' => 'esc_attr'
     ));
 
     $wp_customize->add_control('aza_zigzag_testimonial_bottom', array(
@@ -747,7 +749,7 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_section('aza_appearance_ribbon', array(
         'title'       => __('Ribbon Section', 'aza-lite'),
-        'description' => __('AZA theme Ribbon appearance options', 'aza-lite'),
+        'description' => __('Call to action ribbon options', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -757,7 +759,7 @@ function aza_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('aza_ribbon_text', array(
-        'label'     => __('Ribbon Text', 'aza-lite'),
+        'label'     => __('Text', 'aza-lite'),
         'section'   => 'aza_appearance_ribbon',
         'priority'  => 1
     ));
@@ -768,9 +770,21 @@ function aza_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control('aza_ribbon_button_text', array(
-        'label'     => __('Button Text', 'aza-lite'),
-        'section'   => 'aza_appearance_ribbon',
-        'priority'  => 2
+        'label'       => __('Button options', 'aza-lite'),
+        'description' => __('Button text', 'aza-lite'),
+        'section'     => 'aza_appearance_ribbon',
+        'priority'    => 2
+    ));
+
+    $wp_customize->add_setting('aza_ribbon_button_link', array(
+        'default'           => esc_url('#'),
+        'sanitize_callback' => 'aza_sanitize_text'
+    ));
+
+    $wp_customize->add_control('aza_ribbon_button_link', array(
+        'description' => __('Button link', 'aza-lite'),
+        'section'     => 'aza_appearance_ribbon',
+        'priority'    => 2
     ));
 
 
