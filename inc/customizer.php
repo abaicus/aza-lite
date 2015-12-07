@@ -1,6 +1,6 @@
 <?php
 /**
- * AZA Theme Theme Customizer.
+ * AZA Theme Customizer.
  *
  * @package aza-lite
  */
@@ -312,7 +312,7 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
     //first button controls
     $wp_customize->add_setting('aza_button_text_1', array(
-        'default'           => esc_html__('Button 1'),
+        'default'           => esc_html__('Button 1', 'aza-lite'),
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control('aza_button_text_1', array(
@@ -323,7 +323,7 @@ function aza_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('aza_button_link_1', array(
-        'default'           => esc_html__('#'),
+        'default'           => esc_url('#'),
         'sanitize_callback' => 'esc_url'
     ));
     $wp_customize->add_control('aza_button_link_1', array(
@@ -360,7 +360,7 @@ function aza_customize_register($wp_customize)
 
     //second button controls
     $wp_customize->add_setting('aza_button_text_2', array(
-        'default'           => esc_html__('Button 2'),
+        'default'           => esc_html__('Button 2', 'aza-lite'),
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control('aza_button_text_2', array(
