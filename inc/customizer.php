@@ -669,7 +669,7 @@ function aza_customize_register($wp_customize)
 
     /*=============================================================================
     Testimonial Title
-    --=============================================================================*/
+    =============================================================================*/
 
     $wp_customize->add_setting('aza_testimonials_header', array(
         'default'           => esc_html__('TESTIMONIALS', 'aza-lite'),
@@ -684,7 +684,7 @@ function aza_customize_register($wp_customize)
 
     /*=============================================================================
     Testimonials Repeater
-    --=============================================================================*/
+    =============================================================================*/
 
     $wp_customize->add_setting('aza_testimonials', array(
         'sanitize_callback' => 'aza_sanitize_repeater',
@@ -710,10 +710,22 @@ function aza_customize_register($wp_customize)
     $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_testimonials', array(
         'label'                   =>__('Section content', 'aza-lite'),
         'section'                 => 'aza_appearance_testimonials',
-        'priority'                => 5,
+        'priority'                => 2,
         'parallax_image_control'  => true,
         'parallax_title_control'  => true,
         'parallax_text_control'   => true
+    )));
+
+    $wp_customize->add_setting('aza_testimonials_accent_color', array(
+        'default'           => '#ffb52c',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'aza_testimonials_accent_color', array(
+        'section'     => 'aza_appearance_testimonials',
+        'settings'    => 'aza_testimonials_accent_color',
+        'description' => __('Accent color', 'aza-lite'),
+        'priority'    => 3,
     )));
 
 
