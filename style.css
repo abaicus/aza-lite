@@ -1310,8 +1310,6 @@ header .navbar-brand {
 =============================================================================*/
 
 #cover {
-    /*  position: absolute;*/
-    /*        background-color: rgba(255, 255, 255, 0.7);*/
     background: no-repeat fixed center 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1678,123 +1676,6 @@ button.btn-normal-header:active {
 
 
 /*=============================================================================
-3.5 TESTIMONIAL
-=============================================================================*/
-
-#testimonials {
-    height: auto;
-    min-height: 600px;
-    padding: 80px 0 80px 0;
-    background-color: #464448;
-    -moz-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
-}
-
-.testimonials-background {
-    height: auto;
-}
-
-.testimonials-background h1 {
-    margin-bottom: 80px;
-    margin-top: 0;
-}
-
-.testimonials-pic {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    height: 170px;
-    width: 170px;
-    border: 3px solid #ffb52c;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    -o-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    background-size: cover;
-    background-position: center;
-}
-
-#carousel > a.right.carousel-control,
-#carousel > a.left.carousel-control {
-    background: none;
-}
-
-.carousel {
-    margin-bottom: 80px;
-}
-
-.carousel-caption {
-    z-index: 1;
-}
-
-.carousel .item {
-    height: auto;
-}
-
-#carousel p {
-    color: #ffffff;
-    font: 100 18px Roboto;
-    text-align: center;
-    max-width: 800px;
-    padding-top: 40px;
-    min-height: 180px;
-}
-
-#carousel h4 {
-    color: #d2d2d2;
-    font: 400 18px Homemade Apple;
-}
-
-.carousel-indicators li {
-    background-color: #a8a5ac;
-    border: none;
-}
-
-.carousel-indicators li.active {
-    background-color: #ffb52c;
-    border: none;
-}
-
-.carousel-indicators {
-    position: relative;
-    padding: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    text-align: center;
-}
-
-#carousel a>span {
-    font-size: 80px;
-    color: #ffffff;
-}
-
-#carousel a {
-    margin-top: 0;
-    margin-bottom: 0;
-    align-content: center;
-}
-
-.signature {
-    text-align: right;
-    padding: 0 80px;
-    margin: 0;
-}
-
-#carousel {
-    margin: 0;
-}
-
-#carousel ol {
-    margin-top: 20px;
-    margin-bottom: 0;
-    position: relative;
-}
-
-
-/*=============================================================================
 3.6 RIBBON
 =============================================================================*/
 
@@ -1978,6 +1859,70 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
     -moz-border-radius: 5px !important;
     border-radius: 5px !important;
 }
+/*=============================================================================
+3.10 CLIENTS SECTION
+=============================================================================*/
+
+.clients-header {
+    margin-bottom: 40px;
+}
+
+section#clients p {
+    margin-top: 40px;
+    color: #ededed;
+    font: 400 21px Roboto;
+}
+
+#clients {
+    height: auto;
+    padding: 40px 0;
+    background-color: #252426;
+    text-align: center;
+    -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+#clients .container .client-list.row {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#clients .container .client-list img {
+    margin: 0 auto;
+    display: static;
+    margin-bottom: 40px;
+}
+
+#clients > div.container .client-list .client-item:hover {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+  filter: none; /* IE 6-9 */
+}
+
+
+#clients > div.container .client-list .client-item {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0px;
+    padding: 0;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray; /* IE 6-9 */
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
 
 /*=============================================================================
 3.11 TEAM SECTION
@@ -2120,9 +2065,9 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
 #blog {
     padding: 80px 0;
     background-color: #464448;
-    -webkit-box-shadow: 1px -1px 15px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px -1px 15px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 1px -1px 15px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
 }
 
 #blog .blog-p {
@@ -2246,6 +2191,9 @@ section#contact p {
 #social {
     background-color: #464448;
     padding: 20px 0;
+    -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
 }
 
 #social h3 {
@@ -2271,9 +2219,6 @@ section#contact p {
     color: #fff !important;
 }
 
-.social-btn-row {
-    /*    margin-top:*/
-}
 
 .social-btn-row .btn img {
     height: 50px;
@@ -2302,6 +2247,9 @@ section#contact p {
 =============================================================================*/
 
 .site-footer {
+  -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
     height: auto;
     background-color: #252426;
     padding: 20px;
@@ -2343,6 +2291,127 @@ section#contact p {
 
 
 /*=============================================================================
+3.16 SITE FOOTER
+=============================================================================*/
+
+.footer-widgets {
+    padding-left: 40px;
+    font-family: Roboto;
+    color: #b4b4b4;
+}
+
+.footer-widgets a {
+    color: #9fcfff;;
+    transition: 0.3s ease all;
+}
+
+.footer-widgets a:hover {
+    color: #fc535f;
+}
+
+.footer-widgets h2 {
+    font-size: 16px;
+    color: #fc535f;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Roboto;
+    text-align: center;
+}
+
+.footer-widgets h2::before {
+    content: "";
+    max-width: 200px;
+    height: 1px;
+    background-color: #7b7b7b;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-widgets ul {
+    list-style: none;
+    color: #777777;
+    font-size: 14px;
+    padding: 0;
+}
+
+.footer-widgets select {
+    font-size: 14px;
+    max-width: 200px;
+    color: #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.footer-widgets caption {
+    font-size: 14px;
+    font-weight: normal;
+    color: #e2e2e2;
+}
+
+.footer-widgets table {
+    border:none;
+    font-size: 16px;
+    font-weight: 100;
+    color: #afafaf;
+}
+
+.footer-widgets table td {
+    padding: 2px;
+    border: none;
+}
+
+.footer-widgets .rssSummary {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.footer-widgets .rss-date {
+    font-size: 10px;
+    color: #a3a3a3;
+}
+
+.footer-widgets cite {
+    color: #ff9a9a;
+    font-size: 14px;
+}
+
+.footer-widgets input,
+.footer-widgets input.search-field {
+    font-size: 14px;
+    max-width: 125px;
+    font-weight: 100;
+    color: #333;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border:none;
+    padding: 2px 10px;
+}
+
+.footer-widgets .search-submit {
+    color: #ffffff;
+    font-weight: 700;
+    font-family: montserrat;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #fc535f;
+    transition: all 0.5s ease;
+    padding: 2px 10px;
+}
+
+.footer-widgets .search-submit:hover {
+    background-color: #e63340;
+    color: #eeeeee;
+}
+
+
+.footer-widgets select option {
+    max-width: 200px;
+}
+
+
+/*=============================================================================
 4.0 BLOG PAGE
 =============================================================================*/
 
@@ -2364,7 +2433,6 @@ section#contact p {
     4.1 SIDEBAR
 =============================================================================*/
 
-.footer-widgets > div,
 #secondary {
     border-left:1px solid #7b7b7b;
     padding-left: 40px;

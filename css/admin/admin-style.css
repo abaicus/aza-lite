@@ -154,7 +154,6 @@ button.repeater_general_control_remove_field:hover {
 #accordion-section-aza_shortcodes .accordion-section-title::after,
 #accordion-section-aza_appearance_testimonials .accordion-section-title::after,
 #accordion-section-aza_appearance_about .accordion-section-title::after,
-#accordion-section-aza_appearance_clients .accordion-section-title::after,
 #accordion-section-aza_appearance_portfolio .accordion-section-title::after {
 	content: "\f160";
 	color:#c85656;	}
@@ -162,7 +161,6 @@ button.repeater_general_control_remove_field:hover {
 #accordion-section-aza_shortcodes .accordion-section-title, #customize-controls .control-section #accordion-section-aza_shortcodes .accordion-section-title:hover,
 #accordion-section-aza_appearance_testimonials .accordion-section-title, #customize-controls .control-section #accordion-section-aza_appearance_testimonials .accordion-section-title:hover,
 #accordion-section-aza_appearance_about .accordion-section-title, #customize-controls .control-section #accordion-section-aza_appearance_about .accordion-section-title:hover,
-#accordion-section-aza_appearance_clients .accordion-section-title, #customize-controls .control-section #accordion-section-aza_appearance_clients .accordion-section-title:hover,
 #accordion-section-aza_appearance_portfolio .accordion-section-title, #customize-controls .control-section #accordion-section-aza_appearance_portfolio .accordion-section-title:hover{
 	color:#7e7e7e;
 	background-color: #eeeeee;

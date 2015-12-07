@@ -281,7 +281,7 @@ var entityMap = {
   };
 
 	function escapeHtml(string) {
-      string = String(string).replace(new RegExp('\r?\n','g'), '<br />');
+      string = String(string).replace(new RegExp('\r?\n','g'), '<br>');
       string = String(string).replace(/\\/g,'&#92;');
       return String(string).replace(/[&<>"'\/]/g, function (s) {
          return entityMap[s];

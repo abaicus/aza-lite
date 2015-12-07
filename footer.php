@@ -42,21 +42,22 @@ echo '</h4>';  ?>
 ?>
 </div></div>
 
-<?php
-$widget1 = 'home_footer_1';
-$widget2 = 'home_footer_2';
-$widget3 = 'home_footer_3';
-
- ?>
 <div class="row footer-widgets">
   <div class="col-md-4">
-    <?php dynamic_sidebar( 'home_footer_1' ); ?>
+    <?php if ( is_active_sidebar('home_footer_1') ) {
+      dynamic_sidebar( 'home_footer_1' );
+    } ?>
+  </div>
+
+  <div class="col-md-4">
+    <?php if ( is_active_sidebar('home_footer_2') ) {
+    dynamic_sidebar( 'home_footer_2' );
+  } ?>
   </div>
   <div class="col-md-4">
-    <?php dynamic_sidebar( 'home_footer_2' ); ?>
-  </div>
-  <div class="col-md-4">
-    <?php dynamic_sidebar( 'home_footer_3' ); ?>
+    <?php if ( is_active_sidebar('home_footer_3') ) {
+    dynamic_sidebar( 'home_footer_3' );
+  } ?>
   </div>
 </div>
     </footer>

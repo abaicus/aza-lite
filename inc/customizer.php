@@ -875,8 +875,8 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_section('aza_appearance_clients', array(
-        'title'       => __('Clients Section', 'aza-lite'),
-        'description' => __('Get the PRO version of the theme to have access to the Portfolio section.', 'aza-lite'),
+        'title'       => __('Clients Section', 'aza-pro'),
+        'description' => __('Clients section options', 'aza-pro'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -885,14 +885,103 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_setting('aza_clients_title', array(
+        'default'           => esc_html__('OUR CLIENTS', 'aza-pro'),
         'sanitize_callback' => 'aza_sanitize_text'
     ));
 
     $wp_customize->add_control('aza_clients_title', array(
+        'label'     => __('Title', 'aza-pro'),
         'section'   => 'aza_appearance_clients',
-        'priority'  => 1,
-        'type'      => 'radio'
+        'priority'  => 1
     ));
+
+    $wp_customize->add_setting('aza_clients_subtitle', array(
+        'default'           => esc_html__("Our awesome clients", 'aza-pro'),
+        'sanitize_callback' => 'aza_sanitize_text'
+    ));
+
+    $wp_customize->add_control('aza_clients_subtitle', array(
+        'label'     => __('Subtitle', 'aza-pro'),
+        'section'   => 'aza_appearance_clients',
+        'priority'  => 2
+    ));
+
+    /*=============================================================================
+    Clients content
+    =============================================================================*/
+
+    $wp_customize->add_setting('aza_clients_content', array(
+        'sanitize_callback' => 'aza_sanitize_repeater',
+        'default'           => json_encode(array(
+            array(
+                  "image_url" => aza_get_file('/images/adobe.png'),
+                  "link"      => esc_url("#")
+            ),
+            array(
+                  "image_url" => aza_get_file('/images/pixelgraft.png'),
+                  "link"      => esc_url("#")
+            ),
+            array(
+                  "image_url" => aza_get_file('/images/wordpress.png'),
+                  "link"      => esc_url("#")
+            ),
+            array(
+                  "image_url" => aza_get_file('/images/squares.png'),
+                  "link"      => esc_url("#")
+            )
+        ))
+    ));
+
+    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_clients_content', array(
+        'label'                   => __('Edit the Clients icons', 'aza-pro'),
+        'section'                 => 'aza_appearance_clients',
+        'priority'                => 3,
+        'parallax_link_control'   => true,
+        'parallax_image_control'  => true
+    )));
+
+    /*=============================================================================
+    Clients Separators
+    =============================================================================*/
+
+    $wp_customize->add_setting('aza_separator_clients_top', array(
+        'default'           => 0,
+        'sanitize_callback' => 'esc_attr'
+    ));
+
+    $wp_customize->add_control('aza_separator_clients_top', array(
+        'label'   => __('Separator top','aza-pro'),
+        'type'    => 'checkbox',
+        'section' => 'aza_appearance_clients'
+    ));
+
+    $wp_customize->add_setting('aza_separator_clients_bottom', array(
+        'default'           => 0,
+        'sanitize_callback' => 'esc_attr'
+    ));
+
+    $wp_customize->add_control('aza_separator_clients_bottom', array(
+        'label'   => __('Separator bottom','aza-pro'),
+        'type'    => 'checkbox',
+        'section' => 'aza_appearance_clients'
+    ));
+
+
+    /*=============================================================================
+    Clients Button
+    =============================================================================*/
+
+    $wp_customize->add_setting('aza_clients_button_text', array(
+        'default'           => esc_html__('Become a client', 'aza-pro'),
+        'sanitize_callback' => 'aza_sanitize_text'
+    ));
+
+    $wp_customize->add_control('aza_clients_button_text', array(
+        'label'     => __('Button Text', 'aza-pro'),
+        'section'   => 'aza_appearance_clients',
+        'priority'  => 4
+    ));
+
 
     /*=============================================================================
     TEAM SECTION

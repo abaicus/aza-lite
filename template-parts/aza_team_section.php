@@ -62,12 +62,12 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         <div class="team-picture">
                             <div class="team-member-image" style="background-image: url(' .esc_url($team_content -> image_url).')"></div>
                             <div class="team-picture-overlay">
-                                <p class="team-description">'.$team_content -> text.'</p>
+                                <p class="team-description">'.html_entity_decode($team_content -> text).'</p>
                             </div>
                         </div>
                         <div class="separator-team"></div>
-                        <h4 class="team-name1" style = " color:'.$team_content -> color.'">'.$team_content -> title.'</h4>
-                        <p>'.$team_content -> subtitle.'</p>
+                        <h4 class="team-name1" style = " color:'.$team_content -> color.'">'.esc_html($team_content -> title).'</h4>
+                        <p>'.esc_html__($team_content -> subtitle).'</p>
                     </div>';
         }}}
                     ?>
