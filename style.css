@@ -72,19 +72,19 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 9. PLUGINS COMPATIBILITY
 	9.1
 
------------------------------------------*/
+-=============================================================================*/
 
 
 /* --------------------------------------
 =========================================
    1. GLOBAL STYLES
 =========================================
------------------------------------------*/
+-=============================================================================*/
 
 
 /*=============================================================================--------
    1.0 GENERAL STYLES
------------------------------------------*/
+-=============================================================================*/
 
 html {
     font-size: 100%;
@@ -108,7 +108,7 @@ body {
 
 /*=============================================================================--------
    1.1 PRE-LOADER
------------------------------------------*/
+-=============================================================================*/
 /*
 Scalable Lines
 */
@@ -446,9 +446,9 @@ Rotating Plane
 
 
 
-/*=============================================================================--------
+/*=============================================================================
    1.2 ANCHOR AND BOLD TEXT
------------------------------------------*/
+=============================================================================*/
 
 a {
     text-decoration: none;
@@ -466,9 +466,9 @@ a:focus {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
    1.3 MISC FIXES
------------------------------------------*/
+=============================================================================*/
 
 @-webkit-viewport {
     width: device-width;
@@ -538,16 +538,13 @@ a:focus {
 }
 
 
-/* --------------------------------------
-=========================================
+/*=========================================
    2. COMPONENTS
-=========================================
------------------------------------------*/
+=========================================*/
 
-
-/*=============================================================================--------
+/*=============================================================================
    2.1 TYPOGRAPHY
------------------------------------------*/
+=============================================================================*/
 
 
 /* HEADINGS */
@@ -677,9 +674,9 @@ strong,
 }
 
 
-/*=============================================================================-------------------------------
+/*=============================================================================
 	2.2 Elements
---------------------------------------------------------------*/
+=============================================================================*/
 
 html {
     box-sizing: border-box;
@@ -867,9 +864,9 @@ big {
 }*/
 
 
-/*=============================================================================-------------------------------
+/*=============================================================================
 	2.3 ALIGNMENTS
---------------------------------------------------------------*/
+=============================================================================*/
 
 .alignleft {
     display: inline;
@@ -918,9 +915,9 @@ sub {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
    3.1 SECTION: HOME / HEADER
------------------------------------------*/
+-=============================================================================*/
 
 .aza_only_customizer {
     display: none !important;
@@ -1308,9 +1305,9 @@ header .navbar-brand {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 3.2 COVER
-----------------------------------------*/
+=============================================================================*/
 
 #cover {
     /*  position: absolute;*/
@@ -1394,9 +1391,9 @@ button.btn-normal-header:active {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 3.3 FEATURES
-----------------------------------------*/
+=============================================================================*/
 
 .features-background {
     background-color: #464448;
@@ -1597,13 +1594,9 @@ button.btn-normal-header:active {
     position: relative;
 }
 
-
-/*----------*/
-
-
-/*=============================================================================--------
+/*=============================================================================
 3.4 PARALLAX
-----------------------------------------*/
+=============================================================================*/
 
 #parallax >div.parallax-container {
     height: auto;
@@ -1684,9 +1677,9 @@ button.btn-normal-header:active {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 3.5 TESTIMONIAL
-----------------------------------------*/
+=============================================================================*/
 
 #testimonials {
     height: auto;
@@ -1835,106 +1828,10 @@ button.btn-normal-header:active {
 }
 
 
-/*=============================================================================--------
-3.7 PORTFOLIO
-----------------------------------------*/
 
-#portfolio {
-    height: auto;
-    background-color: #464448;
-    padding: 80px 0 40px 0;
-    -moz-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
-    -webkit-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
-    box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.80);
-}
-
-#portfolio h1 {
-    margin-bottom: 40px;
-}
-
-#portfolio p {
-    margin: 40px 0;
-    color: #ededed;
-    font: 400 21px 30px Roboto;
-}
-
-.portfolio-item {
-    position: relative;
-    z-index: 0;
-    height: 286px;
-    width: auto;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.portfolio-collumns {
-    float: none;
-    display: inline-block;
-    min-height: 286px;
-    vertical-align: top;
-    font-size: 0px;
-    padding: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0 -2px;
-}
-
-.portfolio-img-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    bottom: 5%;
-    padding: 70px 10px;
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-
-.portfolio-item h3 {
-    color: #fc535f;
-    font: 700 40px / 72px Montserrat;
-    text-transform: uppercase;
-}
-
-.portfolio-item {
-    -webkit-transition: all 1s ease;
-    /* Safari and Chrome */
-    -moz-transition: all 1s ease;
-    /* Firefox */
-    -o-transition: all 1s ease;
-    /* IE 9 */
-    -ms-transition: all 1s ease;
-    /* Opera */
-    transition: all 1s ease;
-    overflow: hidden;
-    background-size: cover;
-}
-
-.portfolio-item:hover,
-.portfolio-item:focus {}
-
-#portfolio .portfolio-content {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#portfolio button {
-    margin-top: 20px;
-}
-
-.portfolio-item:hover .portfolio-img-overlay {
-    opacity: 1;
-    transition: all 0.5s ease;
-}
-
-
-/*=============================================================================--------
+/*=============================================================================
 3.8 PRICING
-----------------------------------------*/
+=============================================================================*/
 
 
  #pricing {
@@ -2082,134 +1979,9 @@ div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-
     border-radius: 5px !important;
 }
 
-
-
-/*=============================================================================--------
-3.9 ABOUT SECTION
-----------------------------------------*/
-
-section#about {
-    height: auto;
-    padding: 80px 0 40px 0;
-    background-color: #464448;
-}
-
-section#about canvas {
-    display: inline-block;
-    float: left;
-    margin: 0 0 10px 0;
-    padding: 0;
-    position: relative;
-}
-
-#about h1 {
-    margin-bottom: 40px;
-}
-
-section#about p {
-    margin-top: 40px;
-    /*    margin: 0;*/
-    color: #ededed;
-    font: 400 21px Roboto;
-}
-
-#content > section#about > div > div:nth-child(2) > div {
-    display: flex;
-}
-
-.about-content {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-div.row.about-content ul > li {
-    padding: 10px;
-    margin: 20px 0px;
-    min-height: 124px;
-}
-
-#about .knob-list li p {
-    color: #f0f0f0;
-    margin: 0;
-    font: 200 16px Roboto;
-}
-
-#about .knob-list li h3 {
-    text-align: center;
-    color: #ededed;
-    font: 500 21px Roboto;
-    margin: 0 0 13px 0;
-}
-
-.knob-descriptions {
-    margin-left: 140px;
-}
-
-.percentages {
-    color: #fff !important;
-    color: #ededed;
-    font: 200 18px Roboto !important;
-}
-
-.knob-list {
-    padding: 0 auto;
-}
-
-#about img {
-    max-height: 460px;
-    -webkit-box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
-    margin: 0 auto;
-}
-
-
-/*=============================================================================--------
-3.10 CLIENTS SECTION
-----------------------------------------*/
-
-.clients-header {
-    margin-bottom: 40px;
-}
-
-section#clients p {
-    margin-top: 40px;
-    color: #ededed;
-    font: 400 21px Roboto;
-}
-
-#clients {
-    height: auto;
-    padding: 40px 0;
-    background-color: #252426;
-    text-align: center;
-}
-
-#clients .container .client-list.row {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-#clients .container .client-list img {
-    margin: 0 auto;
-    display: static;
-    margin-bottom: 40px;
-}
-
-#clients > div.container .client-list .client-item {
-    float: none;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 0px;
-    padding: 0;
-}
-
-
-/*=============================================================================--------
+/*=============================================================================
 3.11 TEAM SECTION
-----------------------------------------*/
+=============================================================================*/
 
 #team {
     padding: 80px 0 60px 0;
@@ -2343,7 +2115,7 @@ section#clients p {
 
 /*=============================================================================--------
 3.12 BLOG SECTION
-----------------------------------------*/
+=============================================================================*/
 
 #blog {
     padding: 80px 0;
@@ -2396,7 +2168,7 @@ section#clients p {
 
 /*=============================================================================--------
 3.13 CONTACT SECTION
-----------------------------------------*/
+=============================================================================*/
 
 section#contact {
     padding: 80px 0;
@@ -2441,9 +2213,9 @@ section#contact p {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 3.14 MAP SECTION
-----------------------------------------*/
+=============================================================================*/
 
 #container-fluid {
     position: relative;
@@ -2467,9 +2239,9 @@ section#contact p {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 3.15 SOCIAL RIBBON SECTION
-----------------------------------------*/
+=============================================================================*/
 
 #social {
     background-color: #464448;
@@ -2525,9 +2297,9 @@ section#contact p {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 3.16 SITE FOOTER
-----------------------------------------*/
+=============================================================================*/
 
 .site-footer {
     height: auto;
@@ -2570,9 +2342,9 @@ section#contact p {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
 4.0 BLOG PAGE
-----------------------------------------*/
+=============================================================================*/
 
 .blog-content-wrapper,
 .archive-content-wrapper{
@@ -2588,11 +2360,11 @@ section#contact p {
 
 .bypostauthor {}
 
-/*=============================================================================--------
+/*=============================================================================
     4.1 SIDEBAR
-----------------------------------------*/
+=============================================================================*/
 
-
+.footer-widgets > div,
 #secondary {
     border-left:1px solid #7b7b7b;
     padding-left: 40px;
@@ -2713,9 +2485,9 @@ section#contact p {
     max-width: 200px;
 }
 
-/*=============================================================================--------
+/*=============================================================================
     4.2 POST
-----------------------------------------*/
+=============================================================================*/
 
 #primary {
     color: #dadada;
@@ -2947,9 +2719,9 @@ section#contact p {
     margin-left: 10px;
 }
 
-/*=============================================================================--------
+/*=============================================================================
     4.3 BLOG PAGE
------------------------------------------*/
+=============================================================================*/
 
 .aza-post-meta {
     font-size: 12px;
@@ -2973,22 +2745,9 @@ section#contact p {
 }
 
 
-
-/*=============================================================================--------
+/*=============================================================================
    6.5 FIXES FOR => 768PX to <= 991PX SCREENS
------------------------------------------*/
-
-@media (max-width: 1199px) {
-    .portfolio-item h3 {
-        font-size: 25px;
-        margin: 0;
-        line-height: 30px;
-        padding: 10px 0 0 0;
-    }
-    .portfolio-item p {
-        font-size: 16px;
-    }
-}
+=============================================================================*/
 
 @media (max-width: 991px) {
     .device {
@@ -3191,9 +2950,9 @@ section#contact p {
 }
 
 
-/*=============================================================================--------
+/*=============================================================================
    6.6 FIXES FOR <= 768PX SCREENS
------------------------------------------*/
+=============================================================================*/
 
 @media (max-width: 767px) {
     html {
@@ -3211,28 +2970,6 @@ section#contact p {
     #carousel ol {
         margin-top: 20px;
         position: relative;
-    }
-    .portfolio-img-overlay {
-        background-color: rgba(0, 0, 0, 0.7);
-        opacity: 1;
-        bottom: -30px;
-        top: 70%;
-        padding: 0;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-    }
-    #portfolio p {
-        margin: 0;
-    }
-    #about button {
-        margin-top: 40px;
-    }
-    .portfolio-item h3 {
-        font-size: 30px;
-        margin: 0;
-        line-height: 30px;
-        padding: 10px 0 0 0;
     }
     #masthead div > div.navbar-header {
         margin: 0;
@@ -3381,9 +3118,6 @@ section#contact p {
     .has_children > ul {
         display: none;
     }
-    .has_children.this-open > ul {
-        display: block;
-    }
     .navbar-fixed-top .navbar-collapse,
     .navbar-fixed-bottom .navbar-collapse {
         max-height: 2000px;
@@ -3400,92 +3134,16 @@ section#contact p {
         margin-left: 0;
         padding-left: 0;
     }
-    #header_layer_one,
-    #header_layer_two {
-        background-position: top center !important;
-    }
-    /* woocommerce */
-    .woocommerce div.product .woocommerce-tabs {
-        padding: 80px 0 0;
-    }
-    .woocommerce div.product .woocommerce-tabs ul.tabs {
-        text-align: center;
-    }
-    .woocommerce-page .upsells.products ul li.product,
-    .woocommerce-page .upsells.products ul.products li.product,
-    .woocommerce .upsells.products ul li.product,
-    .woocommerce .upsells.products ul.products li.product,
-    .woocommerce .related ul li.product,
-    .woocommerce-page .related ul.products li.product {
-        width: 48%;
-        float: left;
-        clear: both;
-        margin: 0 0 2.992em;
-    }
-    .woocommerce-page .upsells.products ul li.product:nth-child(even),
-    .woocommerce-page .upsells.products ul.products li.product:nth-child(even),
-    .woocommerce .upsells.products ul li.product:nth-child(even),
-    .woocommerce .upsells.products ul.products li.product:nth-child(even),
-    .woocommerce .related ul li.product:nth-child(even),
-    .woocommerce-page .related ul.products li.product:nth-child(even) {
-        float: right;
-    }
-    .woocommerce .cart_item .quantity .qty {
-        width: 40px;
-    }
-    .woocommerce .order_details li {
-        border-bottom: 1px dashed #d3ced2;
-        width: 100%;
-        padding: 10px 5px;
-        border-right: none;
-    }
-    .comment-list .comment-author img {
-        left: -45px;
-        border: 3px solid #e4e4e4;
-        width: 32px;
-        height: 32px;
-    }
-    .comment-list .comment > article {
-        margin-left: 45px;
-    }
-    .comment-list ol.children {
-        margin-left: 30px;
-    }
-    .services-wrap > .service-box {
-        width: 100%;
-        margin: 0;
-        margin-bottom: 30px;
-        margin-left: 0;
-        clear: left;
-        margin-right: 0;
-        clear: right;
-    }
-    .testimonials-wrap > .testimonials-box {
-        width: 100%;
-        margin: 0;
-        margin-bottom: 30px;
-        margin-left: 0;
-        clear: left;
-        margin-right: 0;
-        clear: right;
-    }
     .navbar-collapse .main-navigation li a {
         margin: 0;
         line-height: 25px;
     }
 }
 
-@media (max-width: 680px) {
-    .single-feature {
-        width: auto;
-        float: none;
-    }
-}
 
-
-/*=============================================================================--------
+/*=============================================================================
    6.7 FIXES FOR MOBILE SCREENS
------------------------------------------*/
+=============================================================================*/
 
 @media (max-width: 580px) {
     html {
@@ -3521,223 +3179,15 @@ section#contact p {
         display: block;
         width: 100%;
     }
-    .contact-links .row[class^="col-xs"],
-    .contact-links .row[class*=" col-xs"] {
-        margin-bottom: 10px;
-    }
-    .section-header {
-        margin-bottom: 25px;
-    }
-    .header .overlay-layer {
-        padding-top: 55px;
-    }
-    .header-style-two .overlay-layer {
-        padding-bottom: 0;
-    }
-    .header .overlay-layer .pull-right {
-        padding: 0;
-    }
-    .vertical-registration-form,
-    .header-style-two .vertical-registration-form {
-        background: #ffffff;
-        padding: 7px 16px 16px 16px;
-        margin-top: 34px;
-        width: 100%;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        border-radius: 0px;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-    .intro-section,
-    .header-style-two .intro-section {
-        margin-top: 40px;
-    }
-    .header-style-three .intro-section {
-        margin-top: 30px;
-    }
-    .intro-section h5,
-    .header-style-one .intro-section h5,
-    .header-style-three .intro-section h5 {
-        margin-top: 15px;
-        margin-bottom: 30px;
-    }
-    .header-style-four .horizontal-subscribe-form {
-        max-width: 100%;
-        margin: auto;
-        padding: 5px;
-    }
-    .header-style-four .horizontal-subscribe-form .input-box {
-        min-height: 55px;
-    }
-    .pricing-table {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .standard-button {
-        padding: 15px 35px 15px 35px;
-    }
-    .timeline-section {
-        padding-left: 0;
-    }
-    .timeline-box-wrap {
-        padding-left: 1em;
-    }
-    .timeline-section li .icon-container {
-        margin: 0 auto;
-        float: none;
-        margin-bottom: -80px;
-    }
-    .timeline-section li .date {
-        display: none;
-    }
-    .timeline-section li .info {
-        padding-left: 15px;
-        padding-top: 90px;
-    }
-    .timeline-section li {
-        padding: 1em;
-    }
-    .timeline-section li .info {
-        border-left: 1px solid #e4e7e7;
-    }
-    .list-post-entry-meta {
-        position: relative;
-        float: left;
-        padding: 0;
-        margin: 15px 0 0;
-    }
-    .post-author {
-        font-size: 12px;
-        padding-left: 14px;
-        float: left;
-    }
-    .post-author i {
-        font-size: 10px;
-        line-height: 20px;
-    }
-    .posted-in {
-        font-size: 12px;
-        padding-left: 14px;
-        float: left;
-    }
-    .posted-in i {
-        line-height: 20px;
-        font-size: 10px;
-    }
-    .post-comments {
-        font-size: 12px;
-        float: left;
-        padding-left: 15px;
-    }
-    .post-comments i {
-        font-size: 10px;
-    }
-    .post-list h1.entry-title {
-        clear: left;
-    }
-    .post-date {
-        padding: 10px;
-        min-width: 80px;
-        min-height: 80px;
-    }
-    .footer-widget-wrap .widget-box {
-        width: 100%;
-    }
-    /* woocommerce */
-    .woocommerce ul.products li.product,
-    .woocommerce-page ul.products li.product {
-        width: 100%;
-    }
-    .woocommerce ul.products li.product a:nth-child(1) {
-        height: auto !important;
-        width: 100%;
-    }
-    .woocommerce .products ul,
-    .woocommerce ul.products {
-        text-align: center;
-    }
-    .woocommerce-ordering {
-        width: 100%;
-        margin: 10px 15px;
-    }
-    .woocommerce div.product .woocommerce-tabs ul.tabs li {
-        width: 100%;
-        border-bottom: 1px solid rgb(236, 236, 236);
-    }
-    .woocommerce-page .upsells.products ul li.product,
-    .woocommerce-page .upsells.products ul.products li.product,
-    .woocommerce .upsells.products ul li.product,
-    .woocommerce .upsells.products ul.products li.product,
-    .woocommerce .related ul li.product,
-    .woocommerce-page .related ul.products li.product {
-        width: 100%;
-        max-width: 300px;
-        float: none !important;
-        display: inline-block;
-    }
-    .woocommerce #reviews #comments ol.commentlist li img.avatar {
-        width: 32px;
-    }
-    .woocommerce #reviews #comments ol.commentlist li .comment-text {
-        margin: 0 0 0 50px;
-    }
-    .woocommerce .commentlist .star-rating {
-        float: none;
-        margin-bottom: 10px;
-        display: block;
-        clear: left;
-    }
-    .woocommerce .cart-collaterals .cross-sells ul.products li,
-    .woocommerce-page .cart-collaterals .cross-sells ul.products li {
-        width: 100%;
-    }
-    .woocommerce ul.products li.product,
-    .woocommerce-page ul.products li.product {
-        float: left;
-        width: 100%;
-        margin: 0;
-        margin-bottom: 30px;
-    }
-    .woocommerce ul.products li.product,
-    .woocommerce-page ul.products li.product {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    /* contact page */
-    .comment-form p {
-        padding-left: 0;
-    }
-    .comment-form label {
-        position: relative;
-        line-height: 15px;
-    }
-    .comment-form input {
-        width: 100%;
-    }
-    .parallax-content .parallax-features h3 {
-        font-size: 24px;
-    }
-    .parallax-content .parallax-features p {
-        font-size: 14px;
-    }
-    .parallax-content ul {
-        margin-top: 20px;
-    }
-    .parallax-content {
-        padding: 20px 0 20px 0;
-    }
     #carousel a>span {
         font-size: 45px;
     }
 }
 
 
-/* --------------------------------------
-=========================================
+/*=========================================
    8. ACCESSIBILITY
-=========================================
------------------------------------------*/
+=========================================*/
 
 .screen-reader-text {
     position: absolute!important;

@@ -21,8 +21,6 @@ if ( 'page' == get_option( 'show_on_front' ) ) {
                 get_template_part('/template-parts/aza_parallax_section');
                 get_template_part('/template-parts/aza_ribbon_section');
                 get_template_part('/template-parts/aza_shortcodes_section');
-                get_template_part('/template-parts/aza_about_section');
-                get_template_part('/template-parts/aza_clients_section');
                 get_template_part('/template-parts/aza_team_section');
                 get_template_part('/template-parts/aza_blog_section');
                 get_template_part('/template-parts/aza_contact_section');

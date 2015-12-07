@@ -1,14 +1,14 @@
 <!-- =========================
 BLOG SECTION
 ============================== -->
-<?php 
+<?php
 
 $heading = get_theme_mod('aza_blog_title', 'LATEST NEWS');
 
 $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch with your latest blog posts and updates.');
 
-?> 
-           
+?>
+
 
         <section id="blog">
             <div class="container">
@@ -16,12 +16,12 @@ $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch wit
                     <div class="col-lg-12 col-md-12 text-center">
                              <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.$heading.'</h1>';    
+                        echo '<h1>'.$heading.'</h1>';
                     }?>
                      <?php echo ( get_theme_mod( 'aza_separator_blog_top' ) ) ? "<hr class='separator'/>" : "" ?>
                      <?php
                                 if(!empty($subheading)) {
-                                echo '<p class="blog-p">'.$subheading.'</p>';    
+                                echo '<p class="blog-p">'.$subheading.'</p>';
                         }?>
                     </div>
                 </div>
@@ -29,9 +29,9 @@ $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch wit
 
             <div class="container">
                 <div class="row row-centered text-center">
-                
-                
-                
+
+
+
 	<?php if ( have_posts() ) : ?>
     <?php query_posts("showposts=2"); ?>
 			<?php if ( is_home() && ! is_front_page() ) : ?>
@@ -61,7 +61,8 @@ $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch wit
     <?php wp_reset_query(); ?>
 
 		<?php endif; ?>
-
          </div>
-     </div>       
+
+         <?php echo ( get_theme_mod( 'aza_separator_blog_bottom' ) ) ? "<hr class='separator'/>" : "" ?>
+     </div>
 </section>

@@ -63,6 +63,7 @@
  setTimeout(function () {
  $('.panel-title').append(upsell);
  $('.customize-section-title h3').append(upsell);
+ $('.control-panel-content .panel-title').append(upsell);
  }, 200);
  // Remove accordion click event
  $('.prefix-upsell-link').on('click', function(e) {

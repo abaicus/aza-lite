@@ -829,8 +829,8 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_section('aza_appearance_about', array(
-        'title'       => __('About us section', 'aza-lite'),
-        'description' => __('AZA theme About section appearance options', 'aza-lite'),
+        'title'       => __('About section', 'aza-lite'),
+        'description' => __('Get the PRO version of the theme to have access to the About section.', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -839,157 +839,13 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_setting('aza_about_title', array(
-        'default'           => esc_html__('ABOUT US', 'aza-lite'),
         'sanitize_callback' => 'aza_sanitize_text'
     ));
 
     $wp_customize->add_control('aza_about_title', array(
-        'label'     => __('Title', 'aza-lite'),
-        'section'   => 'aza_appearance_about',
-        'priority'  => 1
-    ));
-
-    $wp_customize->add_setting('aza_about_subtitle', array(
-        'default'           => esc_html__("Let clients know about your company in this section.", 'aza-lite'),
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_about_subtitle', array(
-        'label'     => __('Subtitle', 'aza-lite'),
-        'section'   => 'aza_appearance_about',
-        'priority'  => 2
-    ));
-
-    /*=============================================================================
-    About Content
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_about_content', array(
-        'sanitize_callback' => 'aza_sanitize_repeater',
-        'default'           => json_encode(array(
-            array(
-                  "title"       => esc_html__('iOS Users', 'aza-lite'),
-                  "text"        => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
-                  "percentage"  => '27',
-                  "color"       => '#3399df'
-            ),
-
-            array(
-                  "title"       => esc_html__('Android Users', 'aza-lite'),
-                  "text"        => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
-                  "percentage"  => '45',
-                  "color"       => '#f0b57c'
-            ),
-
-            array(
-                  "title"       => esc_html__('Windows Mobile Users', 'aza-lite'),
-                  "text"        => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
-                  "percentage"  => '10',
-                  "color"       => '#4bb992'
-            ),
-
-            array(
-                  "title"       => esc_html__('Desktop Users', 'aza-lite'),
-                  "text"        => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite'),
-                  "percentage"  => '18',
-                  "color"       => '#8a74b9'
-            )
-        ))
-    ));
-
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_about_content', array(
-        'label'                       => __('Edit the About Us section content', 'aza-lite'),
-        'section'                     => 'aza_appearance_about',
-        'priority'                    => 3,
-        'parallax_title_control'      => true,
-        'parallax_percentage_control' => true,
-        'parallax_text_control'       => true,
-        'parallax_color_control'      => true
-    )));
-
-
-    /*=============================================================================
-    About Picture
-    =============================================================================*/
-
-    $wp_customize->add_setting('about_image', array(
-        'default'           => aza_get_file('/images/about-photo.png'),
-        'sanitize_callback' => 'esc_url'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_image', array(
-        'label'   => __('Section Photo', 'aza-lite'),
-        'section' => 'aza_appearance_about'
-    )));
-
-
-    /*=============================================================================
-    About Separators
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_separator_about_top', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_separator_about_top', array(
-        'label'   => __('Separator top', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_about'
-    ));
-
-    $wp_customize->add_setting('aza_separator_about_bottom', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_separator_about_bottom', array(
-        'label'   => __('Separator bottom', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_about'
-    ));
-
-
-    /*=============================================================================
-    About Button
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_about_button_text', array(
-        'default'           => esc_html__('More info', 'aza-lite'),
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_about_button_text', array(
-        'label'     => __('Button Text', 'aza-lite'),
-        'section'   => 'aza_appearance_about',
-        'priority'  => 4
-    ));
-
-
-    /*=============================================================================
-    About Jagged Edges
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_zigzag_about_top', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_zigzag_about_top', array(
-        'label'   => __('Jagged top edge', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_about'
-    ));
-
-    $wp_customize->add_setting('aza_zigzag_about_bottom', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_zigzag_about_bottom', array(
-        'label'   => __('Jagged bottom edge', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_about'
+        'section'     => 'aza_appearance_about',
+        'priority'    => 1,
+        'type'        =>'radio'
     ));
 
 
@@ -997,38 +853,22 @@ function aza_customize_register($wp_customize)
     SHORTCODES SECTION
     =============================================================================*/
 
-    $wp_customize->add_panel('panel_3', array(
-        'priority'        => 32,
-        'capability'      => 'edit_theme_options',
-        'theme_supports'  => '',
-        'title'           => __('Shortcodes', 'aza-lite')
-    ));
 
     $wp_customize->add_section('aza_shortcodes', array(
-        'title'       => __('Shortcodes', 'aza-lite'),
-        'description' => __('AZA theme shortcode options', 'aza-lite'),
-        'panel'       => 'panel_3'
+        'title'       => __('Shortcodes section', 'aza-lite'),
+        'description' => __('Get the PRO version of the theme to have access to the Shortcodes section.', 'aza-lite'),
+        'panel'       => 'appearance_panel'
     ));
 
-    $wp_customize->add_setting('aza_shortcodes_settings', array(
-        'sanitize_callback' => 'aza_sanitize_repeater',
-        'default' => json_encode(array(
-            array(
-                  "title"     => esc_html__('Shortcode Section', 'aza-lite'),
-                  "subtitle"  => esc_html__('Add your shortcodes to this section','aza-lite'),
-                  "link"      => esc_url('')
-            )
-        ))
+    $wp_customize->add_setting('aza_shortcodes_title', array(
+        'sanitize_callback' => 'aza_sanitize_text'
     ));
 
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_shortcodes_settings', array(
-        'label'                       => __('Edit the shortcode options', 'aza-lite'),
-        'section'                     => 'aza_shortcodes',
-        'priority'                    => 1,
-        'parallax_title_control'      => true,
-        'parallax_subtitle_control'   => true,
-        'parallax_shortcode_control'  => true
-    )));
+    $wp_customize->add_control('aza_shortcodes_title', array(
+        'section'   => 'aza_shortcodes',
+        'priority'  => 1,
+        'type'      => 'radio'
+    ));
 
     /*=============================================================================
     CLIENTS SECTION
@@ -1036,7 +876,7 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_section('aza_appearance_clients', array(
         'title'       => __('Clients Section', 'aza-lite'),
-        'description' => __('AZA theme Clients section appearance options', 'aza-lite'),
+        'description' => __('Get the PRO version of the theme to have access to the Portfolio section.', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -1045,103 +885,14 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_setting('aza_clients_title', array(
-        'default'           => esc_html__('OUR CLIENTS', 'aza-lite'),
         'sanitize_callback' => 'aza_sanitize_text'
     ));
 
     $wp_customize->add_control('aza_clients_title', array(
-        'label'     => __('Title', 'aza-lite'),
         'section'   => 'aza_appearance_clients',
-        'priority'  => 1
+        'priority'  => 1,
+        'type'      => 'radio'
     ));
-
-    $wp_customize->add_setting('aza_clients_subtitle', array(
-        'default'           => esc_html__("Our awesome clients", 'aza-lite'),
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_clients_subtitle', array(
-        'label'     => __('Subtitle', 'aza-lite'),
-        'section'   => 'aza_appearance_clients',
-        'priority'  => 2
-    ));
-
-    /*=============================================================================
-    Clients content
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_clients_content', array(
-        'sanitize_callback' => 'aza_sanitize_repeater',
-        'default'           => json_encode(array(
-            array(
-                  "image_url" => aza_get_file('/images/adobe.png'),
-                  "link"      => esc_url("#")
-            ),
-            array(
-                  "image_url" => aza_get_file('/images/pixelgraft.png'),
-                  "link"      => esc_url("#")
-            ),
-            array(
-                  "image_url" => aza_get_file('/images/wordpress.png'),
-                  "link"      => esc_url("#")
-            ),
-            array(
-                  "image_url" => aza_get_file('/images/squares.png'),
-                  "link"      => esc_url("#")
-            )
-        ))
-    ));
-
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_clients_content', array(
-        'label'                   => __('Edit the Clients icons', 'aza-lite'),
-        'section'                 => 'aza_appearance_clients',
-        'priority'                => 3,
-        'parallax_link_control'   => true,
-        'parallax_image_control'  => true
-    )));
-
-    /*=============================================================================
-    Clients Separators
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_separator_clients_top', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_separator_clients_top', array(
-        'label'   => __('Separator top','aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_clients'
-    ));
-
-    $wp_customize->add_setting('aza_separator_clients_bottom', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_separator_clients_bottom', array(
-        'label'   => __('Separator bottom','aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_clients'
-    ));
-
-
-    /*=============================================================================
-    Clients Button
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_clients_button_text', array(
-        'default'           => esc_html__('Become a client', 'aza-lite'),
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_clients_button_text', array(
-        'label'     => __('Button Text', 'aza-lite'),
-        'section'   => 'aza_appearance_clients',
-        'priority'  => 4
-    ));
-
 
     /*=============================================================================
     TEAM SECTION
@@ -1332,6 +1083,7 @@ function aza_customize_register($wp_customize)
         'type'    => 'checkbox',
         'section' => 'aza_appearance_blog'
     ));
+
 
     /*=============================================================================
     CONTACT SECTION
