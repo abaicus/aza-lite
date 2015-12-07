@@ -388,7 +388,9 @@ jQuery(document).ready(function($) {
 
 });
 
-//RADIO CHECK OLIGOFREN SUNT
+
+
+//RADIO CHECK
 jQuery(document).ready(function() {
 		var button_controls = jQuery ( '#customize-control-aza_appstore_link, #customize-control-aza_playstore_link, #customize-control-aza_button_text_1, #customize-control-aza_button_text_2, #customize-control-aza_button_link_1, #customize-control-aza_button_link_2, #customize-control-aza_button_color_1, #customize-control-aza_button_color_2, #customize-control-aza_button_text_color_1, #customize-control-aza_button_text_color_2' );
 		button_controls.addClass("hidden-customizer-control");
@@ -421,4 +423,16 @@ jQuery(document).ready(function() {
 			 store_buttons.addClass('hidden-customizer-control');
 		 }
 	});
+});
+
+
+jQuery(document).ready(function() {
+	jQuery('li.panel-meta.customize-info.accordion-section > button').css({
+ 'height' : '96px',
+	});
+
+	jQuery(' .customize-section-description-container > div.customize-section-title > button').css({
+ 'height' : '97px',
+	});
+
 });

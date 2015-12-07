@@ -19,9 +19,7 @@ if ( 'page' == get_option( 'show_on_front' ) ) {
                 get_template_part('/template-parts/aza_header_section');
                 get_template_part('/template-parts/aza_features_section');
                 get_template_part('/template-parts/aza_parallax_section');
-                get_template_part('/template-parts/aza_testimonial_section');
                 get_template_part('/template-parts/aza_ribbon_section');
-                get_template_part('/template-parts/aza_portfolio_section');
                 get_template_part('/template-parts/aza_shortcodes_section');
                 get_template_part('/template-parts/aza_about_section');
                 get_template_part('/template-parts/aza_clients_section');

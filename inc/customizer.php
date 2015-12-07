@@ -111,12 +111,6 @@ function aza_customize_register($wp_customize)
     /********************* PRELOADER ************************/
     /********************************************************/
 
-    $wp_customize->add_panel('aza_preloader_panel', array(
-        'priority'        => 32,
-        'capability'      => 'edit_theme_options',
-        'theme_supports'  => '',
-        'title'           => __('Edit the preloader appearance', 'aza-lite')
-    ));
     $wp_customize->add_section('aza_preloader_section', array(
         'title'       => __('Preloader', 'aza-lite'),
         'priority'    => 25,
@@ -663,96 +657,22 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_section('aza_appearance_testimonials', array(
         'title'       => __('Testimonials Section', 'aza-lite'),
-        'description' => __('Testimonials section options', 'aza-lite'),
+        'description' => __('Get the PRO version of the theme to have access to the Testimonials section.', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
     /*=============================================================================
-    Testimonial Title
+    Testimonial upsell
     =============================================================================*/
 
     $wp_customize->add_setting('aza_testimonials_header', array(
-        'default'           => esc_html__('TESTIMONIALS', 'aza-lite'),
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control('aza_testimonials_header', array(
-        'label'     => __('Section Title', 'aza-lite'),
-        'section'   => 'aza_appearance_testimonials',
-        'priority'  => 1
-    ));
-
-
-    /*=============================================================================
-    Testimonials Repeater
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_testimonials', array(
-        'sanitize_callback' => 'aza_sanitize_repeater',
-        'default'           => json_encode(array(
-            array(
-                "image_url" => aza_get_file('/images/testimonials-pic1.png'),
-                "title"     => esc_html__('John Fox', 'aza-lite'),
-                "text"      => esc_html__('Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.', 'aza-lite')
-            ),
-            array(
-                "image_url" => aza_get_file('/images/testimonials-pic2.png'),
-                "title"     => esc_html__('Parr Otte', 'aza-lite'),
-                "text"      => esc_html__('Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.', 'aza-lite')
-            ),
-            array(
-                "image_url" => aza_get_file('/images/testimonials-pic3.png'),
-                "title"     => esc_html__('Gee Raff', 'aza-lite'),
-                "text"      => esc_html__('Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.', 'aza-lite')
-            )
-        ))
-    ));
-
-    $wp_customize->add_control(new General_Repeater($wp_customize, 'aza_testimonials', array(
-        'label'                   =>__('Section content', 'aza-lite'),
-        'section'                 => 'aza_appearance_testimonials',
-        'priority'                => 2,
-        'parallax_image_control'  => true,
-        'parallax_title_control'  => true,
-        'parallax_text_control'   => true
-    )));
-
-    $wp_customize->add_setting('aza_testimonials_accent_color', array(
-        'default'           => '#ffb52c',
-        'sanitize_callback' => 'sanitize_hex_color'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'aza_testimonials_accent_color', array(
-        'section'     => 'aza_appearance_testimonials',
-        'settings'    => 'aza_testimonials_accent_color',
-        'description' => __('Accent color', 'aza-lite'),
-        'priority'    => 3,
-    )));
-
-
-    /*=============================================================================
-    Testimonials Jagged Edges
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_zigzag_testimonial_top', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_zigzag_testimonial_top', array(
-        'label'   => __('Jagged top edge', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_testimonials'
-    ));
-
-    $wp_customize->add_setting('aza_zigzag_testimonial_bottom', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_zigzag_testimonial_bottom', array(
-        'label'   => __('Jagged bottom edge', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_testimonials'
+        // 'description'     => __('', 'aza-lite'),
+        'section'         => 'aza_appearance_testimonials',
+        'priority'        => 1,
+        'type'            => 'radio',
     ));
 
     /*=============================================================================
@@ -886,126 +806,22 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_section('aza_appearance_portfolio', array(
         'title'       => __('Portfolio Section', 'aza-lite'),
-        'description' => esc_html__('AZA theme Portfolio section appearance options', 'aza-lite'),
+        'description' => __('Get the PRO version of the theme to have access to the Portfolio section.', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
     /*=============================================================================
-    Portfolio headings
+    Portfolio upsell
     =============================================================================*/
 
-    $wp_customize->add_setting('aza_portfolio_title', array(
-        'default'           => esc_html__('PORTFOLIO SECTION', 'aza-lite'),
+    $wp_customize->add_setting('aza_portfolio_upsell', array(
         'sanitize_callback' => 'aza_sanitize_text'
     ));
 
-    $wp_customize->add_control('aza_portfolio_title', array(
-        'label'     => __('Title', 'aza-lite'),
+    $wp_customize->add_control('aza_portfolio_upsell', array(
+        'type'      => 'radio',
         'section'   => 'aza_appearance_portfolio',
         'priority'  => 1
-    ));
-    $wp_customize->add_setting('aza_portfolio_subtitle', array(
-        'default'           => esc_html__("Showcase your own work. Be it photography, graphic design or any other form of visual art, you can showcase it in AZA Theme's portfolio grid.", 'aza-lite'),
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-    $wp_customize->add_control('aza_portfolio_subtitle', array(
-        'label'     => __('Subtitle', 'aza-lite'),
-        'section'   => 'aza_appearance_portfolio',
-        'priority'  => 2
-    ));
-
-    /*=============================================================================
-    Portfolio Content
-    =============================================================================*/
-
-    $wp_customize->add_setting('portfolio_show_link_to_single', array(
-        'default'           => 1,
-        'sanitize_callback' => 'esc_attr'
-    ));
-    $wp_customize->add_control('portfolio_show_link_to_single', array(
-        'type'        => 'checkbox',
-        'label'       => __('Show link to single?', 'aza-lite'),
-        'description' => __('If you check this box, a link to single page will be available when hover on a portfolio item', 'aza-lite'),
-        'section'     => 'aza_appearance_portfolio',
-        'priority'    => 10
-    ));
-    $wp_customize->add_setting('number_of_portfolio_posts', array(
-        'default'           => 3,
-        'sanitize_callback' => 'esc_attr'
-    ));
-    $wp_customize->add_control('number_of_portfolio_posts', array(
-        'type'      => 'number',
-        'label'     => __('Number of posts', 'aza-lite'),
-        'section'   => 'aza_appearance_portfolio',
-        'priority'  => 40
-    ));
-
-    /*=============================================================================
-    Portfolio Separators
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_separator_portfolio_top', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_separator_portfolio_top', array(
-        'label'   => __('Separator top', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_portfolio'
-    ));
-
-    $wp_customize->add_setting('aza_separator_portfolio_bottom', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_separator_portfolio_bottom', array(
-        'label'   => __('Separator bottom', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_portfolio'
-    ));
-
-    /*=============================================================================
-    Portfolio Button
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_portfolio_button_text', array(
-        'default'           => esc_html__('Other Works', 'aza-lite'),
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_portfolio_button_text', array(
-        'label'     => __('Button Text', 'aza-lite'),
-        'section'   => 'aza_appearance_portfolio',
-        'priority'  => 4
-    ));
-
-    /*=============================================================================
-    Portfolio Jagged Edges
-    =============================================================================*/
-
-
-    $wp_customize->add_setting('aza_zigzag_portfolio_top', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_zigzag_portfolio_top', array(
-        'label'   => __('Jagged top edge', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_portfolio'
-    ));
-
-    $wp_customize->add_setting('aza_zigzag_portfolio_bottom', array(
-        'default'           => 0,
-        'sanitize_callback' => 'esc_attr'
-    ));
-
-    $wp_customize->add_control('aza_zigzag_portfolio_bottom', array(
-        'label'   => __('Jagged bottom edge', 'aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_portfolio'
     ));
 
     /*=============================================================================
@@ -1794,8 +1610,31 @@ function aza_sanitize_text($input)
 
 function aza_customize_preview_js()
 {
-    wp_enqueue_script('aza_customizer', get_template_directory_uri() . '/js/customizer.js', array(
+    wp_enqueue_script('aza_customizer', get_template_directory_uri() . '/js/admin/customizer.js', array(
         'customize-preview'
     ), '20130508', true);
 }
 add_action('customize_preview_init', 'aza_customize_preview_js');
+
+/**
+ * Display upgrade notice on customizer page
+ */
+function prefix_upsell_notice() {
+ // Enqueue the script
+ wp_enqueue_script(
+ 'prefix-customizer-upsell',
+ get_template_directory_uri() . '/js/admin/customizer.js',
+ array(), '1.0.0',
+ true
+ );
+ // Localize the script
+ wp_localize_script(
+ 'prefix-customizer-upsell',
+ 'prefixL10n',
+ array(
+ 'prefixURL'	   => esc_url( 'https://themeisle.com/themes/aza-pro' ),
+ 'prefixLabel'	 => __( 'Upgrade to AZA PRO', 'aza-lite' ),
+ )
+ );
+}
+add_action( 'customize_controls_enqueue_scripts', 'prefix_upsell_notice' );

@@ -2134,10 +2134,10 @@ div.row.about-content ul > li {
     color: #f0f0f0;
     margin: 0;
     font: 200 16px Roboto;
-    text-align: center;
 }
 
 #about .knob-list li h3 {
+    text-align: center;
     color: #ededed;
     font: 500 21px Roboto;
     margin: 0 0 13px 0;
