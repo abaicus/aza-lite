@@ -1,9 +1,9 @@
 <!-- =========================
-ABOUT SECTION 
+ABOUT SECTION
 ============================== -->
 
 
-<?php 
+<?php
 
 $heading = get_theme_mod('aza_about_title', 'ABOUT US');
 
@@ -17,17 +17,17 @@ $about_content = get_theme_mod ('aza_about_content',json_encode(
                        "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
                        "percentage" => '27',
                        "color"      => '#3399df'),
-                
+
                 array("title"       => esc_html__('Android Users','aza-lite'),
                        "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
                        "percentage" => '45',
                        "color"      => '#f0b57c'),
-                
+
                 array("title"       => esc_html__('Windows Mobile Users','aza-lite'),
                        "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
                        "percentage" => '10',
                        "color"      => '#4bb992'),
-                
+
                 array("title"       => esc_html__('Desktop Users','aza-lite'),
                        "text"       => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.','aza-lite'),
                        "percentage" => '18',
@@ -49,14 +49,14 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                     <div class="col-lg-12 col-centered text-center">
                         <?php
                     if(!empty($heading)) {
-                        echo '<h1>'.$heading.'</h1>';    
+                        echo '<h1>'.$heading.'</h1>';
                     }?>
 
                             <?php echo ( get_theme_mod( 'aza_separator_about_top' ) ) ? "<hr class='separator'/>" : "" ?>
 
                                 <?php
                                 if(!empty($subheading)) {
-                                echo '<p>'.$subheading.'</p>';    
+                                echo '<p>'.$subheading.'</p>';
                         }?>
                     </div>
                 </div>
@@ -74,12 +74,19 @@ $button_text = get_theme_mod('aza_about_button_text', 'More info')
                             if(!empty($about_content_decoded)) {
                         foreach($about_content_decoded as $about_content) {
                                         echo '<li>';
+                                        if(!empty($about_content->percentage))
+                                        {
                                         echo '<input class= "percentages k'.$var.'" value = "'.$about_content->percentage.'" data-fgColor = "'.$about_content->color.'" data-bgColor = "#333333"/>';
                                         echo ' <div class="knob-descriptions">';
                                         echo '<h3>'.$about_content->title.'</h3>';
                                         echo '<p>'.$about_content->text.'</p>';
                                         echo '</div></li>';
                                             $var++;
+                                          } else {
+                                        echo '<h3>'.$about_content->title.'</h3>';
+                                        echo '<p>'.$about_content->text.'</p>';
+                                        echo '</li>';
+                                          }
                         }}}
                   ?>
                     </div>

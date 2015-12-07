@@ -2134,7 +2134,7 @@ div.row.about-content ul > li {
     color: #f0f0f0;
     margin: 0;
     font: 200 16px Roboto;
-    max-width: 326px;
+    text-align: center;
 }
 
 #about .knob-list li h3 {
