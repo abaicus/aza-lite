@@ -52,7 +52,7 @@ $parallax_text_decoded = json_decode($parallax_text);
 
                                     foreach($parallax_text_decoded as $parallax_text) {
                                 echo '<h3>'.esc_html($parallax_text->title).'<h3>
-                                <p>'.esc_html($parallax_text->text).'</p>'; }}} ?>
+                                <p>'.html_entity_decode($parallax_text->text).'</p>'; }}} ?>
                                                        </div>
                     </div>
                 </div>

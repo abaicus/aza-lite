@@ -112,7 +112,7 @@ function aza_widgets_init() {
 
 
 	register_sidebar( array(
-		'name'          => esc_html__('Footer left widget'),
+		'name'          => esc_html__('Footer left widget', 'aza-lite'),
 		'id'            => 'home_footer_1',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -121,7 +121,7 @@ function aza_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__('Footer center widget'),
+		'name'          => esc_html__('Footer center widget', 'aza-lite'),
 		'id'            => 'home_footer_2',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
@@ -130,7 +130,7 @@ function aza_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__('Footer left widget'),
+		'name'          => esc_html__('Footer left widget', 'aza-lite'),
 		'id'            => 'home_footer_3',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',

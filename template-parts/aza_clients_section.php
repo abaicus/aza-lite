@@ -21,7 +21,10 @@ $clients_content = get_theme_mod ('aza_clients_content',json_encode(
 
 $clients_content_decoded = json_decode($clients_content);
 
-$button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
+$button_text = get_theme_mod('aza_clients_button_text', 'Become a client');
+$button_link = get_theme_mod('aza_clients_button_link', '#');
+
+
 
 
 ?>
@@ -65,10 +68,11 @@ $button_text = get_theme_mod('aza_clients_button_text', 'Become a client')
              <?php
                         if(!empty($button_text))
                         {
-                        echo '<div class="row"><div class="col-lg-12 col-centered text-center">';
-                        echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div></div>';
-                        }
-                    ?>
+                        echo '<div class="row"><div class="col-lg-12 col-centered text-center">'; ?>
+                              <button type="button" onclick="window.location='<?php echo $button_link; ?>'" class="btn features-btn">
+                                        <?php echo $button_text; ?>
+                                    </button>
+                      <?php } ?>
                 </div>
            </div>
     </section>

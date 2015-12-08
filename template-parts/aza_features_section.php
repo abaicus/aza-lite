@@ -112,7 +112,7 @@ $features_icons_right = get_theme_mod ('aza_features_icons_right',json_encode(
                            } ?>
                             </div>
                         </div>
-                        <?php if(!empty($button_link)){ ?>
+                        <?php if(!empty($button_text)){ ?>
                             <div class="row features-btn-row">
                                 <div class="col-lg-12 col-centered">
 

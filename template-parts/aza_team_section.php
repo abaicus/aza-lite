@@ -7,6 +7,8 @@ $heading = get_theme_mod('aza_team_title', 'OUR TEAM');
 
 $subheading = get_theme_mod('aza_team_subtitle', 'Present your team members and their role in the company.');
 
+$background_color = get_theme_mod('aza_team_background', 'rgba(0, 0, 0, 0.75)');
+
 $team_content = get_theme_mod ('aza_team_content',json_encode(
          array(
                 array("image_url"     => aza_get_file('/images/team1.png'),
@@ -34,10 +36,12 @@ $team_content = get_theme_mod ('aza_team_content',json_encode(
 
 $team_content_decoded = json_decode($team_content);
 
-$button_text = get_theme_mod('aza_team_button_text', 'Work with us')
+$button_text = get_theme_mod('aza_team_button_text', 'Work with us');
+$button_link = get_theme_mod('aza_team_button_link', '#');
+
 
 ?>
-<section id="team">
+<section id="team" style="background-color: <?php echo esc_attr($background_color); ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-centered text-center">
@@ -67,7 +71,7 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
                         </div>
                         <div class="separator-team"></div>
                         <h4 class="team-name1" style = " color:'.$team_content -> color.'">'.esc_html($team_content -> title).'</h4>
-                        <p>'.esc_html__($team_content -> subtitle).'</p>
+                        <p>'.esc_html($team_content -> subtitle).'</p>
                     </div>';
         }}}
                     ?>
@@ -76,8 +80,11 @@ $button_text = get_theme_mod('aza_team_button_text', 'Work with us')
              <?php
                         if(!empty($button_text))
                         {
-                        echo '<div class="row"><div class="col-lg-12 col-centered text-center">';
-                        echo '<button type="button" class="btn features-btn">'.$button_text.'</button></div></div>';
+                        echo '<div class="row"><div class="col-lg-12 col-centered text-center">'; ?>
+                            <button type="button" onclick="window.location='<?php echo $button_link; ?>'" class="btn features-btn">
+                                        <?php echo $button_text; ?>
+                            </button>
+                      <?php echo '</div></div>';
                         }
                     ?>
                 </div>
