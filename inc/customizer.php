@@ -948,14 +948,14 @@ function aza_customize_register($wp_customize)
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default'           => json_encode(array(
             array(
-                  "image_url" => aza_get_file('/images/team1.png'),
+                  "image_url" => aza_get_file('/images/team1.jpg'),
                   "title"     => esc_html__('Jane Doe', 'aza-lite'),
                   "subtitle"  => esc_html__('Project Supervisor', 'aza-lite'),
                   "color"     => '#f0b57c',
                   "text"      => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')
             ),
             array(
-                  "image_url" => aza_get_file('/images/team2.png'),
+                  "image_url" => aza_get_file('/images/team2.jpg'),
                   "title"     => esc_html__('Ola Nordmann', 'aza-lite'),
                   "subtitle"  => esc_html__('Web Designer', 'aza-lite'),
                   "color"     => '#4bb992',
@@ -963,14 +963,14 @@ function aza_customize_register($wp_customize)
             ),
 
             array(
-                  "image_url" => aza_get_file('/images/team3.png'),
+                  "image_url" => aza_get_file('/images/team3.jpg'),
                   "title"     => esc_html__('Average Joe', 'aza-lite'),
                   "subtitle"  => esc_html__('Front End Developer', 'aza-lite'),
                   "color"     => '#349ae0',
                   "text"      => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')
             ),
             array(
-                  "image_url" => aza_get_file('/images/team4.png'),
+                  "image_url" => aza_get_file('/images/team4.jpg'),
                   "title"     => esc_html__('Joe Bloggs', 'aza-lite'),
                   "subtitle"  => esc_html__('UX Designer', 'aza-lite'),
                   "color"     => '#887caf',
