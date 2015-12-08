@@ -1,45 +1,51 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-_s
-===
+=== AZA Lite===
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Contributors: Andrei Baicus
+Tags: red, white, gray, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready, parallax
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+Requires at least: 4.0
+Tested up to: 4.3
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts/` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Getting Started
----------------
+AZA Lite
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+== Description ==
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+AZA Lite is a perfect one-page Wordpress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable Wordpress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
+== Installation ==
+	
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-OR
+== Frequently Asked Questions ==
 
-* Search for: `'_s'` and replace with: `'megatherium'`
-* Search for: `_s_` and replace with: `megatherium_`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s-` and replace with: `megatherium-`
+= Does this theme support any plugins? =
 
-Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
+* Intergeo Maps 	https://wordpress.org/plugins/intergeo-maps/
+* Pirate Forms		https://wordpress.org/plugins/pirate-forms/
+* Contact Forms 7	https://wordpress.org/plugins/contact-form-7/
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+== License ==
 
-Good luck!
+AZA Lite WordPress theme, Copyright (C) 2015 Andrei Baicus. AZA Lite WordPress theme is licensed under the GPL3.
+
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License. The exceptions to this license are as follows:
+
+	* Bootstrap v3.1.1 (http://getbootstrap.com) Copyright 2011-2014 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+	* Images
+	  
+	License:	All unsplash.com and mystock.photos images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+			
+		*images/background.jpg	
+		*images/team1.jpg		https://download.unsplash.com/photo-1433615988899-12bdf1bd42b6				
+		*images/team2.jpg		https://images.unsplash.com/photo-1444857903073-dda503df5ec5	
+		*images/team3.jpg		https://images.unsplash.com/photo-1429117257281-73c32df3dcdc
+		*images/team4.jpg		https://images.unsplash.com/photo-1420578509940-73e9f7232eae
+			
