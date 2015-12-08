@@ -74,7 +74,7 @@ function aza_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'aza_custom_background_args', array(
 		'default-color' => '#ffffff',
-		'default-image' => get_template_directory_uri().'/images/background.png',
+		'default-image' => get_template_directory_uri().'/images/background.jpg',
 	) ) );
 
 

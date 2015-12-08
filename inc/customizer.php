@@ -31,7 +31,7 @@ function aza_customize_register($wp_customize)
     $wp_customize->add_section('aza_general_section', array(
         'title' => __('General Options', 'aza-lite'),
         'priority' => 1,
-        'description' => __('Aza Lite theme general options', 'aza-lite')
+        'description' => __('Theme general options', 'aza-lite')
     ));
 
     /*=============================================================================
@@ -58,7 +58,7 @@ function aza_customize_register($wp_customize)
         'label'       => __(' Navigation bar color', 'aza-lite'),
         'section'     => 'aza_general_section',
         'priority'    => 2,
-        'description' => __('Change color and opacity of the menu bar.', 'aza-lite'),
+        'description' => __('Change color and opacity of the menu bar', 'aza-lite'),
         'palette'     => false
     )));
 
@@ -183,7 +183,7 @@ function aza_customize_register($wp_customize)
             '3' => 'Folding square',
             '4' => 'Bouncing lines'
         ),
-        'description' => __('Change the preloader animation.', 'aza-lite')
+        'description' => __('Change the preloader animation', 'aza-lite')
     ));
 
     /********************************************************/
@@ -242,14 +242,14 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_setting('aza_hero_background', array(
-        'default'           => 'rgba(0, 0, 0, 0.5)',
+        'default'           => 'rgba(0,252,37,0.08)',
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_hero_background', array(
         'label'       => __(' Overlay', 'aza-lite'),
         'section'     => 'aza_appearance_cover',
         'priority'    => 4,
-        'description' => __('Edit the background <b>overlay</b> color and opacity.', 'aza-lite'),
+        'description' => __('Edit the background <b>overlay</b> color and opacity', 'aza-lite'),
         'palette'     => false
     )));
 
@@ -1068,7 +1068,7 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_section('aza_appearance_blog', array(
         'title'       => __('Blog Section', 'aza-lite'),
-        'description' => __('AZA theme Blog section appearance options', 'aza-lite'),
+        'description' => __('Blog section options', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -1130,7 +1130,7 @@ function aza_customize_register($wp_customize)
 
     $wp_customize->add_section('aza_appearance_contact', array(
         'title'       => __('Contact Section', 'aza-lite'),
-        'description' => __('AZA theme contact section shortcode', 'aza-lite'),
+        'description' => __('Contact section shortcode', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -1234,7 +1234,7 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
     $wp_customize->add_section('aza_appearance_social_ribbon', array(
         'title'       => __('Social Ribbon', 'aza-lite'),
-        'description' => __('AZA theme social ribbon appearance options.', 'aza-lite'),
+        'description' => __('Social ribbon options.', 'aza-lite'),
         'panel'       => 'appearance_panel'
     ));
 
@@ -1441,7 +1441,7 @@ require_once('class/alpha-general-customizer.php');
 function aza_custom_background_settings()
 {
     add_theme_support('custom-background', array(
-        'default-image'       => aza_get_file('/images/background.png'),
+        'default-image'       => aza_get_file('/images/background.jpg'),
         'default-repeat'      => 'no-repeat',
         'default-position-x'  => 'center',
         'default-attachment'  => 'fixed'
