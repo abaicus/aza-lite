@@ -8,11 +8,11 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aza-lite
-Tags:black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Tags:red, white, gray, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready, parallax
 
 This theme, like WordPress, is licensed under the GPL.
 
-AZA is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+AZA Lite is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -40,37 +40,24 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	    3.1.3 INTRO
 	3.2 SECTION: COVER
 	3.3 SECTION: FEATURES
-	3.4 SECTION: APP BRIEF
+	3.4 PARALLAX
+  3.5 RIBBON
+	3.6 CLIENTS SECTION
+  3.7 TEAM SECTION
+  3.8 BLOG SECTION
+  3.9 CONTACT SECTION
+  3.10 MAP SECTION
+  3.11 SOCIAL RIBBON SECTION
+  3.12 SITE FOOTER
 
-	3.5 SECTION: STATS
-    3.6 SECTION: FEATURES
-    3.7 SECTION: PRICING TABLE
-    3.8 SECTION: SCREENSHOTS
-    3.9 SECTION: TIMELINE
-    3.10 SECTION: TEAM
-    3.11 SECTION: TESTIMONIALS
-    3.12 SECTION: CALL TO ACTION
-    3.13 SECTION: CONTACT INFO
-    3.14 SECTION: GOOGLE MAP
-    3.15 TEMPLATE: CONTACT PAGE
-    3.16 WOOCOMMERCE STYLE
-    3.17 FOOTER
+4. BLOG PAGE
+  4.1 SIDEBAR
+  4.2 POST
+  4.3 BLOG PAGE
 
-4. DEFAULT COLORS
+5. RESPONSIVE
 
-5. BLOG
-	5.1. SINGLE PAGE
-	5.2 GALLERY
-	5.3 SIDEBAR
-
-6. RESPONSIVE
-
-7. ICONS
-
-8. ACCESSIBILITY
-
-9. PLUGINS COMPATIBILITY
-	9.1
+6. ACCESSIBILITY
 
 -=============================================================================*/
 
@@ -193,7 +180,6 @@ Folding Cube
   left: 0;
   width: 100%;
   height: 100%;
-/*  background-color: #fff;*/
   -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
           animation: sk-foldCubeAngle 2.4s infinite linear both;
   -webkit-transform-origin: 100% 100%;
@@ -263,7 +249,6 @@ Rotating Plane
 .sk-rotating-plane {
   width: 40px;
   height: 40px;
-/*  background-color: #fc535f;*/
   margin: 40px auto;
   -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
           animation: sk-rotatePlane 1.2s infinite ease-in-out; }
@@ -289,14 +274,6 @@ Rotating Plane
   100% {
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
             transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
-
-/*
-#wrapper.not_ready {
-    display: none;
-    transition: all 0.5s ease;
-}
-*/
-
 
 /*=================================region LOADER=================================*/
 
@@ -375,7 +352,6 @@ Rotating Plane
     top: 0;
     width: 51%;
     height: 100%;
-/*    background: #222222;*/
     z-index: 1000;
     -webkit-transform: translateX(0);
     /* Chrome, Opera 15+, Safari 3.1+ */
@@ -858,9 +834,9 @@ big {
 }
 
 
-/**:focus {
+*:focus {
     outline: 0 !important;
-}*/
+}
 
 
 /*=============================================================================
@@ -1339,9 +1315,9 @@ header .navbar-brand {
 
 .cover-text h2 {
     font-size: 30px;
-    font-family: Montserrat;
-    font-weight: bold;
-    color: #d2d2d2;
+    font-family: Roboto;
+    font-weight: light;
+    color: #ffffff;
     letter-spacing: 2px;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -1675,7 +1651,7 @@ button.btn-normal-header:active {
 
 
 /*=============================================================================
-3.6 RIBBON
+3.5 RIBBON
 =============================================================================*/
 
 #ribbon {
@@ -1708,158 +1684,8 @@ button.btn-normal-header:active {
 }
 
 
-
 /*=============================================================================
-3.8 PRICING
-=============================================================================*/
-
-
- #pricing {
-    height: auto;
-    padding: 80px 0;
-    background: linear-gradient( rgba(41, 2, 2, 0.5), rgba(41, 2, 2, 0.5)), url(images/parallax-background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    overflow: hidden;
-}
-
-#pricing p {
-    margin: 40px 0;
-    color: #ededed;
-    font: 400 21px Roboto;
-}
-
-#pricing h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 40px;
-    margin-bottom: 40px;
-}
-
-div.ptp-item-container {
-    border: none !important;
-    height: auto;
-    padding: 20px 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.5);
-}
-
-div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-plan {
-    color: #ffffff;
-    font: 700 25px Montserrat !important;
-    text-transform: capitalize;
-    margin: 0;
-    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
-    line-height: 25px;
-    letter-spacing: 1.5px;
-}
-
-div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-price {
-    color: #ffffff;
-    font: 400 30px Montserrat !important;
-    line-height: 40px;
-    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
-    /*    padding: 50px 0;*/
-}
-
-div.ptp-col.ptp-four-col > div.ptp-item-container > div.ptp-bullet-item.ptp-row-id-0 {
-    color: #ffffff;
-    font: 400 17px Roboto;
-    margin: 0 0 10px 0;
-    padding: 0 40px;
-}
-
-.ptp-col-id-0 div.ptp-plan,
-.ptp-col-id-0 div.ptp-cta,
-.ptp-col-id-0 div.ptp-bullet-item {
-    background-color: #f0b57c;
-    border: none;
-}
-
-.ptp-col-id-0 div.ptp-price {
-    background-color: #f1953c
-}
-
-.ptp-col-id-1 div.ptp-plan,
-.ptp-col-id-1 div.ptp-cta,
-.ptp-col-id-1 div.ptp-bullet-item {
-    background-color: #4bb992;
-    border: none;
-}
-
-.ptp-col-id-1 div.ptp-price {
-    background-color: #39a27d;
-}
-
-.ptp-col-id-2 div.ptp-plan,
-.ptp-col-id-2 div.ptp-cta,
-.ptp-col-id-2 div.ptp-bullet-item {
-    background-color: #349ae0;
-    border: none;
-}
-
-.ptp-col-id-2 div.ptp-price {
-    background-color: #1b70aa;
-}
-
-.ptp-col-id-3 div.ptp-plan,
-.ptp-col-id-3 div.ptp-cta,
-.ptp-col-id-3 div.ptp-bullet-item {
-    background-color: #887caf;
-    border: none;
-}
-
-.ptp-col-id-3 div.ptp-price {
-    background-color: #665797;
-}
-
-.ptp-pricing-table .ptp-col a.ptp-button {
-    padding: 10px 30px;
-    width: auto;
-    -webkit-border-radius: 5px !important;
-    -moz-border-radius: 5px !important;
-    border-radius: 5px !important;
-}
-
-.ptp-item-container {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-.ptp-pricing-table div.ptp-col .ptp-item-container .ptp-plan {
-    border-top-left-radius: 5px !important;
-    border-top-right-radius: 5px !important;
-    -moz-border-top-left-radius: 5px !important;
-    -moz-border-top-right-radius: 5px !important;
-    -webkit-border-top-left-radius: 5px !important;
-    -webkit-border-top-right-radius: 5px !important;
-}
-
-.ptp-pricing-table div.ptp-col .ptp-item-container .ptp-cta {
-    border-bottom-left-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
-    -moz-border-bottom-left-radius: 5px !important;
-    -moz-border-bottom-right-radius: 5px !important;
-    -webkit-border-bottom-left-radius: 5px !important;
-    -webkit-border-bottom-right-radius: 5px !important;
-}
-
-.ptp-pricing-table div.ptp-col .ptp-most-popular {
-    background-color: rgba(255, 0, 0, 0.5);
-    height: auto;
-    line-height: 20px;
-    -webkit-border-radius: 5px !important;
-    -moz-border-radius: 5px !important;
-    border-radius: 5px !important;
-}
-/*=============================================================================
-3.10 CLIENTS SECTION
+3.6 CLIENTS SECTION
 =============================================================================*/
 
 .clients-header {
@@ -1924,7 +1750,7 @@ section#clients p {
 
 
 /*=============================================================================
-3.11 TEAM SECTION
+3.7 TEAM SECTION
 =============================================================================*/
 
 #team {
@@ -2058,7 +1884,7 @@ section#clients p {
 
 
 /*=============================================================================--------
-3.12 BLOG SECTION
+3.8 BLOG SECTION
 =============================================================================*/
 
 #blog {
@@ -2111,7 +1937,7 @@ section#clients p {
 
 
 /*=============================================================================
-3.13 CONTACT SECTION
+3.9 CONTACT SECTION
 =============================================================================*/
 
 
@@ -2211,7 +2037,7 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
 }
 
 /*=============================================================================
-3.14 MAP SECTION
+3.10 MAP SECTION
 =============================================================================*/
 
 #container-fluid {
@@ -2237,7 +2063,7 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
 
 
 /*=============================================================================
-3.15 SOCIAL RIBBON SECTION
+3.11 SOCIAL RIBBON SECTION
 =============================================================================*/
 
 #social {
@@ -2295,7 +2121,7 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
 
 
 /*=============================================================================
-3.16 SITE FOOTER
+3.12 SITE FOOTER
 =============================================================================*/
 
 .site-footer {
@@ -2342,9 +2168,7 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
 }
 
 
-/*=============================================================================
-3.16 SITE FOOTER
-=============================================================================*/
+/* FOOTER WIDGETS */
 
 .footer-widgets {
     padding-left: 40px;
@@ -2866,10 +2690,18 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
 
 
 /*=============================================================================
-   6.5 FIXES FOR => 768PX to <= 991PX SCREENS
+   5.1 FIXES FOR => 768PX to <= 991PX SCREENS
 =============================================================================*/
 
 @media (max-width: 991px) {
+    #cover h1 {
+        font-size: 50px;
+    }
+
+    #cover h2 {
+        font-size: 25px;
+    }
+
     .device {
         -ms-transform: scale(2,3);
         -webkit-transform: scale(2,3);
@@ -3071,7 +2903,7 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
 
 
 /*=============================================================================
-   6.6 FIXES FOR <= 768PX SCREENS
+   5.2 FIXES FOR <= 768PX SCREENS
 =============================================================================*/
 
 @media (max-width: 767px) {
@@ -3262,7 +3094,7 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
 
 
 /*=============================================================================
-   6.7 FIXES FOR MOBILE SCREENS
+   5.3 FIXES FOR MOBILE SCREENS
 =============================================================================*/
 
 @media (max-width: 580px) {
@@ -3302,11 +3134,19 @@ section#contact .wpcf7-form input.wpcf7-submit:focus {
     #carousel a>span {
         font-size: 45px;
     }
+    #cover h1 {
+        font-size: 40px;
+    }
+
+    #cover h2 {
+        font-size: 18px;
+    }
+
 }
 
 
 /*=========================================
-   8. ACCESSIBILITY
+   6. ACCESSIBILITY
 =========================================*/
 
 .screen-reader-text {

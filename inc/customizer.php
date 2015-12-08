@@ -242,7 +242,7 @@ function aza_customize_register($wp_customize)
     =============================================================================*/
 
     $wp_customize->add_setting('aza_hero_background', array(
-        'default'           => 'rgba(0,252,37,0.08)',
+        'default'           => 'rgba(0, 0, 0, 0.25)',
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_hero_background', array(
@@ -956,7 +956,7 @@ function aza_customize_register($wp_customize)
             ),
             array(
                   "image_url" => aza_get_file('/images/team2.png'),
-                  "title"     => esc_html__('Ola c', 'aza-lite'),
+                  "title"     => esc_html__('Ola Nordmann', 'aza-lite'),
                   "subtitle"  => esc_html__('Web Designer', 'aza-lite'),
                   "color"     => '#4bb992',
                   "text"      => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum augue posuere.', 'aza-lite')
@@ -1518,8 +1518,8 @@ function prefix_upsell_notice() {
  'prefix-customizer-upsell',
  'prefixL10n',
  array(
- 'prefixURL'	   => esc_url( 'https://themeisle.com/themes/aza-lite' ),
- 'prefixLabel'	 => __( 'Upgrade to AZA PRO', 'aza-lite' ),
+ 'prefixURL'	   => esc_url( 'http://themeisle.com' ),
+ 'prefixLabel'	 => __( 'AZA PRO - Coming soon', 'aza-lite' ),
  )
  );
 }
