@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-=== AZA Lite===
+#AZA Lite
 
 Contributors: Andrei Baicus
 Tags: red, white, gray, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready, parallax
@@ -13,25 +13,23 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 AZA Lite
 
-== Description ==
+#Description
 
 AZA Lite is a perfect one-page Wordpress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable Wordpress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
 
-== Installation ==
+#Installation
 	
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
+#Supported Plugins
 
 * Intergeo Maps 	https://wordpress.org/plugins/intergeo-maps/
 * Pirate Forms		https://wordpress.org/plugins/pirate-forms/
 * Contact Forms 7	https://wordpress.org/plugins/contact-form-7/
 
-== License ==
+#License
 
 AZA Lite WordPress theme, Copyright (C) 2015 Andrei Baicus. AZA Lite WordPress theme is licensed under the GPL3.
 
