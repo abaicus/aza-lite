@@ -11,6 +11,8 @@ $aza_playstore = get_theme_mod('aza_playstore', aza_get_file('/images/playstore.
 $aza_appstore_link = get_theme_mod('aza_appstore_link','#');
 $aza_playstore_link = get_theme_mod('aza_playstore_link','#');
 
+$separator = get_theme_mod('aza_separator_social_ribbon', '1');
+
 $social_icons = get_theme_mod ('aza_social_ribbon_icons', json_encode(
             array(
                 array('icon_value' => 'icon-social-facebook' ,
@@ -44,7 +46,7 @@ if(!empty($social_icons)){
 echo '</p>';
 }}
                         ?>
-                        <?php echo ( get_theme_mod( 'aza_separator_social_ribbon' ) ) ? "<hr class='separator'/>" : "" ?>
+                        <?php echo ($separator) ? "<hr class='separator'/>" : "" ?>
                             <?php
 if(!empty($aza_secondary_header)){
         echo "<h3>".$aza_secondary_header."</h3>";

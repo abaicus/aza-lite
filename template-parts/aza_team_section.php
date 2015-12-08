@@ -9,6 +9,9 @@ $subheading = get_theme_mod('aza_team_subtitle', 'Present your team members and 
 
 $background_color = get_theme_mod('aza_team_background', 'rgba(0, 0, 0, 0.75)');
 
+$separator_top = get_theme_mod('aza_separator_team_top', '1');
+$separator_bottom = get_theme_mod('aza_separator_team_bottom', '0');
+
 $team_content = get_theme_mod ('aza_team_content',json_encode(
          array(
                 array("image_url"     => aza_get_file('/images/team1.png'),
@@ -49,7 +52,7 @@ $button_link = get_theme_mod('aza_team_button_link', '#');
                     if(!empty($heading)) {
                         echo '<h1>'.$heading.'</h1>';
                     }?>
-                    <?php echo ( get_theme_mod( 'aza_separator_team_top' ) ) ? "<hr class='separator'/>" : "" ?>
+                    <?php echo ($separator_top) ? "<hr class='separator'/>" : "" ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p class = "team-p">'.$subheading.'</p>';
@@ -76,7 +79,7 @@ $button_link = get_theme_mod('aza_team_button_link', '#');
         }}}
                     ?>
             </div>
-             <?php echo ( get_theme_mod( 'aza_separator_team_bottom' ) ) ? "<hr class='separator'/>" : "" ?>
+             <?php echo ($separator_bottom) ? "<hr class='separator'/>" : "" ?>
              <?php
                         if(!empty($button_text))
                         {

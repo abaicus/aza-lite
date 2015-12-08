@@ -6,6 +6,7 @@ $frontpage_contact_shortcode = get_theme_mod('frontpage_contact_shortcode');
 $background_color = get_theme_mod('aza_contact_background','rgba(0, 0, 0, 0.75)');
 $heading = get_theme_mod('aza_contact_title', 'Contact');
 $subheading = get_theme_mod('aza_contact_subtitle', 'Message us');
+$separator_top = get_theme_mod('aza_separator_contact_top', '1');
 ?>
 
 
@@ -20,7 +21,7 @@ $subheading = get_theme_mod('aza_contact_subtitle', 'Message us');
                     if(!empty($heading)) {
                         echo '<h1>'.$heading.'</h1>';
                     }?>
-                     <?php echo ( get_theme_mod( 'aza_separator_contact_top' ) ) ? "<hr class='separator'/>" : "" ?>
+                     <?php echo ($separator_top) ? "<hr class='separator'/>" : "" ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p class = "team-p">'.$subheading.'</p>';
@@ -30,10 +31,14 @@ $subheading = get_theme_mod('aza_contact_subtitle', 'Message us');
 <?php
  if( !empty($frontpage_contact_shortcode) ){
 ?>
+<div class="row">
+  <div class="col-md-12 text-center">
                 <?php echo do_shortcode($frontpage_contact_shortcode);?>
-
+  </div>
+</div>
         <!-- .container-fluid -->
 <?php
      }
 ?>
+</div>
 </section>

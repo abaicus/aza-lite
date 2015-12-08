@@ -5,7 +5,7 @@ CTA RIBBON SECTION
 
 $aza_buttons_type = get_theme_mod ('aza_ribbon_layout', '2');
 
-$aza_ribbon_background_color = get_theme_mod ('aza_ribbon_background_color', 'rgba(255, 0, 0, 0.3)');
+$aza_ribbon_background_color = get_theme_mod ('aza_ribbon_background_color', 'rgba(0, 69, 97, 0.35)');
 
 $text =  get_theme_mod('aza_ribbon_text', 'START USING THIS BEAUTIFUL THEME TODAY');
 $text_color = get_theme_mod ('aza_ribbon_text_color', '#ffffff');

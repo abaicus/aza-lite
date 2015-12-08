@@ -1,3 +1,4 @@
+<div class="blog-content-wrapper">
 <?php
 /**
  * The template for displaying 404 pages (not found).
@@ -8,8 +9,9 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+<div class ="container">
+	<div class="row">
+	<div id="primary" class="content-area col-md-9">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
@@ -19,7 +21,8 @@ get_header(); ?>
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'aza-lite' ); ?></p>
-
+</div></div>
+<div id ="secondary" class= "col-md-3">
 					<?php get_search_form(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
@@ -54,5 +57,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div></div>
 <?php get_footer(); ?>

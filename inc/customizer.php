@@ -685,7 +685,7 @@ function aza_customize_register($wp_customize)
     //Color
 
     $wp_customize->add_setting('aza_ribbon_background_color', array(
-        'default'           => 'rgba(255, 0, 0, 0.3)',
+        'default'           => 'rgba(0, 69, 97, 0.35)',
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_ribbon_background_color', array(

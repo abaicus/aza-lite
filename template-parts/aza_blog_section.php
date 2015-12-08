@@ -7,6 +7,9 @@ $heading = get_theme_mod('aza_blog_title', 'LATEST NEWS');
 
 $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch with your latest blog posts and updates.');
 
+$separator_top = get_theme_mod('aza_separator_blog_top', '1');
+$separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
+
 ?>
 
 
@@ -18,7 +21,7 @@ $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch wit
                     if(!empty($heading)) {
                         echo '<h1>'.$heading.'</h1>';
                     }?>
-                     <?php echo ( get_theme_mod( 'aza_separator_blog_top' ) ) ? "<hr class='separator'/>" : "" ?>
+                     <?php echo ($separator_top) ? "<hr class='separator'/>" : "" ?>
                      <?php
                                 if(!empty($subheading)) {
                                 echo '<p class="blog-p">'.$subheading.'</p>';
@@ -63,6 +66,6 @@ $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch wit
 		<?php endif; ?>
          </div>
 
-         <?php echo ( get_theme_mod( 'aza_separator_blog_bottom' ) ) ? "<hr class='separator'/>" : "" ?>
+         <?php echo ($separator_bottom) ? "<hr class='separator'/>" : "" ?>
      </div>
 </section>
