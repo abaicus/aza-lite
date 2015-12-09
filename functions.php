@@ -147,7 +147,7 @@ function aza_scripts() {
 
     wp_enqueue_style( 'aza-bootstrap-style', aza_get_file( '/css/bootstrap.min.css'), array(), '3.3.1');
 
-    wp_enqueue_style( 'aza-stamp-icons', aza_get_file('/css/stamp-icons.css'));
+    wp_enqueue_style( 'aza-stamp-icons', aza_get_file('/stamp-icons.css'));
 
     wp_enqueue_style( 'aza-style', get_stylesheet_uri() );
 

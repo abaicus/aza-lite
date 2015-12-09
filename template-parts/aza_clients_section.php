@@ -9,11 +9,11 @@ $subheading = get_theme_mod('aza_clients_subheading', 'Our awesome clients');
 
 $clients_content = get_theme_mod ('aza_clients_content',json_encode(
          array(
-                array("image_url"     => aza_get_file('/images/adobe.png'),
+                array("image_url"     => aza_get_file('/images/logofactory.png'),
                       "link"          => esc_url("#")),
                 array("image_url"     => aza_get_file('/images/pixelgraft.png'),
                       "link"          => esc_url("#")),
-                array("image_url"     => aza_get_file('/images/wordpress.png'),
+                array("image_url"     => aza_get_file('/images/theloop.png'),
                       "link"          => esc_url("#")),
                 array("image_url"     => aza_get_file('/images/squares.png'),
                       "link"          => esc_url("#")),

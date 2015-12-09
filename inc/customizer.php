@@ -597,8 +597,8 @@ function aza_customize_register($wp_customize)
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default'           => json_encode(array(
             array(
-                'title' => esc_html__('Multi layered parallax.', 'aza-lite'),
-                'text'  => esc_html__('Fully customizable and showcases anything you need with an eyecandy design. Everything is organized on layers that can be changed individually. Fully responsive and massively beautiful.', 'aza-lite')
+                'title' => esc_html__('Parallax Section', 'aza-lite'),
+                'text'  => esc_html__('Fully responsive, multi-layered parallax section. Perfecly adaptable to any device.', 'aza-lite')
             )
         ))
     ));
@@ -820,7 +820,7 @@ function aza_customize_register($wp_customize)
         'sanitize_callback' => 'aza_sanitize_repeater',
         'default'           => json_encode(array(
             array(
-                  "image_url" => aza_get_file('/images/adobe.png'),
+                  "image_url" => aza_get_file('/images/logofactory.png'),
                   "link"      => esc_url("#")
             ),
             array(
@@ -828,7 +828,7 @@ function aza_customize_register($wp_customize)
                   "link"      => esc_url("#")
             ),
             array(
-                  "image_url" => aza_get_file('/images/wordpress.png'),
+                  "image_url" => aza_get_file('/images/theloop.png'),
                   "link"      => esc_url("#")
             ),
             array(

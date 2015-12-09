@@ -53,8 +53,8 @@
  'color' 						: '#fff',
  'text-transform' 	: 'uppercase',
  'margin-top' 			: '6px',
- 'padding' 					: '3px 6px',
- 'font-size'				: '10px',
+ 'padding' 					: '2px 6px',
+ 'font-size'				: '9px',
  'letter-spacing'		: '1.5px',
  'line-height'			: '1.5',
  'clear' 						: 'both'
