@@ -1387,9 +1387,9 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
 }
 .parallax-features p {
   color: #f0f0f0;
-  font: 100 16px / 18px Roboto;
-  line-height: 18px;
-  letter-spacing: 0.5px;
+  font: 100 16px Roboto;
+  line-height: 25px;
+  letter-spacing: 0.1px;
 }
 .parallax-features {
   margin: 0 auto;

@@ -598,7 +598,13 @@ function aza_customize_register($wp_customize)
         'default'           => json_encode(array(
             array(
                 'title' => esc_html__('Parallax Section', 'aza-lite'),
-                'text'  => esc_html__('Fully responsive, multi-layered parallax section. Perfecly adaptable to any device.', 'aza-lite')
+                'text'  => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Equidem e Cn. Itaque hic ipse iam pridem est reiectus; Ita prorsus, inquam; Respondent extrema primis, media utrisque, omnia omnibus. Duo Reges: constructio interrete. Est, ut dicis, inquam.
+
+Quae ista amicitia est? Dici enim nihil potest verius. Sit enim idem caecus, debilis.
+
+Primum quid tu dicis breve? Hoc Hieronymus summum bonum esse dixit. Quod vestri non item. At coluit ipse amicitias. Nihil illinc huc pervenit. Nos cum te, M.
+
+Sed ad rem redeamus; Quid enim? Quonam, inquit, modo? Ille enim occurrentia nescio quae comminiscebatur;', 'aza-lite')
             )
         ))
     ));
