@@ -27,7 +27,7 @@ AZA Lite is a perfect one-page Wordpress theme for small businesses, freelancers
 
 * Intergeo Maps 	https://wordpress.org/plugins/intergeo-maps/
 * Pirate Forms		https://wordpress.org/plugins/pirate-forms/
-* Contact Forms 7	https://wordpress.org/plugins/contact-form-7/
+* Contact Form 7	https://wordpress.org/plugins/contact-form-7/
 
 == License ==
 
