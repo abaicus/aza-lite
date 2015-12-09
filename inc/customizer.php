@@ -1511,7 +1511,7 @@ add_action('customize_preview_init', 'aza_customize_preview_js');
 /**
  * Display upgrade notice on customizer page
  */
-function prefix_upsell_notice() {
+function aza_upsell_notice() {
  // Enqueue the script
  wp_enqueue_script(
  'prefix-customizer-upsell',
@@ -1529,4 +1529,4 @@ function prefix_upsell_notice() {
  )
  );
 }
-add_action( 'customize_controls_enqueue_scripts', 'prefix_upsell_notice' );
+add_action( 'customize_controls_enqueue_scripts', 'aza_upsell_notice' );
