@@ -1,8 +1,8 @@
 /*
 Theme Name: AZA Lite
-Theme URI: http://themeisle.com/
+Theme URI: https://wordpress.org/themes/aza-lite/
 Author: Andrei Băicuș
-Author URI: http://themeisle.com/
+Author URI: https://profiles.wordpress.org/baicusandrei
 Description: AZA Lite is a perfect one-page Wordpress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable Wordpress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -1124,7 +1124,7 @@ header .navbar-brand {
 .cover-text h2 {
   font-size: 30px;
   font-family: Roboto;
-  font-weight: light;
+  font-weight: 100;
   color: #ffffff;
   letter-spacing: 2px;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
