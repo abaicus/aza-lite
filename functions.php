@@ -35,6 +35,7 @@ function aza_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'custom-header' );
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
