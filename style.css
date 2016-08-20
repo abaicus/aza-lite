@@ -7,7 +7,7 @@ Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aza-lite
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 
@@ -900,6 +900,18 @@ header .navbar-brand {
   z-index: -1;
   line-height: 28px;
 }
+
+button.dropdown-toggle.toggled-on:hover,
+button.dropdown-toggle.toggled-on:focus,
+button.dropdown-toggle.toggled-on,
+button.dropdown-toggle:hover,
+button.dropdown-toggle:focus,
+button.dropdown-toggle {
+  color: #fff;
+  background: none;
+  border: none;
+}
+
 .sticky-navigation-open .sticky-navigation {
   top: 0px;
   opacity: 1;
