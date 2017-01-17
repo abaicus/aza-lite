@@ -165,7 +165,7 @@ function aza_scripts() {
 
     wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700|Homemade+Apple');
 
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.min.css','4.6.3' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css','4.6.3' );
 
 	wp_enqueue_script( 'aza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
