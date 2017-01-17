@@ -31,7 +31,6 @@ function aza_preloader_styles() {
 
 						section#contact { background-color: " . esc_attr($contact_background_color) . "; }
 
-
 						.header-image { background-color: " . esc_attr($aza_hero_background) . "; }
 
 						.first-header-button { background-color: " . esc_attr($aza_button_color_1) . "; color:" . esc_attr($aza_button_text_color_1) . "; }
@@ -48,7 +47,7 @@ function aza_preloader_styles() {
 
 						#ribbon h3 { color: " . esc_attr($ribbon_text_color) . "; }
 
-						#ribbon button { color: " . esc_attr($ribbon_button_text_color) . "; background-color: " . esc_attr($ribbon_button_color) . "; }
+						#ribbon .btn.features-btn { color: " . esc_attr($ribbon_button_text_color) . "; background-color: " . esc_attr($ribbon_button_color) . "; }
 
 
 					</style>";
