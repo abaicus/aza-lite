@@ -1,6 +1,6 @@
 <?php
 
-function aza_preloader_styles() {
+function aza_custom_colors() {
 		$preloader_color = get_theme_mod('aza_preloader_color','#fc535f');
 		$preloader_background_color = get_theme_mod('aza_preloader_background_color','#333333');
 		$navbar_color = get_theme_mod('aza_navbar_color','rgba(0, 0, 0, 0.75)');
@@ -19,7 +19,7 @@ function aza_preloader_styles() {
 		$ribbon_text_color = get_theme_mod ('aza_ribbon_text_color', '#ffffff');
 		$header_image = get_header_image();
 
-		echo "<style>
+		$output = "
 
 						body.home.page { background-image: url(". esc_url($header_image) ."); }
 
@@ -27,15 +27,15 @@ function aza_preloader_styles() {
 
 						#loader .sk-rotating-plane, #loader .sk-child, #loader .sk-cube, #loader .spinner > div { background-color:" . esc_attr($preloader_color) . "; }
 
-						.sticky-navigation-open .sticky-navigation { background-color: " . esc_attr($navbar_color) . "; }
+						.navbar, .dropdown-menu { background-color: " . esc_attr($navbar_color) . "; }
 
 						section#contact { background-color: " . esc_attr($contact_background_color) . "; }
 
 						.header-image { background-color: " . esc_attr($aza_hero_background) . "; }
 
-						.first-header-button { background-color: " . esc_attr($aza_button_color_1) . "; color:" . esc_attr($aza_button_text_color_1) . "; }
+						.first-header-button, .first-header-button:hover, .first-header-button:active, .first-header-button:focus { background-color: " . esc_attr($aza_button_color_1) . "; color:" . esc_attr($aza_button_text_color_1) . "; }
 
-						.second-header-button { background-color: " . esc_attr($aza_button_color_2) . "; color:" . esc_attr($aza_button_text_color_2) . "; }
+						.second-header-button, .second-header-button:hover, .second-header-button:active, .second-header-button:focus  { background-color: " . esc_attr($aza_button_color_2) . "; color:" . esc_attr($aza_button_text_color_2) . "; }
 
 						#parallax .parallax-background { background-image: url( " . esc_url($parallax_background) . "); }
 
@@ -47,11 +47,12 @@ function aza_preloader_styles() {
 
 						#ribbon h3 { color: " . esc_attr($ribbon_text_color) . "; }
 
-						#ribbon .btn.features-btn { color: " . esc_attr($ribbon_button_text_color) . "; background-color: " . esc_attr($ribbon_button_color) . "; }
+						#ribbon .btn.features-btn { color: " . esc_attr($ribbon_button_text_color) . "; background-color: " . esc_attr($ribbon_button_color) . "; } 
+						
+						";
 
-
-					</style>";
+	wp_add_inline_style( 'aza-style', $output );
 }
-add_action('wp_head', 'aza_preloader_styles', 100);
+add_action( 'wp_enqueue_scripts', 'aza_custom_colors', 10 );
 
 ?>

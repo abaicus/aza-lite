@@ -26,3 +26,11 @@ jQuery(document).ready(function () {
    jQuery('.map_overlay').click(function(){
        jQuery(this).hide();
    });
+
+jQuery(document).ready(function () {
+
+    var buttons = jQuery('#pirate-forms-contact-submit, .wpcf7-form input.wpcf7-submit');
+    if ( buttons !== undefined ) {
+        buttons.addClass('btn btn-default');
+    }
+});

@@ -15,6 +15,7 @@ function aza_customize_register($wp_customize) {
 
 // Load Customizer repeater control.
 	require_once( 'customizer-repeater/class/customizer-repeater-control.php' );
+// Load Alpha Colorpicker control.
 	require_once( 'class/alpha-general-customizer.php' );
 
     /*=============================================================================
@@ -126,10 +127,10 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     ));
 
     /********************************************************/
-    /********************* APPEARANCE  **********************/
+    /********************* SECTIONS  **********************/
     /********************************************************/
 
-    $wp_customize->add_panel('appearance_panel', array(
+    $wp_customize->add_panel('sections_panel', array(
         'priority'        => 30,
         'capability'      => 'edit_theme_options',
         'theme_supports'  => '',
@@ -140,9 +141,9 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_section('aza_appearance_cover', array(
         'title'       => __('Hero Area', 'aza-lite'),
-        'priority'    => 30,
+        'priority'    => 1,
         'description' => __('Edit the hero area content', 'aza-lite'),
-        'panel'       => 'appearance_panel'
+        'panel'       => 'sections_panel'
     ));
 
     /*=============================================================================
@@ -335,15 +336,76 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 		'palette'     => false
 	)));
 
-    /*=============================================================================
-    PARALLAX SECTION
-    =============================================================================*/
+	/*=============================================================================
+	 BLOG SECTION
+	 =============================================================================*/
+
+	$wp_customize->add_section('aza_appearance_blog', array(
+		'title'       => __('Blog Section', 'aza-lite'),
+		'description' => __('Blog section options', 'aza-lite'),
+		'priority'    => 5,
+		'panel'       => 'sections_panel',
+	));
+
+	/*=============================================================================
+	Blog headings
+	=============================================================================*/
+
+	$wp_customize->add_setting('aza_blog_title', array(
+		'sanitize_callback' => 'aza_sanitize_text'
+	));
+
+	$wp_customize->add_control('aza_blog_title', array(
+		'label'     => __('Title', 'aza-lite'),
+		'section'   => 'aza_appearance_blog',
+		'priority'  => 1
+	));
+
+	$wp_customize->add_setting('aza_blog_subtitle', array(
+		'sanitize_callback' => 'aza_sanitize_text'
+	));
+
+	$wp_customize->add_control('aza_blog_subtitle', array(
+		'label'     => esc_html__('Subtitle', 'aza-lite'),
+		'section'   => 'aza_appearance_blog',
+		'priority'  => 2
+	));
+	/*=============================================================================
+	Blog Separators
+	=============================================================================*/
+
+	$wp_customize->add_setting('aza_separator_blog_top', array(
+		'default'           => 1,
+		'sanitize_callback' => 'aza_sanitize_checkbox'
+	));
+
+	$wp_customize->add_control('aza_separator_blog_top', array(
+		'label'   => __('Separator top','aza-lite'),
+		'type'    => 'checkbox',
+		'section' => 'aza_appearance_blog'
+	));
+
+	$wp_customize->add_setting('aza_separator_blog_bottom', array(
+		'default'           => 0,
+		'sanitize_callback' => 'aza_sanitize_checkbox'
+	));
+
+	$wp_customize->add_control('aza_separator_blog_bottom', array(
+		'label'   => __('Separator bottom','aza-lite'),
+		'type'    => 'checkbox',
+		'section' => 'aza_appearance_blog'
+	));
+
+
+	/*=============================================================================
+	PARALLAX SECTION
+	=============================================================================*/
 
     $wp_customize->add_section('aza_appearance_parallax', array(
         'title'       => __('Parallax Section', 'aza-lite'),
-        'priority'    => 32,
+        'priority'    => 10,
         'description' => __('Parallax section options', 'aza-lite'),
-        'panel'       => 'appearance_panel'
+        'panel'       => 'sections_panel'
     ));
 
     /*=============================================================================
@@ -421,7 +483,8 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     $wp_customize->add_section('aza_appearance_ribbon', array(
         'title'       => __('Ribbon Section', 'aza-lite'),
         'description' => __('Call to action ribbon options', 'aza-lite'),
-        'panel'       => 'appearance_panel'
+        'panel'       => 'sections_panel',
+	    'priority'    => 15,
     ));
 
 
@@ -536,175 +599,13 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     )));
 
     /*=============================================================================
-    BLOG SECTION
-    =============================================================================*/
-
-    $wp_customize->add_section('aza_appearance_blog', array(
-        'title'       => __('Blog Section', 'aza-lite'),
-        'description' => __('Blog section options', 'aza-lite'),
-        'panel'       => 'appearance_panel'
-    ));
-
-    /*=============================================================================
-    Blog headings
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_blog_title', array(
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_blog_title', array(
-        'label'     => __('Title', 'aza-lite'),
-        'section'   => 'aza_appearance_blog',
-        'priority'  => 1
-    ));
-
-    $wp_customize->add_setting('aza_blog_subtitle', array(
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_blog_subtitle', array(
-        'label'     => esc_html__('Subtitle', 'aza-lite'),
-        'section'   => 'aza_appearance_blog',
-        'priority'  => 2
-    ));
-    /*=============================================================================
-    Blog Separators
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_separator_blog_top', array(
-        'default'           => 1,
-        'sanitize_callback' => 'aza_sanitize_checkbox'
-    ));
-
-    $wp_customize->add_control('aza_separator_blog_top', array(
-        'label'   => __('Separator top','aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_blog'
-    ));
-
-    $wp_customize->add_setting('aza_separator_blog_bottom', array(
-        'default'           => 0,
-        'sanitize_callback' => 'aza_sanitize_checkbox'
-    ));
-
-    $wp_customize->add_control('aza_separator_blog_bottom', array(
-        'label'   => __('Separator bottom','aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_blog'
-    ));
-
-
-    /*=============================================================================
-    CONTACT SECTION
-    =============================================================================*/
-
-    $wp_customize->add_section('aza_appearance_contact', array(
-        'title'       => __('Contact Section', 'aza-lite'),
-        'description' => __('Contact section shortcode', 'aza-lite'),
-        'panel'       => 'appearance_panel'
-    ));
-
-    /*=============================================================================
-    Contact headings
-    =============================================================================*/
-
-
-    $wp_customize->add_setting('aza_contact_title', array(
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_contact_title', array(
-        'label'     => __('Section heading', 'aza-lite'),
-        'section'   => 'aza_appearance_contact',
-        'description' => __('Title', 'aza-lite'),
-        'priority'  => 1,
-    ));
-
-    $wp_customize->add_setting('aza_contact_subtitle', array(
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('aza_contact_subtitle', array(
-        'description' => __('Subtitle', 'aza-lite'),
-        'section'     => 'aza_appearance_contact',
-        'priority'    => 2,
-    ));
-
-    /*=============================================================================
-    Contact shortcode
-    =============================================================================*/
-
-    $wp_customize->add_setting('frontpage_contact_shortcode', array(
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-
-    $wp_customize->add_control('frontpage_contact_shortcode', array(
-        'label'             => __('Form Shortcode', 'aza-lite'),
-        'section'           => 'aza_appearance_contact',
-        'priority'          => 3,
-    ));
-
-
-    /*=============================================================================
-    Contact background
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_contact_background', array(
-      'default'           => 'rgba(0, 0, 0, 0.75)',
-      'sanitize_callback' => 'aza_sanitize_colors'
-  ));
-  $wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_contact_background', array(
-      'label'       => __(' Background color', 'aza-lite'),
-      'section'     => 'aza_appearance_contact',
-      'palette'     => false,
-      'priority'    => 4,
-  )));
-
-
-    /*=============================================================================
-    Contact separators
-    =============================================================================*/
-
-    $wp_customize->add_setting('aza_separator_contact_top', array(
-        'default'           => 1,
-        'sanitize_callback' => 'aza_sanitize_checkbox'
-    ));
-
-    $wp_customize->add_control('aza_separator_contact_top', array(
-        'label'   => __('Top Separator','aza-lite'),
-        'type'    => 'checkbox',
-        'section' => 'aza_appearance_contact',
-        'priority'=> 5,
-    ));
-
-
-    /*=============================================================================
-    INTERGEO MAPS SECTION
-    =============================================================================*/
-
-    $wp_customize->add_section('aza_appearance_map', array(
-        'title'       => __('Maps Section', 'aza-lite'),
-        'panel'       => 'appearance_panel'
-    ));
-    $wp_customize->add_setting('frontpage_map_shortcode', array(
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
-    $wp_customize->add_control('frontpage_map_shortcode', array(
-        'label'       => __('Map Shortcode', 'aza-lite'),
-        'description' => __('We suggest using the <b>Intergeo Maps</b> plugin for the best possible experience', 'aza-lite'),
-        'section'     => 'aza_appearance_map',
-        'priority'    => 1
-    ));
-
-
-    /*=============================================================================
     SOCIAL RIBBON
     =============================================================================*/
     $wp_customize->add_section('aza_appearance_social_ribbon', array(
         'title'       => __('Social Ribbon', 'aza-lite'),
         'description' => __('Social ribbon options.', 'aza-lite'),
-        'panel'       => 'appearance_panel'
+        'panel'       => 'sections_panel',
+	    'priority'    => 20,
     ));
 
 
@@ -803,6 +704,109 @@ if ( !function_exists( 'the_custom_logo' ) ) {
         'type'    => 'checkbox',
         'section' => 'aza_appearance_social_ribbon'
     ));
+
+	/*=============================================================================
+  CONTACT SECTION
+  =============================================================================*/
+
+	$wp_customize->add_section('aza_appearance_contact', array(
+		'title'       => __('Contact Section', 'aza-lite'),
+		'description' => __('Contact section shortcode', 'aza-lite'),
+		'panel'       => 'sections_panel'
+	));
+
+	/*=============================================================================
+	Contact headings
+	=============================================================================*/
+
+
+	$wp_customize->add_setting('aza_contact_title', array(
+		'sanitize_callback' => 'aza_sanitize_text'
+	));
+
+	$wp_customize->add_control('aza_contact_title', array(
+		'label'     => __('Section heading', 'aza-lite'),
+		'section'   => 'aza_appearance_contact',
+		'description' => __('Title', 'aza-lite'),
+		'priority'  => 1,
+	));
+
+	$wp_customize->add_setting('aza_contact_subtitle', array(
+		'sanitize_callback' => 'aza_sanitize_input'
+	));
+
+	$wp_customize->add_control('aza_contact_subtitle', array(
+		'description' => __('Subtitle', 'aza-lite'),
+		'section'     => 'aza_appearance_contact',
+		'priority'    => 2,
+	));
+
+	/*=============================================================================
+	Contact shortcode
+	=============================================================================*/
+
+	$wp_customize->add_setting('frontpage_contact_shortcode', array(
+		'sanitize_callback' => 'aza_sanitize_text'
+	));
+
+	$wp_customize->add_control('frontpage_contact_shortcode', array(
+		'label'             => __('Form Shortcode', 'aza-lite'),
+		'section'           => 'aza_appearance_contact',
+		'priority'          => 3,
+	));
+
+
+	/*=============================================================================
+	Contact background
+	=============================================================================*/
+
+	$wp_customize->add_setting('aza_contact_background', array(
+		'default'           => 'rgba(0, 0, 0, 0.75)',
+		'sanitize_callback' => 'aza_sanitize_colors'
+	));
+	$wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_contact_background', array(
+		'label'       => __(' Background color', 'aza-lite'),
+		'section'     => 'aza_appearance_contact',
+		'palette'     => false,
+		'priority'    => 4,
+	)));
+
+
+	/*=============================================================================
+	Contact separators
+	=============================================================================*/
+
+	$wp_customize->add_setting('aza_separator_contact_top', array(
+		'default'           => 1,
+		'sanitize_callback' => 'aza_sanitize_checkbox'
+	));
+
+	$wp_customize->add_control('aza_separator_contact_top', array(
+		'label'   => __('Top Separator','aza-lite'),
+		'type'    => 'checkbox',
+		'section' => 'aza_appearance_contact',
+		'priority'=> 5,
+	));
+
+
+	/*=============================================================================
+	INTERGEO MAPS SECTION
+	=============================================================================*/
+
+	$wp_customize->add_section('aza_appearance_map', array(
+		'title'       => __('Maps Section', 'aza-lite'),
+		'panel'       => 'sections_panel'
+	));
+	$wp_customize->add_setting('frontpage_map_shortcode', array(
+		'sanitize_callback' => 'aza_sanitize_input'
+	));
+	$wp_customize->add_control('frontpage_map_shortcode', array(
+		'label'       => __('Map Shortcode', 'aza-lite'),
+		'description' => __('We suggest using the <b>Intergeo Maps</b> plugin for the best possible experience', 'aza-lite'),
+		'section'     => 'aza_appearance_map',
+		'priority'    => 1
+	));
+
 
 }
 
@@ -917,6 +921,17 @@ function aza_sanitize_select( $input, $setting ) {
 }
 
 /**
+ * Sanitize variables to allow HTML tags
+ *
+ * @param string $input Text to sanitize.
+ *
+ * @return string
+ */
+function aza_sanitize_input( $input ) {
+	return wp_kses_post( force_balance_tags( $input ) );
+}
+
+/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
@@ -927,5 +942,3 @@ function aza_customize_preview_js()
     ), '20130508', true);
 }
 add_action('customize_preview_init', 'aza_customize_preview_js');
-
-
