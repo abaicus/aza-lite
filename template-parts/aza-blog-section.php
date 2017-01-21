@@ -12,41 +12,47 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
 ?>
 <section id="blog">
     <?php if( ! empty( $heading ) || ! empty( $subheading ) ) { ?>
-        <div class="container">
+        <div class="container title-subtitle-container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 text-center">
                     <?php
                     if( ! empty( $heading ) ) {
                         echo '<h2>'. esc_html( $heading ).'</h2>';
+                    } elseif ( is_customize_preview() ) {
+                        echo '<h2 class="aza_only_customizer"></h2>';
                     }
 
                     if ( $separator_top ) {
                         echo "<hr class='separator'/>";
+                    } elseif ( is_customize_preview() ) {
+                        echo "<hr class='separator aza_customizer_only'/>";
                     }
 
                     if( ! empty( $subheading ) ) {
                         echo '<p class="section-subheading">'. esc_html( $subheading ) .'</p>';
+                    } elseif ( is_customize_preview() ) {
+                        echo '<p class="section-subheading aza_only_customizer"></p>';
                     }
                     ?>
                 </div>
             </div>
         </div>
-    <?php } ?>
+    <?php }  ?>
 
-    <div class="container">
+    <div class="container posts-container">
         <div class="row">
 
 
-            <?php $loop = new WP_Query( array( 'posts_per_page' => 3, 'ignore_sticky_posts' => true ) );
+            <?php
+            $posts_number = get_theme_mod('aza_blog_posts_number', 3);
+            $loop = new WP_Query( array( 'posts_per_page' => $posts_number, 'ignore_sticky_posts' => true ) );
             if ( $loop->have_posts() ) {
                 while ( $loop->have_posts() ) {
                     $loop->the_post();
                     get_template_part( 'template-parts/blog-posts', get_post_format() );
                 }
-                wp_reset_postdata();
             } else {
                 get_template_part( 'template-parts/content', 'none' );
-                wp_reset_query();
             } ?>
         </div>
 

@@ -72,7 +72,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 html {
     font-size: 100%;
-    font-family: Sans-serif;
+    font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
@@ -438,30 +438,7 @@ a:focus {
 .navbar-inverse .navbar-nav > li > a {
     color: inherit;
 }
-.nav > li > a {
-    padding: inherit;
-}
-.navbar-nav.navbar-right:last-child {
-    margin-right: 0;
-}
-.navbar-inverse .navbar-nav > li > a:focus {
-    color: #fc535f;
-    outline: 1px solid #008ed6;
-    outline-style: dotted;
-}
-.navbar-inverse .navbar-nav > li.not-active {
-    color: #008ed6;
-}
-.navbar {
-    border-radius: 0px;
-}
-.mailchimp-success, .mailchimp-error, .email-success, .email-error {
-    display: none;
-    margin-top: 15px;
-}
-.mailchimp-success span, .mailchimp-error span, .email-success span, .email-error span {
-    margin-right: 10px;
-}
+
 
 /*=========================================
    2. COMPONENTS
@@ -476,7 +453,7 @@ a:focus {
 /* HEADINGS */
 
 h1, h2 {
-    font-family: 'Montserrat', Helvetica Neue, Sans-serif;
+    font-family: 'Montserrat', Helvetica Neue, sans-serif;
     font-weight: 400;
 }
 h1 {
@@ -487,25 +464,25 @@ h1 {
 }
 h2 {
     font-size: 30px;
-    line-height: 34px;
+    line-height: 1.6;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
 h3 {
     font-size: 24px;
-    line-height: 28px;
+    line-height: 1.6;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
 h4 {
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.6;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
 h5 {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 1.6;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
@@ -562,7 +539,7 @@ strong, .strong {
     text-transform: uppercase;
 }
 .price .month {
-    font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+    font-family: 'Open Sans', Helvetica Neue, sans-serif;
     color: #666666;
     font-size: 16px !important;
 }
@@ -579,11 +556,8 @@ html {
     box-sizing: inherit;
 }
 body {
-    background-attachment: fixed;
+    background: fixed no-repeat #000;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #000;
-    /* Fallback for when there is no custom background color defined. */
 }
 body.custom-background {
     background-size: cover;
@@ -596,9 +570,8 @@ body.custom-background {
     color: #008ed6!important;
 }
 .header {
+    background: top center fixed;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: top center;
 }
 blockquote:before, blockquote:after, q:before, q:after {
     content: "";
@@ -661,7 +634,7 @@ dfn, cite, em, i {
 }
 blockquote {
     padding: 15px 20px;
-    font-size: 17.5px;
+    font-size: 17px;
     line-height: 24px;
     margin-bottom: 1.5em;
     font-weight: 300;
@@ -674,10 +647,8 @@ address {
     margin: 0 0 1.5em;
 }
 pre {
-    background: #eee;
     font-family: "Courier 10 Pitch", Courier, monospace;
     font-size: 15px;
-    font-size: 0.9375rem;
     line-height: 1.6;
     margin-bottom: 1.6em;
     max-width: 100%;
@@ -689,7 +660,6 @@ pre {
 code, kbd, tt, var {
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 15px;
-    font-size: 0.9375rem;
 }
 abbr, acronym {
     border-bottom: 1px dotted #666;
@@ -795,7 +765,7 @@ h2{
     vertical-align: super;
 }
 sub {
-    bottom: 0px;
+    bottom: 0;
     font-size: 50%;
 }
 
@@ -847,12 +817,12 @@ p.site-description {
     float: right;
 }
 .nav li a {
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     color: #fff;
     font-size: 15px;
 }
 .nav>li>a:hover, .nav>li>a:focus, .nav>li>a:active, .dropdown-menu>li>a:hover, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
-    color: #e63340;
+    color: #fc535f;
     background: transparent;
 }
 .nav>li>a {
@@ -939,7 +909,7 @@ p.site-description {
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
     letter-spacing: 3px;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     padding-top: 40px;
 }
 .cover-text h1 {
@@ -970,7 +940,7 @@ p.site-description {
     position: relative;
 }
 .row-parallax {
-    margin: 0px 0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -978,27 +948,24 @@ p.site-description {
 .parallax-background {
     position: absolute;
     width: 100%;
-    background-position: center center;
+    background: center center no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     min-height: 600px;
     z-index: -100;
     margin-top: -25px;
 }
 .parallax-layer-1 {
     width: 100%;
-    background-position: center center;
+    background: center center no-repeat;
     background-size: auto;
-    background-repeat: no-repeat;
     height: 650px;
     position: absolute;
     z-index: -100;
 }
 .parallax-layer-2 {
     width: 100%;
-    background-position: center center;
+    background: center center no-repeat;
     background-size: auto;
-    background-repeat: no-repeat;
     height: 650px;
     position: absolute;
     z-index: -1;
@@ -1013,16 +980,11 @@ p.site-description {
 }
 .parallax-features h3 {
     color: #ffffff;
-    font: 100 30px Montserrat;
+    font-weight: 100;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
     margin: 20px 0 20px 0;
     letter-spacing: 1px;
-    /*    text-align: center;*/
-}
-.parallax-features p {
-    color: #f0f0f0;
-    font: 100 16px Roboto;
-    line-height: 25px;
-    letter-spacing: 0.1px;
 }
 .parallax-features {
     margin: 0 auto;
@@ -1040,17 +1002,18 @@ p.site-description {
     padding: 80px 0;
 }
 #ribbon .ribbon-row {
-    margin: 0px 0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #ribbon .ribbon-row h3 {
-    font: 700 21px Montserrat;
+    font: 700 25px Montserrat;
+
     text-transform: uppercase;
     margin: 0 auto;
     padding: 10px 0;
-    letter-spacing: normal;
+    letter-spacing: 1px;
 }
 #ribbon a {
     margin-top: 0;
@@ -1067,23 +1030,29 @@ p.site-description {
 #blog {
     padding: 80px 0;
     background-color: #3d3d3d;
-    -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
 }
-#blog .blog-p {
-    color: #fefefe;
-    font-family: "roboto", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+
+#blog .title-subtitle-container {
     margin-bottom: 40px;
 }
-#blog img {4
+#blog img {
+    transition: all .3s ease;
     width: 100%;
     margin: 0 auto 20px;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+#blog a:hover>img {
+    position: relative;
+    transform: translateY(-5px);
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
 }
 #blog p {
     color: #ffffff;
@@ -1161,7 +1130,7 @@ section#contact .wpcf7-form textarea {
     width: auto;
 }
 section#contact .wpcf7-form p {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 18px;
 }
 section#contact .wpcf7-form input.wpcf7-submit {
@@ -1197,16 +1166,16 @@ section#contact .wpcf7-form input.wpcf7-submit {
 #social {
     background-color: #3d3d3d;
     padding: 20px 0;
-    -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
 }
 #social h3 {
     color: #cccccc;
     font: 400 18px Montserrat;
     text-transform: uppercase;
 }
-#social p {}
+#social p { margin-bottom: 0}
 #social .separator {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -1230,7 +1199,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
     border-radius: 5px;
     border: 1px solid #191919;
     background-color: #222222;
-    padding: 0px;
+    padding: 0;
     transition: all 0.5s ease;
     margin: 0 20px;
 }
@@ -1244,9 +1213,9 @@ section#contact .wpcf7-form input.wpcf7-submit {
 =============================================================================*/
 
 .site-footer {
-    -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.75);
     height: auto;
     background-color: #252426;
     padding: 20px;
@@ -1257,7 +1226,6 @@ section#contact .wpcf7-form input.wpcf7-submit {
 }
 .site-footer ul li {
     font-size: 12px;
-    line-height: 18px;
     display: inline-block;
     margin: 0 3px;
 }
@@ -1302,7 +1270,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
     color: #fc535f;
     text-transform: uppercase;
     font-weight: bold;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     text-align: center;
 }
 .footer-widgets h2::before {
@@ -1368,7 +1336,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
 .footer-widgets .search-submit {
     color: #ffffff;
     font-weight: 700;
-    font-family: montserrat;
+    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     background-color: #fc535f;
@@ -1403,7 +1371,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
 #secondary {
     border-left: 1px solid #7b7b7b;
     padding-left: 40px;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     color: #b4b4b4;
 }
 #secondary a {
@@ -1419,7 +1387,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
     color: #ffcbcd;
     text-transform: uppercase;
     font-weight: bold;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
 }
 #secondary h2::before {
     margin-bottom: 10px;
@@ -1488,7 +1456,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
 #secondary .search-submit {
     color: #ffffff;
     font-weight: 700;
-    font-family: montserrat;
+    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     background-color: #fc535f;
@@ -1521,7 +1489,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
 #primary input[type=submit] {
     color: #ffffff;
     font-weight: 700;
-    font-family: montserrat;
+    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     background-color: #fc535f;
@@ -1574,7 +1542,6 @@ section#contact .wpcf7-form input.wpcf7-submit {
 #primary .byline {
     margin-left: auto;
     font-size: 12px;
-    line-height: 12px;
 }
 #primary footer.entry-footer {
     display: flex;
@@ -1649,20 +1616,17 @@ section#contact .wpcf7-form input.wpcf7-submit {
 }
 #primary .comment-content {
     font-size: 14px;
-    line-height: 18px;
 }
 #primary .comment-metadata .edit-link {
     margin-left: 10px;
 }
 #primary .comment-metadata {
     font-size: 12px;
-    line-height: 10px;
     margin: 10px 0;
 }
 #primary .comment-form-comment label {
     display: block;
     font-size: 12px;
-    line-height: 16px;
     letter-spacing: 1px;
     font-weight: 100;
 }
@@ -1692,7 +1656,6 @@ section#contact .wpcf7-form input.wpcf7-submit {
 .aza-post-meta {
     font-size: 12px;
     color: #a9a9a9;
-    line-height: 12px;
 }
 .list-post-entry-meta {
     font-size: 14px;
@@ -1795,17 +1758,6 @@ section#contact .wpcf7-form input.wpcf7-submit {
     html {
         font-size: 95%;
     }
-    .sticky-navigation {
-        min-height: 70px;
-    }
-    .sticky-navigation .main-navigation > li.has_children > a {
-        line-height: 34px;
-        line-height: 18px;
-        padding: 26px 18px;
-    }
-    .sticky-navigation .login-register {
-        margin-top: 3px;
-    }
     .ipad-image {
         max-width: 500px;
     }
@@ -1845,18 +1797,11 @@ section#contact .wpcf7-form input.wpcf7-submit {
         border: 1px solid #fc535f;
         transition: all 0.5s ease;
     }
-    .sticky-navigation .main-navigation li a {
-        line-height: inherit;
-        padding: 10px;
-    }
     .border-right-colored, .border-left-colored {
         border: none;
     }
     .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
         border-color: rgba(49, 49, 49, 0.1);
-    }
-    .sticky-navigation {
-        min-height: 60px;
     }
     .nav > li {
         display: inline-block;
@@ -1914,53 +1859,12 @@ section#contact .wpcf7-form input.wpcf7-submit {
         margin-right: 8px;
     }
     /* fixed header */
-    .sticky-navigation {
-        top: 0 !important;
-        opacity: 1 !important;
-        position: relative !important;
-    }
-    .sticky-navigation .main-navigation ul, .sticky-navigation .main-navigation ul ul, .sticky-navigation .main-navigation ul ul ul {
-        position: relative;
-        left: 0;
-        left: auto;
-    }
-    .sticky-navigation .main-navigation ul, .sticky-navigation .main-navigation ul li, .sticky-navigation .main-navigation ul a {
-        width: 100%;
-    }
-    .sticky-navigation .main-navigation ul li:hover > ul {
-        left: 0;
-    }
-    .sticky-navigation .main-navigation ul {
-        box-shadow: none;
-        padding: 0;
-    }
-    .sticky-navigation .primary-menu ul li {
-        padding-left: 7%;
-    }
-    .sticky-navigation .main-navigation ul .dropdownmenu, .dropdownmenu {
-        position: absolute;
-        z-index: 9;
-        right: 0;
-        top: 5px;
-        width: 25px;
-        height: 25px;
-        margin: 0;
-        padding: 0;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-        background: #999999;
-    }
-    .sticky-navigation .main-navigation ul .this-open > .dropdownmenu, .this-open > .dropdownmenu {
-        background: #008ed6;
-    }
     .dropdownmenu:before {
         content: "";
         text-align: center;
         width: 25px;
         height: 25px;
         color: #ffffff;
-        line-height: 26px !important;
         float: left;
     }
     .this-open > a {
@@ -2048,7 +1952,6 @@ section#contact .wpcf7-form input.wpcf7-submit {
     overflow: hidden;
     color: #000;
     background: #fff;
-    width: 1px;
     height: 1px;
 }
 .screen-reader-text:focus {

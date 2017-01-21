@@ -120,3 +120,17 @@ function aza_category_transient_flusher() {
 }
 add_action( 'edit_category', 'aza_category_transient_flusher' );
 add_action( 'save_post',     'aza_category_transient_flusher' );
+
+/**
+ * Excerpt length option.
+ *
+ * @return int
+ */
+function aza_custom_excerpt_length() {
+	if ( is_page_template('template-frontpage.php') ) {
+		return absint( get_theme_mod('aza_frontpage_blog_excerpt_length' ) );
+	} else {
+		return 100;
+	}
+}
+add_filter( 'excerpt_length', 'aza_custom_excerpt_length', 999 );

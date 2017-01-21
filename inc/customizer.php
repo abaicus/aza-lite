@@ -62,6 +62,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     */
     $wp_customize->add_setting('aza_preloader_color', array(
         'default'           => '#fc535f',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_colors'
     ));
 
@@ -75,6 +76,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_preloader_background_color', array(
         'default'           => '#333333',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_colors'
     ));
 
@@ -92,8 +94,8 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_preloader_toggle', array(
         'default'           => 1,
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_checkbox'
-
     ));
 
     $wp_customize->add_control('aza_preloader_toggle', array(
@@ -110,6 +112,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     =============================================================================*/
     $wp_customize->add_setting('aza_preloader_type', array(
         'default'           => '1',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_select'
     ));
 
@@ -135,7 +138,8 @@ if ( !function_exists( 'the_custom_logo' ) ) {
         'capability'      => 'edit_theme_options',
         'theme_supports'  => '',
         'title'           => __('Sections', 'aza-lite'),
-        'description'     => __('Customize the appearance of the front page sections', 'aza-lite')
+        'description'     => __('Customize the appearance of the front page sections', 'aza-lite'),
+	    'active_callback' => 'frontpage_check',
     ));
 
 
@@ -151,7 +155,9 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     =============================================================================*/
 
     $wp_customize->add_setting('aza_header_title', array(
-        'sanitize_callback' => 'aza_sanitize_text'
+    'sanitize_callback' => 'aza_sanitize_text',
+	'transport'         => 'postMessage',
+
     ));
 
     $wp_customize->add_control('aza_header_title', array(
@@ -166,8 +172,9 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     =============================================================================*/
 
     $wp_customize->add_setting('aza_subheader_title', array(
-        'sanitize_callback' => 'aza_sanitize_text'
-    ));
+        'sanitize_callback' => 'aza_sanitize_text',
+        'transport'         => 'postMessage',
+));
     $wp_customize->add_control('aza_subheader_title', array(
         'section'     => 'aza_appearance_cover',
         'priority'    => 3,
@@ -175,9 +182,21 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     ));
 
-    /*=============================================================================
-    Header buttons
-    =============================================================================*/
+	/*=============================================================================
+	Site Header Partials
+	=============================================================================*/
+	$wp_customize->selective_refresh->add_partial( 'aza_header_title', array(
+		'selector'        => '.cover-text h1' ,
+		'settings'        => 'aza_header_title',
+		'render_callback' => function(){
+			return get_theme_mod( 'aza_header_title' );
+		},
+	) );
+
+
+	/*=============================================================================
+	Header buttons
+	=============================================================================*/
     $wp_customize->add_setting('aza_header_buttons_type', array(
         'default'           => 'normal_buttons',
         'sanitize_callback' => 'aza_sanitize_select'
@@ -190,18 +209,18 @@ if ( !function_exists( 'the_custom_logo' ) ) {
         'description' => __('Change the header buttons type or remove them', 'aza-lite'),
         'section'     => 'aza_appearance_cover',
         'choices'     => array(
-            'store_buttons'     => 'Store buttons',
-            'normal_buttons'    => 'Normal buttons',
+	        'normal_buttons'    => 'Normal buttons',
+	        'store_buttons'     => 'Store buttons',
             'disabled_buttons'  => 'Disable buttons'
         )
     ));
-
 
     /*=============================================================================
     Store Buttons
     =============================================================================*/
     $wp_customize->add_setting('aza_appstore_link', array(
         'default'           => esc_url('#'),
+	    'transport'         => 'postMessage',
         'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_appstore_link', array(
@@ -213,6 +232,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_playstore_link', array(
         'default'           => esc_url('#'),
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_playstore_link', array(
@@ -228,6 +248,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     //first button controls
     $wp_customize->add_setting('aza_button_text_1', array(
         'default'           => esc_html__('Button 1', 'aza-lite'),
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control('aza_button_text_1', array(
@@ -239,6 +260,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_link_1', array(
 	    'default'           => esc_url('#'),
+	    'transport'         => 'postMessage',
 	    'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_button_link_1', array(
@@ -249,6 +271,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_color_1', array(
         'default'           => '#3399df',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_colors',
     ));
 
@@ -262,6 +285,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_text_color_1', array(
         'default'           => '#ffffff',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_colors'
     ));
 
@@ -276,6 +300,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     //second button controls
     $wp_customize->add_setting('aza_button_text_2', array(
         'default'           => esc_html__('Button 2', 'aza-lite'),
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_text'
     ));
     $wp_customize->add_control('aza_button_text_2', array(
@@ -287,6 +312,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_link_2', array(
 	    'default'           => esc_url('#'),
+	    'transport'         => 'postMessage',
 	    'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_button_link_2', array(
@@ -297,6 +323,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_color_2', array(
         'default'           => '#fc535f',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_colors'
     ));
 
@@ -310,6 +337,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_text_color_2', array(
         'default'           => '#ffffff',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_colors'
     ));
 
@@ -326,6 +354,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
 	$wp_customize->add_setting('aza_hero_color', array(
 		'default'           => 'rgba(0, 0, 0, 0.25)',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'aza_sanitize_colors'
 	));
 	$wp_customize->add_control(new Aza_Customize_Alpha_Color_Control($wp_customize, 'aza_hero_color', array(
@@ -370,6 +399,37 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 		'section'   => 'aza_appearance_blog',
 		'priority'  => 2
 	));
+
+	/*=============================================================================
+	Blog Posts Number
+	=============================================================================*/
+
+	$wp_customize->add_setting('aza_blog_posts_number', array(
+		'default'           => 3,
+		'priority'          => 3,
+		'sanitize_callback' => 'absint'
+	));
+
+	$wp_customize->add_control('aza_blog_posts_number', array(
+		'label'   => __('Blog Posts Number','aza-lite'),
+		'section' => 'aza_appearance_blog'
+	));
+
+	/*=============================================================================
+	Blog Excerpt Length
+	=============================================================================*/
+	$wp_customize->add_setting('aza_frontpage_blog_excerpt_length', array(
+		'default'           => 50,
+		'priority'          => 4,
+		'sanitize_callback' => 'absint'
+	));
+
+	$wp_customize->add_control('aza_frontpage_blog_excerpt_length', array(
+		'label'   => __('Excerpt Length','aza-lite'),
+		'type'    => 'number',
+		'section' => 'aza_appearance_blog'
+	));
+
 	/*=============================================================================
 	Blog Separators
 	=============================================================================*/
@@ -415,7 +475,8 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_parallax_image', array(
         'default'           => get_template_directory_uri() . '/images/parallax-image.png',
-        'sanitize_callback' => 'esc_url_raw'
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_url_raw',
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_image', array(
@@ -426,16 +487,27 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     )));
 
     $wp_customize->add_setting('aza_parallax_text', array(
+	    'transport'         => 'postMessage',
         'sanitize_callback' => 'aza_sanitize_text',
-      ));
+    ));
 
     $wp_customize->add_control('aza_parallax_text', array(
-        'description'             => __('Text', 'aza-lite'),
+        'description'             => __('Text - You can also use html basic tags here.', 'aza-lite'),
         'section'                 => 'aza_appearance_parallax',
+        'type'                    => 'textarea',
         'priority'                => 2,
     ));
 
-
+	/*=============================================================================
+	Parallax Text Partials
+	=============================================================================*/
+	$wp_customize->selective_refresh->add_partial( 'aza_parallax_text', array(
+		'selector'        => '.parallax-features h3' ,
+		'settings'        => 'aza_parallax_text',
+		'render_callback' => function(){
+			return get_theme_mod( 'aza_parallax_text' );
+		},
+	) );
     /*=============================================================================
     Parallax layers
     =============================================================================*/
@@ -464,7 +536,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     )));
 
     $wp_customize->add_setting('aza_parallax_layer_2', array(
-        'default'           => esc_url( get_template_directory_uri() . '/images/parallax-layer2.png' ),
+	    'default'           => esc_url( get_template_directory_uri() . '/images/parallax-layer2.png' ),
         'sanitize_callback' => 'esc_url_raw'
     ));
 
@@ -474,12 +546,9 @@ if ( !function_exists( 'the_custom_logo' ) ) {
         'priority'    => 5
     )));
 
-
     /*=============================================================================
     RIBBON SECTION
     =============================================================================*/
-
-
     $wp_customize->add_section('aza_appearance_ribbon', array(
         'title'       => __('Ribbon Section', 'aza-lite'),
         'description' => __('Call to action ribbon options', 'aza-lite'),
@@ -942,3 +1011,7 @@ function aza_customize_preview_js()
     ), '20130508', true);
 }
 add_action('customize_preview_init', 'aza_customize_preview_js');
+
+function frontpage_check() {
+	return is_page_template('template-frontpage.php');
+}

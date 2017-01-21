@@ -38,7 +38,7 @@ $button_text = get_theme_mod('aza_ribbon_button_text');
                     <?php }
 
                     if( ! empty( $button_text ) ) { ?>
-                        <div class="col-lg-5 col-md-12 col-xs-12 col-sm-12">'
+                        <div class="col-lg-5 col-md-12 col-xs-12 col-sm-12">
                             <a href="<?php echo esc_html( $button_link ); ?>" class="btn features-btn center-block">
                                 <?php echo esc_html ( $button_text ); ?>
                             </a>

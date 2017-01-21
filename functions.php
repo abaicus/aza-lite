@@ -37,7 +37,10 @@ function aza_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-header', array(
+		'width'                  => 1920,
+		'height'                 => 1080,
+	) );
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -94,6 +97,7 @@ function aza_setup() {
 
 	}
 
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 
 }
@@ -167,7 +171,7 @@ function aza_scripts() {
 
     wp_enqueue_style( 'aza-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700|Homemade+Apple');
+    wp_enqueue_style( 'aza-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400,700|Homemade+Apple');
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css','4.6.3' );
 

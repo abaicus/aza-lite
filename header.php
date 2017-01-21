@@ -22,51 +22,50 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 </head>
 
 <body <?php body_class(); ?>>
-<?php if($preloader_toggle) { ?>
+<?php if( ( $preloader_toggle )&& ( ! is_customize_preview() ) ) { ?>
 
+<div id="loader-wrapper">
+	<div id="loader">
 
-	<div id="loader-wrapper">
-		<div id="loader">
+		<?php
 
-			<?php
-
-			switch ( $preloader_type ) {
-				case '1': ?>
-					<div class="sk-rotating-plane"></div>
-					<?php break;
-				case '2': ?>
-					<div class="sk-three-bounce">
-						<div class="sk-child sk-bounce1"></div>
-						<div class="sk-child sk-bounce2"></div>
-						<div class="sk-child sk-bounce3"></div>
-					</div>
-					<?php
-					break;
-				case '3': ?>
-					<div class="sk-folding-cube">
-						<div class="sk-cube1 sk-cube"></div>
-						<div class="sk-cube2 sk-cube"></div>
-						<div class="sk-cube4 sk-cube"></div>
-						<div class="sk-cube3 sk-cube"></div>
-					</div>
-					<?php
-					break;
-				case '4': ?>
-					<div class="spinner">
-						<div class="rect1"></div>
-						<div class="rect2"></div>
-						<div class="rect3"></div>
-						<div class="rect4"></div>
-						<div class="rect5"></div>
-					</div>
-					<?php
-					break;
-			}
-			?>
-		</div>
-		<div class="loader-section section-left"></div>
-		<div class="loader-section section-right"></div>
+		switch ( $preloader_type ) {
+			case '1': ?>
+				<div class="sk-rotating-plane"></div>
+				<?php break;
+			case '2': ?>
+				<div class="sk-three-bounce">
+					<div class="sk-child sk-bounce1"></div>
+					<div class="sk-child sk-bounce2"></div>
+					<div class="sk-child sk-bounce3"></div>
+				</div>
+				<?php
+				break;
+			case '3': ?>
+				<div class="sk-folding-cube">
+					<div class="sk-cube1 sk-cube"></div>
+					<div class="sk-cube2 sk-cube"></div>
+					<div class="sk-cube4 sk-cube"></div>
+					<div class="sk-cube3 sk-cube"></div>
+				</div>
+				<?php
+				break;
+			case '4': ?>
+				<div class="spinner">
+					<div class="rect1"></div>
+					<div class="rect2"></div>
+					<div class="rect3"></div>
+					<div class="rect4"></div>
+					<div class="rect5"></div>
+				</div>
+				<?php
+				break;
+		}
+		?>
 	</div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
 
 <?php } ?>
 
@@ -91,33 +90,33 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 					</button>
 					<?php
 					if ( function_exists( 'the_custom_logo' ) ) {
-						$website_logo_id = get_theme_mod( 'custom_logo' );
-						$website_logo_meta = wp_get_attachment_image_src($website_logo_id, 'full');
-						$website_logo = $website_logo_meta[0];
+					$website_logo_id = get_theme_mod( 'custom_logo' );
+					$website_logo_meta = wp_get_attachment_image_src($website_logo_id, 'full');
+					$website_logo = $website_logo_meta[0];
 					} else {
-						$website_logo = get_theme_mod('aza_logo', get_template_directory_uri() . '/images/logo.png' );
+					$website_logo = get_theme_mod('aza_logo', get_template_directory_uri() . '/images/logo.png' );
 					}
 					if(!empty($website_logo)) {
 
-						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
+					echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-						echo '<img src="'.esc_url($website_logo).'" alt="'.get_bloginfo('title').'">';
+					echo '<img src="'.esc_url($website_logo).'" alt="'.get_bloginfo('title').'">';
 
-						echo '</a>';
+					echo '</a>';
 
 					} elseif( (bool) display_header_text() == true ) {
 
-						echo '<div class="title-tagline-wrapper">';
+					echo '<div class="title-tagline-wrapper">';
 
-						echo '<div class="header-logo-wrap vert-align">';
+					echo '<div class="header-logo-wrap vert-align">';
 
-						echo '<h1 id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+					echo '<h1 id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
-						echo '<p id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
+					echo '<p id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
-						echo '</div>';
+					echo '</div>';
 
-						echo '</div>';
+					echo '</div>';
 
 					}
 
@@ -130,12 +129,12 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<?php
 						wp_nav_menu( array(
-							'menu'            => esc_html__( 'Primary Menu', 'baicus' ),
-							'theme_location'  => 'primary',
-							'depth'           => 2,
-							'menu_class'      => 'nav navbar-nav',
-							'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-							'walker'          => new wp_bootstrap_navwalker(),
+						'menu'            => esc_html__( 'Primary Menu', 'baicus' ),
+						'theme_location'  => 'primary',
+						'depth'           => 2,
+						'menu_class'      => 'nav navbar-nav',
+						'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+						'walker'          => new wp_bootstrap_navwalker(),
 						) );
 						?>
 					</nav>
