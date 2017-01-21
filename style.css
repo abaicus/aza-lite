@@ -689,12 +689,15 @@ big {
     background-color: #272727;
 }
 .btn {
+    transition: all .3s ease;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 24px;
     padding: 10px 20px;
-    transition: all 0.5s ease;
 }
 .btn-default {
     background-color: #fff;
@@ -712,12 +715,17 @@ big {
     color: #fff;
     position:relative;
     transform: translateY(-3px);
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
 }
 .btn.btn-normal-header {
     margin: 0 10px 20px 10px;
     transition: all .3s ease;
 }
-
+.btn.btn-stores {
+    padding: 0 10px;
+}
 /*=============================================================================
 	2.3 ALIGNMENTS
 =============================================================================*/
@@ -812,6 +820,7 @@ p.site-description {
 .navbar {
     margin: 0;
     border: none;
+    border-radius: 0;
 }
 .nav {
     float: right;
@@ -835,7 +844,7 @@ p.site-description {
     left: 51%;
     right: 51%;
     bottom: 0;
-    background: #fff;
+    background: #fc535f;
     -webkit-transition-property: left, right;
     transition-property: left, right;
     -webkit-transition-duration: 0.3s;
@@ -843,7 +852,7 @@ p.site-description {
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
     z-index: 10;
-    height: 1px;
+    height: 2px;
 
 }
 .nav>li>a:hover:before {
@@ -854,9 +863,11 @@ p.site-description {
     background: transparent;
 }
 .dropdown-menu {
-    text-align: center;
     border: none;
     background-color: rgba(0,0,0,0.5);
+}
+.dropdown-menu>li>a{
+    padding: 10px;
 }
 .dropdown-menu>.active>a {
     background: transparent;
