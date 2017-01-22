@@ -1281,21 +1281,22 @@ section#contact .wpcf7-form input.wpcf7-submit {
 .footer-widgets a:hover {
     color: #fc535f;
 }
-.footer-widgets h2 {
+.footer-widgets .widget-title {
     font-size: 16px;
     color: #fc535f;
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
     text-align: center;
+    margin-bottom: 5px;
 }
-.footer-widgets h2::before {
+.footer-widgets .widget-title::before {
     content: "";
     max-width: 200px;
     height: 1px;
     background-color: #7b7b7b;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 20px;
 }
 .footer-widgets ul {
     list-style: none;
