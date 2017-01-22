@@ -1,13 +1,13 @@
 /*=============================
-=========== JS CHECK  =========
-===============================*/
+ =========== JS CHECK  =========
+ ===============================*/
 
-        jQuery('html').removeClass('no-js');
-        jQuery('html').addClass('js');
+jQuery('html').removeClass('no-js');
+jQuery('html').addClass('js');
 
 /*=============================
-======= PRELOADER SCRIPT ======
-===============================*/
+ ======= PRELOADER SCRIPT ======
+ ===============================*/
 
 
 jQuery(document).ready(function () {
@@ -20,12 +20,12 @@ jQuery(document).ready(function () {
 
 
 /*=============================
-========= MAP OVERLAY =========
-===============================*/
+ ========= MAP OVERLAY =========
+ ===============================*/
 
-   jQuery('.map_overlay').click(function(){
-       jQuery(this).hide();
-   });
+jQuery('.map_overlay').click(function(){
+    jQuery(this).hide();
+});
 
 jQuery(document).ready(function () {
 
@@ -33,4 +33,26 @@ jQuery(document).ready(function () {
     if ( buttons !== undefined ) {
         buttons.addClass('btn btn-default');
     }
+});
+
+/*=============================
+ ========= Smooth scr =========
+ ===============================*/
+jQuery(document).ready(function ($) {
+    $( '.navbar a[href*="#"], a.btn[href*="#"]' ).click(function () {
+        var menuitem = $(this).attr( 'class' );
+        if (menuitem === 'dropdown-toggle' ) {
+            return;
+        }
+        if (location.pathname.replace(/^\//, '' ) === this.pathname.replace(/^\//, '' ) && location.hostname === this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $( '[name=' + this.hash.slice(1) + ']' );
+            if (target.length) {
+                $( 'html,body' ).animate({
+                    scrollTop: target.offset().top
+                }, 1200 );
+                return false;
+            }
+        }
+    });
 });
