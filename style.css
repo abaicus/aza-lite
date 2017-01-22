@@ -1155,6 +1155,11 @@ section#contact .wpcf7-form input.wpcf7-submit {
 #container-fluid {
     position: relative;
 }
+
+.map-section {
+    position: relative;
+}
+
 .map_overlay {
     position: absolute;
     width: 100%;

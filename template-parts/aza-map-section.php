@@ -9,7 +9,7 @@ if ( ! empty( $frontpage_map_shortcode ) ) {
 
     ?>
 
-    <section id="map">
+    <section id="map" class="map-section">
 
         <div class="map_overlay"></div>
 
