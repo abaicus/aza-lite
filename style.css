@@ -1798,6 +1798,13 @@ section#contact .wpcf7-form input.wpcf7-submit {
         font-size: 80%;
     }
     body.home.page {
+        background-attachment: fixed !important;
+        background-size: cover !important;
+        background-clip: border-box;
+        background-color: transparent;
+        background-origin: padding-box;
+        background-position: right top;
+        background-repeat: no-repeat;
         height: 100vh;
     }
     .features-btn {
