@@ -902,6 +902,35 @@ p.site-description {
     margin: 0;
 }
 
+/**
+Centered Menu
+**/
+.centered-menu .navbar-header {
+    width: 100%;
+    text-align: center;
+    float:none;
+}
+.centered-menu .navbar-header .navbar-brand {
+    float: none;
+}
+.centered-menu .navbar-header .navbar-brand>img{
+    display: inline;
+    margin-top: 20px;
+}
+.centered-menu .nav{
+    text-align: center;
+    float: none;
+    margin-top: 20px;
+}
+.centered-menu .nav>li {
+    float: none;
+    display: inline-block;
+}
+.centered-menu .nav>li a {
+    padding: 0 10px;
+    line-height: 45px;
+}
+
 /*=============================================================================
 3.2 COVER
 =============================================================================*/
