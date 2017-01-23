@@ -1797,6 +1797,9 @@ section#contact .wpcf7-form input.wpcf7-submit {
     html {
         font-size: 80%;
     }
+    body.home.page {
+        height: 100vh;
+    }
     .features-btn {
         margin-bottom: 40px;
     }
