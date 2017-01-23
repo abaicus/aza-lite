@@ -1196,9 +1196,12 @@ section#contact .wpcf7-form input.wpcf7-submit {
     margin-bottom: 10px;
 }
 #social p>a {
+    margin: 0 20px 10px 0;
     font-size: 40px;
-    margin: 0 20px;
     transition: all 0.5s ease;
+}
+#social p>a:last-child{
+    margin-right: 0;
 }
 #social p>a:hover,
 #social p>a:focus,
