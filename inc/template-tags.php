@@ -127,8 +127,9 @@ add_action( 'save_post',     'aza_category_transient_flusher' );
  * @return int
  */
 function aza_custom_excerpt_length() {
+	$excerpt = get_theme_mod( 'aza_frontpage_blog_excerpt_length' );
 	if ( is_page_template('template-frontpage.php') ) {
-		return absint( get_theme_mod('aza_frontpage_blog_excerpt_length' ) );
+		return absint( $excerpt );
 	} else {
 		return 100;
 	}

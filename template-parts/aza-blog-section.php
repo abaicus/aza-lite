@@ -18,20 +18,14 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
                     <?php
                     if( ! empty( $heading ) ) {
                         echo '<h2>'. esc_html( $heading ).'</h2>';
-                    } elseif ( is_customize_preview() ) {
-                        echo '<h2 class="aza_only_customizer"></h2>';
                     }
 
                     if ( $separator_top ) {
                         echo "<hr class='separator'/>";
-                    } elseif ( is_customize_preview() ) {
-                        echo "<hr class='separator aza_customizer_only'/>";
                     }
 
                     if( ! empty( $subheading ) ) {
                         echo '<p class="section-subheading">'. esc_html( $subheading ) .'</p>';
-                    } elseif ( is_customize_preview() ) {
-                        echo '<p class="section-subheading aza_only_customizer"></p>';
                     }
                     ?>
                 </div>
@@ -52,7 +46,7 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
                     get_template_part( 'template-parts/blog-posts', get_post_format() );
                 }
             } else {
-                get_template_part( 'template-parts/content', 'none' );
+                    get_template_part( 'template-parts/content', 'none' );
             } ?>
         </div>
 

@@ -876,8 +876,7 @@ p.site-description {
     background-color: #fff;
 }
 .navbar-toggle {
-    padding: 42px 20px;
-    margin: 0;
+    padding: 34px 30px 34px 0;
 }
 .vert-align {
     vertical-align: middle;
@@ -1275,7 +1274,6 @@ section#contact .wpcf7-form input.wpcf7-submit {
 }
 .footer-widgets a {
     color: #9fcfff;
-;
     transition: 0.3s ease all;
 }
 .footer-widgets a:hover {
@@ -1380,6 +1378,12 @@ section#contact .wpcf7-form input.wpcf7-submit {
     margin-bottom: 80px;
 }
 .bypostauthor {}
+
+.post-img-wrap {
+    margin-top: 10px;
+}
+
+
 
 /*=============================================================================
     4.1 SIDEBAR
@@ -1732,6 +1736,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
     #parallax .parallax-content img {
         display: block;
         margin-bottom: 40px;
+        max-width: 50%;
     }
     .parallax-features {
         text-align: center;
@@ -1747,6 +1752,7 @@ section#contact .wpcf7-form input.wpcf7-submit {
     }
     .parallax-features h3 {
         padding: 0 20px;
+        font-size: 20px;
     }
     .parallax-background {
         height: 950px;
