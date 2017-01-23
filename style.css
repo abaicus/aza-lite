@@ -961,7 +961,7 @@ p.site-description {
     background: center center no-repeat;
     background-size: cover;
     min-height: 600px;
-    z-index: -100;
+    z-index: -200;
     margin-top: -25px;
 }
 .parallax-layer-1 {
@@ -978,10 +978,10 @@ p.site-description {
     background-size: auto;
     height: 650px;
     position: absolute;
-    z-index: -1;
+    z-index: 10;
 }
 .parallax-img {
-    z-index: -75;
+    z-index: 0;
     position: relative;
     margin: 0 auto;
 }
