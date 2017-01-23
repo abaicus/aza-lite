@@ -1963,6 +1963,16 @@ section#contact .wpcf7-form input.wpcf7-submit {
     #cover h2 {
         font-size: 18px;
     }
+    .btn {
+        font-size: 18px;
+    }
+
+    #blog {
+        padding: 50px 0;
+    }
+    .header-image {
+    padding-top: 80px;
+    }
 }
 
 /*=========================================
