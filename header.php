@@ -22,6 +22,8 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 </head>
 
 <body <?php body_class(); ?>>
+<div id="fixedbg"></div>
+
 <?php if( ( $preloader_toggle )&& ( ! is_customize_preview() ) ) { ?>
 
 <div id="loader-wrapper">

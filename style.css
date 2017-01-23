@@ -92,6 +92,16 @@ body.home.page {
     background-size: cover;
 }
 
+#fixedbg {
+    z-index:-10000;
+    height:100%;
+    width:100%;
+    position:fixed;
+    background-size: cover;
+    background-position: center;
+
+}
+
 body.blog {
     background-image: none !important;
 }
@@ -1796,16 +1806,6 @@ section#contact .wpcf7-form input.wpcf7-submit {
 @media (max-width: 767px) {
     html {
         font-size: 80%;
-    }
-    body.home.page {
-        background-attachment: fixed !important;
-        background-size: cover !important;
-        background-clip: border-box;
-        background-color: transparent;
-        background-origin: padding-box;
-        background-position: right top;
-        background-repeat: no-repeat;
-        height: 100vh;
     }
     .features-btn {
         margin-bottom: 40px;

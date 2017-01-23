@@ -21,7 +21,7 @@ function aza_custom_colors() {
 
 		$output = "
 
-						body.home.page { background-image: url(". esc_url($header_image) ."); }
+						#fixedbg { background-image: url(". esc_url($header_image) ."); }
 
 						.loader-section, .sk-folding-cube .sk-cube:before { background-color:" . esc_attr($preloader_background_color) . "; }
 
