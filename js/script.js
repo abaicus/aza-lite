@@ -6,7 +6,10 @@ jQuery('html').removeClass('no-js');
 jQuery('html').addClass('js');
 
 jQuery(document).ready(function ($) {
-    centerMenu()
+    windowWidth = $(window).width();
+    if (windowWidth >= 768) {
+        centerMenu();
+    }
     /*=============================
      ======= PRELOADER SCRIPT ======
      ===============================*/
