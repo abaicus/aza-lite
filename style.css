@@ -818,6 +818,10 @@ p.site-description {
 }
 .navbar-brand {
     height: auto;
+    max-width: 250px;
+}
+.navbar-brand>img {
+    transition: height .3s ease;
 }
 .header-logo-wrap {
     text-align: center;
@@ -888,18 +892,57 @@ p.site-description {
     padding: 34px 30px 34px 0;
 }
 .vert-align {
+    float: none;
     vertical-align: middle;
     display: table-cell;
 }
 .title-tagline-wrapper {
-    min-height:100px;
+    padding: 24px 0 23px;
     display: table;
+    transition: all .3s ease;
+}
+.navbar-brand-wrapper {
+    transition: all .3s ease;
+    float: left;
+    display: table;
+    min-height:100px;
 }
 
 .section-subheading {
     color: #ededed;
     font: 100 21px Roboto;
     margin: 0;
+}
+
+/**
+Sticky Navbar
+**/
+.sticky-navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+}
+
+.sticky-navbar.navbar-small .navbar-brand-wrapper {
+    min-height: 70px;
+}
+.sticky-navbar.navbar-small .title-tagline-wrapper {
+    padding: 8px 0 9px;
+}
+.centered-menu .sticky-navbar.navbar-small .title-tagline-wrapper {
+    padding: 5px 0;
+}
+.sticky-navbar.navbar-small .nav li>a {
+    line-height: 40px;
+}
+
+.sticky-navbar.navbar-small .navbar-brand {
+    max-width: 200px;
+    padding: 5px 15px;
+}
+
+.sticky-navbar.navbar-small .navbar-brand>img{
+    max-height: 60px;
 }
 
 /**
@@ -910,17 +953,28 @@ Centered Menu
     text-align: center;
     float:none;
 }
-.centered-menu .navbar-header .navbar-brand {
+.centered-menu .navbar-brand-wrapper {
     float: none;
+    min-height: 0;
+    display: inline;
+}
+
+.centered-menu .title-tagline-wrapper {
+    margin: 0 auto;
+    padding: 10px 0 0;
+    display: inline-block;
+}
+.centered-menu .menu-primary-container{
+    text-align: center;
 }
 .centered-menu .navbar-header .navbar-brand>img{
     display: inline;
     margin-top: 20px;
 }
 .centered-menu .nav{
-    text-align: center;
+    display: inline-block;
     float: none;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .centered-menu .nav>li {
     float: none;
