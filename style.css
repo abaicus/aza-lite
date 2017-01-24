@@ -1017,6 +1017,11 @@ Centered Menu
     z-index: 1;
     background-attachment: fixed;
 }
+
+.sticky-navigation .header-image {
+    padding-top: 300px;
+}
+
 .cover-text {
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
@@ -2081,6 +2086,9 @@ section#contact .wpcf7-form input.wpcf7-submit {
     }
     .header-image {
         padding-top: 80px;
+    }
+    .sticky-navigation .header-image {
+        padding-top: 180px;
     }
 }
 

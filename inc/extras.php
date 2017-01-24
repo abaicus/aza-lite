@@ -8,17 +8,18 @@
  */
 
 /**
- * Adds custom classes to the array of body classes.
+ * Add class for sticky navbar if sticky navbar is on.
  *
- * @param array $classes Classes for the body element.
+ * @param $classes
+ *
  * @return array
  */
 function aza_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
+	$aza_sticky_navbar = get_theme_mod('aza_sticky_navbar', false);
 
-	return $classes;
-}
+	if( (bool) $aza_sticky_navbar === true ) {
+		return array_merge( $classes, array( 'sticky-navigation' ) );
+	}
+};
+
 add_filter( 'body_class', 'aza_body_classes' );

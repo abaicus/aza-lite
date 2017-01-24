@@ -10,8 +10,12 @@
 $preloader_toggle = get_theme_mod('aza_preloader_toggle','1');
 $preloader_type = get_theme_mod('aza_preloader_type','1');
 $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
-$aza_sticky_navbar = get_theme_mod('aza_sticky_navbar', false)
-
+$aza_sticky_navbar = get_theme_mod('aza_sticky_navbar', false);
+if( (bool) $aza_sticky_navbar === true ) {
+	$class_to_add = "sticky-navbar";
+} else {
+	$class_to_add = "";
+}
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -79,11 +83,6 @@ $aza_sticky_navbar = get_theme_mod('aza_sticky_navbar', false)
 ============================== -->
 <!--header-->
 <header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" class="header site-header">
-<?php  if( (bool) $aza_sticky_navbar === true ) {
-	$class_to_add = "sticky-navbar";
-} else {
-	$class_to_add = "";
-}?>
 	<div class="overlay-layer-nav">
 		<div class="navbar <?php echo esc_attr( $class_to_add ); ?>">
 			<div class="container">
