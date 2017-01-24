@@ -797,7 +797,7 @@ function aza_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_control( 'aza_social_ribbon_store_buttons', array(
-		'label'   => __( 'Show store buttons' ),
+		'label'   => __( 'Show store buttons', 'aza-lite' ),
 		'type'    => 'checkbox',
 		'section' => 'aza_appearance_social_ribbon'
 	) );

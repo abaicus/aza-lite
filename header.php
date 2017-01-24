@@ -139,7 +139,7 @@ if( (bool) $aza_sticky_navbar === true ) {
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<?php
 						wp_nav_menu( array(
-							'menu'            => esc_html__( 'Primary Menu', 'baicus' ),
+							'menu'            => esc_html__( 'Primary Menu', 'aza-lite' ),
 							'theme_location'  => 'primary',
 							'depth'           => 2,
 							'menu_class'      => 'nav navbar-nav',
