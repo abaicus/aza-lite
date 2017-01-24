@@ -937,8 +937,12 @@ Sticky Navbar
 .centered-menu .sticky-navbar.navbar-small .title-tagline-wrapper {
     padding: 5px 0;
 }
+
+@media (min-width: 540px) {
+
 .sticky-navbar.navbar-small .nav li>a {
     line-height: 40px;
+}
 }
 
 .sticky-navbar.navbar-small .navbar-brand {
