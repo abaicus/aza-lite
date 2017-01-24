@@ -890,6 +890,7 @@ p.site-description {
 }
 .navbar-toggle {
     padding: 34px 30px 34px 0;
+    transition: all .3s ease;
 }
 .vert-align {
     float: none;
@@ -921,6 +922,10 @@ Sticky Navbar
     position: fixed;
     width: 100%;
     z-index: 10000;
+}
+
+.sticky-navbar.navbar-small .navbar-toggle {
+    padding: 19px 30px 19px 0;
 }
 
 .sticky-navbar.navbar-small .navbar-brand-wrapper {
