@@ -69,11 +69,12 @@ jQuery(document).ready(function ($) {
     }
 
     $(window).resize(function() {
+        if (windowWidth >= 768) {
         if(this.resizeTO) clearTimeout(this.resizeTO);
         this.resizeTO = setTimeout(function() {
             $(this).trigger('resizeEnd');
         }, 100);
-    });
+    }});
     $(window).bind('resizeEnd', function() {
         centerMenu();
     });
