@@ -136,3 +136,19 @@ function aza_custom_excerpt_length() {
 }
 add_filter( 'excerpt_length', 'aza_custom_excerpt_length', 999 );
 
+/**
+ * Add class for sticky navbar if sticky navbar is on.
+ *
+ * @param $classes
+ *
+ * @return array
+ */
+function aza_body_classes( $classes ) {
+	$aza_sticky_navbar = get_theme_mod('aza_sticky_navbar', false);
+
+	if( (bool) $aza_sticky_navbar === true ) {
+		return array_merge( $classes, array( 'sticky-navigation' ) );
+	}
+};
+
+add_filter( 'body_class', 'aza_body_classes' );
