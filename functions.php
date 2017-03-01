@@ -7,6 +7,8 @@
  * @package aza-lite
  */
 
+define('AZA_INC_DIR', get_template_directory() . '/inc/');
+
 require_once( trailingslashit( get_template_directory() ) . 'inc/wp_bootstrap_navwalker.php' );
 
 if ( ! function_exists( 'aza_setup' ) ) :
@@ -304,3 +306,34 @@ function aza_register_required_plugins() {
 }
 
 add_action( 'tgmpa_register', 'aza_register_required_plugins' );
+
+function aza_features_manager() {
+	$feature_manager = AZA_INC_DIR . '/advanced/functions.php';
+	if ( file_exists( $feature_manager ) ) {
+		include_once ( $feature_manager );
+	}
+}
+add_action( 'after_setup_theme','aza_features_manager' );
+
+
+function aza_include_sections() {
+	$inc_dir = rtrim( AZA_INC_DIR, '/' );
+	$allowed_phps = array(
+		'/sections/aza-header-section',
+		'/sections/aza-blog-section',
+		'/sections/aza-parallax-section',
+		'/sections/aza-ribbon-section',
+		'/sections/aza-social-section',
+		'/sections/aza-contact-section',
+		'/sections/aza-map-section',
+	);
+	$allowed_phps = apply_filters( 'aza_filter_sections',$allowed_phps );
+	foreach ( $allowed_phps as $file ) {
+		$file_to_include = $inc_dir . $file . '.php';
+		if ( file_exists( $file_to_include ) ) {
+			include_once( $file_to_include );
+		}
+	}
+}
+add_action( 'after_setup_theme','aza_include_sections' );
+

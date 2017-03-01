@@ -304,7 +304,7 @@ Rotating Plane
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 1000000;
 }
 #loader {
     display: block;
@@ -831,6 +831,7 @@ p.site-description {
 /* STICKY NAVIGATION AND LOGO */
 
 .navbar {
+    transition: all .3s ease;
     margin: 0;
     border: none;
     border-radius: 0;
@@ -938,9 +939,9 @@ Sticky Navbar
     padding: 5px 0;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 768px) {
 
-    .sticky-navbar.navbar-small .nav li>a {
+    .sticky-navbar.navbar-small .nav >li>a {
         line-height: 40px;
     }
 }
@@ -1088,7 +1089,7 @@ Centered Menu
     background-size: auto;
     height: 650px;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
 }
 .parallax-img {
     z-index: 0;
@@ -1096,10 +1097,10 @@ Centered Menu
     margin: 0 auto;
 }
 .parallax-content {
+    z-index: 10;
     padding: 80px 0 60px 0;
 }
 .parallax-features h3 {
-    color: #ffffff;
     font-weight: 100;
     font-size: 30px;
     font-family: "Montserrat", sans-serif;
@@ -1109,7 +1110,19 @@ Centered Menu
 .parallax-features {
     margin: 0 auto;
     list-style: none;
+    color: #ffffff;
     text-align: center;
+}
+
+.parallax-container:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -190;
 }
 
 /*=============================================================================
@@ -1318,19 +1331,14 @@ section#contact .wpcf7-form input.wpcf7-submit {
 #social p>a:active {
     color: #fff !important;
 }
+
+#social .social-btn-row {
+    margin-top: 20px;
+}
 .social-btn-row .btn img {
     height: 50px;
 }
-.btn-stores-social {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    border: 1px solid #191919;
-    background-color: #222222;
-    padding: 0;
-    transition: all 0.5s ease;
-    margin: 0 20px;
-}
+
 .btn-stores-social:hover, .btn-stores-social:focus {
     border: 1px solid #191919;
     background-color: #272727;
@@ -1643,11 +1651,11 @@ section#contact .wpcf7-form input.wpcf7-submit {
     margin: 0 auto;
     display: block;
 }
-#primary a:not(.btn) {
+#primary a {
     color: #9fcfff;
     transition: 0.3s ease all;
 }
-#primary a:not(.btn):hover {
+#primary a:hover {
     color: #fc535f;
 }
 #primary #main .entry-content {

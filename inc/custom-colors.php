@@ -56,6 +56,6 @@ function aza_custom_colors() {
 
 	wp_add_inline_style( 'aza-style', $output );
 }
-add_action( 'wp_enqueue_scripts', 'aza_custom_colors', 10 );
+add_action( 'wp_enqueue_scripts', 'aza_custom_colors' );
 
 ?>

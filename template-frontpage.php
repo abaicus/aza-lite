@@ -16,19 +16,40 @@ get_header(); ?>
 
 		<?php
 
-		get_template_part('/template-parts/aza-header-section');
+		do_action('aza_frontpage_header');
 
-		get_template_part('/template-parts/aza-blog-section');
+		$sections_order = get_theme_mod( 'sections_order' );
+		if ( ! empty( $sections_order ) ) {
+			$sections_order_decoded = json_decode( $sections_order, true );
+			foreach ( $sections_order_decoded as $section_name => $priority ) {
+				if ( function_exists( $section_name ) ) {
+					call_user_func( $section_name );
+				}
+			}
 
-		get_template_part('/template-parts/aza-parallax-section');
+		} else {
 
-		get_template_part('/template-parts/aza-ribbon-section');
+			aza_blog_section();
 
-		get_template_part('/template-parts/aza-social-section');
+			if( function_exists( 'aza_pro_video_section' ) ) {
+				aza_pro_video_section();
+			}
 
-		get_template_part('/template-parts/aza-contact-section');
+			if( function_exists( 'aza_pro_services_section' ) ) {
+				aza_pro_services_section();
+			}
 
-		get_template_part('/template-parts/aza-map-section');
+			aza_parallax_section();
+
+			aza_ribbon_section();
+
+			aza_social_section();
+
+			aza_contact_section();
+
+			aza_map_section();
+
+		}
 
 		?>
 
