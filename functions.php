@@ -310,7 +310,7 @@ add_action( 'tgmpa_register', 'aza_register_required_plugins' );
 function aza_features_manager() {
 	$feature_manager = AZA_INC_DIR . '/advanced/functions.php';
 	if ( file_exists( $feature_manager ) ) {
-		include_once ( $feature_manager );
+		include_once( $feature_manager );
 	}
 }
 add_action( 'after_setup_theme','aza_features_manager' );
